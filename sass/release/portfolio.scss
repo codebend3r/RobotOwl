@@ -1,0 +1,231 @@
+@import "variables";
+@import "mixins";
+
+/////////////////////
+
+.portfolioContainer {
+
+  font-size: .9rem;
+  width: 620px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  float: right;
+
+  .launch {
+
+    margin: 20px 0 0 0;
+
+    a {
+      cursor: pointer;
+      color: #EEEEEE;
+      text-decoration: none;
+      background-color: #333333;
+      padding : 10px;
+      background-repeat: repeat;
+      background-image: url(../../pattern/stripes_faded2.png);
+      -moz-box-shadow: 0 0 3px #000000;
+      -webkit-box-shadow: 0 0 3px #000000;
+      box-shadow: 0 0 3px #000000;
+      @media #{$smallBreakpoint} {
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        padding : 10px 0;
+        margin: 0 auto;
+      }
+    }
+
+    a:hover {
+      color : #FFFFFF;
+      text-decoration : none;
+      background-color: $darkRed;
+      padding : 10px;
+      background-repeat: repeat;
+      background-image: url(../../pattern/stripes_faded2.png);
+      margin : 0px;
+      box-shadow : 0 0 4px #333333;
+      //@include gradient();
+      @media #{$smallBreakpoint} {
+        padding : 10px 0;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @media #{$mediumBreakpoint} {
+    position: static;
+    float: none;
+    margin-left: 20px;
+    width: 100%;
+  }
+
+  @media #{$smallBreakpoint} {
+    position: static;
+    float: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+}
+
+.portTitle {
+  font-family: "nimbus-sans", Georgia, sans-serif;
+  font-size: 1.4rem;
+  @media #{$smallBreakpoint} {
+    font-size: 2rem;
+  }
+  font-weight: normal;
+  color: $darkRed;
+  text-decoration: underline;
+}
+
+/**
+* @description container for a text section
+*
+* @markup
+*   <div class="sub"></div>
+*/
+.sub {
+  margin: 10px 0 10px 0;
+}
+
+/**
+* @description sub header in red
+*
+* @markup
+*   <p class="subHeading"></p>
+*/
+.subHeading {
+  font-weight: bold;
+  color: $darkRed;
+  font-size: 1rem;
+}
+
+/**
+* @description the text under .subHeading
+*
+* @markup
+*   <p class="details"></p>
+*/
+.details {
+
+}
+
+/**
+* @description the preloading animated gif
+*
+* @markup
+*   <div class="portfolioList"></div>
+*/
+.portfolioList {
+
+  position: static;
+  width: 220px;
+  font-size: 0.8rem;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  margin: 20px 0 0 0;
+  float: left;
+  background-repeat: repeat;
+  background-image: url(../../pattern/stripes_faded2.png);
+  z-index: 9999;
+
+  @media #{$mediumBreakpoint} {
+    float: none;
+    position: absolute;
+    width: 260px;
+    height: 100%;
+    left: -300px;
+    margin: 0;
+    padding: 0;
+    background-color: #ebe4dc;
+    @include dropShadow(0, 4, 20, 0, #b9b9b9);
+  }
+
+}
+
+.slideMenuIn {
+   left: 0px;
+}
+
+.animate {
+  -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -ms-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+/**
+* @description a diagonal border for images
+*
+* @markup
+*   <div class="stripedBorder"></div>
+*/
+.stripedBorder {
+  position: relative;
+  overflow: hidden;
+  display: none;
+  width: 600px;
+  height: 335px;
+  background-repeat: repeat;
+  background-image: url(../../pattern/stripes_faded.png);
+  padding: 10px;
+  margin: 0;
+
+  img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+}
+
+@media #{$smallBreakpoint} {
+  .stripedBorder {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background: transparent;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+
+/**
+* @description the preloading animated gif
+*
+* @markup
+*   <div class="imagePreloader"></div>
+*/
+.imagePreloader {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 600px;
+  height: 335px;
+  background: url(../../images/preloader.gif) 50% 50% no-repeat;
+  padding: 10px;
+  margin: 0;
+
+  img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+  }
+}
+

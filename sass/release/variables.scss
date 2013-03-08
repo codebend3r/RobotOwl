@@ -1,0 +1,29 @@
+$blue: #3f769b;
+$darkRed: #cb3429;
+$headerColour: #d3d3d3;
+$bodyColour: #efefef;
+$shadowColour: #b9b9b9;
+$slateGrey: #2f4f4f;
+
+//breakpoint values
+$smallSize: 620px;
+$mediumSize: 875px;
+$largeSize: 1000px;
+
+//breakpoint definition string incorporating breakpoint values
+$smallBreakpoint: "all and (max-width: " + $smallSize + ")";
+$mediumBreakpoint: "all and (max-width: " + $mediumSize + ")";
+$largeBreakpoint: "all and (max-width: " + $largeSize + ")";
+
+$buttonBase1: #87e0fd;
+$buttonBase2: #53cbf1;
+$buttonBase3: #05abe0;
+
+$white: #ffffff;
+$offwhite: #d1d1d1;
+$lightGrey: #eeeeee;
+$mediumGrey: #cccccc;
+
+$navBarHeightLarge: 70px;
+$navBarHeightMedium: 45px;
+$navBarHeightSmall: 35px;

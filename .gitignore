@@ -1,0 +1,9 @@
+# Output Files
+bin
+
+# IDE system files (RubyMine)
+.idea
+
+# SASS Cache - generated when runing sass --watch
+.sass-cache
+
