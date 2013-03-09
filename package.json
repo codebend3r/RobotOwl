@@ -20,6 +20,7 @@
   },
   "description": "Porftolio Website",
   "main": "Gruntfile.js",
+  "outputFolder": "bin",
   "dependencies": {
     "grunt": "~0.4.0",
     "grunt-contrib-jshint": "~0.1.1",

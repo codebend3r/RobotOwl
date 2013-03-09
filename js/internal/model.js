@@ -18,9 +18,16 @@ function init() {
             };
 
             self.openSmallMenu = function() {
-                var $portfolioList = $('.portfolioList');
-                $portfolioList.toggleClass('slideMenuIn');
-                $portfolioList.addClass('animate');
+
+                var $portfolioContainer = $('.portfolio-container'),
+                $navBar = $('.nav-bar');
+
+                $portfolioContainer.toggleClass('slide-menu-in');
+                $portfolioContainer.addClass('animate');
+
+                $navBar.toggleClass('slide-menu-in');
+                $navBar.addClass('animate');
+
             };
 
             self.showPortflio = function() {
@@ -67,11 +74,14 @@ function init() {
                 self.portfolioData(self.longList[data.id]);
                 //location.hash = 'portfolio/' + data.slug;
 
-                var $portfolioList = $('.portfolioList');
+                var $portfolioContainer = $('.portfolio-container'),
+                    $navBar = $('.nav-bar');
 
-                if ($portfolioList.hasClass('slideMenuIn')) {
-                    $portfolioList.removeClass('slideMenuIn');
+                if ($portfolioContainer.hasClass('slide-menu-in')) {
+                    $portfolioContainer.removeClass('slide-menu-in');
+                    $navBar.removeClass('slide-menu-in');
                 }
+
                 Crivas.showNewSection();
 
             };
@@ -117,7 +127,7 @@ function init() {
 
             Crivas.showPreloader();
 
-            $('.stripedBorder').imagesLoaded(function(){
+            $('.striped-border').imagesLoaded(function(){
 
                 console.log('showNewSection');
                 Crivas.allImagesLoaded();
@@ -134,7 +144,7 @@ function init() {
 
             console.log('initCycle');
 
-            Crivas.cycler.currentSlideList = $(".stripedBorder img");
+            Crivas.cycler.currentSlideList = $(".striped-border img");
             Crivas.cycler.numberOfPics = Crivas.cycler.currentSlideList.length - 1;
             Crivas.cycler.currentSlideNum = Crivas.cycler.currentSlideList.length - 1;
 
@@ -178,14 +188,14 @@ function init() {
         },
 
         showPreloader: function() {
-            $('.imagePreloader').show();
-            $('.stripedBorder').hide();
+            $('.image-preloader').show();
+            $('.striped-border').hide();
         },
 
         allImagesLoaded: function() {
             console.log('allImagesLoaded');
-            $('.imagePreloader').hide();
-            $('.stripedBorder').show();
+            $('.image-preloader').hide();
+            $('.striped-border').show();
             this.initCycle();
         },
 

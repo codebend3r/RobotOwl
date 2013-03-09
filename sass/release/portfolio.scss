@@ -3,123 +3,50 @@
 
 /////////////////////
 
-.portfolioContainer {
+.portfolio-container {
 
   font-size: .9rem;
   width: 620px;
   display: inline-block;
+  background-color: $bodyColour;
   padding: 0;
   margin: 0;
   float: right;
 
-  .launch {
-
-    margin: 20px 0 0 0;
-
-    a {
-      cursor: pointer;
-      color: #EEEEEE;
-      text-decoration: none;
-      background-color: #333333;
-      padding : 10px;
-      background-repeat: repeat;
-      background-image: url(../../pattern/stripes_faded2.png);
-      -moz-box-shadow: 0 0 3px #000000;
-      -webkit-box-shadow: 0 0 3px #000000;
-      box-shadow: 0 0 3px #000000;
-      @media #{$smallBreakpoint} {
-        width: 50%;
-        display: inline-block;
-        text-align: center;
-        padding : 10px 0;
-        margin: 0 auto;
-      }
-    }
-
-    a:hover {
-      color : #FFFFFF;
-      text-decoration : none;
-      background-color: $darkRed;
-      padding : 10px;
-      background-repeat: repeat;
-      background-image: url(../../pattern/stripes_faded2.png);
-      margin : 0px;
-      box-shadow : 0 0 4px #333333;
-      //@include gradient();
-      @media #{$smallBreakpoint} {
-        padding : 10px 0;
-        margin: 0 auto;
-      }
-    }
-  }
-
   @media #{$mediumBreakpoint} {
-    position: static;
     float: none;
-    margin-left: 20px;
+    position: absolute;
+    margin: 80px 0 0 0;
     width: 100%;
   }
 
   @media #{$smallBreakpoint} {
-    position: static;
     float: none;
-    margin: 0;
-    padding: 0;
+    position: absolute;
     width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    margin: 160px 0 0 0;
   }
 
 }
 
-.portTitle {
+.port-title {
   font-family: "nimbus-sans", Georgia, sans-serif;
   font-size: 1.4rem;
-  @media #{$smallBreakpoint} {
-    font-size: 2rem;
-  }
   font-weight: normal;
   color: $darkRed;
   text-decoration: underline;
 }
 
 /**
-* @description container for a text section
-*
-* @markup
-*   <div class="sub"></div>
-*/
-.sub {
-  margin: 10px 0 10px 0;
-}
-
-/**
-* @description sub header in red
-*
-* @markup
-*   <p class="subHeading"></p>
-*/
-.subHeading {
-  font-weight: bold;
-  color: $darkRed;
-  font-size: 1rem;
-}
-
-/**
-* @description the text under .subHeading
-*
-* @markup
-*   <p class="details"></p>
-*/
-.details {
-
-}
-
-/**
 * @description the preloading animated gif
 *
 * @markup
-*   <div class="portfolioList"></div>
+*   <div class="portfolio-list"></div>
 */
-.portfolioList {
+.portfolio-list {
 
   position: static;
   width: 220px;
@@ -136,19 +63,21 @@
   @media #{$mediumBreakpoint} {
     float: none;
     position: absolute;
-    width: 260px;
+    width: 300px;
     height: 100%;
-    left: -300px;
+    top: 0px;
+    left: 0px;
     margin: 0;
     padding: 0;
     background-color: #ebe4dc;
-    @include dropShadow(0, 4, 20, 0, #b9b9b9);
+    z-index: -999;
+    border-right: 1px solid $mediumGrey;
   }
 
 }
 
-.slideMenuIn {
-   left: 0px;
+.slide-menu-in {
+   left: 301px;
 }
 
 .animate {
@@ -163,9 +92,9 @@
 * @description a diagonal border for images
 *
 * @markup
-*   <div class="stripedBorder"></div>
+*   <div class="striped-border"></div>
 */
-.stripedBorder {
+.striped-border {
   position: relative;
   overflow: hidden;
   display: none;
@@ -185,7 +114,7 @@
 }
 
 @media #{$smallBreakpoint} {
-  .stripedBorder {
+  .striped-border {
     position: relative;
     margin: 0;
     padding: 0;
@@ -204,14 +133,46 @@
   }
 }
 
+/**
+* @description container for a text section
+*
+* @markup
+*   <div class="sub"></div>
+*/
+.sub {
+  margin: 10px 0 10px 0;
+}
+
+/**
+* @description sub header in red
+*
+* @markup
+*   <p class="subHeading"></p>
+*/
+.sub-heading {
+  font-weight: bold;
+  color: $darkRed;
+  font-size: 1rem;
+}
+
+/**
+* @description the text under .subHeading
+*
+* @markup
+*   <p class="details"></p>
+*/
+.details {
+
+}
+
 
 /**
 * @description the preloading animated gif
 *
 * @markup
-*   <div class="imagePreloader"></div>
+*   <div class="image-preloader"></div>
 */
-.imagePreloader {
+.image-preloader {
   position: relative;
   overflow: hidden;
   display: block;

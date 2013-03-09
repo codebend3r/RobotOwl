@@ -5,22 +5,22 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        clean: ["__release", "compiled" ],
+        clean: ["<%= pkg.outputFolder %>", "compiled" ],
         copy: {
             main: {
                 files: [
-                    {src: ['index.html'], dest: '__release/index.max.html'},
-                    {src: ['icons/**'], dest: '__release/'},
-                    {src: ['images/**'], dest: '__release/'},
-                    {src: ['pages/**'], dest: '__release/'},
-                    {src: ['pattern/**'], dest: '__release/'},
-                    {src: ['css/'], dest: '__release/css'},
-                    {src: ['js/'], dest: '__release/js'}
+                    {src: ['index.html'], dest: '<%= pkg.outputFolder %>/index.max.html'},
+                    {src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['css/'], dest: '<%= pkg.outputFolder %>/css'},
+                    {src: ['js/'], dest: '<%= pkg.outputFolder %>/js'}
                 ]
             },
             after: {
                 files: [
-                    {src: ['js/compiled/<%= pkg.outputName %>.min.js'], dest: '__release/js/<%= pkg.outputName %>.min.js'}
+                    {src: ['js/compiled/<%= pkg.outputName %>.min.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>.min.js'}
                 ]
             }
         },
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
         },
         jshint: {
             // define the files to lint
-            files: ['__release/js/<%= pkg.name %>/*.js'],
+            files: ['<%= pkg.outputFolder %>/js/<%= pkg.name %>/*.js'],
             // configure JSHint (documented at http://www.jshint.com/docs/)
             options: {
                 // more options here if you want to override JSHint defaults
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
         cssmin: {
             compress: {
                 files: {
-                    "__release/css/<%= pkg.outputName %>.min.css": ["css/release/**/*.css"]
+                    "<%= pkg.outputFolder %>/css/<%= pkg.outputName %>.min.css": ["css/release/**/*.css"]
                 }
             }
         },
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
                     collapseWhitespace: true
                 },
                 files: {
-                    '__release/index.html': '__release/index.max.html'
+                    '<%= pkg.outputFolder %>/index.html': '<%= pkg.outputFolder %>/index.max.html'
                 }
             }
         },

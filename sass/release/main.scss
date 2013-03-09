@@ -3,6 +3,9 @@
 
 html {
   font-size: 100%;
+  @media #{$smallBreakpoint} {
+    font-size: 150%;
+  }
 }
 
 body {
@@ -18,76 +21,14 @@ body {
 }
 
 /**
-  * @description the main menu styles
-  *
-  * @markup
-  *   <ul class="main-menu">
-  */
-.main-menu {
-
-  display: inline-block;
-  vertical-align: middle;
-  float: right;
+* @description TODO
+*
+* @markup
+*   <div class="portfolio-content"></div>
+*/
+.portfolio-content {
   margin: 0;
   padding: 0;
-  height: $navBarHeightLarge;
-  border-left: solid 1px #c6c6c6;
-  border-right: solid 1px $white;
-
-  ul {
-    display: inline-block;
-  }
-
-  li {
-    display: inline-block;
-    list-style: none;
-    margin: 0 -2px;
-    padding: 0px 20px;
-    vertical-align: middle;
-    //background-color: $white;
-    cursor: pointer;
-    border-left: solid 1px $white;
-    border-right: solid 1px #c6c6c6;
-    height: $navBarHeightLarge;
-    line-height: $navBarHeightLarge;
-    text-align: center;
-  }
-
-  li:hover {
-    background-color: $darkRed;
-    color: $white;
-    background-repeat: repeat;
-    background-image: url(../../pattern/stripes_faded2.png);
-  }
-
-  @media #{$mediumBreakpoint} {
-    height: $navBarHeightLarge;
-    padding: 0 3px;
-
-    li {
-      height: $navBarHeightLarge;
-      line-height: $navBarHeightLarge;
-    }
-  }
-
-  @media #{$smallBreakpoint} {
-    width: 100%;
-    height: $navBarHeightLarge;
-    padding: 0 3px;
-    border-bottom: solid 1px #c6c6c6;
-
-    li {
-      width: 32%;
-      height: $navBarHeightLarge;
-      line-height: $navBarHeightLarge;
-      padding: 0;
-    }
-
-    li:first-child {
-      width: 35%;
-    }
-  }
-
 }
 
 /**
@@ -99,42 +40,13 @@ body {
 .main-wrapper {
   @include centeredAndFixed();
   height: 100%;
+
   @media #{$smallBreakpoint} {
-    padding: 10px;
+    height: 100%;
     margin: 0;
+    padding: 0;
+    z-index: 997;
   }
-}
-
-/**
-* @description the nav bar header which spans 100% of the width
-*
-* @markup
-*   <div class="nav-bar"></div>
-*/
-.nav-bar {
-  background-color: $headerColour;
-  height: $navBarHeightLarge;
-  width: 100%;
-  @include dropShadow(0, 0, 5, 5);
-  @include gradient($white,$lightGrey,$mediumGrey);
-
-  @media #{$mediumBreakpoint} {
-    height: $navBarHeightLarge;
-    @include removeShadow();
-    @include removeGradient($bodyColour);
-    border-bottom: 1px $headerColour solid;
-  }
-}
-
-/**
-* @description the container which has a max width
-*
-* @markup
-*   <div class="nav-bar-fixed"></div>
-*/
-.nav-bar-fixed {
-  @include centeredAndFixed();
-  vertical-align: middle;
 }
 
 /**
@@ -158,6 +70,10 @@ button {
   @media #{$mediumBreakpoint} {
     padding: 10px 5px;
   }
+
+  @media #{$smallBreakpoint} {
+    background-color: $bodyColour;
+  }
 }
 
 button:hover {
@@ -173,37 +89,6 @@ p {
 
 ////////////////////////////////////////
 
-/**
-* @description button that only appears in medium and small mode
-*
-* @markup
-*   <div class="open-small-menu">
-*      <div class="horizontal-groove"></div>
-*   </div>
-*/
-.open-small-menu {
-
-  display: none;
-
-  .horizontal-groove {
-    margin: 11px 7px -6px 7px;
-    background-color: #666666;
-    height: 2px;
-    border-radius: 4px;
-    border: 1px inset #ffffff;
-  }
-
-  @media #{$mediumBreakpoint} {
-    float: left;
-    cursor: pointer;
-    margin: 0px 0px;
-    display: inline-block;
-    width: $navBarHeightLarge;
-    height: $navBarHeightLarge;
-    border-right: 2px solid $offwhite;
-  }
-
-}
 
 .horizontal-lines {
   height: 0px;
@@ -226,13 +111,66 @@ p {
 *   <div class="logo"></div>
 */
 .logo {
-  background: url('../../images/crivas_logo.png') no-repeat;
-  width: 171px;
-  height: 70px;
+  background: url('../../images/crivas-logo.png') no-repeat;
+  width: 216px;
+  height: 80px;
   display: inline-block;
   float: left;
   @media #{$mediumBreakpoint} {
     border-left: 1px solid $white;
+  }
+  @media #{$retinaBreakpoint} {
+    background: url('../../images/crivas-logo@2x.png') no-repeat;
+    width: 216px;
+    height: 80px;
+  }
+}
+
+
+/**
+* @description resusable launch button
+*
+* @markup
+*   <div class="launch"></div>
+*/
+.launch {
+
+  margin: 20px 0 0 0;
+
+  a {
+    cursor: pointer;
+    color: #EEEEEE;
+    text-decoration: none;
+    background-color: #333333;
+    padding : 10px;
+    background-repeat: repeat;
+    background-image: url(../../pattern/stripes_faded2.png);
+    -moz-box-shadow: 0 0 3px #000000;
+    -webkit-box-shadow: 0 0 3px #000000;
+    box-shadow: 0 0 3px #000000;
+    @media #{$smallBreakpoint} {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      padding : 10px 0;
+      margin: 0 auto;
+    }
+  }
+
+  a:hover {
+    color : #FFFFFF;
+    text-decoration : none;
+    background-color: $darkRed;
+    padding : 10px;
+    background-repeat: repeat;
+    background-image: url(../../pattern/stripes_faded2.png);
+    margin : 0px;
+    box-shadow : 0 0 4px #333333;
+    //@include gradient();
+    @media #{$smallBreakpoint} {
+      padding : 10px 0;
+      margin: 0 auto;
+    }
   }
 }
 

@@ -1,0 +1,127 @@
+/**
+* @description the nav bar header which spans 100% of the width
+*
+* @markup
+*   <div class="nav-bar"></div>
+*/
+.nav-bar {
+  background-color: lightgrey;
+  height: 80px;
+  width: 100%;
+  background: #eeeeee;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #eeeeee 0%, #eeeeee 40%, #eeeeee 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(40%, #eeeeee), color-stop(100%, #eeeeee));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #eeeeee 0%, #eeeeee 40%, #eeeeee 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #eeeeee 0%, #eeeeee 40%, #eeeeee 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #eeeeee 0%, #eeeeee 40%, #eeeeee 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #eeeeee 0%, #eeeeee 40%, #eeeeee 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$buttonBase1', endColorstr='$buttonBase3',GradientType=0 );
+  /* IE6-9 */
+  border-bottom: 1px lightgrey solid; }
+  @media all and (max-width: 875px) {
+    .nav-bar {
+      height: 80px;
+      z-index: 998;
+      position: absolute; } }
+  @media all and (max-width: 620px) {
+    .nav-bar {
+      z-index: 998;
+      position: absolute;
+      top: 0px;
+      left: 0px; } }
+
+/**
+* @description the container which has a max width
+*
+* @markup
+*   <div class="nav-bar-fixed"></div>
+*/
+.nav-bar-fixed {
+  width: 1000px;
+  margin: 0 auto;
+  vertical-align: middle; }
+  @media all and (max-width: 1000px) {
+    .nav-bar-fixed {
+      width: 100%; } }
+
+/**
+* @description button that only appears in medium and small mode
+*
+* @markup
+*   <div class="open-small-menu">
+*      <div class="horizontal-groove"></div>
+*   </div>
+*/
+.open-small-menu {
+  display: none; }
+  .open-small-menu .horizontal-groove {
+    margin: 20px 10px -12px 10px;
+    background-color: #cecece;
+    height: 6px;
+    border-radius: 4px;
+    border: 2px inset #eeeeee; }
+  @media all and (max-width: 875px) {
+    .open-small-menu {
+      float: left;
+      cursor: pointer;
+      margin: 0px 0px;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border-right: 2px solid #d1d1d1; } }
+
+/**
+* @description the main menu styles
+*
+* @markup
+*   <ul class="main-menu">
+*/
+ul.main-menu {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  height: 80px;
+  background-color: #efefef;
+  display: inline-block;
+  margin: 0 2px;
+  padding: 0;
+  border-bottom: solid 1px #c6c6c6; }
+
+li {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0 20px;
+  cursor: pointer;
+  height: 80px;
+  line-height: 80px;
+  text-align: center; }
+
+li:hover {
+  border-bottom: 3px #cb3429 solid; }
+
+li.selected {
+  border-bottom: 3px #cb3429 solid; }
+
+@media all and (max-width: 620px) {
+  ul.main-menu {
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    background-color: #efefef;
+    -webkit-box-shadow: 0px 4px 20px 0px #333333;
+    -moz-box-shadow: 0px 4px 20px 0px #333333;
+    box-shadow: 0px 4px 20px 0px #333333; }
+
+  li {
+    width: 32.4%;
+    margin: 0;
+    padding: 0; } }

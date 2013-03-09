@@ -11,6 +11,7 @@
     <link rel="apple-touch-icon" href="icons/icon_32x32x32.png" />
     <link rel="stylesheet" type="text/css" href="css/release/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/release/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/release/nav-bar.css" />
     <link rel="stylesheet" type="text/css" href="css/release/portfolio.css" />
     <link rel="stylesheet" type="text/css" href="css/release/resume.css" />
     <link rel="stylesheet" type="text/css" href="css/release/contact.css" />
@@ -61,41 +62,41 @@
 <section class="main-wrapper">
 
     <!-- PORTFOLIO SECTION -->
-    <section class="portfolioContent" data-bind="visible: visiblePortfolio">
+    <section class="portfolio-content" data-bind="visible: visiblePortfolio">
 
-        <div class="portfolioList" data-bind="foreach: navigationList">
+        <div class="portfolio-list" data-bind="foreach: navigationList">
             <button data-bind="html: menuText, click: $root.changePage"></button>
         </div>
 
-        <div class="portfolioContainer" data-bind="with: portfolioData">
+        <div class="portfolio-container" data-bind="with: portfolioData">
 
-            <h3 class="portTitle" data-bind="text: title"></h3>
+            <h3 class="port-title" data-bind="text: title"></h3>
 
-            <div class="imagePreloader"></div>
-            <div class="stripedBorder" data-bind="foreach: imageurl">
+            <div class="image-preloader"></div>
+            <div class="striped-border" data-bind="foreach: imageurl">
                 <img data-bind="attr:{src: $data}"/>
             </div>
 
             <div class="sub">
-                <p class="subHeading">
+                <p class="sub-heading">
                     Company
                 </p>
                 <p class="details" data-bind="text: companyName"></p>
             </div>
             <div class="sub">
-                <p class="subHeading">
+                <p class="sub-heading">
                     Business Case
                 </p>
                 <p class="details" data-bind="text: businessCase"></p>
             </div>
             <div class="sub">
-                <p class="subHeading">
+                <p class="sub-heading">
                     Details
                 </p>
                 <p class="details" data-bind="text: details"></p>
             </div>
             <div class="sub">
-                <p class="subHeading">
+                <p class="sub-heading">
                     Technology Used
                 </p>
                 <p class="details" data-bind="text: techUsed"></p>
