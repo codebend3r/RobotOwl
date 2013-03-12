@@ -2,7 +2,7 @@
 
 @mixin centeredAndFixed() {
   width: $largeSize;
-  margin: 0 auto;
+  margin: 5px auto 0 auto;
   @media #{$largeBreakpoint} {
     width: 100%;
   }

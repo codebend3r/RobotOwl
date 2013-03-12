@@ -1,0 +1,28 @@
+.skillset {
+  margin: 0;
+  padding: 0;
+  -moz-column-count: 2;
+  /* Firefox */
+  -webkit-column-count: 2;
+  /* Safari and Chrome */
+  column-count: 2; }
+  .skillset li {
+    font-size: 12px; }
+
+.stackable {
+  border-bottom: 1px solid #666666; }
+
+.job {
+  background-color: #ffffff;
+  margin: 5px 0 0 0;
+  padding: 0; }
+  .job p {
+    margin: 0;
+    padding: 0; }
+  .job .job-title {
+    font-size: 14px;
+    font-style: italic;
+    font-family: Georgia; }
+  .job .company-name {
+    font-size: 12px;
+    color: #696969; }

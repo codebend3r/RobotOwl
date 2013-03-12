@@ -91,25 +91,26 @@ ul.main-menu {
   margin: 0 2px;
   padding: 0;
   border-bottom: solid 1px #c6c6c6;
-}
 
-li {
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-  padding: 0 20px;
-  cursor: pointer;
-  height: $navBarHeightLarge;
-  line-height: $navBarHeightLarge;
-  text-align: center;
-}
+  li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    cursor: pointer;
+    height: $navBarHeightLarge;
+    line-height: $navBarHeightLarge;
+    text-align: center;
+  }
 
-li:hover {
-  border-bottom: 3px $darkRed solid;
-}
+  li:hover {
+    border-bottom: 3px $darkRed solid;
+  }
 
-li.selected {
-  border-bottom: 3px $darkRed solid;
+  li.selected {
+    border-bottom: 3px $darkRed solid;
+  }
+
 }
 
 @media #{$mediumBreakpoint} {
@@ -126,12 +127,13 @@ li.selected {
     padding: 0;
     background-color: $bodyColour;
     @include dropShadow(0, 4, 20, 0, #333333);
-  }
 
-  li {
-    width: 32.4%;
-    margin: 0;
-    padding: 0;
+    li {
+      width: 32.4%;
+      margin: 0;
+      padding: 0;
+    }
+
   }
 
 }

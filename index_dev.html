@@ -45,7 +45,7 @@
 <header class="nav-bar">
     <div class="nav-bar-fixed">
 
-        <div class="open-small-menu" data-bind="click:$root.openSmallMenu">
+        <div class="open-small-menu" data-bind="click: $root.openSmallMenu">
             <div class="horizontal-groove"></div>
             <div class="horizontal-groove"></div>
             <div class="horizontal-groove"></div>
@@ -53,7 +53,7 @@
         <div class="logo"></div>
 
         <ul class="main-menu" data-bind="foreach: menuList">
-            <li data-bind="text: name, click:$root.menuClick"></li>
+            <li data-bind="text: name, click: $root.menuClick"></li>
         </ul>
 
     </div>
@@ -73,8 +73,9 @@
             <h3 class="port-title" data-bind="text: title"></h3>
 
             <div class="image-preloader"></div>
+
             <div class="striped-border" data-bind="foreach: imageurl">
-                <img data-bind="attr:{src: $data}"/>
+                <img class="work-images" data-bind="attr:{src: $data}"/>
             </div>
 
             <div class="sub">
@@ -111,44 +112,22 @@
     </section>
 
     <!-- RESUME SECTION -->
-    <section class="resumeContent" data-bind="visible: visibleResume">
+    <section class="resume-content" data-bind="visible: visibleResume">
 
         <h1>Resume</h1>
 
         <div class="stackable">
 
-            <span class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> (Word 2010 Format)</span>
-            <span class="launch"><a href="resume/Chester Rivas CV.doc" target="_blank">DOWNLOAD</a> (Word 2007 Format)</span>
-            <span class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> (PDF Format)</span>
-
-        </div>
-
-        <div class="stackable">
-
-            <h3>Software and Development Languages</h3>
-
-            <ul>
-                <li>JavaScript</li>
-                <li>JQuery</li>
-                <li>Knockout.js</li>
-                <li>Sproutcore</li>
-                <li>Grunt.js</li>
-                <li>HTML/HTML5</li>
-                <li>CSS/CSS3</li>
-                <li>Facebook Development</li>
-                <li>C#</li>
-                <li>Android/Java</li>
-                <li>Photoshop</li>
-                <li>Illustrator</li>
-                <li>Flex</li>
-                <li>ActionScript 3.0</li>
-            </ul>
+            <p class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> (Word 2010 Format)</p>
+            <p class="launch"><a href="resume/Chester Rivas CV.doc" target="_blank">DOWNLOAD</a> (Word 2007 Format)</p>
+            <p class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> (PDF Format)</p>
 
         </div>
 
         <div class="stackable">
 
             <h3>Summary</h3>
+
             <p>
                 Chester Rivas is a highly skilled Front End Developer who specializes in JavaScript, JQuery and HTML/CSS. Coming from a design background he has the complementary skills of being able to design interfaces, websites, components through coding.
             </p>
@@ -164,10 +143,33 @@
 
         </div>
 
+        <div class="stackable">
+
+            <h3>Software and Development Languages</h3>
+
+            <ul class="skillset" data-bind="foreach: skillset">
+                <li data-bind="text: $data"></li>
+            </ul>
+
+        </div>
+
+        <div class="stackable">
+
+            <div data-bind="foreach: experienceList">
+                <div class="job">
+                    <p class="job-title" data-bind="text: jobTitle"></p>
+                    <p class="company-name" data-bind="text: companyName"></p>
+                    <p class="job-type" data-bind="text: jobType"></p>
+                    <p class="dates-at-job" data-bind="text: datesAtJob"></p>
+                </div>
+            </div>
+
+        </div>
+
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="contactSection" data-bind="visible: visibleContact">
+    <section class="contact-content" data-bind="visible: visibleContact">
 
         <h1>Contact Info</h1>
         <h2>Chester Rivas</h2>
@@ -186,6 +188,7 @@
 <script src="js/external/jquery.imagesloaded.js" type="text/javascript"></script>
 <script src="js/external/modernizr-2.6.2.js" type="text/javascript"></script>
 <script src="js/external/knockout-2.2.1.js" type="text/javascript"></script>
+<script src="js/external/sammy-0.7.4.js" type="text/javascript"></script>
 
 <!-- INTERNAL JS -->
 <script src="js/internal/model.js" type="text/javascript"></script>

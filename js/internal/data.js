@@ -151,6 +151,7 @@ var data = {
             menuText:'Slot Machine Demo',
             imageurl:[ 'pages/slotmachine_page.jpg' ],
             companyName:'Personal',
+            businessCase: '',
             details:'A company asked me to build a demo for a slot machine as part of the interview process. I built this in 2 hours.',
             techUsed:'Flash, ActionScript 3.0, HTML, JavaScript',
             url:'http://crivas.net/portfolio/slotmachine/'

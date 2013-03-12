@@ -1,25 +1,19 @@
 html {
-  font-size: 100%;
-}
-@media all and (max-width: 620px) {
-  html {
-    font-size: 150%;
-  }
-}
+  font-size: 100%; }
+  @media all and (max-width: 620px) {
+    html {
+      font-size: 150%; } }
 
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 100%;
   background-color: #efefef;
   color: darkslategrey;
-  min-width: 400px;
-}
-@media all and (max-width: 620px) {
-  body {
-    margin: 0;
-    padding: 0;
-  }
-}
+  min-width: 400px; }
+  @media all and (max-width: 620px) {
+    body {
+      margin: 0;
+      padding: 0; } }
 
 /**
 * @description TODO
@@ -29,8 +23,7 @@ body {
 */
 .portfolio-content {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /**
 * @description main container for all sections
@@ -40,22 +33,17 @@ body {
 */
 .main-wrapper {
   width: 1000px;
-  margin: 0 auto;
-  height: 100%;
-}
-@media all and (max-width: 1000px) {
-  .main-wrapper {
-    width: 100%;
-  }
-}
-@media all and (max-width: 620px) {
-  .main-wrapper {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    z-index: 997;
-  }
-}
+  margin: 5px auto 0 auto;
+  height: 100%; }
+  @media all and (max-width: 1000px) {
+    .main-wrapper {
+      width: 100%; } }
+  @media all and (max-width: 620px) {
+    .main-wrapper {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      z-index: 997; } }
 
 /**
   * @name Button
@@ -74,43 +62,34 @@ button {
   padding: 5px;
   background-color: #ece5dd;
   border: none;
-  text-align: left;
-}
-@media all and (max-width: 875px) {
-  button {
-    padding: 10px 5px;
-  }
-}
-@media all and (max-width: 620px) {
-  button {
-    background-color: #efefef;
-  }
-}
+  text-align: left; }
+  @media all and (max-width: 875px) {
+    button {
+      padding: 10px 5px; } }
+  @media all and (max-width: 620px) {
+    button {
+      background-color: #efefef; } }
 
 button:hover {
   background-color: #cb3429;
   color: white;
   background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
-}
+  background-image: url(../../pattern/stripes_faded2.png); }
 
 p {
-  font-size: .8rem;
-}
+  font-size: .8rem; }
 
 .horizontal-lines {
   height: 0px;
   border-top: 2px solid #d1d1d1;
   border-bottom: 2px solid white;
-  display: block;
-}
+  display: block; }
 
 .vertical-lines {
   width: 0px;
   border-left: 1px solid white;
   border-right: 1px solid #d1d1d1;
-  display: block;
-}
+  display: block; }
 
 /**
 * @description contains the website logo
@@ -123,20 +102,15 @@ p {
   width: 216px;
   height: 80px;
   display: inline-block;
-  float: left;
-}
-@media all and (max-width: 875px) {
-  .logo {
-    border-left: 1px solid white;
-  }
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .logo {
-    background: url("../../images/crivas-logo@2x.png") no-repeat;
-    width: 216px;
-    height: 80px;
-  }
-}
+  float: left; }
+  @media all and (max-width: 875px) {
+    .logo {
+      border-left: 1px solid white; } }
+  @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .logo {
+      background: url("../../images/crivas-logo@2x.png") no-repeat;
+      width: 216px;
+      height: 80px; } }
 
 /**
 * @description resusable launch button
@@ -145,45 +119,41 @@ p {
 *   <div class="launch"></div>
 */
 .launch {
-  margin: 20px 0 0 0;
-}
-.launch a {
-  cursor: pointer;
-  color: #EEEEEE;
-  text-decoration: none;
-  background-color: #333333;
-  padding: 10px;
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
-  -moz-box-shadow: 0 0 3px black;
-  -webkit-box-shadow: 0 0 3px black;
-  box-shadow: 0 0 3px black;
-}
-@media all and (max-width: 620px) {
+  display: block;
+  height: 40px;
+  padding: 5px;
+  margin: 0; }
   .launch a {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    padding: 10px 0;
-    margin: 0 auto;
-  }
-}
-.launch a:hover {
-  color: #FFFFFF;
-  text-decoration: none;
-  background-color: #cb3429;
-  padding: 10px;
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
-  margin: 0px;
-  box-shadow: 0 0 4px #333333;
-}
-@media all and (max-width: 620px) {
+    cursor: pointer;
+    color: #EEEEEE;
+    text-decoration: none;
+    background-color: #333333;
+    padding: 10px;
+    background-repeat: repeat;
+    background-image: url(../../pattern/stripes_faded2.png);
+    -moz-box-shadow: 0 0 3px black;
+    -webkit-box-shadow: 0 0 3px black;
+    box-shadow: 0 0 3px black; }
+    @media all and (max-width: 620px) {
+      .launch a {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        padding: 10px 0;
+        margin: 0 auto; } }
   .launch a:hover {
-    padding: 10px 0;
-    margin: 0 auto;
-  }
-}
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color: #cb3429;
+    padding: 10px;
+    background-repeat: repeat;
+    background-image: url(../../pattern/stripes_faded2.png);
+    margin: 0px;
+    box-shadow: 0 0 4px #333333; }
+    @media all and (max-width: 620px) {
+      .launch a:hover {
+        padding: 10px 0;
+        margin: 0 auto; } }
 
 /**
   * @description a line separator
@@ -194,5 +164,4 @@ p {
 .indent-line {
   margin: 20px 0 0 0;
   border-top: 1px solid white;
-  border-bottom: 1px solid #cccccc;
-}
+  border-bottom: 1px solid #cccccc; }
