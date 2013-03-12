@@ -13,8 +13,7 @@
   border-bottom: 1px solid #666666; }
 
 .job {
-  background-color: #ffffff;
-  margin: 5px 0 0 0;
+  margin: 10px 0 0 0;
   padding: 0; }
   .job p {
     margin: 0;
@@ -23,6 +22,14 @@
     font-size: 14px;
     font-style: italic;
     font-family: Georgia; }
+  .job .job-type {
+    font-size: 10px; }
   .job .company-name {
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: bold;
     color: #696969; }
+  .job .dates-at-job {
+    text-transform: uppercase;
+    font-size: 10px; }
+  .job li {
+    font-size: 11px; }

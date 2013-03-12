@@ -110,7 +110,8 @@ function init() {
                         companyName: i.companyName,
                         jobTitle: i.jobTitle,
                         jobType: i.jobType,
-                        datesAtJob: i.datesAtJob
+                        datesAtJob: i.datesAtJob,
+                        tasks: i.tasks
                     };
                 })
             );
