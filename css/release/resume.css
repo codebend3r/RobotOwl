@@ -5,31 +5,41 @@
   /* Firefox */
   -webkit-column-count: 2;
   /* Safari and Chrome */
-  column-count: 2; }
-  .skillset li {
-    font-size: 12px; }
+  column-count: 2;
+}
+.skillset li {
+  font-size: 12px;
+}
 
 .stackable {
-  border-bottom: 1px solid #666666; }
+  border-bottom: 1px solid #666666;
+}
 
 .job {
   margin: 10px 0 0 0;
-  padding: 0; }
-  .job p {
-    margin: 0;
-    padding: 0; }
-  .job .job-title {
-    font-size: 14px;
-    font-style: italic;
-    font-family: Georgia; }
-  .job .job-type {
-    font-size: 10px; }
-  .job .company-name {
-    font-size: 13px;
-    font-weight: bold;
-    color: #696969; }
-  .job .dates-at-job {
-    text-transform: uppercase;
-    font-size: 10px; }
-  .job li {
-    font-size: 11px; }
+  padding: 0;
+}
+.job p {
+  margin: 0;
+  padding: 0;
+}
+.job .job-title {
+  font-size: 14px;
+  font-style: italic;
+  font-family: Georgia;
+}
+.job .job-type {
+  font-size: 10px;
+}
+.job .company-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: #696969;
+}
+.job .dates-at-job {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.job li {
+  font-size: 11px;
+}

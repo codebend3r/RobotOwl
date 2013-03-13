@@ -5,29 +5,35 @@
   background-color: #efefef;
   padding: 0;
   margin: 0;
-  float: right; }
-  @media all and (max-width: 875px) {
-    .portfolio-container {
-      float: none;
-      position: absolute;
-      margin: 80px 0 0 0;
-      width: 100%; } }
-  @media all and (max-width: 620px) {
-    .portfolio-container {
-      float: none;
-      position: absolute;
-      width: 100%;
-      top: 0px;
-      left: 0px;
-      z-index: 999;
-      margin: 160px 0 0 0; } }
+  float: right;
+}
+@media all and (max-width: 875px) {
+  .portfolio-container {
+    float: none;
+    position: absolute;
+    margin: 80px 0 0 0;
+    width: 100%;
+  }
+}
+@media all and (max-width: 620px) {
+  .portfolio-container {
+    float: none;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    margin: 160px 0 0 0;
+  }
+}
 
 .port-title {
   font-family: "nimbus-sans", Georgia, sans-serif;
   font-size: 1.4rem;
   font-weight: normal;
   color: #cb3429;
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 /**
 * @description the preloading animated gif
@@ -46,30 +52,35 @@
   float: left;
   background-repeat: repeat;
   background-image: url(../../pattern/stripes_faded2.png);
-  z-index: 9999; }
-  @media all and (max-width: 875px) {
-    .portfolio-list {
-      float: none;
-      position: absolute;
-      width: 300px;
-      height: 100%;
-      top: 0px;
-      left: 0px;
-      margin: 0;
-      padding: 0;
-      background-color: #ebe4dc;
-      z-index: -999;
-      border-right: 1px solid #cccccc; } }
+  z-index: 9999;
+}
+@media all and (max-width: 875px) {
+  .portfolio-list {
+    float: none;
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+    background-color: #ebe4dc;
+    z-index: -999;
+    border-right: 1px solid #cccccc;
+  }
+}
 
 .slide-menu-in {
-  left: 301px; }
+  left: 301px;
+}
 
 .animate {
   -webkit-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   -moz-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   -ms-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1); }
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
+}
 
 /**
 * @description a diagonal border for images
@@ -86,12 +97,14 @@
   background-repeat: repeat;
   background-image: url(../../pattern/stripes_faded.png);
   padding: 10px;
-  margin: 0; }
+  margin: 0;
+}
 
 img.work-images {
   position: absolute;
   top: 10px;
-  left: 10px; }
+  left: 10px;
+}
 
 @media all and (max-width: 620px) {
   .striped-border {
@@ -100,15 +113,18 @@ img.work-images {
     padding: 0;
     max-width: 100%;
     max-height: 100%;
-    background: transparent; }
-    .striped-border img {
-      max-width: 100%;
-      max-height: 100%;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      margin: 0;
-      padding: 0; } }
+    background: transparent;
+  }
+  .striped-border img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+  }
+}
 /**
 * @description container for a text section
 *
@@ -116,7 +132,8 @@ img.work-images {
 *   <div class="sub"></div>
 */
 .sub {
-  margin: 10px 0 10px 0; }
+  margin: 10px 0 10px 0;
+}
 
 /**
 * @description sub header in red
@@ -127,7 +144,8 @@ img.work-images {
 .sub-heading {
   font-weight: bold;
   color: #cb3429;
-  font-size: 1rem; }
+  font-size: 1rem;
+}
 
 /**
 * @description the text under .subHeading
@@ -149,9 +167,11 @@ img.work-images {
   height: 335px;
   background: url(../../images/preloader.gif) 50% 50% no-repeat;
   padding: 10px;
-  margin: 0; }
-  .image-preloader img {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: none; }
+  margin: 0;
+}
+.image-preloader img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}

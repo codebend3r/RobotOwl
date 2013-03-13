@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    {src: ['index.html'], dest: '<%= pkg.outputFolder %>/index.max.html'},
+                    {src: ['index_optimized.html'], dest: '<%= pkg.outputFolder %>/index.max.html'},
                     {src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
                     {src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
                     {src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
@@ -20,7 +20,8 @@ module.exports = function(grunt) {
             },
             after: {
                 files: [
-                    {src: ['js/compiled/<%= pkg.outputName %>.min.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>.min.js'}
+                    {src: ['js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>-<%= pkg.version %>.min.js'},
+                    {src: ['css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.css'], dest: '<%= pkg.outputFolder %>/css/<%= pkg.outputName %>-<%= pkg.version %>.min.css'}
                 ]
             }
         },
@@ -31,13 +32,20 @@ module.exports = function(grunt) {
             },
             dist: {
                 // the files to concatenate
-                src: ['js/**/*.js'],
+                src: [
+                    'js/external/jquery-1.9.1.js',
+                    'js/external/jquery.imagesloaded.js',
+                    'js/external/knockout-2.2.1.js',
+                    'js/external/modernizr-2.6.2.js',
+                    'js/internal/data.js.js',
+                    'js/internal/model.js'
+                ],
                 // the location of the resulting JS file
-                dest: 'js/compiled/<%= pkg.outputName %>.js'
+                dest: 'js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'
             },
             cssconcat: {
-                src: ['css/**/*.css'],
-                dest: 'css/compiled/<%= pkg.outputName %>.css'
+                src: ['css/release/*.css'],
+                dest: 'css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css'
             }
         },
         uglify: {
@@ -47,7 +55,14 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'js/compiled/<%= pkg.outputName %>.min.js': ['js/external/*.js','js/internal/*.js']
+                    'js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.js': [
+                        'js/external/jquery-1.9.1.js',
+                        'js/external/jquery.imagesloaded.js',
+                        'js/external/knockout-2.2.1.js',
+                        'js/external/modernizr-2.6.2.js',
+                        'js/internal/data.js.js',
+                        'js/internal/model.js'
+                    ]
                 }
             }
         },
@@ -64,6 +79,16 @@ module.exports = function(grunt) {
                 }
             }
         },
+        jquerytransform: {
+            files: ['<%= pkg.outputFolder %>/index.max.html'], // All HTML files
+            transform: function($) {
+                // For styling bullet separate from text
+                $('html').find('script').remove();
+            }
+        },
+        chester: {
+
+        },
         sass: {
             dist: {
                 options: {
@@ -71,38 +96,17 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'css/release/main.css': 'sass/release/main.scss',
+                    'css/release/nav-bar.css': 'sass/release/nav-bar.scss',
                     'css/release/portfolio.css': 'sass/release/portfolio.scss',
                     'css/release/resume.css': 'sass/release/resume.scss',
                     'css/release/contact.css': 'sass/release/contact.scss'
                 }
             }
         },
-        DSS: {
-            options: {
-                // Task-specific options go here.
-            },
-            your_target: {
-                // Target-specific file lists and/or options go here.
-                option:'sass/portfolio.scss'
-            }
-        },
-        yuidoc: {
-            pkg: grunt.file.readJSON('package.json'),
-            compile: {
-                name: '<%= pkg.name %>',
-                description: '<%= pkg.description %>',
-                version: '<%= pkg.version %>',
-                url: '<%= pkg.homepage %>'
-            },
-            options: {
-                paths: 'js/',
-                outdir: 'docs/'
-            }
-        },
         cssmin: {
             compress: {
                 files: {
-                    "<%= pkg.outputFolder %>/css/<%= pkg.outputName %>.min.css": ["css/release/**/*.css"]
+                    "css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.css": ['css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css']
                 }
             }
         },
@@ -119,7 +123,7 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['**/*'],
+            files: ['sass/*.scss'],
             tasks: ['sass:dist']
         }
     });
@@ -131,13 +135,16 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-yuidoc');
+    //grunt.loadNpmTasks('grunt-contrib-yuidoc');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('DSS');
+    grunt.loadNpmTasks('grunt-jquerytransform');
+    //grunt.loadNpmTasks('DSS');
+
 
     // Default task(s).
     grunt.registerTask('sassy', ['watch']);
+    grunt.registerTask('quickbuild', ['clean', 'copy:main', 'jquerytransform']);
     grunt.registerTask('default', [ 'sass', 'clean', 'copy:main', 'concat', 'uglify', 'sass', 'cssmin', 'copy:after', 'htmlmin']);
 
 };

@@ -6,4 +6,5 @@ npm install grunt-contrib-jshint --save-dev
 npm install grunt-contrib-jshint --save-dev
 npm install grunt-contrib-concat --save-dev
 npm install grunt-contrib-sass --save-dev
-npm install dss --save-dev
+npm install htmlparser --save-dev
+npm install grunt-jquerytransform --save-dev
