@@ -149,11 +149,13 @@ function init() {
             **/
             self.showNewSection = function() {
 
+                console.log('--------------------------');
                 console.log('showNewSection');
 
                 self.showPreloader();
 
-                $('.striped-border').imagesLoaded(function(){
+                $('.work-images').imagesLoaded(function(){
+                    console.log('ALL IMAGES LOADED');
                     self.allImagesLoaded();
                 });
             };
@@ -167,7 +169,7 @@ function init() {
                 console.log('allImagesLoaded');
                 self.$imagePreloader.hide();
                 self.$stripedBorder.show();
-                self.initCycle();
+                //self.initCycle();
             };
 
 
@@ -188,6 +190,9 @@ function init() {
 
                 clearInterval(self.cycler.cycleTimer);
 
+                console.log('self.cycler.numberOfPics', self.cycler.numberOfPics);
+                console.log('self.cycler.currentSlideNum', self.cycler.currentSlideNum);
+
                 if (self.cycler.numberOfPics > 0) {
                     console.log('START CYCLE');
                     self.cycler.cycleTimer = setInterval( self.cycleImages, self.cycler.cycleTime);
@@ -203,7 +208,7 @@ function init() {
             **/
             self.cycleImages = function() {
 
-                console.log('cycleImages', self.cycler.currentSlideNum);
+                console.log('cycleImages');
 
                 var currentSlide = self.cycler.$currentSlideList[ self.cycler.currentSlideNum ];
                 var firstSlide = self.cycler.$currentSlideList[ 0 ];
@@ -246,6 +251,15 @@ function init() {
 
             self.setHash = function(val) {
                 window.location.hash = val;
+            };
+
+            self.sendEmail = function() {
+                $.ajax({
+                    type: "POST",
+                    data: formData,
+                    url: "php/emailform.php",
+                    success: blah
+                });
             };
 
             //JQUERY OBJECTS

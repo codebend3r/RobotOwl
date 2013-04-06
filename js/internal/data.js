@@ -334,15 +334,17 @@ var data = {
             jobTitle: 'UI Developer',
             jobType: "full-time",
             datesAtJob: 'May 2012 - Present',
-            tasks: [ 
+            tasks: [
                 "worked on Kobo's Instant Reader web app built on Sproutcore JavaScript framework",
                 "responsible for front end bug fixes and implementing new features to the application as needed",
-                "worked with design/UX team to implement responsive design for all platforms",
-                "collaborated using GitHub",
-                "front end work on kobobooks.com",
+                "worked with design/UX team to implement responsive design on all platforms",
+                "workflow involved using GitHub",
+                "built research prototypes for potential widgets and functionality in website redesign",
+                "performance tested  prototypes on devices",
                 "managed site maintenance and improvements",
+                "maintained documentation on internal wiki page",
                 "collaborated with other teams to solve bugs or research on certain features",
-                "collaborated with back end developers to implement full scale features to the Kobo's website"
+                "collaborated with back end developers to implement full scale features to the Kobo’s website"
             ]
         },
         {
@@ -369,7 +371,47 @@ var data = {
                 "made modifications to a flash application for touch-screen kiosks",
                 "integrated design and functionality changes"
             ]
-        }    
+        },
+        {
+            id: 3,
+            companyName: 'St. Joseph/Pi Media',
+            jobTitle: 'Front End Developer',
+            jobType: "contract",
+            datesAtJob: 'January 2012 – February 2012',
+            tasks: [
+                "made modifications to sections of bell.ca using HTML, CSS and JavaScript",
+                "made modifications to a flash application for touch-screen kiosks",
+                "integrated design and functionality changes"
+            ]
+        },
+        {
+            id: 4,
+            companyName: 'Capital C',
+            jobTitle: 'Front End Developer',
+            jobType: "contract",
+            datesAtJob: 'December 2011 – January 2012',
+            tasks: [
+                "front end development for multiple Facebook apps utilizing JavaScript, JQuery, HTML, CSS and ASP.NET",
+                "integrated multi-lingual support in Facebook environment",
+                "built apps requiring authentication by the user via JavaScript Facebook SDK",
+                "integrated designs into FB applications",
+                "made modifications Infiniti and Nissan websites"
+            ]
+        },
+        {
+            id: 5,
+            companyName: 'Brightworks',
+            jobTitle: 'Senior Flex Developer',
+            jobType: "contract",
+            datesAtJob: 'November 2011 – November 2011',
+            tasks: [
+                "met with clients and stakeholders",
+                "developed financial application for RBC utilizing Yodlee framework",
+                "prepared Yodlee package for online store release",
+                "implemented designs and content"
+            ]
+        }
+
     ]
 
 }
