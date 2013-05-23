@@ -1,338 +1,301 @@
-$(init);
+Crivas.DataModel = function() {
 
-function init() {
+	var self = this;
 
-    var Crivas = {
+	self.longList = Crivas.Data.portfolio.workExperience;
 
-        DataModel: function() {
+	self.portfolioData = ko.observable(self.longList[0]);
 
-            var self = this;
+	self.menuClick = function(data) {
+		self.killSection();
+		self.navArray[data.id]();
+	};
 
-            self.longList = data.portfolio;
+	self.openSmallMenu = function() {
 
-            self.portfolioData = ko.observable(self.longList[0]);
+		var $portfolioContainer = $('.portfolio-container'),
+			$navBar = $('.nav-bar');
 
-            self.menuClick = function(data) {
-                self.killSection();
-                self.navArray[data.id]();
-            };
+		$portfolioContainer.toggleClass('slide-menu-in');
+		$portfolioContainer.addClass('animate');
 
+		$navBar.toggleClass('slide-menu-in');
+		$navBar.addClass('animate');
 
-            self.openSmallMenu = function() {
+	};
 
-                var $portfolioContainer = $('.portfolio-container'),
-                $navBar = $('.nav-bar');
+	self.visiblePortfolio = ko.observable(true);
+	self.visibleResume = ko.observable(false);
+	self.visibleContact = ko.observable(false);
 
-                $portfolioContainer.toggleClass('slide-menu-in');
-                $portfolioContainer.addClass('animate');
+	self.showPortflio = function() {
 
-                $navBar.toggleClass('slide-menu-in');
-                $navBar.addClass('animate');
+		self.setHash('portfolio');
 
-            };
+		self.visiblePortfolio(true);
+		self.visibleResume(false);
+		self.visibleContact(false);
 
-            self.visiblePortfolio = ko.observable(true);
-            self.visibleResume = ko.observable(false);
-            self.visibleContact = ko.observable(false);
+		setTimeout( self.showNewSection, 100 );
+		//self.showNewSection();
 
-            self.showPortflio = function() {
+	};
 
-                self.setHash('portfolio');
+	self.showResume = function() {
 
-                self.visiblePortfolio(true);
-                self.visibleResume(false);
-                self.visibleContact(false);
+		self.setHash('resume');
 
-                setTimeout( self.showNewSection, 100 );
-                //self.showNewSection();
+		self.visiblePortfolio(false);
+		self.visibleResume(true);
+		self.visibleContact(false);
 
-            };
+	};
 
-            self.showResume = function() {
+	self.showContact = function() {
 
-                self.setHash('resume');
+		self.setHash('contact');
 
-                self.visiblePortfolio(false);
-                self.visibleResume(true);
-                self.visibleContact(false);
+		self.visiblePortfolio(false);
+		self.visibleResume(false);
+		self.visibleContact(true);
 
-            };
+	};
 
-            self.showContact = function() {
+	self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
 
-                self.setHash('contact');
+	self.navigationList = ko.observableArray(
+		ko.utils.arrayMap(data.portfolio, function(i) {
+			return {
+				id: i.id,
+				menuText: i.menuText,
+				slug: i.slug.toLowerCase()
+			};
+		})
+	);
 
-                self.visiblePortfolio(false);
-                self.visibleResume(false);
-                self.visibleContact(true);
+	debugger;
 
-            };
+	self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function(i) {
+		return {
+			id: i.id,
+			name: i.name
+		};
+	});
 
-            self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
+	self.changePage = function(data) {
 
-            self.navigationList = ko.observableArray(
-                ko.utils.arrayMap(data.portfolio, function(i) {
-                    return {
-                        id: i.id,
-                        menuText: i.menuText,
-                        slug: i.slug.toLowerCase()
-                    };
-                })
-            );
+		self.portfolioData(self.longList[data.id]);
+		//location.hash = 'portfolio/' + data.slug;
 
-            self.menuList = ko.observableArray(
-                ko.utils.arrayMap(data.menu, function(i) {
-                    return {
-                        id: i.id,
-                        name: i.name
-                    };
-                })
-            );
+		if (self.$portfolioContainer.hasClass('slide-menu-in')) {
+			self.$portfolioContainer.removeClass('slide-menu-in');
+			self.$navBar.removeClass('slide-menu-in');
+		}
 
-            self.changePage = function(data) {
+		self.showNewSection();
 
-                self.portfolioData(self.longList[data.id]);
-                //location.hash = 'portfolio/' + data.slug;
+	};
 
-                if (self.$portfolioContainer.hasClass('slide-menu-in')) {
-                    self.$portfolioContainer.removeClass('slide-menu-in');
-                    self.$navBar.removeClass('slide-menu-in');
-                }
+	self.experienceList = ko.observableArray(
+		ko.utils.arrayMap(data.resume, function(i) {
+			return {
+				id: i.id,
+				companyName: i.companyName,
+				jobTitle: i.jobTitle,
+				jobType: i.jobType,
+				datesAtJob: i.datesAtJob,
+				tasks: i.tasks
+			};
+		})
+	);
+
+	self.summaryText = Crivas.Data.portfolio.summaryText;
+
+	self.skillSet = ko.observableArray([
+		'JavaScript',
+		'JQuery',
+		'Knockout.js',
+		'Sproutcore',
+		'HTML/HTML5',
+		'CSS/CSS3',
+		'MVVM',
+		'MVC',
+		'Grunt.js',
+		'Facebook Development',
+		'C#',
+		'Android/Java',
+		'Photoshop',
+		'Illustrator',
+		'JavaScript',
+		'ActionScript'
+	]);
+
+	self.cycler = {
+		cycleTime: 3000,
+		cycleTimer: null,
+		currentSlideNum: 0,
+		numberOfPics: 0
+	};
+
+	/**
+	 Click event listener method for menu item click
+
+	 @method showNewSection
+	 **/
+	self.showNewSection = function() {
+
+		console.log('--------------------------');
+		console.log('showNewSection');
+
+		self.showPreloader();
+
+		$('.work-images').imagesLoaded(function(){
+			console.log('ALL IMAGES LOADED');
+			self.allImagesLoaded();
+		});
+	};
+
+	/**
+	 Listener for when images are loaded
+
+	 @method allImagesLoaded
+	 **/
+	self.allImagesLoaded = function() {
+		console.log('allImagesLoaded');
+		self.$imagePreloader.hide();
+		self.$stripedBorder.show();
+		//self.initCycle();
+	};
+
+
+	/**
+	 Get a new list of images and starts cycle again
+
+	 @method initCycle
+	 **/
+	self.initCycle = function() {
 
-                self.showNewSection();
-
-            };
-
-            self.experienceList = ko.observableArray(
-                ko.utils.arrayMap(data.resume, function(i) {
-                    return {
-                        id: i.id,
-                        companyName: i.companyName,
-                        jobTitle: i.jobTitle,
-                        jobType: i.jobType,
-                        datesAtJob: i.datesAtJob,
-                        tasks: i.tasks
-                    };
-                })
-            );
-
-            self.skillset = ko.observableArray([
-                'JavaScript',
-                'JQuery',
-                'Knockout.js',
-                'Sproutcore',
-                'HTML/HTML5',
-                'CSS/CSS3',
-                'MVVM',
-                'MVC',
-                'Grunt.js',
-                'Facebook Development',
-                'C#',
-                'Android/Java',
-                'Photoshop',
-                'Illustrator',
-                'JavaScript',
-                'ActionScript'
-            ]);
-
-            self.cycler = {
-                cycleTime: 3000,
-                cycleTimer: null,
-                currentSlideNum: 0,
-                numberOfPics: 0
-            };
-
-            /**
-            Click event listener method for menu item click
-
-            @method showNewSection
-            **/
-            self.showNewSection = function() {
-
-                console.log('--------------------------');
-                console.log('showNewSection');
-
-                self.showPreloader();
-
-                $('.work-images').imagesLoaded(function(){
-                    console.log('ALL IMAGES LOADED');
-                    self.allImagesLoaded();
-                });
-            };
-
-            /**
-            Listener for when images are loaded
-
-            @method allImagesLoaded
-            **/
-            self.allImagesLoaded = function() {
-                console.log('allImagesLoaded');
-                self.$imagePreloader.hide();
-                self.$stripedBorder.show();
-                //self.initCycle();
-            };
-
-
-            /**
-            Get a new list of images and starts cycle again
-
-            @method initCycle
-            **/
-            self.initCycle = function() {
+		console.log('initCycle');
+
+		self.$workImages = $('.work-images');
 
-                console.log('initCycle');
+		self.cycler.$currentSlideList = self.$workImages;
+		self.cycler.numberOfPics = self.$workImages.length - 1;
+		self.cycler.currentSlideNum = self.$workImages.length - 1;
 
-                self.$workImages = $('.work-images');
+		clearInterval(self.cycler.cycleTimer);
 
-                self.cycler.$currentSlideList = self.$workImages;
-                self.cycler.numberOfPics = self.$workImages.length - 1;
-                self.cycler.currentSlideNum = self.$workImages.length - 1;
+		console.log('self.cycler.numberOfPics', self.cycler.numberOfPics);
+		console.log('self.cycler.currentSlideNum', self.cycler.currentSlideNum);
 
-                clearInterval(self.cycler.cycleTimer);
+		if (self.cycler.numberOfPics > 0) {
+			console.log('START CYCLE');
+			self.cycler.cycleTimer = setInterval( self.cycleImages, self.cycler.cycleTime);
+		}
 
-                console.log('self.cycler.numberOfPics', self.cycler.numberOfPics);
-                console.log('self.cycler.currentSlideNum', self.cycler.currentSlideNum);
+	};
 
-                if (self.cycler.numberOfPics > 0) {
-                    console.log('START CYCLE');
-                    self.cycler.cycleTimer = setInterval( self.cycleImages, self.cycler.cycleTime);
-                }
+	/**
+	 Cycles through the next image in the array.
+	 If it's the last image in array it will reset back to the first one.
 
-            };
+	 @method cycleImages
+	 **/
+	self.cycleImages = function() {
 
-            /**
-            Cycles through the next image in the array.
-            If it's the last image in array it will reset back to the first one.
+		console.log('cycleImages');
 
-            @method cycleImages
-            **/
-            self.cycleImages = function() {
+		var currentSlide = self.cycler.$currentSlideList[ self.cycler.currentSlideNum ];
+		var firstSlide = self.cycler.$currentSlideList[ 0 ];
+		var lastSlide = self.cycler.$currentSlideList[ self.cycler.numberOfPics ];
+		$(currentSlide).fadeOut( 300 );
 
-                console.log('cycleImages');
+		self.cycler.currentSlideNum -= 1;
 
-                var currentSlide = self.cycler.$currentSlideList[ self.cycler.currentSlideNum ];
-                var firstSlide = self.cycler.$currentSlideList[ 0 ];
-                var lastSlide = self.cycler.$currentSlideList[ self.cycler.numberOfPics ];
-                $(currentSlide).fadeOut( 300 );
+		if (self.cycler.currentSlideNum <= -1) {
+			self.cycler.currentSlideNum = self.cycler.numberOfPics;
+			$(lastSlide).fadeIn( 300 );
+			$(firstSlide).fadeIn( 300, self.showAll );
+		}
 
-                self.cycler.currentSlideNum -= 1;
+	};
 
-                if (self.cycler.currentSlideNum <= -1) {
-                    self.cycler.currentSlideNum = self.cycler.numberOfPics;
-                    $(lastSlide).fadeIn( 300 );
-                    $(firstSlide).fadeIn( 300, self.showAll );
-                }
+	/**
+	 Cycles through the whole image array and shows everything
 
-            };
+	 @method showAll
+	 **/
+	self.showAll = function() {
+		$.each( self.$currentSlideList, function() {
+			$(this).show();
+		})
+	};
 
-            /**
-            Cycles through the whole image array and shows everything
+	self.showPreloader = function() {
+		self.$imagePreloader.show();
+		self.$stripedBorder.hide();
+	};
 
-            @method showAll
-            **/
-            self.showAll = function() {
-                $.each( self.$currentSlideList, function() {
-                    $(this).show();
-                })
-            };
+	self.killSection = function() {
+		clearInterval(this.cycleTimer);
+	};
 
-            self.showPreloader = function() {
-                self.$imagePreloader.show();
-                self.$stripedBorder.hide();
-            };
+	self.defaultSection = 'portfolio';
 
-            self.killSection = function() {
-                clearInterval(this.cycleTimer);
-            };
+	self.dataModel = null;
 
-            self.defaultSection = 'portfolio';
+	self.setHash = function(val) {
+		window.location.hash = val;
+	};
 
-            self.dataModel = null;
+	self.sendEmail = function() {
+		$.ajax({
+			type: "POST",
+			data: formData,
+			url: "php/emailform.php",
+			success: blah
+		});
+	};
 
-            self.setHash = function(val) {
-                window.location.hash = val;
-            };
+	//JQUERY OBJECTS
 
-            self.sendEmail = function() {
-                $.ajax({
-                    type: "POST",
-                    data: formData,
-                    url: "php/emailform.php",
-                    success: blah
-                });
-            };
+	self.$imagePreloader = $('.image-preloader');
 
-            //JQUERY OBJECTS
+	self.$stripedBorder = $('.striped-border');
 
-            self.$imagePreloader = $('.image-preloader');
+	self.$workImages = $('.work-images');
 
-            self.$stripedBorder = $('.striped-border');
+	self.$portfolioContainer = $('.portfolio-container');
 
-            self.$workImages = $('.work-images');
+	self.$navBar = $('.nav-bar');
 
-            self.$portfolioContainer = $('.portfolio-container');
+	//INIT
 
-            self.$navBar = $('.nav-bar');
+	self.start = function() {
 
-            //INIT
+		console.log('DATA MODEL - init');
+		var hash = window.location.hash;
+		console.log('hash', hash);
 
-            self.start = function() {
+		if (hash == 'resume') {
 
-                console.log('DATA MODEL - init');
-                var hash = window.location.hash;
-                console.log('hash', hash);
+			self.showResume();
 
-                if (hash == 'resume') {
+		} else if (hash == 'contact') {
 
-                    self.showResume();
+			self.showContact();
 
-                } else if (hash == 'contact') {
+		} else {
 
-                    self.showContact();
+			self.setHash(self.defaultSection);
+			self.showPortflio();
 
-                } else {
+		}
 
-                    self.setHash(self.defaultSection);
-                    self.showPortflio();
+	};
 
-                }
+	self.start();
 
-            };
-
-            /*
-            self.app = $.sammy(function() {
-
-                this.get('#/section', function() {
-
-
-
-                });
-
-            });
-            */
-
-            self.start();
-
-        },
-
-        init: function() {
-
-            ko.applyBindings(new Crivas.DataModel());
-
-        }
-
-    }
-
-
-    Crivas.init();
-    window.Site = Crivas;
-
-    window.onhashchange = function(e) {
-        console.log('HASH CHANGE');
-    };
-
+	return self;
 
 };
-
-
-
