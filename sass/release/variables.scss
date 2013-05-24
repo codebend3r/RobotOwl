@@ -7,8 +7,10 @@ $slateGrey: #2f4f4f;
 
 //breakpoint values
 $smallSize: 620px;
-$mediumSize: 875px;
+$mediumSize: 800px;
 $largeSize: 1000px;
+
+$maxWidth: 800px;
 
 //breakpoint definition string incorporating breakpoint values
 $smallBreakpoint: "all and (max-width: " + $smallSize + ")";

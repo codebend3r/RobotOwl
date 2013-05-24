@@ -2,9 +2,9 @@
 
 Crivas.init = function() {
 
-	debugger;
+	var scope = $('body').get(0);
 
-	ko.applyBindings(Crivas.DataModel);
+	ko.applyBindings( new Crivas.ViewModel(), scope);
 
 	window.onhashchange = function(e) {
 		console.log('HASH CHANGE');
@@ -13,8 +13,6 @@ Crivas.init = function() {
 };
 
 $(Crivas.init);
-
-window.Crivas = Crivas;
 
 
 

@@ -86,9 +86,10 @@ ul.main-menu {
   vertical-align: middle;
   float: right;
   height: $navBarHeightLarge;
-  background-color: $bodyColour;
+  //background-color: $bodyColour;
+  background-color: orange;
   display: inline-block;
-  margin: 0 2px;
+  margin: 0 5px 0 0;
   padding: 0;
   border-bottom: solid 1px #c6c6c6;
 

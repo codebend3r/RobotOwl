@@ -24,23 +24,18 @@
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$buttonBase1', endColorstr='$buttonBase3',GradientType=0 );
   /* IE6-9 */
-  border-bottom: 1px lightgrey solid;
-}
-@media all and (max-width: 875px) {
-  .nav-bar {
-    height: 80px;
-    z-index: 998;
-    position: absolute;
-  }
-}
-@media all and (max-width: 620px) {
-  .nav-bar {
-    z-index: 998;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-  }
-}
+  border-bottom: 1px lightgrey solid; }
+  @media all and (max-width: 800px) {
+    .nav-bar {
+      height: 80px;
+      z-index: 998;
+      position: absolute; } }
+  @media all and (max-width: 620px) {
+    .nav-bar {
+      z-index: 998;
+      position: absolute;
+      top: 0px;
+      left: 0px; } }
 
 /**
 * @description the container which has a max width
@@ -49,15 +44,13 @@
 *   <div class="nav-bar-fixed"></div>
 */
 .nav-bar-fixed {
-  width: 1000px;
+  width: 800px;
   margin: 5px auto 0 auto;
-  vertical-align: middle;
-}
-@media all and (max-width: 1000px) {
-  .nav-bar-fixed {
-    width: 100%;
-  }
-}
+  background-color: purple;
+  vertical-align: middle; }
+  @media all and (max-width: 1000px) {
+    .nav-bar-fixed {
+      width: 100%; } }
 
 /**
 * @description button that only appears in medium and small mode
@@ -68,26 +61,22 @@
 *   </div>
 */
 .open-small-menu {
-  display: none;
-}
-.open-small-menu .horizontal-groove {
-  margin: 20px 10px -12px 10px;
-  background-color: #cecece;
-  height: 6px;
-  border-radius: 4px;
-  border: 2px inset #eeeeee;
-}
-@media all and (max-width: 875px) {
-  .open-small-menu {
-    float: left;
-    cursor: pointer;
-    margin: 0px 0px;
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    border-right: 2px solid #d1d1d1;
-  }
-}
+  display: none; }
+  .open-small-menu .horizontal-groove {
+    margin: 20px 10px -12px 10px;
+    background-color: #cecece;
+    height: 6px;
+    border-radius: 4px;
+    border: 2px inset #eeeeee; }
+  @media all and (max-width: 800px) {
+    .open-small-menu {
+      float: left;
+      cursor: pointer;
+      margin: 0px 0px;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border-right: 2px solid #d1d1d1; } }
 
 /**
 * @description the main menu styles
@@ -100,28 +89,24 @@ ul.main-menu {
   vertical-align: middle;
   float: right;
   height: 80px;
-  background-color: #efefef;
+  background-color: orange;
   display: inline-block;
-  margin: 0 2px;
+  margin: 0 5px 0 0;
   padding: 0;
-  border-bottom: solid 1px #c6c6c6;
-}
-ul.main-menu li {
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-  padding: 0 20px;
-  cursor: pointer;
-  height: 80px;
-  line-height: 80px;
-  text-align: center;
-}
-ul.main-menu li:hover {
-  border-bottom: 3px #cb3429 solid;
-}
-ul.main-menu li.selected {
-  border-bottom: 3px #cb3429 solid;
-}
+  border-bottom: solid 1px #c6c6c6; }
+  ul.main-menu li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    cursor: pointer;
+    height: 80px;
+    line-height: 80px;
+    text-align: center; }
+  ul.main-menu li:hover {
+    border-bottom: 3px #cb3429 solid; }
+  ul.main-menu li.selected {
+    border-bottom: 3px #cb3429 solid; }
 
 @media all and (max-width: 620px) {
   ul.main-menu {
@@ -132,11 +117,8 @@ ul.main-menu li.selected {
     background-color: #efefef;
     -webkit-box-shadow: 0px 4px 20px 0px #333333;
     -moz-box-shadow: 0px 4px 20px 0px #333333;
-    box-shadow: 0px 4px 20px 0px #333333;
-  }
-  ul.main-menu li {
-    width: 32.4%;
-    margin: 0;
-    padding: 0;
-  }
-}
+    box-shadow: 0px 4px 20px 0px #333333; }
+    ul.main-menu li {
+      width: 32.4%;
+      margin: 0;
+      padding: 0; } }

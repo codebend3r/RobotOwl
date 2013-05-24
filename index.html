@@ -50,9 +50,10 @@
                 <div class="horizontal-groove"></div>
                 <div class="horizontal-groove"></div>
             </div>
+
             <div class="logo"></div>
 
-            <ul class="main-menu" data-bind="foreach: menuList">
+            <ul class="main-menu" data-bind="foreach: $root.menuList">
                 <li data-bind="text: name, click: $root.menuClick"></li>
             </ul>
 
@@ -62,13 +63,13 @@
     <section class="main-wrapper">
 
         <!-- PORTFOLIO SECTION -->
-        <section class="portfolio-content" data-bind="visible: visiblePortfolio">
+        <section class="portfolio-content">
 
-            <div class="portfolio-list" data-bind="foreach: navigationList">
+            <div class="portfolio-list" data-bind="foreach: $root.navigationList">
                 <button data-bind="html: menuText, click: $root.changePage"></button>
             </div>
 
-            <div class="portfolio-container" data-bind="with: portfolioData">
+            <div class="portfolio-container" data-bind="with: $root.portfolioData">
 
                 <h3 class="port-title" data-bind="text: title"></h3>
 
@@ -112,7 +113,8 @@
         </section>
 
         <!-- RESUME SECTION -->
-        <section class="resume-content" data-bind="visible: visibleResume">
+        <!--
+        <section class="resume-content" data-bind="visible: $root.visibleResume">
 
             <h1>Resume</h1>
 
@@ -128,7 +130,7 @@
 
                 <h3>Summary</h3>
 
-                <div class='summary' data-bind='summaryText'></div>
+                <div class='summary' data-bind='text: $root.summaryText'></div>
 
             </div>
 
@@ -136,7 +138,7 @@
 
                 <h3>Software and Development Languages</h3>
 
-                <ul class="skillset" data-bind="foreach: skillSet">
+                <ul class="skillset" data-bind="foreach: $root.skillSet">
                     <li data-bind="text: $data"></li>
                 </ul>
 
@@ -144,7 +146,7 @@
 
             <div class="stackable">
 
-                <div data-bind="foreach: experienceList">
+                <div data-bind="foreach: $root.experienceList">
                     <div class="job">
                         <p><span class="job-title" data-bind="text: jobTitle"></span></p>
                         <p><span class="company-name" data-bind="text: companyName"></span> | <span class="job-type" data-bind="text: jobType"></span></p>
@@ -159,9 +161,11 @@
             </div>
 
         </section>
+        -->
 
         <!-- CONTACT SECTION -->
-        <section class="contact-content" data-bind="visible: visibleContact">
+        <!--
+        <section class="contact-content" data-bind="visible: $root.visibleContact">
 
             <form name="contactform" method="post" action="email/emailform.php">
                 <label for="first_name">First Name</label>
@@ -204,6 +208,7 @@
             <p>Git: crivas</p>
 
         </section>
+        -->
 
     </section>
 
@@ -214,13 +219,9 @@
     <script src="js/external/knockout-2.2.1.js" type="text/javascript"></script>
 
     <!-- INTERNAL JS -->
-    <script>
-        var Crivas = {};
-        window.Crivas = Crivas;
-    </script>
-    <script src="js/internal/data.js" type="text/javascript"></script>
-    <script src="js/internal/main.js" type="text/javascript"></script>
-    <script src="js/internal/model.js" type="text/javascript"></script>
+    <script src="js/internal/Crivas.Data.js" type="text/javascript"></script>
+    <script src="js/internal/Crivas.Main.js" type="text/javascript"></script>
+    <script src="js/internal/Crivas.ViewModel.js" type="text/javascript"></script>
 
     <!--<script type="text/javascript" src="//use.typekit.net/wvi2nlg.js"></script>-->
     <!--<script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->

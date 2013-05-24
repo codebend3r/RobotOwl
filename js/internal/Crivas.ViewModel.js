@@ -1,10 +1,61 @@
-Crivas.DataModel = function() {
+Crivas.ViewModel = function() {
 
 	var self = this;
 
 	self.longList = Crivas.Data.portfolio.workExperience;
 
-	self.portfolioData = ko.observable(self.longList[0]);
+	self.currentSectionID = ko.observable(0);
+
+	self.portfolioData = ko.observable(self.longList[self.currentSectionID()]);
+
+	self.visiblePortfolio = ko.observable(true);
+	self.visibleResume = ko.observable(true);
+	self.visibleContact = ko.observable(true);
+
+	self.showPortflio = function() {
+
+		self.setHash('portfolio');
+
+		self.visiblePortfolio(true);
+		self.visibleResume(true);
+		self.visibleContact(true);
+
+		setTimeout( self.showNewSection, 100 );
+		//self.showNewSection();
+
+	};
+
+	self.showResume = function() {
+
+		self.setHash('resume');
+
+		self.visiblePortfolio(true);
+		self.visibleResume(true);
+		self.visibleContact(true);
+
+	};
+
+	self.showContact = function() {
+
+		self.setHash('contact');
+
+		self.visiblePortfolio(true);
+		self.visibleResume(true);
+		self.visibleContact(true);
+
+	};
+
+	self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
+
+	self.navigationList = ko.observableArray(
+		ko.utils.arrayMap(Crivas.Data.portfolio.workExperience, function(i) {
+			return {
+				id: i.id,
+				menuText: i.menuText,
+				slug: i.slug.toLowerCase()
+			};
+		})
+	);
 
 	self.menuClick = function(data) {
 		self.killSection();
@@ -24,57 +75,6 @@ Crivas.DataModel = function() {
 
 	};
 
-	self.visiblePortfolio = ko.observable(true);
-	self.visibleResume = ko.observable(false);
-	self.visibleContact = ko.observable(false);
-
-	self.showPortflio = function() {
-
-		self.setHash('portfolio');
-
-		self.visiblePortfolio(true);
-		self.visibleResume(false);
-		self.visibleContact(false);
-
-		setTimeout( self.showNewSection, 100 );
-		//self.showNewSection();
-
-	};
-
-	self.showResume = function() {
-
-		self.setHash('resume');
-
-		self.visiblePortfolio(false);
-		self.visibleResume(true);
-		self.visibleContact(false);
-
-	};
-
-	self.showContact = function() {
-
-		self.setHash('contact');
-
-		self.visiblePortfolio(false);
-		self.visibleResume(false);
-		self.visibleContact(true);
-
-	};
-
-	self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
-
-	self.navigationList = ko.observableArray(
-		ko.utils.arrayMap(data.portfolio, function(i) {
-			return {
-				id: i.id,
-				menuText: i.menuText,
-				slug: i.slug.toLowerCase()
-			};
-		})
-	);
-
-	debugger;
-
 	self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function(i) {
 		return {
 			id: i.id,
@@ -84,8 +84,12 @@ Crivas.DataModel = function() {
 
 	self.changePage = function(data) {
 
-		self.portfolioData(self.longList[data.id]);
+		self.currentSectionID(data.id);
+
+		self.portfolioData(self.longList[self.currentSectionID()]);
 		//location.hash = 'portfolio/' + data.slug;
+
+		console.log('ViewModel.changePage', self.currentSectionID());
 
 		if (self.$portfolioContainer.hasClass('slide-menu-in')) {
 			self.$portfolioContainer.removeClass('slide-menu-in');
@@ -97,7 +101,7 @@ Crivas.DataModel = function() {
 	};
 
 	self.experienceList = ko.observableArray(
-		ko.utils.arrayMap(data.resume, function(i) {
+		ko.utils.arrayMap(Crivas.Data.resume, function(i) {
 			return {
 				id: i.id,
 				companyName: i.companyName,
@@ -111,24 +115,7 @@ Crivas.DataModel = function() {
 
 	self.summaryText = Crivas.Data.portfolio.summaryText;
 
-	self.skillSet = ko.observableArray([
-		'JavaScript',
-		'JQuery',
-		'Knockout.js',
-		'Sproutcore',
-		'HTML/HTML5',
-		'CSS/CSS3',
-		'MVVM',
-		'MVC',
-		'Grunt.js',
-		'Facebook Development',
-		'C#',
-		'Android/Java',
-		'Photoshop',
-		'Illustrator',
-		'JavaScript',
-		'ActionScript'
-	]);
+	self.skillSet = Crivas.Data.portfolio.skillset;
 
 	self.cycler = {
 		cycleTime: 3000,
@@ -145,7 +132,7 @@ Crivas.DataModel = function() {
 	self.showNewSection = function() {
 
 		console.log('--------------------------');
-		console.log('showNewSection');
+		console.log('ViewModel.showNewSection', self.currentSectionID());
 
 		self.showPreloader();
 
@@ -161,10 +148,11 @@ Crivas.DataModel = function() {
 	 @method allImagesLoaded
 	 **/
 	self.allImagesLoaded = function() {
-		console.log('allImagesLoaded');
-		self.$imagePreloader.hide();
-		self.$stripedBorder.show();
-		//self.initCycle();
+		console.log('ViewModel.allImagesLoaded');
+		//self.$imagePreloader.hide();
+		$('.image-preloader').hide();
+		$('.striped-border').show();
+		self.initCycle();
 	};
 
 
@@ -175,7 +163,7 @@ Crivas.DataModel = function() {
 	 **/
 	self.initCycle = function() {
 
-		console.log('initCycle');
+		console.log('ViewModel.initCycle');
 
 		self.$workImages = $('.work-images');
 
@@ -232,8 +220,8 @@ Crivas.DataModel = function() {
 	};
 
 	self.showPreloader = function() {
-		self.$imagePreloader.show();
-		self.$stripedBorder.hide();
+		$('.image-preloader').show();
+		$('.striped-border').hide();
 	};
 
 	self.killSection = function() {
@@ -273,7 +261,7 @@ Crivas.DataModel = function() {
 
 	self.start = function() {
 
-		console.log('DATA MODEL - init');
+		console.log('self.start');
 		var hash = window.location.hash;
 		console.log('hash', hash);
 

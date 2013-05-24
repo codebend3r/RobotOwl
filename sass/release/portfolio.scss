@@ -3,15 +3,55 @@
 
 /////////////////////
 
+/**
+* @description the preloading animated gif
+*
+* @markup
+*   <div class="portfolio-list"></div>
+*/
+.portfolio-list {
+
+  display: inline-block;
+  position: static;
+  width: 25%;
+  font-size: 0.8rem;
+  vertical-align: top;
+  padding: 10px;
+  margin: 0 0 0 0;
+  float: left;
+  background-repeat: repeat;
+  background-image: url(../../pattern/stripes_faded2.png);
+  z-index: 9999;
+
+  @media #{$largeBreakpoint} {
+    display: none;
+    float: none;
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    margin: 0;
+    padding: 0;
+    background-color: #ebe4dc;
+    z-index: -999;
+    border-right: 1px solid $mediumGrey;
+  }
+
+}
+
+/////////////////////
+
 .portfolio-container {
 
   font-size: .9rem;
-  width: 620px;
+  width: 70%;
   display: inline-block;
-  background-color: $bodyColour;
+  //background-color: $bodyColour;
+  background-color: lightslategrey;
   padding: 0;
-  margin: 0;
-  float: right;
+  margin: 0 0 0 2%;
+  float: left;
 
   @media #{$mediumBreakpoint} {
     float: none;
@@ -30,6 +70,10 @@
     margin: 160px 0 0 0;
   }
 
+  &:after {
+    clear: both;
+  }
+
 }
 
 .port-title {
@@ -38,42 +82,6 @@
   font-weight: normal;
   color: $darkRed;
   text-decoration: underline;
-}
-
-/**
-* @description the preloading animated gif
-*
-* @markup
-*   <div class="portfolio-list"></div>
-*/
-.portfolio-list {
-
-  position: static;
-  width: 220px;
-  font-size: 0.8rem;
-  display: inline-block;
-  vertical-align: top;
-  padding: 10px;
-  margin: 20px 0 0 0;
-  float: left;
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
-  z-index: 9999;
-
-  @media #{$mediumBreakpoint} {
-    float: none;
-    position: absolute;
-    width: 300px;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    margin: 0;
-    padding: 0;
-    background-color: #ebe4dc;
-    z-index: -999;
-    border-right: 1px solid $mediumGrey;
-  }
-
 }
 
 .slide-menu-in {
@@ -95,15 +103,23 @@
 *   <div class="striped-border"></div>
 */
 .striped-border {
-  position: relative;
-  overflow: hidden;
-  display: none;
-  width: 600px;
-  height: 335px;
+
+  position: static;
+  overflow: visible;
+  display: block;
+  max-width: 100%;
   background-repeat: repeat;
   background-image: url(../../pattern/stripes_faded.png);
-  padding: 10px;
+  padding: 0;
   margin: 0;
+
+  img.work-images {
+    position: relative;
+    overflow: visible;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
 
 }
 
