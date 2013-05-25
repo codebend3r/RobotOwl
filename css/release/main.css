@@ -32,7 +32,7 @@ body {
 *   <div class="main-wrapper"></div>
 */
 .main-wrapper {
-  width: 800px;
+  width: 900px;
   margin: 5px auto 0 auto;
   background-color: purple;
   height: 100%; }
@@ -104,6 +104,9 @@ p {
   height: 80px;
   display: inline-block;
   float: left; }
+  @media all and (max-width: 1000px) {
+    .logo {
+      margin: 0 0 0 15px; } }
   @media all and (max-width: 800px) {
     .logo {
       border-left: 1px solid white; } }

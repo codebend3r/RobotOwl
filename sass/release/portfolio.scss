@@ -47,8 +47,7 @@
   font-size: .9rem;
   width: 70%;
   display: inline-block;
-  //background-color: $bodyColour;
-  background-color: lightslategrey;
+  background-color: $bodyColour;
   padding: 0;
   margin: 0 0 0 2%;
   float: left;
@@ -74,6 +73,12 @@
     clear: both;
   }
 
+}
+
+.image-container {
+  width: 100%;
+  height: 364px;
+  display: block;
 }
 
 .port-title {
@@ -104,29 +109,30 @@
 */
 .striped-border {
 
-  position: static;
+  position: relative;
   overflow: visible;
   display: block;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   background-repeat: repeat;
   background-image: url(../../pattern/stripes_faded.png);
   padding: 0;
   margin: 0;
 
-  img.work-images {
-    position: relative;
-    overflow: visible;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
+  @media #{$largeBreakpoint} {
+    width: 634px;
   }
 
 }
 
 img.work-images {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  overflow: visible;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  top: 15px;
+  left: 15px;
 }
 
 @media #{$smallBreakpoint} {

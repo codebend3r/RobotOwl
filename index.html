@@ -73,10 +73,14 @@
 
                 <h3 class="port-title" data-bind="text: title"></h3>
 
-                <div class="image-preloader"></div>
+                <div class='image-container'>
 
-                <div class="striped-border" data-bind="foreach: imageurl">
-                    <img class="work-images" data-bind="attr:{src: $data}"/>
+                    <div class="image-preloader"></div>
+
+                    <div class="striped-border" data-bind="foreach: imageurl">
+                        <img class="work-images" data-bind="attr:{src: $data}"/>
+                    </div>
+
                 </div>
 
                 <div class="sub">

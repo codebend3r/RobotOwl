@@ -35,7 +35,7 @@
   font-size: .9rem;
   width: 70%;
   display: inline-block;
-  background-color: lightslategrey;
+  background-color: #efefef;
   padding: 0;
   margin: 0 0 0 2%;
   float: left; }
@@ -56,6 +56,11 @@
       margin: 160px 0 0 0; } }
   .portfolio-container:after {
     clear: both; }
+
+.image-container {
+  width: 100%;
+  height: 364px;
+  display: block; }
 
 .port-title {
   font-family: "nimbus-sans", Georgia, sans-serif;
@@ -81,25 +86,27 @@
 *   <div class="striped-border"></div>
 */
 .striped-border {
-  position: static;
+  position: relative;
   overflow: visible;
   display: block;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   background-repeat: repeat;
   background-image: url(../../pattern/stripes_faded.png);
   padding: 0;
   margin: 0; }
-  .striped-border img.work-images {
-    position: relative;
-    overflow: visible;
-    max-width: 100%;
-    padding: 0;
-    margin: 0; }
+  @media all and (max-width: 1000px) {
+    .striped-border {
+      width: 634px; } }
 
 img.work-images {
   position: absolute;
-  top: 10px;
-  left: 10px; }
+  overflow: visible;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  top: 15px;
+  left: 15px; }
 
 @media all and (max-width: 620px) {
   .striped-border {

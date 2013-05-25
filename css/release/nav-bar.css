@@ -44,7 +44,7 @@
 *   <div class="nav-bar-fixed"></div>
 */
 .nav-bar-fixed {
-  width: 800px;
+  width: 900px;
   margin: 5px auto 0 auto;
   background-color: purple;
   vertical-align: middle; }
@@ -89,7 +89,7 @@ ul.main-menu {
   vertical-align: middle;
   float: right;
   height: 80px;
-  background-color: orange;
+  background-color: #efefef;
   display: inline-block;
   margin: 0 5px 0 0;
   padding: 0;

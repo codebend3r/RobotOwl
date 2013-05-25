@@ -116,9 +116,15 @@ p {
   height: 80px;
   display: inline-block;
   float: left;
+
+  @media #{$largeBreakpoint}{
+    margin: 0 0 0 15px;
+  }
+
   @media #{$mediumBreakpoint} {
     border-left: 1px solid $white;
   }
+
   @media #{$retinaBreakpoint} {
     background: url('../../images/crivas-logo@2x.png') no-repeat;
     width: 216px;
