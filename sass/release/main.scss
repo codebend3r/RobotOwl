@@ -109,9 +109,12 @@ p {
 *
 * @markup
 *   <div class="logo"></div>
+* 2.7
 */
 .logo {
-  background: url('../../images/crivas-logo.png') no-repeat;
+
+  background: url('../../images/crivas-logo@2x.png') no-repeat;
+  background-size: 216px 80px;
   width: 216px;
   height: 80px;
   display: inline-block;
@@ -122,14 +125,11 @@ p {
   }
 
   @media #{$mediumBreakpoint} {
-    border-left: 1px solid $white;
+    background-size: 135px 50px;
+    width: 135px;
+    height: 50px;
   }
 
-  @media #{$retinaBreakpoint} {
-    background: url('../../images/crivas-logo@2x.png') no-repeat;
-    width: 216px;
-    height: 80px;
-  }
 }
 
 

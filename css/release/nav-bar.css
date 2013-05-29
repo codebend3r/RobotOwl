@@ -27,11 +27,12 @@
   border-bottom: 1px lightgrey solid; }
   @media all and (max-width: 800px) {
     .nav-bar {
-      height: 80px;
+      height: 50px;
       z-index: 998;
       position: absolute; } }
   @media all and (max-width: 620px) {
     .nav-bar {
+      height: 50px;
       z-index: 998;
       position: absolute;
       top: 0px;
@@ -46,7 +47,6 @@
 .nav-bar-fixed {
   width: 900px;
   margin: 5px auto 0 auto;
-  background-color: purple;
   vertical-align: middle; }
   @media all and (max-width: 1000px) {
     .nav-bar-fixed {
@@ -63,9 +63,9 @@
 .open-small-menu {
   display: none; }
   .open-small-menu .horizontal-groove {
-    margin: 20px 10px -12px 10px;
+    margin: 14px 10px -12px 10px;
     background-color: #cecece;
-    height: 6px;
+    height: 2px;
     border-radius: 4px;
     border: 2px inset #eeeeee; }
   @media all and (max-width: 800px) {
@@ -74,8 +74,8 @@
       cursor: pointer;
       margin: 0px 0px;
       display: inline-block;
-      width: 80px;
-      height: 80px;
+      width: 50px;
+      height: 50px;
       border-right: 2px solid #d1d1d1; } }
 
 /**
@@ -94,6 +94,12 @@ ul.main-menu {
   margin: 0 5px 0 0;
   padding: 0;
   border-bottom: solid 1px #c6c6c6; }
+  @media all and (max-width: 800px) {
+    ul.main-menu {
+      height: 50px; } }
+  @media all and (max-width: 620px) {
+    ul.main-menu {
+      height: 50px; } }
   ul.main-menu li {
     display: inline-block;
     list-style: none;
@@ -103,6 +109,14 @@ ul.main-menu {
     height: 80px;
     line-height: 80px;
     text-align: center; }
+    @media all and (max-width: 800px) {
+      ul.main-menu li {
+        height: 50px;
+        line-height: 50px; } }
+    @media all and (max-width: 620px) {
+      ul.main-menu li {
+        height: 50px;
+        line-height: 50px; } }
   ul.main-menu li:hover {
     border-bottom: 3px #cb3429 solid; }
   ul.main-menu li.selected {

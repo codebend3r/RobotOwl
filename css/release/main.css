@@ -34,7 +34,6 @@ body {
 .main-wrapper {
   width: 900px;
   margin: 5px auto 0 auto;
-  background-color: purple;
   height: 100%; }
   @media all and (max-width: 1000px) {
     .main-wrapper {
@@ -97,9 +96,11 @@ p {
 *
 * @markup
 *   <div class="logo"></div>
+* 2.7
 */
 .logo {
-  background: url("../../images/crivas-logo.png") no-repeat;
+  background: url("../../images/crivas-logo@2x.png") no-repeat;
+  background-size: 216px 80px;
   width: 216px;
   height: 80px;
   display: inline-block;
@@ -109,12 +110,9 @@ p {
       margin: 0 0 0 15px; } }
   @media all and (max-width: 800px) {
     .logo {
-      border-left: 1px solid white; } }
-  @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    .logo {
-      background: url("../../images/crivas-logo@2x.png") no-repeat;
-      width: 216px;
-      height: 80px; } }
+      background-size: 135px 50px;
+      width: 135px;
+      height: 50px; } }
 
 /**
 * @description resusable launch button

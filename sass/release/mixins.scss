@@ -3,7 +3,6 @@
 @mixin centeredAndFixed() {
   width: $maxWidth;
   margin: 5px auto 0 auto;
-  background-color: purple;
   @media #{$largeBreakpoint} {
     width: 100%;
   }

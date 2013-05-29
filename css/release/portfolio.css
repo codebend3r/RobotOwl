@@ -39,23 +39,27 @@
   padding: 0;
   margin: 0 0 0 2%;
   float: left; }
+  @media all and (max-width: 1000px) {
+    .portfolio-container {
+      width: 96%; } }
   @media all and (max-width: 800px) {
     .portfolio-container {
-      float: none;
       position: absolute;
-      margin: 80px 0 0 0;
-      width: 100%; } }
+      float: left;
+      left: 0px;
+      top: 0px;
+      width: 96%;
+      z-index: 999;
+      margin: 60px 0 0 2%; } }
   @media all and (max-width: 620px) {
     .portfolio-container {
-      float: none;
       position: absolute;
-      width: 100%;
-      top: 0px;
+      float: left;
       left: 0px;
+      top: 0px;
+      width: 96%;
       z-index: 999;
-      margin: 160px 0 0 0; } }
-  .portfolio-container:after {
-    clear: both; }
+      margin: 60px 0 0 2%; } }
 
 .image-container {
   width: 100%;

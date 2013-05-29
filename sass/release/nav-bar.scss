@@ -16,13 +16,14 @@
   border-bottom: 1px $headerColour solid;
 
   @media #{$mediumBreakpoint} {
-    height: $navBarHeightLarge;
+    height: $navBarHeightSmall;
     z-index: 998;
     position: absolute;
 
   }
 
   @media #{$smallBreakpoint} {
+    height: $navBarHeightSmall;
     z-index: 998;
     position: absolute;
     top: 0px;
@@ -55,9 +56,9 @@
   display: none;
 
   .horizontal-groove {
-    margin: 20px 10px -12px 10px;
+    margin: 14px 10px -12px 10px;
     background-color: #cecece;
-    height: 6px;
+    height: 2px;
     border-radius: 4px;
     border: 2px inset #eeeeee;
   }
@@ -67,8 +68,8 @@
     cursor: pointer;
     margin: 0px 0px;
     display: inline-block;
-    width: $navBarHeightLarge;
-    height: $navBarHeightLarge;
+    width: $navBarHeightSmall;
+    height: $navBarHeightSmall;
     border-right: 2px solid $offwhite;
   }
 
@@ -92,6 +93,14 @@ ul.main-menu {
   padding: 0;
   border-bottom: solid 1px #c6c6c6;
 
+  @media #{$mediumBreakpoint} {
+    height: $navBarHeightSmall;
+  }
+
+  @media #{$smallBreakpoint} {
+    height: $navBarHeightSmall;
+  }
+
   li {
     display: inline-block;
     list-style: none;
@@ -101,6 +110,17 @@ ul.main-menu {
     height: $navBarHeightLarge;
     line-height: $navBarHeightLarge;
     text-align: center;
+
+    @media #{$mediumBreakpoint} {
+      height: $navBarHeightSmall;
+      line-height: $navBarHeightSmall;
+    }
+
+    @media #{$smallBreakpoint} {
+      height: $navBarHeightSmall;
+      line-height: $navBarHeightSmall;
+    }
+
   }
 
   li:hover {
