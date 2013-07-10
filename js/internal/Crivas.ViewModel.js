@@ -12,16 +12,22 @@ Crivas.ViewModel = function() {
 	self.visibleResume = ko.observable(true);
 	self.visibleContact = ko.observable(true);
 
+	self.scrollSpeed = 1000;
+
 	self.showPortflio = function() {
 
 		self.setHash('portfolio');
 
-		self.visiblePortfolio(true);
-		self.visibleResume(true);
-		self.visibleContact(true);
+		//self.visiblePortfolio(true);
+		//self.visibleResume(true);
+		//self.visibleContact(true);
 
-		setTimeout( self.showNewSection, 100 );
-		//self.showNewSection();
+    $('html, body').animate({
+      scrollTop: 0
+    }, self.scrollSpeed);
+
+		//setTimeout( self.showNewSection, 100 );
+		self.showNewSection();
 
 	};
 
@@ -29,9 +35,15 @@ Crivas.ViewModel = function() {
 
 		self.setHash('resume');
 
-		self.visiblePortfolio(true);
-		self.visibleResume(true);
-		self.visibleContact(true);
+    $('html, body').animate({
+      scrollTop: 1000
+    }, self.scrollSpeed);
+
+		//self.visiblePortfolio(true);
+		//self.visibleResume(true);
+		//self.visibleContact(true);
+
+    self.showNewSection();
 
 	};
 
@@ -39,9 +51,15 @@ Crivas.ViewModel = function() {
 
 		self.setHash('contact');
 
-		self.visiblePortfolio(true);
-		self.visibleResume(true);
-		self.visibleContact(true);
+    $('html, body').animate({
+      scrollTop: 1800
+    }, self.scrollSpeed);
+
+		//self.visiblePortfolio(true);
+		//self.visibleResume(true);
+		//self.visibleContact(true);
+
+    //self.showNewSection();
 
 	};
 
@@ -58,7 +76,7 @@ Crivas.ViewModel = function() {
 	);
 
 	self.menuClick = function(data) {
-		self.killSection();
+		//self.killSection();
 		self.navArray[data.id]();
 	};
 

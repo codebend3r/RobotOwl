@@ -1,6 +1,8 @@
 # Output Files
 bin
 
+*.iml
+
 # IDE system files (RubyMine)
 .idea
 

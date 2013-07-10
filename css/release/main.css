@@ -23,7 +23,8 @@ body {
 */
 .portfolio-content {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  float: clear; }
 
 /**
 * @description main container for all sections
@@ -60,7 +61,7 @@ button {
   width: 100%;
   margin: 0;
   padding: 5px;
-  background-color: #ece5dd;
+  /*background-color: #ece5dd;*/
   border: none;
   text-align: left; }
   @media all and (max-width: 800px) {
@@ -100,8 +101,8 @@ p {
 */
 .logo {
   background: url("../../images/crivas-logo@2x.png") no-repeat;
-  background-size: 216px 80px;
-  width: 216px;
+  background-size: 151px 80px;
+  width: 151px;
   height: 80px;
   display: inline-block;
   float: left; }
@@ -133,9 +134,9 @@ p {
     padding: 10px;
     background-repeat: repeat;
     background-image: url(../../pattern/stripes_faded2.png);
-    -moz-box-shadow: 0 0 3px black;
-    -webkit-box-shadow: 0 0 3px black;
-    box-shadow: 0 0 3px black; }
+    -moz-box-shadow: 0 0 3px #000000;
+    -webkit-box-shadow: 0 0 3px #000000;
+    box-shadow: 0 0 3px #000000; }
     @media all and (max-width: 620px) {
       .launch a {
         width: 100%;
