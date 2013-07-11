@@ -62,19 +62,17 @@
       margin: 60px 0 0 2%; } }
 
 .main-content-section {
-  /*padding: 100px 0;*/ }
+  clear: both;
+  width: 100%;
+  height: 100%;
+  float: left;
+  margin: 0 0 10px 0;
+  padding: 0 0 20px 0; }
 
 .image-container {
   width: 100%;
   height: 364px;
   display: block; }
-
-.port-title {
-  font-family: "nimbus-sans", Georgia, sans-serif;
-  font-size: 1.4rem;
-  font-weight: normal;
-  color: #cb3429;
-  text-decoration: underline; }
 
 .slide-menu-in {
   left: 301px; }

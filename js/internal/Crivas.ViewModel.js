@@ -14,7 +14,9 @@ Crivas.ViewModel = function() {
 
 	self.scrollSpeed = 1000;
 
-	self.showPortflio = function() {
+	self.showPortflio = function(animateScroll) {
+
+    animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
 		self.setHash('portfolio');
 
@@ -22,22 +24,32 @@ Crivas.ViewModel = function() {
 		//self.visibleResume(true);
 		//self.visibleContact(true);
 
-    $('html, body').animate({
-      scrollTop: 0
-    }, self.scrollSpeed);
+		if (animateScroll) {
+      $('html, body').animate({
+        scrollTop: 0
+      }, self.scrollSpeed);
+		} else{
+      window.scrollTo(0,0);
+		}
 
 		//setTimeout( self.showNewSection, 100 );
 		self.showNewSection();
 
 	};
 
-	self.showResume = function() {
+	self.showResume = function(animateScroll) {
+
+    animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
 		self.setHash('resume');
 
-    $('html, body').animate({
-      scrollTop: 1000
-    }, self.scrollSpeed);
+    if (animateScroll) {
+      $('html, body').animate({
+        scrollTop: 825
+      }, self.scrollSpeed);
+    } else {
+      window.scrollTo(0, 825);
+    }
 
 		//self.visiblePortfolio(true);
 		//self.visibleResume(true);
@@ -47,19 +59,25 @@ Crivas.ViewModel = function() {
 
 	};
 
-	self.showContact = function() {
+	self.showContact = function(animateScroll) {
+
+    animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
 		self.setHash('contact');
 
-    $('html, body').animate({
-      scrollTop: 1800
-    }, self.scrollSpeed);
+    if (animateScroll) {
+      $('html, body').animate({
+        scrollTop: 2200
+      }, self.scrollSpeed);
+    } else {
+      window.scrollTo(0, 2200);
+    }
 
 		//self.visiblePortfolio(true);
 		//self.visibleResume(true);
 		//self.visibleContact(true);
 
-    //self.showNewSection();
+    self.showNewSection();
 
 	};
 
@@ -283,18 +301,18 @@ Crivas.ViewModel = function() {
 		var hash = window.location.hash;
 		console.log('hash', hash);
 
-		if (hash == 'resume') {
+		if (hash == '#resume') {
 
-			self.showResume();
+			self.showResume(false);
 
-		} else if (hash == 'contact') {
+		} else if (hash == '#contact') {
 
-			self.showContact();
+			self.showContact(false);
 
 		} else {
 
 			self.setHash(self.defaultSection);
-			self.showPortflio();
+			self.showPortflio(false);
 
 		}
 

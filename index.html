@@ -119,7 +119,7 @@
         </section>
 
         <!-- RESUME SECTION -->
-        <section id="resume-section" class="main-content-sectionresume-content" data-bind="css: { visibleSection: $root.visibleResume }">
+        <section id="resume-section" class="main-content-section resume-content" data-bind="css: { visibleSection: $root.visibleResume }">
 
             <h2>Resume</h2>
 
@@ -131,18 +131,12 @@
 
             </div>
 
-            <div class="indent-line"/>
-            </div>
-
             <div class="stackable">
 
                 <h3>Summary</h3>
 
-                <div class='summary' data-bind='text: $root.summaryText'></div>
+                <div class='summary' data-bind='html: $root.summaryText'></div>
 
-            </div>
-
-            <div class="indent-line"/>
             </div>
 
             <div class="stackable">
@@ -155,10 +149,9 @@
 
             </div>
 
-            <div class="indent-line"/>
-            </div>
-
             <div class="stackable">
+
+                <h3>Work Experience</h3>
 
                 <div data-bind="foreach: $root.experienceList">
                     <div class="job">
@@ -172,9 +165,6 @@
                     </div>
                 </div>
 
-            </div>
-
-            <div class="indent-line"/>
             </div>
 
         </section>
@@ -193,13 +183,17 @@
                 </div>
 
                 <div class='contact-row'>
-                    <span class='icon linkedin-icon'></span>
-                    <span class='label'>Chester Rivas</span>
+                    <a href='https://github.com/crivas' target='_blank'>
+                        <span class='icon linkedin-icon'></span>
+                        <span class='label'>Chester Rivas</span>
+                    </a>
                 </div>
 
                 <div class='contact-row'>
-                    <span class='icon git-hub-icon'></span>
-                    <span class='label'>crivas</span>
+                    <a href='https://github.com/crivas' target='_blank'>
+                        <span class='icon git-hub-icon'></span>
+                        <span class='label'>crivas</span>
+                    </a>
                 </div>
 
             </div>

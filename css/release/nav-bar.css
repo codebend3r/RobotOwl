@@ -24,7 +24,11 @@
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$buttonBase1', endColorstr='$buttonBase3',GradientType=0 );
   /* IE6-9 */
-  border-bottom: 1px lightgrey solid; }
+  border-bottom: 1px lightgrey solid;
+  position: fixed;
+  z-index: 99;
+  background-color: red;
+  top: 0px; }
   @media all and (max-width: 800px) {
     .nav-bar {
       height: 50px;
@@ -46,7 +50,7 @@
 */
 .nav-bar-fixed {
   width: 900px;
-  margin: 5px auto 0 auto;
+  margin: 0px auto 0 auto;
   vertical-align: middle; }
   @media all and (max-width: 1000px) {
     .nav-bar-fixed {

@@ -22,9 +22,7 @@ body {
 *   <div class="portfolio-content"></div>
 */
 .portfolio-content {
-  margin: 0;
-  padding: 0;
-  float: clear; }
+  margin: 0; }
 
 /**
 * @description main container for all sections
@@ -34,7 +32,7 @@ body {
 */
 .main-wrapper {
   width: 900px;
-  margin: 5px auto 0 auto;
+  margin: 100px auto 0 auto;
   height: 100%; }
   @media all and (max-width: 1000px) {
     .main-wrapper {

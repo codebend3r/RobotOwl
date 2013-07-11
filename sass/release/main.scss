@@ -27,9 +27,9 @@ body {
 *   <div class="portfolio-content"></div>
 */
 .portfolio-content {
+
   margin: 0;
-  padding: 0;
-  float: clear;
+
 }
 
 /**
@@ -39,7 +39,8 @@ body {
 *   <div class="main-wrapper"></div>
 */
 .main-wrapper {
-  @include centeredAndFixed();
+
+  @include centeredAndFixed(100px);
   height: 100%;
 
   @media #{$smallBreakpoint} {
@@ -48,6 +49,7 @@ body {
     padding: 0;
     z-index: 997;
   }
+
 }
 
 /**
