@@ -118,6 +118,8 @@
 
         </section>
 
+        <div class='indent-line'></div>
+
         <!-- RESUME SECTION -->
         <section id="resume-section" class="main-content-section resume-content" data-bind="css: { visibleSection: $root.visibleResume }">
 
@@ -156,7 +158,7 @@
                 <div data-bind="foreach: $root.experienceList">
                     <div class="job">
                         <p><span class="job-title" data-bind="text: jobTitle"></span></p>
-                        <p><span class="company-name" data-bind="text: companyName"></span> | <span class="job-type" data-bind="text: jobType"></span></p>
+                        <p><span class="company-name" data-bind="text: companyName"></span> | <span class="job-type" data-bind="text: jobType, css: { isFullTime: isFullTime }"></span></p>
                         <p></p>
                         <p><span class="dates-at-job" data-bind="text: datesAtJob"></span></p>
                         <ul data-bind="foreach: tasks">
@@ -168,6 +170,8 @@
             </div>
 
         </section>
+
+        <div class='indent-line'></div>
 
         <!-- CONTACT SECTION -->
         <section id="contact-section" class="main-content-section contact-content" data-bind="css: { visibleSection: $root.visibleContact }">
@@ -182,19 +186,19 @@
                     <span class='label'>chester.rivas@gmail.com</span>
                 </div>
 
-                <div class='contact-row'>
-                    <a href='https://github.com/crivas' target='_blank'>
+                <a>
+                    <div class='contact-row'>
                         <span class='icon linkedin-icon'></span>
                         <span class='label'>Chester Rivas</span>
-                    </a>
-                </div>
+                    </div>
+                </a>
 
+                <!--<a href="https://github.com/crivas">-->
                 <div class='contact-row'>
-                    <a href='https://github.com/crivas' target='_blank'>
                         <span class='icon git-hub-icon'></span>
                         <span class='label'>crivas</span>
-                    </a>
                 </div>
+                <!--</a>-->
 
             </div>
 

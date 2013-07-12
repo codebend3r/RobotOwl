@@ -144,6 +144,7 @@ Crivas.ViewModel = function() {
 				jobTitle: i.jobTitle,
 				jobType: i.jobType,
 				datesAtJob: i.datesAtJob,
+        isFullTime: i.jobType == "full-time" ? true : false,
 				tasks: i.tasks
 			};
 		})

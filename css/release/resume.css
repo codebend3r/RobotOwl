@@ -13,8 +13,11 @@
   /*border-bottom: 1px solid #666666;*/
   margin: 30px 0; }
 
+.isFullTime {
+  color: red; }
+
 .job {
-  margin: 10px 0 0 0;
+  margin: 10px 0 25px 0;
   padding: 0; }
   .job p {
     margin: 0;
@@ -26,11 +29,14 @@
   .job .job-type {
     font-size: 10px; }
   .job .company-name {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #696969; }
   .job .dates-at-job {
     text-transform: uppercase;
     font-size: 10px; }
+  .job ul {
+    margin: 0;
+    padding: 10px 0; }
   .job li {
-    font-size: 11px; }
+    font-size: 12px; }

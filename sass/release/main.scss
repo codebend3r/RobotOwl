@@ -193,7 +193,18 @@ p {
   *   <div class="indentLine"></div>
   */
 .indent-line {
-  margin: 20px 0 0 0;
+  margin: 5px 0 5px 0;
   border-top: 1px solid $white;
   border-bottom: 1px solid $mediumGrey;
+  clear: both;
+}
+
+a {
+
+  &:hover {
+    color: $darkRed;
+  }
+
+  text-decoration: none;
+
 }
