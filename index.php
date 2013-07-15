@@ -55,7 +55,7 @@
             <div class="logo"></div>
 
             <ul class="main-menu" data-bind="foreach: $root.menuList">
-                <li data-bind="text: name, click: $root.menuClick"></li>
+                <li class="menu-item" data-bind="text: name, click: $root.menuClick"></li>
             </ul>
 
         </div>
@@ -127,9 +127,9 @@
 
             <div class="stackable">
 
-                <p class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> (Word 2010 Format)</p>
-                <p class="launch"><a href="resume/Chester Rivas CV.doc" target="_blank">DOWNLOAD</a> (Word 2007 Format)</p>
-                <p class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> (PDF Format)</p>
+                <p class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> .docx format (Word 2010)</p>
+                <p class="launch"><a href="resume/Chester Rivas CV.doc" target="_blank">DOWNLOAD</a> .doc (Word 2007)</p>
+                <p class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> .pdf (Adobe PDF)</p>
 
             </div>
 
@@ -203,33 +203,30 @@
             </div>
 
             <div class='column'>
-                <form name="contactform" method="post" action="email/emailform.php">
-                    <label for="first_name">First Name</label>
-                    <br/>
-                    <input type="text" name="first_name" maxlength="50" size="30">
-                    <br/>
-                    <label for="last_name">Last Name</label>
-                    <br/>
-                    <input type="text" name="last_name" maxlength="50" size="30">
-                    <br/>
-                    <label for="email">Email Address</label>
-                    <br/>
-                    <input type="text" name="email" maxlength="80" size="30">
-                    <br/>
-                    <label for="telephone">Telephone Number</label>
-                    <br/>
-                    <input type="text" name="telephone" maxlength="30" size="30">
-                    <br/>
-                    <label for="comments">Comments</label>
-                    <br/>
-                    <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-                    <br/>
-                    <input class="button" type="submit" value="Submit">
 
-                    <div id="thank-you">
-                        Thank you for your email. We will be in contact soon.
-                    </div>
+                <form id="contact" method="post">
+
+                    <fieldset>
+                        <label>First Name</label><br/>
+                        <input name="firstname" id="firstname" type="text">
+                        <label>Last Name</label><br/>
+                        <input name="lastname" id="lastname" type="text">
+                        <label>Phone Number</label><br/>
+                        <input name="phonenumber" id="phonenumber" type="text">
+                        <label>Email</label><br/>
+                        <input name="email" id="email" type="text">
+                        <label>Message</label><br/>
+                        <textarea rows="10" name="message" id="message"></textarea>
+                    </fieldset>
+
+                    <input type="submit" value="Send Message" name="submit">
+
+                    <p class="success" style="display:none">Your message has been sent successfully.</p>
+                    <p class="error" style="display:none">E-mail must be valid and message must be longer than 100 characters.</p>
+
                 </form>
+
+
             </div>
 
         </section>
@@ -247,6 +244,7 @@
     <script src="js/internal/Crivas.Data.js" type="text/javascript"></script>
     <script src="js/internal/Crivas.Main.js" type="text/javascript"></script>
     <script src="js/internal/Crivas.ViewModel.js" type="text/javascript"></script>
+    <script src="js/internal/Crivas.EmailForm.js" type="text/javascript"></script>
 
     <!--<script type="text/javascript" src="//use.typekit.net/wvi2nlg.js"></script>-->
     <!--<script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->

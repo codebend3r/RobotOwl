@@ -172,3 +172,6 @@ a {
   text-decoration: none; }
   a:hover {
     color: #cb3429; }
+
+fieldset {
+  border: none; }

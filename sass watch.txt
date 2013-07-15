@@ -1,1 +1,0 @@
-sass --watch C:/Dropbox/Websites/CrivasBeta/sass:C:/Dropbox/Websites/CrivasBeta/css

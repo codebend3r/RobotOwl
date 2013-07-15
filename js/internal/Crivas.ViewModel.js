@@ -20,19 +20,14 @@ Crivas.ViewModel = function() {
 
 		self.setHash('portfolio');
 
-		//self.visiblePortfolio(true);
-		//self.visibleResume(true);
-		//self.visibleContact(true);
-
 		if (animateScroll) {
       $('html, body').animate({
-        scrollTop: 0
+        scrollTop: $('#portfolio-section').offset().top - $('.main-wrapper').offset().top
       }, self.scrollSpeed);
 		} else{
       window.scrollTo(0,0);
 		}
 
-		//setTimeout( self.showNewSection, 100 );
 		self.showNewSection();
 
 	};
@@ -45,15 +40,11 @@ Crivas.ViewModel = function() {
 
     if (animateScroll) {
       $('html, body').animate({
-        scrollTop: 825
+        scrollTop: $('#resume-section').offset().top - $('.main-wrapper').offset().top + 20
       }, self.scrollSpeed);
     } else {
-      window.scrollTo(0, 825);
+      window.scrollTo(0, 830);
     }
-
-		//self.visiblePortfolio(true);
-		//self.visibleResume(true);
-		//self.visibleContact(true);
 
     self.showNewSection();
 
@@ -67,15 +58,11 @@ Crivas.ViewModel = function() {
 
     if (animateScroll) {
       $('html, body').animate({
-        scrollTop: 2200
+        scrollTop: $('#contact-section').offset().top - $('.main-wrapper').offset().top
       }, self.scrollSpeed);
     } else {
-      window.scrollTo(0, 2200);
+      window.scrollTo(0, 4302);
     }
-
-		//self.visiblePortfolio(true);
-		//self.visibleResume(true);
-		//self.visibleContact(true);
 
     self.showNewSection();
 
@@ -96,6 +83,17 @@ Crivas.ViewModel = function() {
 	self.menuClick = function(data) {
 		//self.killSection();
 		self.navArray[data.id]();
+    self.highlightCurrentMenuItem(data.id);
+	};
+
+	self.highlightCurrentMenuItem = function(i){
+	  console.log('highlightCurrentMenuItem: ', i);
+    var $allMenuItems = $('ul.main-menu li');
+    $allMenuItems.each(function () {
+      $(this).removeClass('selected');
+    });
+    var $selectedMenuItem = $($allMenuItems[i]);
+    $selectedMenuItem.addClass('selected');
 	};
 
 	self.openSmallMenu = function() {
@@ -273,15 +271,6 @@ Crivas.ViewModel = function() {
 		window.location.hash = val;
 	};
 
-	self.sendEmail = function() {
-		$.ajax({
-			type: "POST",
-			data: formData,
-			url: "php/emailform.php",
-			success: blah
-		});
-	};
-
 	//JQUERY OBJECTS
 
 	self.$imagePreloader = $('.image-preloader');
@@ -300,20 +289,22 @@ Crivas.ViewModel = function() {
 
 		console.log('self.start');
 		var hash = window.location.hash;
-		console.log('hash', hash);
 
 		if (hash == '#resume') {
 
 			self.showResume(false);
+      self.highlightCurrentMenuItem(1);
 
 		} else if (hash == '#contact') {
 
 			self.showContact(false);
+      self.highlightCurrentMenuItem(2);
 
 		} else {
 
 			self.setHash(self.defaultSection);
 			self.showPortflio(false);
+      self.highlightCurrentMenuItem(0);
 
 		}
 
