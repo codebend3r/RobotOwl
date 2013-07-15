@@ -186,19 +186,16 @@
                     <span class='label'>chester.rivas@gmail.com</span>
                 </div>
 
-                <a>
-                    <div class='contact-row'>
-                        <span class='icon linkedin-icon'></span>
-                        <span class='label'>Chester Rivas</span>
-                    </div>
-                </a>
-
-                <!--<a href="https://github.com/crivas">-->
                 <div class='contact-row'>
-                        <span class='icon git-hub-icon'></span>
-                        <span class='label'>crivas</span>
+                    <a href="http://ca.linkedin.com/in/crivasinc"><span class='icon linkedin-icon'></span></a>
+                    <span class='label'><a href="http://ca.linkedin.com/in/crivasinc">Chester Rivas</a></span>
                 </div>
-                <!--</a>-->
+
+                <div class='contact-row'>
+                    <a href="https://github.com/crivas"><span class='icon git-hub-icon'></span></a>
+                    <span class='label'><a href="https://github.com/crivas">crivas</a></span>
+                </div>
+
 
             </div>
 
@@ -222,7 +219,7 @@
                     <input type="submit" value="Send Message" name="submit">
 
                     <p class="success" style="display:none">Your message has been sent successfully.</p>
-                    <p class="error" style="display:none">E-mail must be valid and message must be longer than 100 characters.</p>
+                    <p class="error" style="display:none">E-mail must be valid.</p>
 
                 </form>
 

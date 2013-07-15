@@ -7,6 +7,8 @@
   vertical-align: top;
   line-height: 32px;
   padding: 15px 0; }
+  .column h2 {
+    padding: 0; }
 
 .icon {
   display: inline-block;
@@ -37,4 +39,13 @@
   padding: 10px 0; }
 
 input, textarea {
+  width: 98%; }
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: 100%; }
+
+form {
   width: 100%; }

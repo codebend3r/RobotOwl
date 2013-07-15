@@ -8,6 +8,7 @@ body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 100%;
   background-color: #efefef;
+  /*background: url('../../pattern/textured_paper.png') repeat;*/
   color: darkslategrey;
   min-width: 400px; }
   @media all and (max-width: 620px) {
@@ -169,9 +170,7 @@ p {
   clear: both; }
 
 a {
+  color: #4f9800;
   text-decoration: none; }
   a:hover {
-    color: #cb3429; }
-
-fieldset {
-  border: none; }
+    color: #db6510; }

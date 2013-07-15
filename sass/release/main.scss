@@ -12,6 +12,7 @@ body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 100%;
   background-color: $bodyColour;
+  /*background: url('../../pattern/textured_paper.png') repeat;*/
   color: $slateGrey;
   min-width: 400px;
   @media #{$smallBreakpoint} {
@@ -201,16 +202,12 @@ p {
 
 a {
 
+  color: $green;
+
   &:hover {
-    color: $darkRed;
+    color: $orange;
   }
 
   text-decoration: none;
-
-}
-
-fieldset {
-
-  border: none;
 
 }

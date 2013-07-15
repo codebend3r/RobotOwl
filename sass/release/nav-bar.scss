@@ -9,14 +9,13 @@
 */
 .nav-bar {
 
-  background-color: $headerColour;
   height: $navBarHeightLarge;
   width: 100%;
-  @include gradient($lightGrey,$lightGrey,$lightGrey);
+  /*@include gradient($lightGrey,$lightGrey,$lightGrey);*/
+  background: url('../../pattern/squairy_light.png') repeat;
   border-bottom: 1px $headerColour solid;
   position: fixed;
   z-index: 99;
-  background-color: red;
   top: 0px;
   @include dropShadow(0, 0, 10, 5, rgba(0,0,0,.3));
 
@@ -95,7 +94,6 @@ ul.main-menu {
   vertical-align: middle;
   float: right;
   height: $navBarHeightLarge;
-  background-color: $bodyColour;
   display: inline-block;
   margin: 0 5px 0 0;
   padding: 0;

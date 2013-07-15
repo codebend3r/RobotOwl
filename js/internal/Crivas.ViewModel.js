@@ -28,6 +28,8 @@ Crivas.ViewModel = function() {
       window.scrollTo(0,0);
 		}
 
+    self.highlightCurrentMenuItem(0);
+
 		self.showNewSection();
 
 	};
@@ -46,6 +48,8 @@ Crivas.ViewModel = function() {
       window.scrollTo(0, 830);
     }
 
+    self.highlightCurrentMenuItem(1);
+
     self.showNewSection();
 
 	};
@@ -63,6 +67,8 @@ Crivas.ViewModel = function() {
     } else {
       window.scrollTo(0, 4302);
     }
+
+    self.highlightCurrentMenuItem(2);
 
     self.showNewSection();
 
@@ -88,7 +94,8 @@ Crivas.ViewModel = function() {
 
 	self.highlightCurrentMenuItem = function(i){
 	  console.log('highlightCurrentMenuItem: ', i);
-    var $allMenuItems = $('ul.main-menu li');
+    var $allMenuItems = $('.menu-item');
+    console.log('$allMenuItems: ', $allMenuItems);
     $allMenuItems.each(function () {
       $(this).removeClass('selected');
     });
@@ -293,18 +300,15 @@ Crivas.ViewModel = function() {
 		if (hash == '#resume') {
 
 			self.showResume(false);
-      self.highlightCurrentMenuItem(1);
 
 		} else if (hash == '#contact') {
 
 			self.showContact(false);
-      self.highlightCurrentMenuItem(2);
 
 		} else {
 
 			self.setHash(self.defaultSection);
 			self.showPortflio(false);
-      self.highlightCurrentMenuItem(0);
 
 		}
 
