@@ -113,7 +113,7 @@ p {
 *
 * @markup
 *   <div class="logo"></div>
-* 2.7
+*
 */
 .logo {
 
@@ -157,10 +157,8 @@ p {
     background-color: #333333;
     padding : 10px;
     background-repeat: repeat;
-    background-image: url(../../pattern/stripes_faded2.png);
-    -moz-box-shadow: 0 0 3px #000000;
-    -webkit-box-shadow: 0 0 3px #000000;
-    box-shadow: 0 0 3px #000000;
+    background-image: url('../../pattern/tweed.png');
+    @include dropShadow(0, 0, 3px, 3px, #000000);
     @media #{$smallBreakpoint} {
       width: 100%;
       display: inline-block;
@@ -176,10 +174,9 @@ p {
     background-color: $darkRed;
     padding : 10px;
     background-repeat: repeat;
-    background-image: url(../../pattern/stripes_faded2.png);
+    background-image: url('../../pattern/tweed-over.png');
     margin : 0px;
-    box-shadow : 0 0 4px #333333;
-    //@include gradient();
+    @include dropShadow(0, 0, 3px, 3px, #000000);
     @media #{$smallBreakpoint} {
       padding : 10px 0;
       margin: 0 auto;
@@ -188,10 +185,37 @@ p {
 }
 
 /**
+  * @description contains two elements: a h2 and an icon element
+  *
+  * @markup
+  *   <div class="icon-and-title"></div>
+  */
+.icon-and-title {
+
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  height: 90px;
+  line-height: 90px;
+
+  .section-icon {
+    vertical-align: middle;
+  }
+
+  h2 {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 0 0 15px;
+    margin: 0;
+  }
+
+}
+
+/**
   * @description a line separator
   *
   * @markup
-  *   <div class="indentLine"></div>
+  *   <div class="indent-line"></div>
   */
 .indent-line {
   margin: 5px 0 5px 0;
@@ -200,6 +224,12 @@ p {
   clear: both;
 }
 
+/**
+  * @description global a elements styles
+  *
+  * @markup
+  *   <a href=''></a>
+  */
 a {
 
   color: $green;

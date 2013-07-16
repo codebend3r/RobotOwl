@@ -66,7 +66,10 @@
         <!-- PORTFOLIO SECTION -->
         <section id="portfolio-section" class="main-content-section portfolio-content" data-bind="css: { visibleSection: $root.visiblePortfolio }">
 
-            <h2>Portfolio</h2>
+            <div class='icon-and-title'>
+                <span class='section-icon portfolio-icon'></span>
+                <h2>Portfolio</h2>
+            </div>
 
             <div class="portfolio-list" data-bind="foreach: $root.navigationList">
                 <button data-bind="html: menuText, click: $root.changePage"></button>
@@ -123,7 +126,10 @@
         <!-- RESUME SECTION -->
         <section id="resume-section" class="main-content-section resume-content" data-bind="css: { visibleSection: $root.visibleResume }">
 
-            <h2>Resume</h2>
+            <div class='icon-and-title'>
+                <span class='section-icon resume-icon'></span>
+                <h2>Resume</h2>
+            </div>
 
             <div class="stackable">
 
@@ -177,23 +183,28 @@
         <section id="contact-section" class="main-content-section contact-content" data-bind="css: { visibleSection: $root.visibleContact }">
 
             <div class='column'>
-                <h2>Contact Info</h2>
+
+                <div class='icon-and-title'>
+                    <span class='section-icon contact-icon'></span>
+                    <h2>Contact Info</h2>
+                </div>
+
                 <h3>Chester Rivas</h3>
-                <h3>UI Developer</h3>
+                <h4>UI Developer</h4>
 
                 <div class='contact-row'>
-                    <span class='icon email-icon'></span>
-                    <span class='label'>chester.rivas@gmail.com</span>
+                    <a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'><span class='icon email-icon'></span></a>
+                    <span class='label'><a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'>chester.rivas@gmail.com</a></span>
                 </div>
 
                 <div class='contact-row'>
-                    <a href="http://ca.linkedin.com/in/crivasinc"><span class='icon linkedin-icon'></span></a>
-                    <span class='label'><a href="http://ca.linkedin.com/in/crivasinc">Chester Rivas</a></span>
+                    <a href='http://ca.linkedin.com/in/crivasinc' target='_blank'><span class='icon linkedin-icon'></span></a>
+                    <span class='label'><a href='http://ca.linkedin.com/in/crivasinc' target='_blank'>Chester Rivas</a></span>
                 </div>
 
                 <div class='contact-row'>
-                    <a href="https://github.com/crivas"><span class='icon git-hub-icon'></span></a>
-                    <span class='label'><a href="https://github.com/crivas">crivas</a></span>
+                    <a href='https://github.com/crivas' target='_blank'><span class='icon git-hub-icon'></span></a>
+                    <span class='label'><a href='https://github.com/crivas' target='_blank'>crivas</a></span>
                 </div>
 
 

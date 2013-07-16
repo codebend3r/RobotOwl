@@ -93,9 +93,7 @@ Crivas.ViewModel = function() {
 	};
 
 	self.highlightCurrentMenuItem = function(i){
-	  console.log('highlightCurrentMenuItem: ', i);
     var $allMenuItems = $('.menu-item');
-    console.log('$allMenuItems: ', $allMenuItems);
     $allMenuItems.each(function () {
       $(this).removeClass('selected');
     });

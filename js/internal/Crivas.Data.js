@@ -29,16 +29,16 @@ Crivas.Data = {
       'JavaScript',
       'JQuery',
       'HTML/HTML5',
-      'CSS/CSS3',
-      'SASS',
+      'CSS/CSS3/SASS',
       'Knockout.js',
       'Sproutcore',
+      'Ember.js',
       'MVVM Frameworks',
-      'MVC',
       'Grunt.js',
       'Photoshop',
       'Illustrator',
-      'ActionScript'
+      'MVC',
+      'ActionScript 3.0'
     ],
 
     workExperience: [
@@ -379,7 +379,7 @@ Crivas.Data = {
       companyName: 'Great Gulf',
       jobTitle: 'Senior Front End Developer',
       jobType: 'contract',
-      datesAtJob: 'May 2013 - March 2013',
+      datesAtJob: 'May 2013 - Present',
       tasks: [
         "updated and maintained front and back end of numerous company websites",
         "lead developer on multiple projects",
