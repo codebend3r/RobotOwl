@@ -11,7 +11,13 @@
   column-count: 2;
 
   li {
+
     font-size: 14px;
+
+    @media #{$mediumBreakpoint} {
+      font-size: $smallScreenFontSize;
+    }
+
   }
 }
 
@@ -36,6 +42,9 @@
     font-size: 16px;
     font-style: italic;
     font-family: Georgia;
+    @media #{$mediumBreakpoint} {
+      font-size: 26px;
+    }
   }
 
   .job-type {
@@ -45,26 +54,41 @@
     &.isFullTime {
       color: $orange;
     }
+    @media #{$mediumBreakpoint} {
+      font-size: 14px;
+    }
   }
 
   .company-name {
     font-size: 16px;
     font-weight: bold;
     color: #696969;
+    @media #{$mediumBreakpoint} {
+      font-size: 20px;
+    }
   }
 
   .dates-at-job {
     text-transform: uppercase;
     font-size: 10px;
+    @media #{$mediumBreakpoint} {
+      font-size: 14px;
+    }
   }
 
   ul {
-    margin: 0;
+    margin: 0 0 0 10px;
     padding: 10px 0;
+    @media #{$mediumBreakpoint} {
+      margin: 0 0 0 25px;
+    }
   }
 
   li {
     font-size: 12px;
+    @media #{$mediumBreakpoint} {
+      font-size: $smallScreenFontSize;
+    }
   }
 
 }

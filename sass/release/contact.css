@@ -4,10 +4,17 @@
   vertical-align: top;
   line-height: 32px;
   padding: 15px 0; }
+  @media all and (max-width: 800px) {
+    .column {
+      display: block;
+      width: 100%; } }
   .column .icon-and-title {
     height: 50px;
     line-height: 50px;
     vertical-align: top; }
+    @media all and (max-width: 800px) {
+      .column .icon-and-title {
+        padding: 0; } }
     .column .icon-and-title .section-icon {
       vertical-align: top; }
     .column .icon-and-title h2 {
@@ -51,8 +58,18 @@
   height: 50px;
   background-size: 100% 100%; }
 
+@media all and (max-width: 800px) {
+  label {
+    font-size: 20px;
+    padding: 10px; } }
+
 input, textarea {
-  width: 98%; }
+  width: 98%;
+  padding: 2px; }
+  @media all and (max-width: 800px) {
+    input, textarea {
+      font-size: 20px;
+      padding: 10px; } }
 
 fieldset {
   padding: 0;

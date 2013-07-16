@@ -23,7 +23,8 @@
     height: $navBarHeightSmall;
     z-index: 998;
     position: absolute;
-
+    top: 0px;
+    left: 0px;
   }
 
   @media #{$smallBreakpoint} {
@@ -32,6 +33,10 @@
     position: absolute;
     top: 0px;
     left: 0px;
+  }
+
+  @media #{$retinaBreakpoint} {
+    background: url('../../pattern/squairy_light_@2X.png') repeat;
   }
 
 }
@@ -91,20 +96,39 @@
 ul.main-menu {
 
   display: inline-block;
+  position: fixed;
   vertical-align: middle;
   float: right;
   height: $navBarHeightLarge;
-  display: inline-block;
   margin: 0 5px 0 0;
   padding: 0;
   border-bottom: solid 1px #c6c6c6;
+  z-index: 555;
+  top: 0px;
+  right: 0px;
 
   @media #{$mediumBreakpoint} {
-    height: $navBarHeightSmall;
+    position: absolute;
+    float: left;
+    display: block;
+    left: 0px;
+    top: 53px;
+    z-index: -999;
+    background-color: $orange;
+    height: auto;
+    border-bottom: none;
   }
 
   @media #{$smallBreakpoint} {
-    height: $navBarHeightSmall;
+    position: absolute;
+    float: left;
+    display: block;
+    left: 0px;
+    top: 0px;
+    z-index: -999;
+    background-color: $orange;
+    height: auto;
+    border-bottom: none;
   }
 
   li {
@@ -119,20 +143,28 @@ ul.main-menu {
     text-align: center;
 
     @media #{$mediumBreakpoint} {
-      height: $navBarHeightSmall;
-      line-height: $navBarHeightSmall;
-    }
+      display: block;
+      z-index: -999;
 
-    @media #{$smallBreakpoint} {
-      height: $navBarHeightSmall;
-      line-height: $navBarHeightSmall;
+      &:hover {
+        border-left: 3px $darkRed solid;
+        border-bottom: none;
+      }
+
+      &.selected {
+        border-left: 3px $green solid;
+        border-bottom: none;
+      }
+
     }
 
     &:hover {
+      border-left: none;
       border-bottom: 3px $darkRed solid;
     }
 
     &.selected {
+      border-left: none;
       border-bottom: 3px $green solid;
     }
 

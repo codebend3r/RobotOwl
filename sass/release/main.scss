@@ -19,19 +19,12 @@ body {
     margin: 0;
     padding: 0;
   }
+
+  @media #{$mediumBreakpoint} {
+    font-size: $smallScreenFontSize;
+  }
 }
 
-/**
-* @description TODO
-*
-* @markup
-*   <div class="portfolio-content"></div>
-*/
-.portfolio-content {
-
-  margin: 0;
-
-}
 
 /**
 * @description main container for all sections
@@ -43,12 +36,54 @@ body {
 
   @include centeredAndFixed(100px);
   height: 100%;
+  background-color: $bodyColour;
 
-  @media #{$smallBreakpoint} {
-    height: 100%;
-    margin: 0;
+  @media #{$mediumBreakpoint} {
+    @include centeredAndFixed(50px);
+    height: auto;
     padding: 0;
     z-index: 997;
+    float: left;
+  }
+
+}
+
+/**
+* @description container for individual section
+*
+* @markup
+*   <div class="main-content-section"></div>
+*/
+.main-content-section {
+  clear: both;
+  width: 100%;
+  height: auto;
+  float: left;
+  margin: 0 0 10px 0;
+  padding: 0 0 100px 0;
+
+  @media #{$mediumBreakpoint} {
+    position: static;
+    float: left;
+    left: 0px;
+    top: 0px;
+    width: 90%;
+    height: auto;
+    z-index: 999;
+    margin: 0;
+    padding: 0 5%;
+  }
+
+  @media #{$smallBreakpoint} {
+    position: static;
+    float: left;
+    left: 0px;
+    top: 0px;
+    width: 90%;
+    height: auto;
+    z-index: 999;
+    margin: 0;
+    padding: 0 5%;
   }
 
 }
@@ -88,7 +123,13 @@ button:hover {
 }
 
 p {
+
   font-size: .8rem;
+
+  @media #{$mediumBreakpoint} {
+    font-size: $smallScreenFontSize;
+  }
+
 }
 
 ////////////////////////////////////////
@@ -198,6 +239,10 @@ p {
   height: 90px;
   line-height: 90px;
 
+  @media #{$mediumBreakpoint} {
+    padding-left: 10px;
+  }
+
   .section-icon {
     vertical-align: middle;
   }
@@ -207,6 +252,9 @@ p {
     vertical-align: top;
     padding: 0 0 0 15px;
     margin: 0;
+    @media #{$mediumBreakpoint} {
+      font-size: 46px;
+    }
   }
 
 }

@@ -20,7 +20,9 @@
     .nav-bar {
       height: 50px;
       z-index: 998;
-      position: absolute; } }
+      position: absolute;
+      top: 0px;
+      left: 0px; } }
   @media all and (max-width: 620px) {
     .nav-bar {
       height: 50px;
@@ -28,6 +30,9 @@
       position: absolute;
       top: 0px;
       left: 0px; } }
+  @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .nav-bar {
+      background: url("../../pattern/squairy_light_@2X.png") repeat; } }
 
 /**
 * @description the container which has a max width
@@ -77,19 +82,38 @@
 */
 ul.main-menu {
   display: inline-block;
+  position: fixed;
   vertical-align: middle;
   float: right;
   height: 80px;
-  display: inline-block;
   margin: 0 5px 0 0;
   padding: 0;
-  border-bottom: solid 1px #c6c6c6; }
+  border-bottom: solid 1px #c6c6c6;
+  z-index: 555;
+  top: 0px;
+  right: 0px; }
   @media all and (max-width: 800px) {
     ul.main-menu {
-      height: 50px; } }
+      position: absolute;
+      float: left;
+      display: block;
+      left: 0px;
+      top: 53px;
+      z-index: -999;
+      background-color: #db6510;
+      height: auto;
+      border-bottom: none; } }
   @media all and (max-width: 620px) {
     ul.main-menu {
-      height: 50px; } }
+      position: absolute;
+      float: left;
+      display: block;
+      left: 0px;
+      top: 0px;
+      z-index: -999;
+      background-color: #db6510;
+      height: auto;
+      border-bottom: none; } }
   ul.main-menu li {
     display: inline-block;
     list-style: none;
@@ -101,15 +125,19 @@ ul.main-menu {
     text-align: center; }
     @media all and (max-width: 800px) {
       ul.main-menu li {
-        height: 50px;
-        line-height: 50px; } }
-    @media all and (max-width: 620px) {
-      ul.main-menu li {
-        height: 50px;
-        line-height: 50px; } }
+        display: block;
+        z-index: -999; }
+        ul.main-menu li:hover {
+          border-left: 3px #cb3429 solid;
+          border-bottom: none; }
+        ul.main-menu li.selected {
+          border-left: 3px #4f9800 solid;
+          border-bottom: none; } }
     ul.main-menu li:hover {
+      border-left: none;
       border-bottom: 3px #cb3429 solid; }
     ul.main-menu li.selected {
+      border-left: none;
       border-bottom: 3px #4f9800 solid; }
 
 @media all and (max-width: 620px) {

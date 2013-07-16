@@ -15,15 +15,9 @@ body {
     body {
       margin: 0;
       padding: 0; } }
-
-/**
-* @description TODO
-*
-* @markup
-*   <div class="portfolio-content"></div>
-*/
-.portfolio-content {
-  margin: 0; }
+  @media all and (max-width: 800px) {
+    body {
+      font-size: 1.2rem; } }
 
 /**
 * @description main container for all sections
@@ -34,16 +28,58 @@ body {
 .main-wrapper {
   width: 900px;
   margin: 100px auto 0 auto;
-  height: 100%; }
+  height: 100%;
+  background-color: #efefef; }
   @media all and (max-width: 1000px) {
     .main-wrapper {
       width: 100%; } }
-  @media all and (max-width: 620px) {
+  @media all and (max-width: 800px) {
     .main-wrapper {
-      height: 100%;
-      margin: 0;
+      width: 900px;
+      margin: 50px auto 0 auto;
+      height: auto;
       padding: 0;
-      z-index: 997; } }
+      z-index: 997;
+      float: left; } }
+    @media all and (max-width: 800px) and (max-width: 1000px) {
+      .main-wrapper {
+        width: 100%; } }
+
+/**
+* @description container for individual section
+*
+* @markup
+*   <div class="main-content-section"></div>
+*/
+.main-content-section {
+  clear: both;
+  width: 100%;
+  height: auto;
+  float: left;
+  margin: 0 0 10px 0;
+  padding: 0 0 100px 0; }
+  @media all and (max-width: 800px) {
+    .main-content-section {
+      position: static;
+      float: left;
+      left: 0px;
+      top: 0px;
+      width: 90%;
+      height: auto;
+      z-index: 999;
+      margin: 0;
+      padding: 0 5%; } }
+  @media all and (max-width: 620px) {
+    .main-content-section {
+      position: static;
+      float: left;
+      left: 0px;
+      top: 0px;
+      width: 90%;
+      height: auto;
+      z-index: 999;
+      margin: 0;
+      padding: 0 5%; } }
 
 /**
   * @name Button
@@ -78,6 +114,9 @@ button:hover {
 
 p {
   font-size: .8rem; }
+  @media all and (max-width: 800px) {
+    p {
+      font-size: 1.2rem; } }
 
 .horizontal-lines {
   height: 0px;
@@ -171,6 +210,9 @@ p {
   vertical-align: middle;
   height: 90px;
   line-height: 90px; }
+  @media all and (max-width: 800px) {
+    .icon-and-title {
+      padding-left: 10px; } }
   .icon-and-title .section-icon {
     vertical-align: middle; }
   .icon-and-title h2 {
@@ -178,6 +220,9 @@ p {
     vertical-align: top;
     padding: 0 0 0 15px;
     margin: 0; }
+    @media all and (max-width: 800px) {
+      .icon-and-title h2 {
+        font-size: 46px; } }
 
 /**
   * @description a line separator

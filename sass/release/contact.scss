@@ -1,9 +1,6 @@
 @import "variables";
 @import "mixins";
 
-
-$columnHeader: 50px;
-
 .column {
 
   display: inline-block;
@@ -12,11 +9,20 @@ $columnHeader: 50px;
   line-height: $iconWidth;
   padding: 15px 0;
 
+  @media #{$mediumBreakpoint} {
+    display: block;
+    width: 100%;
+  }
+
   .icon-and-title {
 
     height: $columnHeader;
     line-height: $columnHeader;
     vertical-align: top;
+
+    @media #{$mediumBreakpoint} {
+      padding: 0;
+    }
 
     .section-icon {
       vertical-align: top;
@@ -75,8 +81,20 @@ $columnHeader: 50px;
   background-size: 100% 100%;
 }
 
+label {
+  @media #{$mediumBreakpoint} {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
 input, textarea {
   width: 98%;
+  padding: 2px;
+  @media #{$mediumBreakpoint} {
+    font-size: 20px;
+    padding: 10px;
+  }
 }
 
 fieldset {

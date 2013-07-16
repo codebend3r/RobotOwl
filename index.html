@@ -44,6 +44,7 @@
 <body>
 
     <header class="nav-bar">
+
         <div class="nav-bar-fixed">
 
             <div class="open-small-menu" data-bind="click: $root.openSmallMenu">
@@ -54,12 +55,13 @@
 
             <div class="logo"></div>
 
-            <ul class="main-menu" data-bind="foreach: $root.menuList">
-                <li class="menu-item" data-bind="text: name, click: $root.menuClick"></li>
-            </ul>
-
         </div>
+
     </header>
+
+    <ul class="main-menu" data-bind="foreach: $root.menuList">
+        <li class="menu-item" data-bind="text: name, click: $root.menuClick"></li>
+    </ul>
 
     <section class="main-wrapper">
 
@@ -83,9 +85,13 @@
 
                     <div class="image-preloader"></div>
 
-                    <div class="striped-border" data-bind="foreach: imageurl">
-                        <img class="work-images" data-bind="attr:{src: $data}"/>
-                    </div>
+                    <a data-bind="attr: {href: url}" target="_blank">
+                        <ul class='image-border' data-bind='foreach: imageurl'>
+                            <li class='images-list'>
+                                <img class='work-images' data-bind='attr:{src: $data}'/>
+                            </li>
+                        </ul>
+                    </a>
 
                 </div>
 

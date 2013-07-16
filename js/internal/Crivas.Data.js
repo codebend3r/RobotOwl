@@ -58,7 +58,7 @@ Crivas.Data = {
         businessCase: 'A complete responsive website with breakpoints for mobile phones and tablets.',
         details: 'This website was built with Knockout.js. Knockout.js was used in conjunction with JSON to store all the data. Custom built deep linking framework',
         techUsed: 'Knockout.js, Grunt, JQuery, CSS3, SASS, JavaScript, HTML5',
-        url: 'http://crivas.net/motionseason/revolution'
+        url: 'http://crivas.net/portfolio/motionseason/revolution'
       },
       {
         id: 1,

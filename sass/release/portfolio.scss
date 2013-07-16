@@ -33,7 +33,6 @@
     left: 0px;
     margin: 0;
     padding: 0;
-    background-color: #ebe4dc;
     z-index: -999;
     border-right: 1px solid $mediumGrey;
   }
@@ -56,53 +55,16 @@
 
 .portfolio-container {
 
-  font-size: .9rem;
   width: 70%;
   display: inline-block;
-  background-color: $bodyColour;
   padding: 0;
   margin: 0 0 0 2%;
   float: left;
 
   @media #{$largeBreakpoint} {
-    width: 96%;
+    width: 100%;
   }
 
-  @media #{$mediumBreakpoint} {
-    position: absolute;
-    float: left;
-    left: 0px;
-    top: 0px;
-    width: 96%;
-    z-index: 999;
-    margin: 60px 0 0 2%;
-  }
-
-  @media #{$smallBreakpoint} {
-    position: absolute;
-    float: left;
-    left: 0px;
-    top: 0px;
-    width: 96%;
-    z-index: 999;
-    margin: 60px 0 0 2%;
-  }
-
-}
-
-.main-content-section {
-  clear: both;
-  width: 100%;
-  height: 100%;
-  float: left;
-  margin: 0 0 10px 0;
-  padding: 0 0 100px 0;
-}
-
-.image-container {
-  width: 100%;
-  height: 364px;
-  display: block;
 }
 
 .port-title {
@@ -121,58 +83,64 @@
   transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
 }
 
+.image-container {
+  width: 600px;
+  height: 334px;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: block;
+  float: left;
+  border: 10px solid white;
+  clear: both;
+}
+
 /**
 * @description a diagonal border for images
 *
 * @markup
 *   <div class="striped-border"></div>
 */
-.striped-border {
+ul.image-border {
 
   position: relative;
   overflow: visible;
   display: block;
   width: 100%;
   height: 100%;
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded.png);
   padding: 0;
   margin: 0;
+  list-style: none;
 
-  @media #{$largeBreakpoint} {
-    width: 634px;
+  li.images-list {
+
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+  }
+
+  @media #{$mediumBreakpoint} {
+
+    width: 100%;
+
   }
 
 }
 
 img.work-images {
-  position: absolute;
-  overflow: visible;
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-  top: 15px;
-  left: 15px;
-}
 
-@media #{$smallBreakpoint} {
-  .striped-border {
-    position: relative;
-    margin: 0;
-    padding: 0;
+  position: absolute;
+  max-width: 100%;
+
+  @media #{$mediumBreakpoint} {
     max-width: 100%;
-    max-height: 100%;
-    background: transparent;
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      margin: 0;
-      padding: 0;
-    }
   }
+
 }
 
 /**
@@ -183,6 +151,9 @@ img.work-images {
 */
 .sub {
   margin: 10px 0 10px 0;
+  @media #{$mediumBreakpoint} {
+    margin: 0;
+  }
 }
 
 /**
@@ -195,6 +166,9 @@ img.work-images {
   font-weight: bold;
   color: $darkRed;
   font-size: 1rem;
+  @media #{$mediumBreakpoint} {
+    font-size: $smallScreenFontSize;
+  }
 }
 
 /**

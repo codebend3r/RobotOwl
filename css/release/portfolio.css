@@ -27,7 +27,6 @@
       left: 0px;
       margin: 0;
       padding: 0;
-      background-color: #ebe4dc;
       z-index: -999;
       border-right: 1px solid #cccccc; } }
 
@@ -42,47 +41,14 @@
   padding: 0 0 20px 0; }
 
 .portfolio-container {
-  font-size: .9rem;
   width: 70%;
   display: inline-block;
-  background-color: #efefef;
   padding: 0;
   margin: 0 0 0 2%;
   float: left; }
   @media all and (max-width: 1000px) {
     .portfolio-container {
-      width: 96%; } }
-  @media all and (max-width: 800px) {
-    .portfolio-container {
-      position: absolute;
-      float: left;
-      left: 0px;
-      top: 0px;
-      width: 96%;
-      z-index: 999;
-      margin: 60px 0 0 2%; } }
-  @media all and (max-width: 620px) {
-    .portfolio-container {
-      position: absolute;
-      float: left;
-      left: 0px;
-      top: 0px;
-      width: 96%;
-      z-index: 999;
-      margin: 60px 0 0 2%; } }
-
-.main-content-section {
-  clear: both;
-  width: 100%;
-  height: 100%;
-  float: left;
-  margin: 0 0 10px 0;
-  padding: 0 0 100px 0; }
-
-.image-container {
-  width: 100%;
-  height: 364px;
-  display: block; }
+      width: 100%; } }
 
 .slide-menu-in {
   left: 301px; }
@@ -94,51 +60,51 @@
   -o-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1); }
 
+.image-container {
+  width: 600px;
+  height: 334px;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: block;
+  float: left;
+  border: 10px solid white;
+  clear: both; }
+
 /**
 * @description a diagonal border for images
 *
 * @markup
 *   <div class="striped-border"></div>
 */
-.striped-border {
+ul.image-border {
   position: relative;
   overflow: visible;
   display: block;
   width: 100%;
   height: 100%;
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded.png);
   padding: 0;
-  margin: 0; }
-  @media all and (max-width: 1000px) {
-    .striped-border {
-      width: 634px; } }
+  margin: 0;
+  list-style: none; }
+  ul.image-border li.images-list {
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+  @media all and (max-width: 800px) {
+    ul.image-border {
+      width: 100%; } }
 
 img.work-images {
   position: absolute;
-  overflow: visible;
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-  top: 15px;
-  left: 15px; }
+  max-width: 100%; }
+  @media all and (max-width: 800px) {
+    img.work-images {
+      max-width: 100%; } }
 
-@media all and (max-width: 620px) {
-  .striped-border {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    max-height: 100%;
-    background: transparent; }
-    .striped-border img {
-      max-width: 100%;
-      max-height: 100%;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      margin: 0;
-      padding: 0; } }
 /**
 * @description container for a text section
 *
@@ -147,6 +113,9 @@ img.work-images {
 */
 .sub {
   margin: 10px 0 10px 0; }
+  @media all and (max-width: 800px) {
+    .sub {
+      margin: 0; } }
 
 /**
 * @description sub header in red
@@ -158,6 +127,9 @@ img.work-images {
   font-weight: bold;
   color: #cb3429;
   font-size: 1rem; }
+  @media all and (max-width: 800px) {
+    .sub-heading {
+      font-size: 1.2rem; } }
 
 /**
 * @description the text under .subHeading
