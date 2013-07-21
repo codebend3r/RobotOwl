@@ -21,8 +21,9 @@ Crivas.Data = {
   portfolio: {
 
     summaryText: "<p> Chester Rivas is a highly skilled Front End Developer who specializes in JavaScript, JQuery and HTML/CSS. Coming from a design background he has the complementary skills of being able to design interfaces, websites, components through coding.</p>" +
+        "<p>At Kobo he was a Sproutcore and UI Developer. He helped build Kobo's Instant Reader and Kobo website redesign. Both were responsive designed and highly optimized for all devices.</p>" +
         "<p>While at Research Now Chester developed a global Flash/JavaScript framework. Also developed several cutting edge market research tools.</p>" +
-        "<p>Chester has been in the industry for 8 years and has worked for many high-end clients to small ad-agencies. His focus is always quality, design and functionality. And he is very comfortable moving at a fast pace.</p>" +
+        "<p>Chester has been in the industry for 9 years and has worked for many high-end clients to small ad-agencies. His focus is always quality, design and functionality. And he is very comfortable moving at a fast pace.</p>" +
         "<p>He is currently on his way to learning Android and other mobile development. With a special passion for getting into game development. Of course also very familiar with HTML5 and CSS3 to make him a complete and well rounded Front End Developer.</p>",
 
     skillset: [
