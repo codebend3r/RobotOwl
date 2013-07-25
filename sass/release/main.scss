@@ -37,6 +37,7 @@ body {
   @include centeredAndFixed(100px);
   height: 100%;
   background-color: $bodyColour;
+  @include dropShadow(0, 0, 10, 5, rgba(0,0,0,.3));
 
   @media #{$mediumBreakpoint} {
     @include centeredAndFixed(50px);
@@ -44,6 +45,7 @@ body {
     padding: 0;
     z-index: 997;
     float: left;
+    position: absolute;
   }
 
 }
@@ -238,6 +240,7 @@ p {
   vertical-align: middle;
   height: 90px;
   line-height: 90px;
+  margin-left: 0px;
 
   @media #{$mediumBreakpoint} {
     padding-left: 10px;

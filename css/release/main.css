@@ -29,7 +29,10 @@ body {
   width: 900px;
   margin: 100px auto 0 auto;
   height: 100%;
-  background-color: #efefef; }
+  background-color: #efefef;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3); }
   @media all and (max-width: 1000px) {
     .main-wrapper {
       width: 100%; } }
@@ -40,7 +43,8 @@ body {
       height: auto;
       padding: 0;
       z-index: 997;
-      float: left; } }
+      float: left;
+      position: absolute; } }
     @media all and (max-width: 800px) and (max-width: 1000px) {
       .main-wrapper {
         width: 100%; } }
@@ -209,7 +213,8 @@ p {
   display: inline-block;
   vertical-align: middle;
   height: 90px;
-  line-height: 90px; }
+  line-height: 90px;
+  margin-left: 0px; }
   @media all and (max-width: 800px) {
     .icon-and-title {
       padding-left: 10px; } }

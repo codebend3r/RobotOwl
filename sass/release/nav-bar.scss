@@ -22,7 +22,7 @@
   @media #{$mediumBreakpoint} {
     height: $navBarHeightSmall;
     z-index: 998;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
   }
@@ -30,7 +30,7 @@
   @media #{$smallBreakpoint} {
     height: $navBarHeightSmall;
     z-index: 998;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
   }
@@ -103,32 +103,34 @@ ul.main-menu {
   margin: 0 5px 0 0;
   padding: 0;
   border-bottom: solid 1px #c6c6c6;
-  z-index: 555;
+  z-index: 997;
   top: 0px;
   right: 0px;
 
   @media #{$mediumBreakpoint} {
-    position: absolute;
-    float: left;
-    display: block;
-    left: 0px;
-    top: 53px;
-    z-index: -999;
-    background-color: $orange;
-    height: auto;
-    border-bottom: none;
-  }
-
-  @media #{$smallBreakpoint} {
-    position: absolute;
+    position: fixed;
     float: left;
     display: block;
     left: 0px;
     top: 0px;
-    z-index: -999;
-    background-color: $orange;
-    height: auto;
+    z-index: -9;
+    background-color: $offwhite;
     border-bottom: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media #{$smallBreakpoint} {
+    position: fixed;
+    float: left;
+    display: block;
+    left: 0px;
+    top: 0px;
+    z-index: -9;
+    background-color: $offwhite;
+    border-bottom: none;
+    width: 100%;
+    height: 100%;
   }
 
   li {
@@ -143,29 +145,33 @@ ul.main-menu {
     text-align: center;
 
     @media #{$mediumBreakpoint} {
+      border-left: 3px rgba(0,0,0,0) solid;
+      border-bottom: none;
+    }
+
+
+    @media #{$mediumBreakpoint} {
       display: block;
       z-index: -999;
-
-      &:hover {
-        border-left: 3px $darkRed solid;
-        border-bottom: none;
-      }
-
-      &.selected {
-        border-left: 3px $green solid;
-        border-bottom: none;
-      }
-
+      text-align: left;
     }
 
     &:hover {
       border-left: none;
       border-bottom: 3px $darkRed solid;
+      @media #{$mediumBreakpoint} {
+        border-left: 3px $darkRed solid;
+        border-bottom: none;
+      }
     }
 
     &.selected {
       border-left: none;
       border-bottom: 3px $green solid;
+      @media #{$mediumBreakpoint} {
+        border-left: 3px $green solid;
+        border-bottom: none;
+      }
     }
 
   }

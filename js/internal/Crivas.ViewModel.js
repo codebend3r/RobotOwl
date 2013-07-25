@@ -109,16 +109,38 @@ Crivas.ViewModel = function() {
 
 	};
 
+	self.menuOpen = false;
+
 	self.openSmallMenu = function() {
 
+		self.menuOpen = !self.menuOpen;
+
 		var $portfolioContainer = $('.portfolio-container'),
-			$navBar = $('.nav-bar');
+				$mainWrapper = $('.main-wrapper'),
+				$mainMenu = $('.main-menu'),
+				$navBar = $('.nav-bar');
 
 		$portfolioContainer.toggleClass('slide-menu-in');
 		$portfolioContainer.addClass('animate');
 
+		$mainWrapper.toggleClass('slide-menu-in');
+		$mainWrapper.addClass('animate');
+
+		//$mainMenu.toggleClass('slide-menu-in');
+		//$mainMenu.addClass('animate');
+
 		$navBar.toggleClass('slide-menu-in');
 		$navBar.addClass('animate');
+
+		var calculatedWidth = $(window).width() - 50;
+
+		$('.slide-menu-in').css({left:calculatedWidth});
+
+		if (self.menuOpen) {
+			$('.animate').css({left:calculatedWidth});
+		} else {
+			$('.animate').css({left:0});
+		}
 
 	};
 

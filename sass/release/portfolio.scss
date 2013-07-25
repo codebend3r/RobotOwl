@@ -72,7 +72,7 @@
 }
 
 .slide-menu-in {
-   left: 301px;
+
 }
 
 .animate {
@@ -92,6 +92,9 @@
   float: left;
   border: 10px solid white;
   clear: both;
+  @media #{$largeBreakpoint} {
+    float: none;
+  }
 }
 
 /**
