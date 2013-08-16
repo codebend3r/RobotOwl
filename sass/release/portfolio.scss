@@ -16,11 +16,14 @@
   width: 25%;
   font-size: 0.8rem;
   vertical-align: top;
-  padding: 10px;
-  margin: 0 0 0 0;
+  padding: 0;
+  margin: 0;
   float: left;
+  /*
   background-repeat: repeat;
   background-image: url(../../pattern/stripes_faded2.png);
+  */
+  border: white solid 10px;
   z-index: 9999;
 
   @media #{$largeBreakpoint} {
@@ -63,6 +66,10 @@
 
   @media #{$largeBreakpoint} {
     width: 100%;
+  }
+
+  @media #{$mediumBreakpoint} {
+     margin: 0;
   }
 
 }

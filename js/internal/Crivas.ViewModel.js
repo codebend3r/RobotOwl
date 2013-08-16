@@ -12,25 +12,15 @@ Crivas.ViewModel = function() {
 	self.visibleResume = ko.observable(true);
 	self.visibleContact = ko.observable(true);
 
-	self.scrollSpeed = 1000;
+	self.scrollSpeed = 2;
 
 	self.showPortflio = function(animateScroll) {
 
     animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
-		self.setHash('portfolio');
-
-    var scrollPosition = $('#portfolio-section').offset().top - $('.main-wrapper').offset().top;
-
-		if (animateScroll) {
-      console.log('scrollPosition', scrollPosition);
-      $('html, body').animate({
-        scrollTop: scrollPosition
-      }, self.scrollSpeed);
-		} else{
-      window.scrollTo(0, scrollPosition);
-		}
-
+    self.goToPosition = $('#portfolio-section').offset().top - $('.main-wrapper').offset().top;
+    self.startScroll(self.goToPosition, animateScroll);
+    self.setHash('portfolio');
     self.highlightCurrentMenuItem(0);
 		//self.showNewSection();
 
@@ -40,19 +30,9 @@ Crivas.ViewModel = function() {
 
     animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
-		self.setHash('resume');
-
-    var scrollPosition = $('#resume-section').offset().top - $('.main-wrapper').offset().top + 20;
-
-    if (animateScroll) {
-      console.log('scrollPosition', scrollPosition);
-      $('html, body').animate({
-        scrollTop: scrollPosition
-      }, self.scrollSpeed);
-    } else {
-      window.scrollTo(0, scrollPosition);
-    }
-
+    self.goToPosition = $('#resume-section').offset().top - $('.main-wrapper').offset().top + 20;
+    self.startScroll(self.goToPosition, animateScroll);
+    self.setHash('resume');
     self.highlightCurrentMenuItem(1);
     //self.showNewSection();
 
@@ -62,21 +42,33 @@ Crivas.ViewModel = function() {
 
     animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
-		self.setHash('contact');
-
-    var scrollPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top;
-
-    if (animateScroll) {
-      console.log('scrollPosition', scrollPosition);
-      $('html, body').animate({
-        scrollTop: scrollPosition
-      }, self.scrollSpeed);
-    } else {
-      window.scrollTo(0, scrollPosition);
-    }
-
+    self.goToPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top - 250;
+    //self.goToPosition = 4000;
+    self.startScroll(self.goToPosition, animateScroll);
+    self.setHash('contact');
     self.highlightCurrentMenuItem(2);
     //self.showNewSection();
+
+	};
+
+	self.goToPosition = 0;
+
+	self.startScroll = function(goToPosition, animateScroll) {
+
+	  console.log('////////////////');
+
+    var currentScrollPosition = window.scrollY;
+    var diff = Math.abs(currentScrollPosition - goToPosition);
+
+    var speed =  diff / self.scrollSpeed;
+
+    if (animateScroll) {
+      $('html, body').animate({
+        scrollTop: goToPosition
+      }, speed);
+    } else {
+      window.scrollTo(0, goToPosition);
+    }
 
 	};
 
@@ -187,13 +179,6 @@ Crivas.ViewModel = function() {
 
 	self.skillSet = Crivas.Data.portfolio.skillset;
 
-	self.cycler = {
-		cycleTime: 3000,
-		cycleTimer: null,
-		currentSlideNum: 0,
-		numberOfPics: 0
-	};
-
 	/**
 	 Click event listener method for menu item click
 
@@ -222,80 +207,16 @@ Crivas.ViewModel = function() {
 		//self.$imagePreloader.hide();
 		$('.image-preloader').hide();
 		$('.striped-border').show();
-		self.initCycle();
-	};
-
-
-	/**
-	 Get a new list of images and starts cycle again
-
-	 @method initCycle
-	 **/
-	self.initCycle = function() {
-
-		console.log('ViewModel.initCycle');
-
-		self.$workImages = $('.work-images');
-
-		self.cycler.$currentSlideList = self.$workImages;
-		self.cycler.numberOfPics = self.$workImages.length - 1;
-		self.cycler.currentSlideNum = self.$workImages.length - 1;
-
-		clearInterval(self.cycler.cycleTimer);
-
-		console.log('self.cycler.numberOfPics', self.cycler.numberOfPics);
-		console.log('self.cycler.currentSlideNum', self.cycler.currentSlideNum);
-
-		if (self.cycler.numberOfPics > 0) {
-			console.log('START CYCLE');
-			self.cycler.cycleTimer = setInterval( self.cycleImages, self.cycler.cycleTime);
-		}
-
-	};
-
-	/**
-	 Cycles through the next image in the array.
-	 If it's the last image in array it will reset back to the first one.
-
-	 @method cycleImages
-	 **/
-	self.cycleImages = function() {
-
-		console.log('cycleImages');
-
-		var currentSlide = self.cycler.$currentSlideList[ self.cycler.currentSlideNum ];
-		var firstSlide = self.cycler.$currentSlideList[ 0 ];
-		var lastSlide = self.cycler.$currentSlideList[ self.cycler.numberOfPics ];
-		$(currentSlide).fadeOut( 300 );
-
-		self.cycler.currentSlideNum -= 1;
-
-		if (self.cycler.currentSlideNum <= -1) {
-			self.cycler.currentSlideNum = self.cycler.numberOfPics;
-			$(lastSlide).fadeIn( 300 );
-			$(firstSlide).fadeIn( 300, self.showAll );
-		}
-
-	};
-
-	/**
-	 Cycles through the whole image array and shows everything
-
-	 @method showAll
-	 **/
-	self.showAll = function() {
-		$.each( self.$currentSlideList, function() {
-			$(this).show();
-		})
+		//self.initCycle();
+		$('.image-container').crivasgallery({
+      child: '.work-images',
+      direction: 'backward'
+		});
 	};
 
 	self.showPreloader = function() {
 		$('.image-preloader').show();
 		$('.striped-border').hide();
-	};
-
-	self.killSection = function() {
-		clearInterval(this.cycleTimer);
 	};
 
 	self.defaultSection = 'portfolio';

@@ -51,6 +51,9 @@
 
   @include centeredAndFixed(0px);
   vertical-align: middle;
+  display: block;
+  position: static;
+  height: 80px;
 
 }
 
@@ -107,30 +110,28 @@ ul.main-menu {
   top: 0px;
   right: 0px;
 
-  @media #{$mediumBreakpoint} {
-    position: fixed;
-    float: left;
-    display: block;
-    left: 0px;
-    top: 0px;
-    z-index: -9;
-    background-color: $offwhite;
-    border-bottom: none;
-    width: 100%;
-    height: 100%;
+  &.large {
+    display: inline-block;
+    position: static;
+    @media #{$mediumBreakpoint} {
+      display: none;
+    }
   }
 
-  @media #{$smallBreakpoint} {
-    position: fixed;
-    float: left;
-    display: block;
-    left: 0px;
-    top: 0px;
-    z-index: -9;
-    background-color: $offwhite;
-    border-bottom: none;
-    width: 100%;
-    height: 100%;
+  &.small {
+    display: none;
+    @media #{$mediumBreakpoint} {
+      display: inline-block;
+      position: fixed;
+      float: left;
+      left: 0px;
+      top: 0px;
+      z-index: -9;
+      background-color: $offwhite;
+      border-bottom: none;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   li {
@@ -149,7 +150,6 @@ ul.main-menu {
       border-bottom: none;
     }
 
-
     @media #{$mediumBreakpoint} {
       display: block;
       z-index: -999;
@@ -162,6 +162,7 @@ ul.main-menu {
       @media #{$mediumBreakpoint} {
         border-left: 3px $darkRed solid;
         border-bottom: none;
+        background-color: #efefef;
       }
     }
 

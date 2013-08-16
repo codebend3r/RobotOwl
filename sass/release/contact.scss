@@ -92,6 +92,7 @@ input, textarea {
   width: 98%;
   padding: 2px;
   @media #{$mediumBreakpoint} {
+    width: 96%;
     font-size: 20px;
     padding: 10px;
   }

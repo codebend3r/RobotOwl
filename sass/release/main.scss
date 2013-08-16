@@ -15,6 +15,7 @@ body {
   /*background: url('../../pattern/textured_paper.png') repeat;*/
   color: $slateGrey;
   min-width: 400px;
+  overflow-x: hidden;
   @media #{$smallBreakpoint} {
     margin: 0;
     padding: 0;
@@ -37,7 +38,7 @@ body {
   @include centeredAndFixed(100px);
   height: 100%;
   background-color: $bodyColour;
-  @include dropShadow(0, 0, 10, 5, rgba(0,0,0,.3));
+  //@include dropShadow(0, 0, 10, 5, rgba(0,0,0,.3));
 
   @media #{$mediumBreakpoint} {
     @include centeredAndFixed(50px);
@@ -57,6 +58,7 @@ body {
 *   <div class="main-content-section"></div>
 */
 .main-content-section {
+
   clear: both;
   width: 100%;
   height: auto;
@@ -69,11 +71,11 @@ body {
     float: left;
     left: 0px;
     top: 0px;
-    width: 90%;
+    width: 98%;
     height: auto;
     z-index: 999;
     margin: 0;
-    padding: 0 5%;
+    padding: 0 1%;
   }
 
   @media #{$smallBreakpoint} {
@@ -81,11 +83,11 @@ body {
     float: left;
     left: 0px;
     top: 0px;
-    width: 90%;
+    width: 98%;
     height: auto;
     z-index: 999;
     margin: 0;
-    padding: 0 5%;
+    padding: 0 1%;
   }
 
 }
@@ -243,7 +245,7 @@ p {
   margin-left: 0px;
 
   @media #{$mediumBreakpoint} {
-    padding-left: 10px;
+    padding-left: 0px;
   }
 
   .section-icon {
@@ -292,3 +294,5 @@ a {
   text-decoration: none;
 
 }
+
+//////////////////////

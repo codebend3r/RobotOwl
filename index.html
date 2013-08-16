@@ -55,11 +55,15 @@
 
             <div class="logo"></div>
 
+            <ul class="main-menu large" data-bind="foreach: $root.menuList">
+                <li class="menu-item" data-bind="text: name, click: $root.menuClick"></li>
+            </ul>
+
         </div>
 
     </header>
 
-    <ul class="main-menu" data-bind="foreach: $root.menuList">
+    <ul class="main-menu small" data-bind="foreach: $root.menuList">
         <li class="menu-item" data-bind="text: name, click: $root.menuClick"></li>
     </ul>
 
@@ -253,6 +257,7 @@
     <script src="js/external/jquery.localscroll-1.2.7.js" type="text/javascript"></script>
     <script src="js/external/modernizr-2.6.2.js" type="text/javascript"></script>
     <script src="js/external/knockout-2.2.1.js" type="text/javascript"></script>
+    <script src="js/internal/plugin/jquery.crivasgallery-0.1.1.js" type="text/javascript"></script>
 
     <!-- INTERNAL JS -->
     <script src="js/internal/Crivas.Data.js" type="text/javascript"></script>
