@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "homepage": "crivas.net",
   "devDependencies": {
-    "grunt": "~0.4.0",
+    "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.1.1",
     "grunt-contrib-nodeunit": "~0.1.2",
     "grunt-contrib-concat": "~0.1.3",

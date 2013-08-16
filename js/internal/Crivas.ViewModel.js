@@ -210,7 +210,7 @@ Crivas.ViewModel = function() {
 		//self.initCycle();
 		$('.image-container').crivasgallery({
       child: '.work-images',
-      direction: 'backward'
+      direction: 'forward'
 		});
 	};
 

@@ -7,9 +7,10 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         clean: ["<%= pkg.outputFolder %>", "compiled" ],
         copy: {
-            main: {
+            before: {
                 files: [
-                    {src: ['index_optimized.html'], dest: '<%= pkg.outputFolder %>/index.max.html'},
+                    {src: ['index-optimized.html'], dest: '<%= pkg.outputFolder %>/index.html'},
+                    {src: ['index-release.html'], dest: '<%= pkg.outputFolder %>/index-release.html'},
                     {src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
                     {src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
                     {src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
@@ -30,7 +31,7 @@ module.exports = function(grunt) {
         concat: {
             options: {
                 // define a string to put between each file in the concatenated output
-                separator: ''
+                separator: '/* NEW FILE */'
             },
             dist: {
                 // the files to concatenate
@@ -39,21 +40,32 @@ module.exports = function(grunt) {
                     'js/external/jquery.imagesloaded.js',
                     'js/external/knockout-2.2.1.js',
                     'js/external/modernizr-2.6.2.js',
-                    'js/internal/data.js.js',
-                    'js/internal/model.js'
+                    'js/internal/plugin/jquery.crivasgallery-0.1.1.js',
+                    'js/internal/Crivas.Data.js',
+                    'js/internal/Crivas.Main.js',
+                    'js/internal/Crivas.ViewModel.js',
+                    'js/internal/Crivas.EmailForm.js'
                 ],
                 // the location of the resulting JS file
                 dest: 'js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'
             },
             cssconcat: {
-                src: ['css/release/*.css'],
+                src: [
+                  'css/release/normalize.css',
+                  'css/release/main.css',
+                  'css/release/headers.css',
+                  'css/release/nav-bar.css',
+                  'css/release/portfolio.css',
+                  'css/release/resume.css',
+                  'css/release/contact.css'
+                ],
                 dest: 'css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css'
             }
         },
         uglify: {
             options: {
                 // the banner is inserted at the top of the output
-                banner: ''
+                banner: '/* NEW FILE */'
             },
             dist: {
                 files: {
@@ -62,8 +74,11 @@ module.exports = function(grunt) {
                         'js/external/jquery.imagesloaded.js',
                         'js/external/knockout-2.2.1.js',
                         'js/external/modernizr-2.6.2.js',
-                        'js/internal/data.js.js',
-                        'js/internal/model.js'
+                        'js/internal/plugin/jquery.crivasgallery-0.1.1.js',
+                        'js/internal/Crivas.Data.js',
+                        'js/internal/Crivas.Main.js',
+                        'js/internal/Crivas.ViewModel.js',
+                        'js/internal/Crivas.EmailForm.js'
                     ]
                 }
             }
@@ -82,14 +97,11 @@ module.exports = function(grunt) {
             }
         },
         jquerytransform: {
-            files: ['<%= pkg.outputFolder %>/index.max.html'], // All HTML files
+            files: ['<%= pkg.outputFolder %>/index-optimized.html'], // All HTML files
             transform: function($) {
                 // For styling bullet separate from text
                 $('html').find('script').remove();
             }
-        },
-        chester: {
-
         },
         sass: {
             dist: {
@@ -116,11 +128,11 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     removeComments: true,
-                    useShortDoctype: true,
                     collapseWhitespace: true
                 },
                 files: {
-                    '<%= pkg.outputFolder %>/index.html': '<%= pkg.outputFolder %>/index.max.html'
+                    '<%= pkg.outputFolder %>/index-optimized.min.html': 'index-optimized.html',
+                    '<%= pkg.outputFolder %>/index-release.min.html': 'index-release.html'
                 }
             }
         },
@@ -146,6 +158,6 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('sassy', ['watch']);
     grunt.registerTask('quickbuild', ['clean', 'copy:main', 'jquerytransform']);
-    grunt.registerTask('default', [ 'sass', 'clean', 'copy:main', 'concat', 'uglify', 'sass', 'cssmin', 'copy:after', 'htmlmin']);
+    grunt.registerTask('default', [ 'sass', 'clean', 'copy:before', 'concat', 'uglify', 'sass', 'cssmin', 'copy:after', 'htmlmin']);
 
 };

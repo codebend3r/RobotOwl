@@ -59,6 +59,7 @@ $.fn.crivasgallery = function (options) {
       //showAll(false);
     }
 
+    console.log('///////////// SETTINGS /////////////');
     console.log('# OF PICS', settings.numberOfPics);
     console.log('STARTING FROM PIC #', settings.currentSlideNum);
     console.log('ALL IMAGES', settings.$imageList);
@@ -127,16 +128,11 @@ $.fn.crivasgallery = function (options) {
         // then select current slide from image list array
         currentSlide = settings.$imageList[ settings.currentSlideNum ];
 
-        console.log('currentSlide', currentSlide);
-
         //if going backwards fade out each image to reveal the image under
         $(currentSlide).fadeOut(settings.fadeTime);
 
       }
     }
-
-
-    console.log('///////////////////////');
 
   };
 
