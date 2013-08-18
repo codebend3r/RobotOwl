@@ -26,6 +26,10 @@
   border: white solid 10px;
   z-index: 9999;
 
+  &.small-menu {
+    display: none;
+  }
+
   @media #{$largeBreakpoint} {
     display: none;
     float: none;
@@ -69,7 +73,9 @@
   }
 
   @media #{$mediumBreakpoint} {
-     margin: 0;
+    margin: 0;
+    padding: 0 5%;
+    width: 89%;
   }
 
 }
@@ -190,7 +196,6 @@ img.work-images {
 .details {
 
 }
-
 
 /**
 * @description the preloading animated gif

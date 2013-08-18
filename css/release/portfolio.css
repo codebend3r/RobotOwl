@@ -20,6 +20,9 @@
   border: white solid 10px;
   z-index: 9999;
 }
+.portfolio-list.small-menu {
+  display: none;
+}
 @media all and (max-width: 1000px) {
   .portfolio-list {
     display: none;
@@ -63,6 +66,8 @@
 @media all and (max-width: 800px) {
   .portfolio-container {
     margin: 0;
+    padding: 0 5%;
+    width: 89%;
   }
 }
 

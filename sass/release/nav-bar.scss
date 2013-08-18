@@ -35,9 +35,12 @@
     left: 0px;
   }
 
+  /*
   @media #{$retinaBreakpoint} {
-    background: url('../../pattern/squairy_light_@2X.png') repeat;
+    background: none;
+    background-color: $bodyColour;
   }
+  */
 
 }
 
@@ -85,6 +88,12 @@
     width: $navBarHeightSmall;
     height: $navBarHeightSmall;
     border-right: 2px solid $offwhite;
+
+    .horizontal-groove {
+      margin: 19px 10px -12px 10px;
+      border: 3px inset #eeeeee;
+    }
+
   }
 
 }
@@ -131,6 +140,7 @@ ul.main-menu {
       border-bottom: none;
       width: 100%;
       height: 100%;
+      font-size: ($smallScreenFontSize + .5);
     }
   }
 

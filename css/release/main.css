@@ -140,11 +140,11 @@ button:hover {
   background-image: url(../../pattern/stripes_faded2.png);
 }
 
-p {
+p, a {
   font-size: .8rem;
 }
 @media all and (max-width: 800px) {
-  p {
+  p, a {
     font-size: 1.2rem;
   }
 }
@@ -185,9 +185,9 @@ p {
 }
 @media all and (max-width: 800px) {
   .logo {
-    background-size: 135px 50px;
-    width: 135px;
-    height: 50px;
+    background-size: 132.125px 70px;
+    width: 132.125px;
+    height: 70px;
   }
 }
 
@@ -259,7 +259,9 @@ p {
 }
 @media all and (max-width: 800px) {
   .icon-and-title {
-    padding-left: 0px;
+    padding: 0 5%;
+    width: 89%;
+    margin: 30px 0 0 0;
   }
 }
 .icon-and-title .section-icon {

@@ -1,24 +1,28 @@
-.skillset {
+ul.skillset {
   margin: 0;
   padding: 10px 0;
   -moz-column-count: 2;
-  /* Firefox */
   -webkit-column-count: 2;
-  /* Safari and Chrome */
   column-count: 2;
 }
-.skillset li {
+ul.skillset li {
   font-size: 14px;
 }
 @media all and (max-width: 800px) {
-  .skillset li {
-    font-size: 1.2rem;
+  ul.skillset li {
+    font-size: 1.4rem !important;
   }
 }
 
 .stackable {
   /*border-bottom: 1px solid #666666;*/
   margin: 30px 0;
+}
+@media all and (max-width: 800px) {
+  .stackable {
+    padding: 0 5%;
+    width: 89%;
+  }
 }
 
 .job {

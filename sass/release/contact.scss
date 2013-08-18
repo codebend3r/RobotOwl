@@ -11,7 +11,8 @@
 
   @media #{$mediumBreakpoint} {
     display: block;
-    width: 100%;
+    width: 90%;
+    padding: 30px 5%;
   }
 
   .icon-and-title {
@@ -22,6 +23,7 @@
 
     @media #{$mediumBreakpoint} {
       padding: 0;
+      width: 95%;
     }
 
     .section-icon {
@@ -92,9 +94,17 @@ input, textarea {
   width: 98%;
   padding: 2px;
   @media #{$mediumBreakpoint} {
-    width: 96%;
-    font-size: 20px;
-    padding: 10px;
+    width: 90%;
+    font-size: 24px;
+    padding: 3% 3%;
+  }
+}
+
+input[type="button"], input[type="reset"], input[type="submit"] {
+  width: 98%;
+  @media #{$mediumBreakpoint} {
+    width: 95%;
+    margin-top: 20px;
   }
 }
 
@@ -102,9 +112,13 @@ fieldset {
   padding: 0;
   margin: 0;
   border: none;
-  width: 100%;
+  width: 98%;
+  overflow: hidden;
+  @media #{$mediumBreakpoint} {
+    //width: 95%;
+  }
 }
 
 form {
-  width: 100%;
+  //width: 100%;
 }

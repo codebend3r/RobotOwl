@@ -8,7 +8,8 @@
 @media all and (max-width: 800px) {
   .column {
     display: block;
-    width: 100%;
+    width: 90%;
+    padding: 30px 5%;
   }
 }
 .column .icon-and-title {
@@ -19,6 +20,7 @@
 @media all and (max-width: 800px) {
   .column .icon-and-title {
     padding: 0;
+    width: 95%;
   }
 }
 .column .icon-and-title .section-icon {
@@ -86,9 +88,19 @@ input, textarea {
 }
 @media all and (max-width: 800px) {
   input, textarea {
-    width: 96%;
-    font-size: 20px;
-    padding: 10px;
+    width: 90%;
+    font-size: 24px;
+    padding: 3% 3%;
+  }
+}
+
+input[type="button"], input[type="reset"], input[type="submit"] {
+  width: 98%;
+}
+@media all and (max-width: 800px) {
+  input[type="button"], input[type="reset"], input[type="submit"] {
+    width: 95%;
+    margin-top: 20px;
   }
 }
 
@@ -96,9 +108,6 @@ fieldset {
   padding: 0;
   margin: 0;
   border: none;
-  width: 100%;
-}
-
-form {
-  width: 100%;
+  width: 98%;
+  overflow: hidden;
 }

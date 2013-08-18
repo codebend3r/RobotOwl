@@ -536,11 +536,11 @@ button:hover {
   background-image: url(../../pattern/stripes_faded2.png);
 }
 
-p {
+p, a {
   font-size: .8rem;
 }
 @media all and (max-width: 800px) {
-  p {
+  p, a {
     font-size: 1.2rem;
   }
 }
@@ -581,9 +581,9 @@ p {
 }
 @media all and (max-width: 800px) {
   .logo {
-    background-size: 135px 50px;
-    width: 135px;
-    height: 50px;
+    background-size: 132.125px 70px;
+    width: 132.125px;
+    height: 70px;
   }
 }
 
@@ -655,7 +655,9 @@ p {
 }
 @media all and (max-width: 800px) {
   .icon-and-title {
-    padding-left: 0px;
+    padding: 0 5%;
+    width: 89%;
+    margin: 30px 0 0 0;
   }
 }
 .icon-and-title .section-icon {
@@ -715,8 +717,7 @@ h3 {
   font-family: "nimbus-sans", Georgia, sans-serif;
   font-size: 1.4rem;
   font-weight: normal;
-  color: #cb3429;
-  text-decoration: underline; }
+  color: #cb3429; }
 /* NEW FILE *//**
 * @description the nav bar header which spans 100% of the width
 *
@@ -735,10 +736,16 @@ h3 {
   -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+  /*
+  @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background: none;
+    background-color: $bodyColour;
+  }
+  */
 }
 @media all and (max-width: 800px) {
   .nav-bar {
-    height: 50px;
+    height: 70px;
     z-index: 998;
     position: fixed;
     top: 0px;
@@ -747,16 +754,11 @@ h3 {
 }
 @media all and (max-width: 620px) {
   .nav-bar {
-    height: 50px;
+    height: 70px;
     z-index: 998;
     position: fixed;
     top: 0px;
     left: 0px;
-  }
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .nav-bar {
-    background: url("../../pattern/squairy_light_@2X.png") repeat;
   }
 }
 
@@ -804,9 +806,13 @@ h3 {
     cursor: pointer;
     margin: 0px 0px;
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-right: 2px solid #d1d1d1;
+  }
+  .open-small-menu .horizontal-groove {
+    margin: 19px 10px -12px 10px;
+    border: 3px inset #eeeeee;
   }
 }
 
@@ -853,6 +859,7 @@ ul.main-menu.small {
     border-bottom: none;
     width: 100%;
     height: 100%;
+    font-size: 1.7rem;
   }
 }
 ul.main-menu li {
@@ -939,6 +946,9 @@ ul.main-menu li.selected {
   border: white solid 10px;
   z-index: 9999;
 }
+.portfolio-list.small-menu {
+  display: none;
+}
 @media all and (max-width: 1000px) {
   .portfolio-list {
     display: none;
@@ -982,6 +992,8 @@ ul.main-menu li.selected {
 @media all and (max-width: 800px) {
   .portfolio-container {
     margin: 0;
+    padding: 0 5%;
+    width: 89%;
   }
 }
 
@@ -1111,27 +1123,31 @@ img.work-images {
   left: 0px;
   display: none;
 }
-/* NEW FILE */.skillset {
+/* NEW FILE */ul.skillset {
   margin: 0;
   padding: 10px 0;
   -moz-column-count: 2;
-  /* Firefox */
   -webkit-column-count: 2;
-  /* Safari and Chrome */
   column-count: 2;
 }
-.skillset li {
+ul.skillset li {
   font-size: 14px;
 }
 @media all and (max-width: 800px) {
-  .skillset li {
-    font-size: 1.2rem;
+  ul.skillset li {
+    font-size: 1.4rem !important;
   }
 }
 
 .stackable {
   /*border-bottom: 1px solid #666666;*/
   margin: 30px 0;
+}
+@media all and (max-width: 800px) {
+  .stackable {
+    padding: 0 5%;
+    width: 89%;
+  }
 }
 
 .job {
@@ -1219,7 +1235,8 @@ img.work-images {
 @media all and (max-width: 800px) {
   .column {
     display: block;
-    width: 100%;
+    width: 90%;
+    padding: 30px 5%;
   }
 }
 .column .icon-and-title {
@@ -1230,6 +1247,7 @@ img.work-images {
 @media all and (max-width: 800px) {
   .column .icon-and-title {
     padding: 0;
+    width: 95%;
   }
 }
 .column .icon-and-title .section-icon {
@@ -1297,9 +1315,19 @@ input, textarea {
 }
 @media all and (max-width: 800px) {
   input, textarea {
-    width: 96%;
-    font-size: 20px;
-    padding: 10px;
+    width: 90%;
+    font-size: 24px;
+    padding: 3% 3%;
+  }
+}
+
+input[type="button"], input[type="reset"], input[type="submit"] {
+  width: 98%;
+}
+@media all and (max-width: 800px) {
+  input[type="button"], input[type="reset"], input[type="submit"] {
+    width: 95%;
+    margin-top: 20px;
   }
 }
 
@@ -1307,9 +1335,6 @@ fieldset {
   padding: 0;
   margin: 0;
   border: none;
-  width: 100%;
-}
-
-form {
-  width: 100%;
+  width: 98%;
+  overflow: hidden;
 }

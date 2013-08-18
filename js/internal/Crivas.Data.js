@@ -7,7 +7,8 @@ Crivas.Data = {
     {
       id: 0,
       name: 'Portfolio',
-      subMenu: 'Crivas.Data.portfolio.workExperience'
+      subMenu: 'Crivas.Data.portfolio.workExperience',
+      subMenuSelector: ''
     },
     {
       id: 1,

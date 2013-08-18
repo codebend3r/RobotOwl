@@ -1,21 +1,19 @@
 @import "variables";
 @import "mixins";
 
-.skillset {
+ul.skillset {
 
   margin: 0;
   padding: 10px 0;
-
-  -moz-column-count: 2; /* Firefox */
-  -webkit-column-count: 2; /* Safari and Chrome */
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
   column-count: 2;
 
   li {
 
     font-size: 14px;
-
     @media #{$mediumBreakpoint} {
-      font-size: $smallScreenFontSize;
+      font-size: ($smallScreenFontSize + .2) !important;
     }
 
   }
@@ -25,6 +23,10 @@
 .stackable {
   /*border-bottom: 1px solid #666666;*/
   margin: 30px 0;
+  @media #{$mediumBreakpoint} {
+    padding: 0 5%;
+    width: 89%;
+  }
 }
 
 
