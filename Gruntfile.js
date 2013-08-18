@@ -83,19 +83,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        jshint: {
-            // define the files to lint
-            files: ['<%= pkg.outputFolder %>/js/<%= pkg.name %>/*.js'],
-            // configure JSHint (documented at http://www.jshint.com/docs/)
-            options: {
-                // more options here if you want to override JSHint defaults
-                globals: {
-                    jQuery: true,
-                    console: true,
-                    module: true
-                }
-            }
-        },
+
         jquerytransform: {
             files: ['<%= pkg.outputFolder %>/index-optimized.html'], // All HTML files
             transform: function($) {
@@ -143,8 +131,7 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');;
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-sass');
