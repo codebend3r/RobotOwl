@@ -404,7 +404,7 @@ table {
 }
 
 body {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: "museo-sans", sans-serif;
   font-size: 100%;
   background-color: #efefef;
   /*background: url('../../pattern/textured_paper.png') repeat;*/
@@ -497,43 +497,6 @@ body {
     margin: 0;
     padding: 0 1%;
   }
-}
-
-/**
-  * @name Button
-  * @description Your standard form button.
-  *
-  * @state :hover - Highlights when hovering.
-  *
-  * @markup
-  *   <button>This is a button</button>
-  */
-button {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: .8rem;
-  width: 100%;
-  margin: 0;
-  padding: 5px;
-  /*background-color: #ece5dd;*/
-  border: none;
-  text-align: left;
-}
-@media all and (max-width: 800px) {
-  button {
-    padding: 10px 5px;
-  }
-}
-@media all and (max-width: 620px) {
-  button {
-    background-color: #efefef;
-  }
-}
-
-button:hover {
-  background-color: #cb3429;
-  color: white;
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
 }
 
 p, a {
@@ -702,6 +665,7 @@ a:hover {
   color: #db6510;
 }
 /* NEW FILE */h1, h2, h3, h4, h5 {
+  font-family: "calluna-sans",sans-serif;
   padding: 0;
   margin: 0;
   line-height: auto; }
@@ -714,7 +678,7 @@ h2 {
 
 h3 {
   padding: 0 0;
-  font-family: "nimbus-sans", Georgia, sans-serif;
+  font-family: "museo-sans",sans-serif;
   font-size: 1.4rem;
   font-weight: normal;
   color: #cb3429; }
@@ -930,7 +894,7 @@ ul.main-menu li.selected {
 * @markup
 *   <div class="portfolio-list"></div>
 */
-.portfolio-list {
+ul.portfolio-list {
   display: inline-block;
   position: static;
   width: 25%;
@@ -946,11 +910,23 @@ ul.main-menu li.selected {
   border: white solid 10px;
   z-index: 9999;
 }
-.portfolio-list.small-menu {
+ul.portfolio-list li {
+  padding: 5px;
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+}
+ul.portfolio-list li:hover {
+  background-color: #cb3429;
+  color: white;
+  background-repeat: repeat;
+  background-image: url(../../pattern/stripes_faded2.png);
+}
+ul.portfolio-list.small-menu {
   display: none;
 }
 @media all and (max-width: 1000px) {
-  .portfolio-list {
+  ul.portfolio-list {
     display: none;
     float: none;
     position: absolute;
@@ -1036,6 +1012,7 @@ ul.image-border {
   padding: 0;
   margin: 0;
   list-style: none;
+  cursor: pointer;
 }
 ul.image-border li.images-list {
   position: absolute;
@@ -1161,7 +1138,6 @@ ul.skillset li {
 .job .job-title {
   font-size: 16px;
   font-style: italic;
-  font-family: Georgia;
 }
 @media all and (max-width: 800px) {
   .job .job-title {

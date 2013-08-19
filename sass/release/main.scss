@@ -9,7 +9,8 @@ html {
 }
 
 body {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  //font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: "museo-sans", sans-serif;
   font-size: 100%;
   background-color: $bodyColour;
   /*background: url('../../pattern/textured_paper.png') repeat;*/
@@ -90,40 +91,6 @@ body {
     padding: 0 1%;
   }
 
-}
-
-/**
-  * @name Button
-  * @description Your standard form button.
-  *
-  * @state :hover - Highlights when hovering.
-  *
-  * @markup
-  *   <button>This is a button</button>
-  */
-button {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: .8rem;
-  width: 100%;
-  margin: 0;
-  padding: 5px;
-  /*background-color: #ece5dd;*/
-  border: none;
-  text-align: left;
-  @media #{$mediumBreakpoint} {
-    padding: 10px 5px;
-  }
-
-  @media #{$smallBreakpoint} {
-    background-color: $bodyColour;
-  }
-}
-
-button:hover {
-  background-color: $darkRed;
-  color: $white;
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
 }
 
 p, a {

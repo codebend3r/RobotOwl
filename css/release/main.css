@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: "museo-sans", sans-serif;
   font-size: 100%;
   background-color: #efefef;
   /*background: url('../../pattern/textured_paper.png') repeat;*/
@@ -101,43 +101,6 @@ body {
     margin: 0;
     padding: 0 1%;
   }
-}
-
-/**
-  * @name Button
-  * @description Your standard form button.
-  *
-  * @state :hover - Highlights when hovering.
-  *
-  * @markup
-  *   <button>This is a button</button>
-  */
-button {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-size: .8rem;
-  width: 100%;
-  margin: 0;
-  padding: 5px;
-  /*background-color: #ece5dd;*/
-  border: none;
-  text-align: left;
-}
-@media all and (max-width: 800px) {
-  button {
-    padding: 10px 5px;
-  }
-}
-@media all and (max-width: 620px) {
-  button {
-    background-color: #efefef;
-  }
-}
-
-button:hover {
-  background-color: #cb3429;
-  color: white;
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
 }
 
 p, a {

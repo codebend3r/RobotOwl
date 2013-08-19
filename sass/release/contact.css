@@ -1,0 +1,89 @@
+.column {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+  line-height: 32px;
+  padding: 15px 0; }
+  @media all and (max-width: 800px) {
+    .column {
+      display: block;
+      width: 90%;
+      padding: 30px 5%; } }
+  .column .icon-and-title {
+    height: 50px;
+    line-height: 50px;
+    vertical-align: top; }
+    @media all and (max-width: 800px) {
+      .column .icon-and-title {
+        padding: 0;
+        width: 95%; } }
+    .column .icon-and-title .section-icon {
+      vertical-align: top; }
+    .column .icon-and-title h2 {
+      vertical-align: top;
+      padding: 0 0 0 15px;
+      height: auto;
+      line-height: auto; }
+
+.icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: 32px;
+  -webkit-background-size: 32px;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0 15px 0 0; }
+
+.email-icon {
+  background-image: url("../../icons/email-icon.png"); }
+
+.git-hub-icon {
+  background-image: url("../../icons/github-icon.png"); }
+
+.linkedin-icon {
+  background-image: url("../../icons/linkedin-icon.png"); }
+
+.label {
+  height: 32px;
+  line-height: 32px;
+  vertical-align: middle; }
+
+.contact-row {
+  height: 32px;
+  padding: 10px 0; }
+
+.contact-icon {
+  display: inline-block;
+  background: url("../../images/about-icon.png") no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 100% 100%; }
+
+@media all and (max-width: 800px) {
+  label {
+    font-size: 20px;
+    padding: 10px; } }
+
+input, textarea {
+  width: 98%;
+  padding: 2px; }
+  @media all and (max-width: 800px) {
+    input, textarea {
+      width: 90%;
+      font-size: 24px;
+      padding: 3% 3%; } }
+
+input[type="button"], input[type="reset"], input[type="submit"] {
+  width: 98%; }
+  @media all and (max-width: 800px) {
+    input[type="button"], input[type="reset"], input[type="submit"] {
+      width: 95%;
+      margin-top: 20px; } }
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: 98%;
+  overflow: hidden; }

@@ -36,7 +36,6 @@ ul.skillset li {
 .job .job-title {
   font-size: 16px;
   font-style: italic;
-  font-family: Georgia;
 }
 @media all and (max-width: 800px) {
   .job .job-title {

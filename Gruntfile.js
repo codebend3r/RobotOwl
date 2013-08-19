@@ -9,7 +9,7 @@ module.exports = function (grunt) {
     copy: {
       before: {
         files: [
-          {src: ['index-optimized.html'], dest: '<%= pkg.outputFolder %>/index.html'},
+          {src: ['index-optimized.html'], dest: '<%= pkg.outputFolder %>/index-optimized.html'},
           {src: ['index-release.html'], dest: '<%= pkg.outputFolder %>/index-release.html'},
           {src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
           {src: ['email/**'], dest: '<%= pkg.outputFolder %>/'},
@@ -120,8 +120,9 @@ module.exports = function (grunt) {
           collapseWhitespace: true
         },
         files: {
-          '<%= pkg.outputFolder %>/index-optimized.min.html': 'index-optimized.html',
-          '<%= pkg.outputFolder %>/index-release.min.html': 'index-release.html'
+          '<%= pkg.outputFolder %>/index.optimized.min.html': 'index-optimized.html',
+          '<%= pkg.outputFolder %>/index-release.min.html': 'index-release.html',
+          '<%= pkg.outputFolder %>/index.html': 'index-release.html'
         }
       }
     },

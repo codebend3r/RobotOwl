@@ -18,78 +18,64 @@ ul.portfolio-list {
   background-image: url(../../pattern/stripes_faded2.png);
   */
   border: white solid 10px;
-  z-index: 9999;
-}
-ul.portfolio-list li {
-  padding: 5px;
-  margin: 0;
-  list-style: none;
-  cursor: pointer;
-}
-ul.portfolio-list li:hover {
-  background-color: #cb3429;
-  color: white;
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
-}
-ul.portfolio-list.small-menu {
-  display: none;
-}
-@media all and (max-width: 1000px) {
-  ul.portfolio-list {
-    display: none;
-    float: none;
-    position: absolute;
-    width: 300px;
-    height: 100%;
-    top: 0px;
-    left: 0px;
+  z-index: 9999; }
+  ul.portfolio-list li {
+    padding: 5px;
     margin: 0;
-    padding: 0;
-    z-index: -999;
-    border-right: 1px solid #cccccc;
-  }
-}
+    list-style: none;
+    cursor: pointer; }
+  ul.portfolio-list li:hover {
+    background-color: #cb3429;
+    color: white;
+    background-repeat: repeat;
+    background-image: url(../../pattern/stripes_faded2.png); }
+  ul.portfolio-list.small-menu {
+    display: none; }
+  @media all and (max-width: 1000px) {
+    ul.portfolio-list {
+      display: none;
+      float: none;
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      margin: 0;
+      padding: 0;
+      z-index: -999;
+      border-right: 1px solid #cccccc; } }
 
 .portfolio-icon {
   display: inline-block;
   background: url("../../images/portfolio-icon.png") no-repeat;
   width: 50px;
   height: 50px;
-  background-size: 100% 100%;
-}
+  background-size: 100% 100%; }
 
 .port-title {
-  padding: 0 0 20px 0;
-}
+  padding: 0 0 20px 0; }
 
 .portfolio-container {
   width: 70%;
   display: inline-block;
   padding: 0;
   margin: 0 0 0 2%;
-  float: left;
-}
-@media all and (max-width: 1000px) {
-  .portfolio-container {
-    width: 100%;
-  }
-}
-@media all and (max-width: 800px) {
-  .portfolio-container {
-    margin: 0;
-    padding: 0 5%;
-    width: 89%;
-  }
-}
+  float: left; }
+  @media all and (max-width: 1000px) {
+    .portfolio-container {
+      width: 100%; } }
+  @media all and (max-width: 800px) {
+    .portfolio-container {
+      margin: 0;
+      padding: 0 5%;
+      width: 89%; } }
 
 .animate {
   -webkit-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   -moz-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   -ms-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-}
+  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1); }
 
 .image-container {
   width: 600px;
@@ -99,13 +85,10 @@ ul.portfolio-list.small-menu {
   display: block;
   float: left;
   border: 10px solid white;
-  clear: both;
-}
-@media all and (max-width: 1000px) {
-  .image-container {
-    float: none;
-  }
-}
+  clear: both; }
+  @media all and (max-width: 1000px) {
+    .image-container {
+      float: none; } }
 
 /**
 * @description a diagonal border for images
@@ -122,33 +105,26 @@ ul.image-border {
   padding: 0;
   margin: 0;
   list-style: none;
-  cursor: pointer;
-}
-ul.image-border li.images-list {
-  position: absolute;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-@media all and (max-width: 800px) {
-  ul.image-border {
+  cursor: pointer; }
+  ul.image-border li.images-list {
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
     width: 100%;
-  }
-}
+    height: 100%;
+    top: 0;
+    left: 0; }
+  @media all and (max-width: 800px) {
+    ul.image-border {
+      width: 100%; } }
 
 img.work-images {
   position: absolute;
-  max-width: 100%;
-}
-@media all and (max-width: 800px) {
-  img.work-images {
-    max-width: 100%;
-  }
-}
+  max-width: 100%; }
+  @media all and (max-width: 800px) {
+    img.work-images {
+      max-width: 100%; } }
 
 /**
 * @description container for a text section
@@ -157,13 +133,10 @@ img.work-images {
 *   <div class="sub"></div>
 */
 .sub {
-  margin: 10px 0 10px 0;
-}
-@media all and (max-width: 800px) {
-  .sub {
-    margin: 0;
-  }
-}
+  margin: 10px 0 10px 0; }
+  @media all and (max-width: 800px) {
+    .sub {
+      margin: 0; } }
 
 /**
 * @description sub header in red
@@ -174,13 +147,10 @@ img.work-images {
 .sub-heading {
   font-weight: bold;
   color: #cb3429;
-  font-size: 1rem;
-}
-@media all and (max-width: 800px) {
-  .sub-heading {
-    font-size: 1.2rem;
-  }
-}
+  font-size: 1rem; }
+  @media all and (max-width: 800px) {
+    .sub-heading {
+      font-size: 1.2rem; } }
 
 /**
 * @description the text under .subHeading
@@ -202,11 +172,9 @@ img.work-images {
   height: 335px;
   background: url(../../images/preloader.gif) 50% 50% no-repeat;
   padding: 10px;
-  margin: 0;
-}
-.image-preloader img {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: none;
-}
+  margin: 0; }
+  .image-preloader img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none; }

@@ -161,6 +161,16 @@ Crivas.ViewModel = function() {
 
 	};
 
+	self.imageClicked = function(data){
+
+		var currentID = data.id,
+			url = Crivas.Data.portfolio.workExperience[currentID].url;
+
+			console.log('url', url);
+			window.open(url,'_blank');
+
+	};
+
 	self.experienceList = ko.observableArray(
 		ko.utils.arrayMap(Crivas.Data.resume, function(i) {
 			return {

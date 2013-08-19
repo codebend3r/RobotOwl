@@ -11340,7 +11340,7 @@ Crivas.Data = {
       id: 0,
       name: 'Portfolio',
       subMenu: 'Crivas.Data.portfolio.workExperience',
-      subMenuSelector: ''
+      subMenuSelector: '.portfolio-list'
     },
     {
       id: 1,
@@ -11798,7 +11798,7 @@ Crivas.Data = {
       companyName: 'St. Joseph/Pi Media',
       jobTitle: 'Front End Developer',
       jobType: 'contract',
-      datesAtJob: 'January 2012 – February 2012',
+      datesAtJob: 'January 2012 - February 2012',
       tasks: [
         "made modifications to sections of bell.ca using HTML, CSS and JavaScript",
         "made modifications to a flash application for touch-screen kiosks",
@@ -11810,7 +11810,7 @@ Crivas.Data = {
       companyName: 'Capital C',
       jobTitle: 'Front End Developer',
       jobType: 'contract',
-      datesAtJob: 'December 2011 – January 2012',
+      datesAtJob: 'December 2011 - January 2012',
       tasks: [
         "front end development for multiple Facebook apps utilizing JavaScript, JQuery, HTML, CSS and ASP.NET",
         "integrated multi-lingual support in Facebook environment",
@@ -11824,7 +11824,7 @@ Crivas.Data = {
       companyName: 'Brightworks',
       jobTitle: 'Senior Flex Developer',
       jobType: 'contract',
-      datesAtJob: 'November 2011 – November 2011',
+      datesAtJob: 'November 2011 - November 2011',
       tasks: [
         "met with clients and stakeholders",
         "developed financial application for RBC utilizing Yodlee framework",
@@ -11837,7 +11837,7 @@ Crivas.Data = {
       companyName: 'Blast Radius',
       jobTitle: 'Flash Developer',
       jobType: 'contract',
-      datesAtJob: 'October 2011 – November 2011',
+      datesAtJob: 'October 2011 - November 2011',
       tasks: [
         "developed holiday catalog slider for Tommy Hilfiger using ActionScript 3.0, JavaScript, HTML, CSS",
         "implemented designs and client feedback",
@@ -11850,7 +11850,7 @@ Crivas.Data = {
       companyName: 'Research Now',
       jobTitle: 'Senior Flex Developer',
       jobType: 'full-time',
-      datesAtJob: 'July 2008 – September 2011',
+      datesAtJob: 'July 2008 - September 2011',
       tasks: [
         "met with clients, give quotes, designed, developed, integrated, QA and deployed",
         "developed global Research Now Flash framework for all custom survey tools",
@@ -11869,7 +11869,7 @@ Crivas.Data = {
       companyName: 'Canwest/Alliance Atlantis',
       jobTitle: 'Digital Media Developer ',
       jobType: 'contract',
-      datesAtJob: 'October 2007 – June 2008',
+      datesAtJob: 'October 2007 - June 2008',
       tasks: [
         "made modifications to slice.ca and showcase.ca utilizing HTML, CSS and JavaScript",
         "lead flash developer on all flash and front end projects",
@@ -11882,7 +11882,7 @@ Crivas.Data = {
       companyName: 'Dashboard',
       jobTitle: 'Digital Architect',
       jobType: 'contract',
-      datesAtJob: 'July 2007 – September 2007',
+      datesAtJob: 'July 2007 - September 2007',
       tasks: [
         "lead flash developer on Wayne Gretzky project using HTML, CSS, and ActionScript 3.0",
         "took over for previous developers",
@@ -11896,7 +11896,7 @@ Crivas.Data = {
       companyName: 'Mindblossom',
       jobTitle: 'Intermediate Flash Developer',
       jobType: 'full-time',
-      datesAtJob: 'October 2006 – July 2007',
+      datesAtJob: 'October 2006 - July 2007',
       tasks: [
         "developed websites, games, and flash components using AS2 OOP",
         "developed to the strict deadlines, design and interface architecture principles",
@@ -11909,7 +11909,7 @@ Crivas.Data = {
       companyName: 'Engage Learning Systems',
       jobTitle: 'Flash Developer',
       jobType: 'contract',
-      datesAtJob: 'October 2005 – April 2006',
+      datesAtJob: 'October 2005 - April 2006',
       tasks: [
         "project lead in numerous projects",
         "developed E-Learning modules using AS2  for high-profile companies",
@@ -12098,6 +12098,16 @@ $(Crivas.init);
 		}
 
 		self.showNewSection();
+
+	};
+
+	self.imageClicked = function(data){
+
+		var currentID = data.id,
+			url = Crivas.Data.portfolio.workExperience[currentID].url;
+
+			console.log('url', url);
+			window.open(url,'_blank');
 
 	};
 
