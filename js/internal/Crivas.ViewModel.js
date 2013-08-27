@@ -9,45 +9,47 @@ Crivas.ViewModel = function() {
 	self.portfolioData = ko.observable(self.longList[self.currentSectionID()]);
 
 	self.visiblePortfolio = ko.observable(true);
+	
 	self.visibleResume = ko.observable(true);
+	
 	self.visibleContact = ko.observable(true);
 
 	self.scrollSpeed = 2;
 
 	self.showPortflio = function(animateScroll) {
 
-    animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
+		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
-    self.goToPosition = $('#portfolio-section').offset().top - $('.main-wrapper').offset().top;
-    self.startScroll(self.goToPosition, animateScroll);
-    self.setHash('portfolio');
-    self.highlightCurrentMenuItem(0);
+		self.goToPosition = $('#portfolio-section').offset().top - $('.main-wrapper').offset().top;
+		self.startScroll(self.goToPosition, animateScroll);
+		self.setHash('portfolio');
+		self.highlightCurrentMenuItem(0);
 		//self.showNewSection();
 
 	};
 
 	self.showResume = function(animateScroll) {
 
-    animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
+		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
-    self.goToPosition = $('#resume-section').offset().top - $('.main-wrapper').offset().top + 20;
-    self.startScroll(self.goToPosition, animateScroll);
-    self.setHash('resume');
-    self.highlightCurrentMenuItem(1);
-    //self.showNewSection();
+		self.goToPosition = $('#resume-section').offset().top - $('.main-wrapper').offset().top + 20;
+		self.startScroll(self.goToPosition, animateScroll);
+		self.setHash('resume');
+		self.highlightCurrentMenuItem(1);
+		//self.showNewSection();
 
 	};
 
 	self.showContact = function(animateScroll) {
 
-    animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
+		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
-    self.goToPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top - 250;
-    //self.goToPosition = 4000;
-    self.startScroll(self.goToPosition, animateScroll);
-    self.setHash('contact');
-    self.highlightCurrentMenuItem(2);
-    //self.showNewSection();
+		self.goToPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top - 250;
+		//self.goToPosition = 4000;
+		self.startScroll(self.goToPosition, animateScroll);
+		self.setHash('contact');
+		self.highlightCurrentMenuItem(2);
+		//self.showNewSection();
 
 	};
 
@@ -55,20 +57,20 @@ Crivas.ViewModel = function() {
 
 	self.startScroll = function(goToPosition, animateScroll) {
 
-	  console.log('////////////////');
+		console.log('////////////////');
 
-    var currentScrollPosition = window.scrollY;
-    var diff = Math.abs(currentScrollPosition - goToPosition);
+		var currentScrollPosition = window.scrollY;
+		var diff = Math.abs(currentScrollPosition - goToPosition);
 
-    var speed =  diff / self.scrollSpeed;
+		var speed =  diff / self.scrollSpeed;
 
-    if (animateScroll) {
-      $('html, body').animate({
-        scrollTop: goToPosition
-      }, speed);
-    } else {
-      window.scrollTo(0, goToPosition);
-    }
+		if (animateScroll) {
+		  $('html, body').animate({
+			scrollTop: goToPosition
+		  }, speed);
+		} else {
+		  window.scrollTo(0, goToPosition);
+		}
 
 	};
 
@@ -87,18 +89,18 @@ Crivas.ViewModel = function() {
 	self.menuClick = function(data) {
 		//self.killSection();
 		self.navArray[data.id]();
-    self.highlightCurrentMenuItem(data.id);
+		self.highlightCurrentMenuItem(data.id);
 	};
 
 	self.highlightCurrentMenuItem = function(i) {
-
-    var $allMenuItems = $('.menu-item');
-    $allMenuItems.each(function () {
-      $(this).removeClass('selected');
-    });
-    var $selectedMenuItem = $($allMenuItems[i]);
-    $selectedMenuItem.addClass('selected');
-
+	
+		var $allMenuItems = $('.menu-item');
+		$allMenuItems.each(function () {
+		  $(this).removeClass('selected');
+		});
+		var $selectedMenuItem = $($allMenuItems[i]);
+		$selectedMenuItem.addClass('selected');
+		
 	};
 
 	self.menuOpen = false;
@@ -179,7 +181,7 @@ Crivas.ViewModel = function() {
 				jobTitle: i.jobTitle,
 				jobType: i.jobType,
 				datesAtJob: i.datesAtJob,
-        isFullTime: i.jobType == "full-time" ? true : false,
+				isFullTime: i.jobType == "full-time" ? true : false,
 				tasks: i.tasks
 			};
 		})
@@ -219,8 +221,8 @@ Crivas.ViewModel = function() {
 		$('.striped-border').show();
 		//self.initCycle();
 		$('.image-container').crivasgallery({
-      child: '.work-images',
-      direction: 'forward'
+			child: '.work-images',
+			direction: 'forward'
 		});
 	};
 
