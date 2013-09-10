@@ -634,7 +634,7 @@ p, a {
 }
 @media all and (max-width: 800px) {
   .icon-and-title h2 {
-    font-size: 46px;
+    font-size: 3rem;
   }
 }
 
@@ -669,6 +669,9 @@ a:hover {
   padding: 0;
   margin: 0;
   line-height: auto; }
+  @media all and (max-width: 800px) {
+    h1, h2, h3, h4, h5 {
+      font-size: 32px; } }
 
 h1 {
   text-decoration: underline; }
@@ -681,7 +684,11 @@ h3 {
   font-family: 'The Girl Next Door', cursive;
   font-size: 1.4rem;
   font-weight: normal;
-  color: #cb3429; }
+  color: #cb3429;
+  text-decoration: underline; }
+  @media all and (max-width: 800px) {
+    h3 {
+      font-size: 1.8rem; } }
 /* NEW FILE *//**
 * @description the nav bar header which spans 100% of the width
 *
@@ -948,6 +955,12 @@ ul.portfolio-list.small-menu {
   height: 50px;
   background-size: 100% 100%;
 }
+@media all and (max-width: 800px) {
+  .portfolio-icon {
+    width: 100px;
+    height: 100px;
+  }
+}
 
 .port-title {
   padding: 0 0 20px 0;
@@ -1202,6 +1215,12 @@ ul.skillset li {
   height: 50px;
   background-size: 100% 100%;
 }
+@media all and (max-width: 800px) {
+  .resume-icon {
+    width: 100px;
+    height: 100px;
+  }
+}
 /* NEW FILE */.column {
   display: inline-block;
   width: 49%;
@@ -1214,6 +1233,11 @@ ul.skillset li {
     display: block;
     width: 90%;
     padding: 30px 5%;
+  }
+}
+@media all and (max-width: 800px) {
+  .column h3 {
+    margin-top: 30px;
   }
 }
 .column .icon-and-title {
@@ -1282,6 +1306,13 @@ ul.skillset li {
   width: 50px;
   height: 50px;
   background-size: 100% 100%;
+}
+@media all and (max-width: 800px) {
+  .contact-icon {
+    width: 100px;
+    height: 100px;
+    margin-top: -30px;
+  }
 }
 
 @media all and (max-width: 800px) {

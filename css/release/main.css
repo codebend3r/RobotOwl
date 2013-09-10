@@ -238,7 +238,7 @@ p, a {
 }
 @media all and (max-width: 800px) {
   .icon-and-title h2 {
-    font-size: 46px;
+    font-size: 3rem;
   }
 }
 

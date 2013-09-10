@@ -100,3 +100,9 @@ ul.skillset li {
   height: 50px;
   background-size: 100% 100%;
 }
+@media all and (max-width: 800px) {
+  .resume-icon {
+    width: 100px;
+    height: 100px;
+  }
+}
