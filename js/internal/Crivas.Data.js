@@ -48,7 +48,7 @@ Crivas.Data = {
 
     workExperience: [
       {
-        id: 0,
+        id: 25,
         slug: 'revolutionMovie',
         title: 'Revolution Movie',
         menuText: 'Revolution Movie',
@@ -67,7 +67,7 @@ Crivas.Data = {
         url: 'http://revolution.motionseason.com/'
       },
       {
-        id: 1,
+        id: 24,
         slug: 'koboInstantReader',
         title: 'Kobo Instant Reader',
         menuText: 'Kobo Instant Reader',
@@ -82,7 +82,7 @@ Crivas.Data = {
         url: 'http://read.kobobooks.com'
       },
       {
-        id: 2,
+        id: 23,
         slug: 'koboWebsite',
         title: 'Kobo Website',
         menuText: 'Kobo Website',
@@ -100,7 +100,7 @@ Crivas.Data = {
         url: 'http://store.kobobooks.com/'
       },
       {
-        id: 3,
+        id: 22,
         slug: 'vaughanMills',
         title: 'Vaughan Mills',
         menuText: 'Vaughan Mills',
@@ -112,7 +112,7 @@ Crivas.Data = {
         url: 'http://www.vaughanmills.com'
       },
       {
-        id: 4,
+        id: 21,
         slug: 'melissasMustSpring',
         title: 'Bayview Village - Melissa\'s Must for Spring',
         menuText: 'Bayview Village - Melissa\'s Must',
@@ -128,7 +128,7 @@ Crivas.Data = {
         url: 'http://www.bayviewvillageshops.com/MelissasMustsForSpring/'
       },
       {
-        id: 5,
+        id: 20,
         slug: 'bayviewVillageSpring2012',
         title: 'Bayview Village - Spring 2012 - Flipbook',
         menuText: 'Bayview Village - Spring 2012',
@@ -144,7 +144,7 @@ Crivas.Data = {
         url: 'http://www.bayviewvillageshops.com/spring2012/'
       },
       {
-        id: 6,
+        id: 19,
         slug: 'bayviewVillageLeasingBrochure',
         title: 'Bayview Village - Leasing Brochure - Flipbook',
         menuText: 'Bayview Village - Leasing Brochure',
@@ -156,7 +156,7 @@ Crivas.Data = {
         url: 'http://www.bayviewvillageshops.theterminal.ca/about/leasing.aspx'
       },
       {
-        id: 7,
+        id: 18,
         slug: 'londonHydroPM',
         title: 'London Hydro - Property Manager',
         menuText: 'London Hydro - Property Manager',
@@ -173,7 +173,7 @@ Crivas.Data = {
         url: 'https://www.londonhydro.com/propmgmt-dev/sign-in.aspx'
       },
       {
-        id: 8,
+        id: 17,
         slug: 'londonHydroTOU',
         title: 'London Hydro - Time of Use',
         menuText: 'London Hydro - Time of Use',
@@ -189,7 +189,7 @@ Crivas.Data = {
         url: 'https://www.londonhydro.com/propmgmt-dev/sign-in.aspx'
       },
       {
-        id: 9,
+        id: 16,
         slug: 'yorkHeritage',
         title: 'York Heritage',
         menuText: 'York Heritage',
@@ -201,7 +201,7 @@ Crivas.Data = {
         url: 'http://www.yorkheritage.com'
       },
       {
-        id: 10,
+        id: 15,
         slug: 'videoPlayer',
         title: 'Video Player',
         menuText: 'Video Player',
@@ -213,7 +213,7 @@ Crivas.Data = {
         url: 'http://survey.openvenue.com/DCT/demo/videoplayer/'
       },
       {
-        id: 11,
+        id: 14,
         slug: 'slotMachine',
         title: 'Slot Machine Demo',
         menuText: 'Slot Machine Demo',
@@ -225,7 +225,7 @@ Crivas.Data = {
         url: 'http://crivas.net/portfolio/slotmachine/'
       },
       {
-        id: 12,
+        id: 13,
         slug: 'nflSuperBowl',
         title: 'NFL Super Bowl Contest',
         menuText: 'NFL Super Bowl Contest',
@@ -237,7 +237,7 @@ Crivas.Data = {
         url: 'offline'
       },
       {
-        id: 13,
+        id: 12,
         slug: 'jx',
         title: 'Infiniti JX 2012 Contest',
         menuText: 'Infiniti JX 2012 Contest',
@@ -250,7 +250,7 @@ Crivas.Data = {
         url: 'offline'
       },
       {
-        id: 14,
+        id: 11,
         slug: 'tommyHilfiger',
         title: 'Tommy Hilfiger Flash Rotator',
         menuText: 'Tommy Hilfiger Rotator',
@@ -262,7 +262,7 @@ Crivas.Data = {
         url: 'http://usa.tommy.com/tommy/browse/landing.jsp?categoryId=cat790026'
       },
       {
-        id: 15,
+        id: 10,
         slug: 'hotSpotGenerator',
         title: 'Hotspot Generator',
         menuText: 'Hotspot Generator',
@@ -274,7 +274,7 @@ Crivas.Data = {
         url: 'http://crivas.net/portfolio/hotspotgenerator/'
       },
       {
-        id: 16,
+        id: 9,
         slug: 'shelfSet',
         title: 'Shelf Set',
         menuText: 'Shelf Set',
@@ -286,7 +286,7 @@ Crivas.Data = {
         url: 'http://crivas.net/portfolio/shelfset/'
       },
       {
-        id: 17,
+        id: 8,
         slug: 'gridGrouping',
         title: 'Grid Grouping',
         menuText: 'Grid Grouping',
@@ -298,7 +298,7 @@ Crivas.Data = {
         url: 'http://survey.openvenue.com/DCT/demo/radixgridgrouping/'
       },
       {
-        id: 18,
+        id: 7,
         slug: 'observantGrid',
         title: 'Observant Grid',
         menuText: 'Observant Grid',
@@ -310,7 +310,7 @@ Crivas.Data = {
         url: 'http://survey.openvenue.com/DCT/demo/observantgridplus/'
       },
       {
-        id: 19,
+        id: 6,
         slug: 'vendingMachine',
         title: 'Vending Machine',
         menuText: 'Vending Machine',
@@ -322,7 +322,7 @@ Crivas.Data = {
         url: 'http://survey.openvenue.com/DCT/demo/vendingmachine/'
       },
       {
-        id: 20,
+        id: 5,
         slug: 'showcase',
         title: 'Showcase',
         menuText: 'Showcase',
@@ -334,7 +334,7 @@ Crivas.Data = {
         url: 'http://www.showcase.ca/'
       },
       {
-        id: 21,
+        id: 4,
         slug: 'slice',
         title: 'Slice TV',
         menuText: 'Slice TV',
@@ -346,7 +346,7 @@ Crivas.Data = {
         url: 'http://www.slice.ca/'
       },
       {
-        id: 22,
+        id: 3,
         slug: 'scratchTicket',
         title: 'Scratch Ticket',
         menuText: 'Scratch Ticket',
@@ -358,7 +358,7 @@ Crivas.Data = {
         url: 'http://survey.openvenue.com/DCT/demo/scratchticket/'
       },
       {
-        id: 23,
+        id: 2,
         slug: 'cardSort',
         title: 'Card Sort',
         menuText: 'Card Sort',
@@ -370,7 +370,7 @@ Crivas.Data = {
         url: 'http://crivas.net/portfolio/cardsort/'
       },
       {
-        id: 24,
+        id: 1,
         slug: 'cortina',
         title: 'Cortina Kitchens',
         menuText: 'Cortina Kitchens',
@@ -382,7 +382,7 @@ Crivas.Data = {
         url: 'http://www.cortinakitchens.com/'
       },
       {
-        id: 25,
+        id: 0,
         slug: 'hydeClub',
         title: 'Hyde',
         menuText: 'Hyde',
@@ -403,7 +403,7 @@ Crivas.Data = {
       companyName: 'Great Gulf',
       jobTitle: 'Senior Front End Developer',
       jobType: 'contract',
-      datesAtJob: 'May 2013 - Present',
+      datesAtJob: 'May 2013 - September 2013',
       tasks: [
         "updated and maintained front and back end of numerous company websites",
         "lead developer on multiple projects",

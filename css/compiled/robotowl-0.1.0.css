@@ -404,7 +404,7 @@ table {
 }
 
 body {
-  font-family: 'Droid Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 100%;
   background-color: #efefef;
   /*background: url('../../pattern/textured_paper.png') repeat;*/
@@ -665,7 +665,7 @@ a:hover {
   color: #db6510;
 }
 /* NEW FILE */h1, h2, h3, h4, h5 {
-  font-family: 'Unkempt', cursive;
+  font-family: 'The Girl Next Door', cursive;
   padding: 0;
   margin: 0;
   line-height: auto; }
@@ -678,7 +678,7 @@ h2 {
 
 h3 {
   padding: 0 0;
-  font-family: 'Droid Sans', sans-serif;
+  font-family: 'The Girl Next Door', cursive;
   font-size: 1.4rem;
   font-weight: normal;
   color: #cb3429; }
@@ -1136,12 +1136,13 @@ ul.skillset li {
   padding: 0;
 }
 .job .job-title {
-  font-size: 16px;
-  font-style: italic;
+  font-size: 20px;
+  font-family: 'The Girl Next Door',cursive;
+  line-height: 22px;
 }
 @media all and (max-width: 800px) {
   .job .job-title {
-    font-size: 26px;
+    font-size: 32px;
   }
 }
 .job .job-type {
@@ -1268,6 +1269,11 @@ ul.skillset li {
 .contact-row {
   height: 32px;
   padding: 10px 0;
+}
+@media all and (max-width: 800px) {
+  .contact-row {
+    font-size: 20px;
+  }
 }
 
 .contact-icon {

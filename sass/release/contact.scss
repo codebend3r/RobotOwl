@@ -73,6 +73,9 @@
 .contact-row {
   height: $iconWidth;
   padding: 10px 0;
+  @media #{$mediumBreakpoint} {
+    font-size: 20px;
+  }
 }
 
 .contact-icon {

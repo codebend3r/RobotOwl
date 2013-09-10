@@ -57,12 +57,9 @@ Crivas.ViewModel = function() {
 
 	self.startScroll = function(goToPosition, animateScroll) {
 
-		console.log('////////////////');
-
-		var currentScrollPosition = window.scrollY;
-		var diff = Math.abs(currentScrollPosition - goToPosition);
-
-		var speed =  diff / self.scrollSpeed;
+		var currentScrollPosition = window.scrollY,
+		diff = Math.abs(currentScrollPosition - goToPosition),
+        speed =  diff / self.scrollSpeed;
 
 		if (animateScroll) {
 		  $('html, body').animate({

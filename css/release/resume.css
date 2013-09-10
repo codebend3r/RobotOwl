@@ -34,12 +34,13 @@ ul.skillset li {
   padding: 0;
 }
 .job .job-title {
-  font-size: 16px;
-  font-style: italic;
+  font-size: 20px;
+  font-family: 'The Girl Next Door',cursive;
+  line-height: 22px;
 }
 @media all and (max-width: 800px) {
   .job .job-title {
-    font-size: 26px;
+    font-size: 32px;
   }
 }
 .job .job-type {

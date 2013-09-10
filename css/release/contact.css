@@ -66,6 +66,11 @@
   height: 32px;
   padding: 10px 0;
 }
+@media all and (max-width: 800px) {
+  .contact-row {
+    font-size: 20px;
+  }
+}
 
 .contact-icon {
   display: inline-block;
