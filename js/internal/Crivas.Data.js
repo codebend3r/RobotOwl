@@ -7,18 +7,20 @@ Crivas.Data = {
         {
             id: 0,
             name: 'Portfolio',
-            subMenu: 'Crivas.Data.portfolio.workExperience',
+            subMenu: true,
             subMenuSelector: '.portfolio-list'
         },
         {
             id: 1,
             name: 'Resume',
-            subMenu: ''
+            subMenu: false,
+            subMenuSelector: ''
         },
         {
             id: 2,
             name: 'Contact',
-            subMenu: ''
+            subMenu: false,
+            subMenuSelector: ''
         }
     ],
 

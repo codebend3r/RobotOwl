@@ -138,7 +138,9 @@ Crivas.ViewModel = function () {
     self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function (i) {
         return {
             id: i.id,
-            name: i.name
+            name: i.name,
+            subMenu: i.subMenu,
+            sunMenuSelector: i.subMenuSelector
         };
     });
 
@@ -216,10 +218,10 @@ Crivas.ViewModel = function () {
         console.log('imgSrc', imgSrc);
         console.log('imgTarget', imgTarget);
 
-        var colorThief = new ColorThief();
-        var palette = colorThief.getPalette(imgTarget, 4);
+        //var colorThief = new ColorThief();
+        //var palette = colorThief.getPalette(imgTarget, 4);
 
-        console.log('COLOR THIEF >>>>>>>>>', palette);
+        //console.log('COLOR THIEF >>>>>>>>>', palette);
 
         self.$imagePreloader = $('.image-preloader');
         self.$stripedBorder = $('.striped-border');
@@ -286,6 +288,8 @@ Crivas.ViewModel = function () {
         }
 
         //var $allMenuItems = $('.menu-item');
+
+        console.log("self.start");
 
     };
 

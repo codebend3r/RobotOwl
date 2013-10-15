@@ -37,8 +37,8 @@
     <meta name="distribution" content="global"/>
 
     <!-- SEO -->
-    <meta name="Description" content="Chester Rivas' Online Portfolio - Web-Design, Web Development, HTML5/CSS, JavaScript, JQuery, Flash/Flex/ActionScript">
-    <meta name="keywords" content="Chester, Rivas, Chester Rivas, Flash, Toronto, Ontario, Canada, UI, UX, Sproutcore, Knockout.js, Front-End, Front, End, Development, ActionScript, 3.0, 2.0, Flex, Flash, Adobe, HTML, HTML5, CSS, CSS3, JavaScript, JQuery"/>
+    <meta name="Description" content="Chester Rivas' Online Portfolio - Web Development, PHP, HTML5/CSS, JavaScript, JQuery, Flash/Flex/ActionScript, JavaScript Frameworks, ">
+    <meta name="keywords" content="Chester, Rivas, Chester Rivas, Flash, Toronto, Ontario, Canada, UI, UX, Knockout, CodeIgniter, Sproutcore, Front-End, Front, End, Development, ActionScript, 3.0, 2.0, Flex, Flash, Adobe, HTML, HTML5, CSS, CSS3, JavaScript, JQuery"/>
 
 </head>
 <body>
@@ -56,7 +56,7 @@
         <div class="logo"></div>
 
         <ul class="main-menu large" data-bind="foreach: $root.menuList">
-            <li class="menu-item" data-bind="text: name, click: $root.menuClick"></li>
+            <li class="menu-item" data-bind="text: name, subMenu: subMenu, click: $root.menuClick"></li>
         </ul>
 
     </div>
