@@ -29,12 +29,17 @@ Crivas.init = function () {
             var subMenuSelector = viewModel.subMenuSelector;
             if (subMenuOn) {
 
-
-
                 $(element).append("<ul class='sub-menu'></ul>");
                 var data = Crivas.Data.resume;
-                console.log("data", data);
+                //console.log("data", data);
+                console.log('!!!!!!!!!!! portfolio-list', $('.portfolio-list'));
                 //$(element).find(".sub-menu").append($clonedSubMenu);
+
+                var $clonedMenu = $('.portfolio-list').clone();
+
+                $clonedMenu.addClass('small-menu');
+
+                $('.sub-menu').append($clonedMenu);
 
             }
 
@@ -42,6 +47,8 @@ Crivas.init = function () {
     };
 
     ko.applyBindings(Crivas.ViewModel(), scope);
+
+
 
     window.onhashchange = function (e) {
         //console.log('HASH CHANGE');

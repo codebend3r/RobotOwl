@@ -26,6 +26,10 @@ ul.portfolio-list {
   border: white solid 10px;
   z-index: 9999;
 
+  &.small-menu {
+    display: none;
+  }
+
   li {
     padding: 5px;
     margin: 0;
