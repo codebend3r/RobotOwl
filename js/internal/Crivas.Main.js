@@ -48,10 +48,11 @@ Crivas.init = function () {
 
     ko.applyBindings(Crivas.ViewModel(), scope);
 
-
+    if (window.location.hash) window.location.hash.replace('#', '');
 
     window.onhashchange = function (e) {
         //console.log('HASH CHANGE');
+        if (window.location.hash) window.location.hash.replace('#', '');
     };
 
 

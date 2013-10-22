@@ -1,4 +1,4 @@
-Crivas.ViewModel = function () {
+Crivas.ViewModel = function() {
 
     var self = this;
 
@@ -16,7 +16,7 @@ Crivas.ViewModel = function () {
 
     self.scrollSpeed = 2;
 
-    self.showPortflio = function (animateScroll) {
+    self.showPortflio = function(animateScroll) {
 
         animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
@@ -28,7 +28,7 @@ Crivas.ViewModel = function () {
 
     };
 
-    self.showResume = function (animateScroll) {
+    self.showResume = function(animateScroll) {
 
         animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
@@ -40,7 +40,7 @@ Crivas.ViewModel = function () {
 
     };
 
-    self.showContact = function (animateScroll) {
+    self.showContact = function(animateScroll) {
 
         animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
@@ -55,11 +55,9 @@ Crivas.ViewModel = function () {
 
     self.goToPosition = 0;
 
-    self.startScroll = function (goToPosition, animateScroll) {
+    self.startScroll = function(goToPosition, animateScroll) {
 
-        var currentScrollPosition = window.scrollY,
-            diff = Math.abs(currentScrollPosition - goToPosition),
-            speed = diff / self.scrollSpeed;
+        var currentScrollPosition = window.scrollY, diff = Math.abs(currentScrollPosition - goToPosition), speed = diff / self.scrollSpeed;
 
         if (animateScroll) {
             $('html, body').animate({
@@ -73,27 +71,31 @@ Crivas.ViewModel = function () {
 
     self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
 
-    self.navigationList = ko.observableArray(
-        ko.utils.arrayMap(Crivas.Data.portfolio.workExperience, function (i) {
-            return {
-                id: i.id,
-                menuText: i.menuText,
-                slug: i.slug.toLowerCase()
-            };
-        })
-    );
+    self.navigationList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.portfolio.workExperience, function(i) {
+        return {
+            id: i.id,
+            menuText: i.menuText,
+            slug: i.slug.toLowerCase()
+        };
+    }));
 
-    self.menuClick = function (data) {
+    self.menuClick = function(data) {
         //self.killSection();
-        var currentID = self.navArray.length - data.id; //backwards quickfix
+        var currentID = data.id;
+        console.log("menuClick.currentID", currentID);
         self.navArray[currentID]();
         self.highlightCurrentMenuItem(currentID);
     };
 
-    self.highlightCurrentMenuItem = function (i) {
+    self.portfolioItemClick = function(data) {
+        var currentID = data.id;
+        console.log("portfolioItemClick.currentID", currentID);
+    };
+
+    self.highlightCurrentMenuItem = function(i) {
 
         var $allMenuItems = $('.menu-item');
-        $allMenuItems.each(function () {
+        $allMenuItems.each(function() {
             $(this).removeClass('selected');
         });
         var $selectedMenuItem = $($allMenuItems[i]);
@@ -103,14 +105,11 @@ Crivas.ViewModel = function () {
 
     self.menuOpen = false;
 
-    self.openSmallMenu = function () {
+    self.openSmallMenu = function() {
 
         self.menuOpen = !self.menuOpen;
 
-        var $portfolioContainer = $('.portfolio-container'),
-            $mainWrapper = $('.main-wrapper'),
-            $mainMenu = $('.main-menu'),
-            $navBar = $('.nav-bar');
+        var $portfolioContainer = $('.portfolio-container'), $mainWrapper = $('.main-wrapper'), $mainMenu = $('.main-menu'), $navBar = $('.nav-bar');
 
         $portfolioContainer.toggleClass('slide-menu-in');
         $portfolioContainer.addClass('animate');
@@ -136,7 +135,7 @@ Crivas.ViewModel = function () {
 
     };
 
-    self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function (i) {
+    self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function(i) {
         return {
             id: i.id,
             name: i.name,
@@ -145,9 +144,17 @@ Crivas.ViewModel = function () {
         };
     });
 
-    self.changePage = function (data) {
+    self.changePage = function(data) {
 
-        self.currentSectionID(data.id);
+        var currentID;
+
+        for ( var i = 0; i < self.navigationList().length; i += 1) {
+            if ( data.id == self.navigationList()[i].id ) {
+                currentID = i;
+            }
+        }
+
+        self.currentSectionID(currentID);
 
         self.portfolioData(self.longList[self.currentSectionID()]);
         //location.hash = 'portfolio/' + data.slug;
@@ -161,29 +168,26 @@ Crivas.ViewModel = function () {
 
     };
 
-    self.imageClicked = function (data) {
+    self.imageClicked = function(data) {
 
-        var currentID = data.id,
-            url = Crivas.Data.portfolio.workExperience[currentID].url;
+        var currentID = data.id, url = Crivas.Data.portfolio.workExperience[currentID].url;
 
         //console.log('url', url);
         window.open(url, '_blank');
 
     };
 
-    self.experienceList = ko.observableArray(
-        ko.utils.arrayMap(Crivas.Data.resume, function (i) {
-            return {
-                id: i.id,
-                companyName: i.companyName,
-                jobTitle: i.jobTitle,
-                jobType: i.jobType,
-                datesAtJob: i.datesAtJob,
-                isFullTime: i.jobType == "full-time" ? true : false,
-                tasks: i.tasks
-            };
-        })
-    );
+    self.experienceList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.resume, function(i) {
+        return {
+            id: i.id,
+            companyName: i.companyName,
+            jobTitle: i.jobTitle,
+            jobType: i.jobType,
+            datesAtJob: i.datesAtJob,
+            isFullTime: i.jobType == "full-time" ? true : false,
+            tasks: i.tasks
+        };
+    }));
 
     self.summaryText = Crivas.Data.portfolio.summaryText;
 
@@ -194,14 +198,14 @@ Crivas.ViewModel = function () {
 
      @method showNewSection
      **/
-    self.showNewSection = function () {
+    self.showNewSection = function() {
 
         self.showPreloader();
 
         self.$workImages = $('.work-images');
 
         // wait for all images to load
-        self.$workImages.imagesLoaded(function () {
+        self.$workImages.imagesLoaded(function() {
             self.allImagesLoaded();
         });
     };
@@ -211,13 +215,13 @@ Crivas.ViewModel = function () {
 
      @method allImagesLoaded
      **/
-    self.allImagesLoaded = function () {
+    self.allImagesLoaded = function() {
 
         var imgTarget = $('.image-border').find('img')[0];
         var imgSrc = $(imgTarget).attr('src');
 
-        console.log('imgSrc', imgSrc);
-        console.log('imgTarget', imgTarget);
+        //console.log('imgSrc', imgSrc);
+        //console.log('imgTarget', imgTarget);
 
         //var colorThief = new ColorThief();
         //var palette = colorThief.getPalette(imgTarget, 4);
@@ -239,7 +243,7 @@ Crivas.ViewModel = function () {
 
     };
 
-    self.showPreloader = function () {
+    self.showPreloader = function() {
 
         self.$imagePreloader.show();
         self.$stripedBorder.hide();
@@ -250,7 +254,7 @@ Crivas.ViewModel = function () {
 
     self.dataModel = null;
 
-    self.setHash = function (val) {
+    self.setHash = function(val) {
         window.location.hash = val;
     };
 
@@ -268,7 +272,7 @@ Crivas.ViewModel = function () {
 
     //INIT
 
-    self.start = function () {
+    self.start = function() {
 
         var hash = window.location.hash;
         self.showNewSection();

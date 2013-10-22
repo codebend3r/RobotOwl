@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                 // define a string to put between each file in the concatenated output
                 separator: '/* NEW FILE */'
             },
-            dist: {
+            jsconcat: {
                 // the files to concatenate
                 src: [
                     'js/external/jquery-1.9.1.js',
@@ -127,8 +127,14 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: ['sass/*.scss'],
-            tasks: ['sass:dist']
+            css: {
+                files: [ 'sass/*.scss' ],
+                tasks: [ 'default' ]
+            },
+            js: {
+                files: [ 'js/internal/*.js' ],
+                tasks: [ 'default' ]
+            }
         },
         jslint: {
             server: {
@@ -160,10 +166,15 @@ module.exports = function (grunt) {
     //grunt.loadNpmTasks('DSS');
 
 
-    // Default task(s).
-    grunt.registerTask('sassy', ['watch']);
+    // Default task(s)
     grunt.registerTask('quickbuild', ['clean', 'copy:main', 'jquerytransform']);
     grunt.registerTask('jslint', ['jslint']);
-    grunt.registerTask('default', [ 'sass', 'clean', 'copy:before', 'concat', 'uglify', 'cssmin', 'copy:after', 'htmlmin']);
+    grunt.registerTask('watchcode', ['watch']);
+    grunt.registerTask('buildjs', ['concat:jsconcat', 'uglify']);
+    grunt.registerTask('buildcss', ['sass', 'concat:cssconcat', 'cssmin' ]);
+    grunt.registerTask('cleanandmove', ['clean', 'copy', 'htmlmin' ]);
+    grunt.registerTask('default', [ 'sass', 'clean', 'copy:before', 'concat', 'uglify', 'cssmin', 'copy:after', 'htmlmin' ]);
+
+
 
 };
