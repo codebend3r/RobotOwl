@@ -11742,13 +11742,14 @@ Crivas.Data = {
             'CSS/CSS3/SASS',
             'Knockout.js',
             'Sproutcore',
+            'RequireJS',
+            'CodeIgniter',
             'Ember.js',
-            'MVVM Frameworks',
+            'MVVM/MVC Concepts',
             'Grunt.js',
             'Photoshop',
             'Illustrator',
-            'MVC',
-            'ActionScript 3.0'
+            'ActionScript 3.0/Flash'
         ],
 
         workExperience: [
@@ -12492,8 +12493,9 @@ $(Crivas.init);
 
     self.menuClick = function (data) {
         //self.killSection();
-        self.navArray[data.id]();
-        self.highlightCurrentMenuItem(data.id);
+        var currentID = self.navArray.length - data.id; //backwards quickfix
+        self.navArray[currentID]();
+        self.highlightCurrentMenuItem(currentID);
     };
 
     self.highlightCurrentMenuItem = function (i) {

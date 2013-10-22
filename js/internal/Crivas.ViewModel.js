@@ -85,8 +85,9 @@ Crivas.ViewModel = function () {
 
     self.menuClick = function (data) {
         //self.killSection();
-        self.navArray[data.id]();
-        self.highlightCurrentMenuItem(data.id);
+        var currentID = self.navArray.length - data.id; //backwards quickfix
+        self.navArray[currentID]();
+        self.highlightCurrentMenuItem(currentID);
     };
 
     self.highlightCurrentMenuItem = function (i) {

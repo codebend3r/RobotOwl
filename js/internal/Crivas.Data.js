@@ -39,13 +39,14 @@ Crivas.Data = {
             'CSS/CSS3/SASS',
             'Knockout.js',
             'Sproutcore',
+            'RequireJS',
+            'CodeIgniter',
             'Ember.js',
-            'MVVM Frameworks',
+            'MVVM/MVC Concepts',
             'Grunt.js',
             'Photoshop',
             'Illustrator',
-            'MVC',
-            'ActionScript 3.0'
+            'ActionScript 3.0/Flash'
         ],
 
         workExperience: [
