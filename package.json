@@ -1,7 +1,7 @@
 {
   "name": "RobotOwl",
   "outputName": "robotowl",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "homepage": "crivas.net",
   "devDependencies": {
     "grunt": "~0.4.1",

@@ -50,6 +50,38 @@ Crivas.Data = {
 
         workExperience: [
             {
+                id: 27,
+                slug: 'justEat',
+                title: 'Just Eat',
+                menuText: 'Just Eat - Chomp Chomp Chomp',
+                imageurl: [
+                    'pages/justeat-01.jpg',
+                    'pages/justeat-02.jpg',
+                    'pages/justeat-03.jpg',
+                    'pages/justeat-04.jpg'
+                ],
+                companyName: 'Jam3',
+                businessCase: 'A website for select Canadian Universities for students to enter the Just-Eat.ca contest for a chance to win food!',
+                details: 'Built with CodeIgniter, this website has a set of different phases program to change automatically at certain times',
+                techUsed: 'CodeIgniter, Grunt, JQuery, CSS3, SASS, JavaScript, HTML5',
+                url: 'http://chompchompchomp.ca'
+            },
+            {
+                id: 26,
+                slug: 'monde',
+                title: 'Monde',
+                menuText: 'Monde Condos',
+                imageurl: [
+                    'pages/monde-01.jpg',
+                    'pages/monde-02.jpg'
+                ],
+                companyName: 'Great Gulf',
+                businessCase: 'Potential home buyers need a way to search and find deals on condos. Potential clients can also view pics and browse floorplans.',
+                details: 'A website showcasing all of Monde Condos',
+                techUsed: 'JavaScript, PHP, HTML5, Grunt, JQuery, CSS3, SASS',
+                url: 'http://www.mondecondominiums.com/'
+            },
+            {
                 id: 25,
                 slug: 'revolutionMovie',
                 title: 'Revolution Movie',
@@ -61,7 +93,7 @@ Crivas.Data = {
                     'pages/rev_4.jpg',
                     'pages/rev_5.jpg'
                 ],
-                companyName: 'Freelance',
+                companyName: 'Contract',
                 businessCase: 'A complete responsive website with breakpoints for mobile phones and tablets.',
                 details: 'This website was built with Knockout.js. Knockout.js was used in conjunction with JSON to store all the data. Custom built deep linking framework',
                 techUsed: 'Knockout.js, Grunt, JQuery, CSS3, SASS, JavaScript, HTML5',
@@ -400,8 +432,24 @@ Crivas.Data = {
     },
 
     resume: [
+
         {
-            id: 0,
+            id: 13,
+            companyName: 'Jam3',
+            jobTitle: 'Senior Front End Developer',
+            jobType: 'contract',
+            datesAtJob: 'September 2013 - November 2013',
+            tasks: [
+                "developed with CodeIgniter PHP framework to maintain backend and code the front end",
+                "created custom functionality in PHP/JavaScript for automatic phase switching at certain times",
+                "implemented styles and created custom JQuery plugins when needed",
+                "worked with RequireJS to implement static page animations and transitions with TweenerLite",
+                "integrated Grunt.js tasks for release packages",
+                "implemented designs and worked with proprietary internal JavaScript Framework"
+            ]
+        },
+        {
+            id: 12,
             companyName: 'Great Gulf',
             jobTitle: 'Senior Front End Developer',
             jobType: 'contract',
@@ -416,7 +464,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 1,
+            id: 11,
             companyName: 'Motion Season',
             jobTitle: 'Lead UI Developer',
             jobType: 'contract',
@@ -432,7 +480,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 2,
+            id: 10,
             companyName: 'Kobo',
             jobTitle: 'UI Developer',
             jobType: 'full-time',
@@ -451,7 +499,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 3,
+            id: 9,
             companyName: 'Sonic Boom Creative Media',
             jobTitle: 'Front End Developer',
             jobType: 'contract',
@@ -464,7 +512,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 4,
+            id: 8,
             companyName: 'St. Joseph/Pi Media',
             jobTitle: 'Front End Developer',
             jobType: 'contract',
@@ -476,7 +524,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 5,
+            id: 7,
             companyName: 'Capital C',
             jobTitle: 'Front End Developer',
             jobType: 'contract',
@@ -503,7 +551,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 7,
+            id: 5,
             companyName: 'Blast Radius',
             jobTitle: 'Flash Developer',
             jobType: 'contract',
@@ -516,7 +564,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 8,
+            id: 4,
             companyName: 'Research Now',
             jobTitle: 'Senior Flex Developer',
             jobType: 'full-time',
@@ -535,7 +583,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 9,
+            id: 3,
             companyName: 'Canwest/Alliance Atlantis',
             jobTitle: 'Digital Media Developer ',
             jobType: 'contract',
@@ -548,7 +596,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 10,
+            id: 2,
             companyName: 'Dashboard',
             jobTitle: 'Digital Architect',
             jobType: 'contract',
@@ -562,7 +610,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 11,
+            id: 1,
             companyName: 'Mindblossom',
             jobTitle: 'Intermediate Flash Developer',
             jobType: 'full-time',
@@ -575,7 +623,7 @@ Crivas.Data = {
             ]
         },
         {
-            id: 12,
+            id: 0,
             companyName: 'Engage Learning Systems',
             jobTitle: 'Flash Developer',
             jobType: 'contract',
