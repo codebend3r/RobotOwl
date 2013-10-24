@@ -58,7 +58,8 @@ Crivas.Data = {
                 imageurl: [
                     'pages/justeat-01.jpg',
                     'pages/justeat-02.jpg',
-                    'pages/justeat-03.jpg',
+                    'pages/justeat-03-a.jpg',
+                    'pages/justeat-03-b.jpg',
                     'pages/justeat-04.jpg'
                 ],
                 companyName: 'Jam3',

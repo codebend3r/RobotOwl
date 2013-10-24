@@ -3,18 +3,13 @@ Crivas.ViewModel = function() {
     var self = this;
 
     self.longList = Crivas.Data.portfolio.workExperience;
-
     self.currentSectionID = ko.observable(0);
-
     self.portfolioData = ko.observable(self.longList[self.currentSectionID()]);
-
     self.visiblePortfolio = ko.observable(true);
-
     self.visibleResume = ko.observable(true);
-
     self.visibleContact = ko.observable(true);
-
     self.scrollSpeed = 2;
+    self.menuOpen = false;
 
     self.showPortflio = function(animateScroll) {
 
@@ -24,7 +19,6 @@ Crivas.ViewModel = function() {
         self.startScroll(self.goToPosition, animateScroll);
         self.setHash('portfolio');
         self.highlightCurrentMenuItem(0);
-        //self.showNewSection();
 
     };
 
@@ -36,7 +30,6 @@ Crivas.ViewModel = function() {
         self.startScroll(self.goToPosition, animateScroll);
         self.setHash('resume');
         self.highlightCurrentMenuItem(1);
-        //self.showNewSection();
 
     };
 
@@ -45,11 +38,9 @@ Crivas.ViewModel = function() {
         animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
         self.goToPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top - 250;
-        //self.goToPosition = 4000;
         self.startScroll(self.goToPosition, animateScroll);
         self.setHash('contact');
         self.highlightCurrentMenuItem(2);
-        //self.showNewSection();
 
     };
 
@@ -57,7 +48,9 @@ Crivas.ViewModel = function() {
 
     self.startScroll = function(goToPosition, animateScroll) {
 
-        var currentScrollPosition = window.scrollY, diff = Math.abs(currentScrollPosition - goToPosition), speed = diff / self.scrollSpeed;
+        var currentScrollPosition = window.scrollY,
+            diff = Math.abs(currentScrollPosition - goToPosition),
+            speed = diff / self.scrollSpeed;
 
         if (animateScroll) {
             $('html, body').animate({
@@ -103,7 +96,15 @@ Crivas.ViewModel = function() {
 
     };
 
-    self.menuOpen = false;
+    self.getPortfolioItemByID = function(id){
+        var currentID;
+        for ( var i = 0; i < self.navigationList().length; i += 1) {
+            if ( id == self.navigationList()[i].id ) {
+                currentID = i;
+                return currentID;
+            }
+        }
+    };
 
     self.openSmallMenu = function() {
 
@@ -146,14 +147,8 @@ Crivas.ViewModel = function() {
 
     self.changePage = function(data) {
 
-        var currentID;
-
-        for ( var i = 0; i < self.navigationList().length; i += 1) {
-            if ( data.id == self.navigationList()[i].id ) {
-                currentID = i;
-            }
-        }
-
+        var currentID = self.getPortfolioItemByID(data.id);
+        console.log("currentID", currentID);
         self.currentSectionID(currentID);
 
         self.portfolioData(self.longList[self.currentSectionID()]);
@@ -170,9 +165,10 @@ Crivas.ViewModel = function() {
 
     self.imageClicked = function(data) {
 
-        var currentID = data.id, url = Crivas.Data.portfolio.workExperience[currentID].url;
+        var currentID = self.getPortfolioItemByID(data.id),
+            url = Crivas.Data.portfolio.workExperience[currentID].url;
 
-        //console.log('url', url);
+        console.log("currentID", currentID);
         window.open(url, '_blank');
 
     };
