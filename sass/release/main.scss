@@ -2,30 +2,29 @@
 @import "mixins";
 
 html {
-  font-size: 100%;
-  @media #{$smallBreakpoint} {
-    font-size: 150%;
-  }
+    font-size: 100%;
+    @media #{$smallBreakpoint} {
+        font-size: 150%;
+    }
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 100%;
-  background-color: $bodyColour;
-  /*background: url('../../pattern/textured_paper.png') repeat;*/
-  color: $slateGrey;
-  min-width: 400px;
-  overflow-x: hidden;
-  @media #{$smallBreakpoint} {
-    margin: 0;
-    padding: 0;
-  }
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    background-color: $bodyColour;
+    /*background: url('../../pattern/textured_paper.png') repeat;*/
+    color: $slateGrey;
+    min-width: 400px;
+    overflow-x: hidden;
+    @media #{$smallBreakpoint} {
+        margin: 0;
+        padding: 0;
+    }
 
-  @media #{$mediumBreakpoint} {
-    font-size: $smallScreenFontSize;
-  }
+    @media #{$mediumBreakpoint} {
+        font-size: $smallScreenFontSize;
+    }
 }
-
 
 /**
 * @description main container for all sections
@@ -35,19 +34,19 @@ body {
 */
 .main-wrapper {
 
-  @include centeredAndFixed(100px);
-  height: 100%;
-  background-color: $bodyColour;
-  //@include dropShadow(0, 0, 10, 5, rgba(0,0,0,.3));
+    @include centeredAndFixed(100px);
+    height: 100%;
+    background-color: $bodyColour;
+    //@include dropShadow(0, 0, 10, 5, rgba(0,0,0,.3));
 
-  @media #{$mediumBreakpoint} {
-    @include centeredAndFixed(50px);
-    height: auto;
-    padding: 0;
-    z-index: 997;
-    float: left;
-    position: absolute;
-  }
+    @media #{$mediumBreakpoint} {
+        @include centeredAndFixed(50px);
+        height: auto;
+        padding: 0;
+        z-index: 997;
+        float: left;
+        position: absolute;
+    }
 
 }
 
@@ -59,64 +58,63 @@ body {
 */
 .main-content-section {
 
-  clear: both;
-  width: 100%;
-  height: auto;
-  float: left;
-  margin: 0 0 10px 0;
-  padding: 0 0 100px 0;
-
-  @media #{$mediumBreakpoint} {
-    position: static;
-    float: left;
-    left: 0px;
-    top: 0px;
-    width: 98%;
+    clear: both;
+    width: 100%;
     height: auto;
-    z-index: 999;
-    margin: 0;
-    padding: 0 1%;
-  }
-
-  @media #{$smallBreakpoint} {
-    position: static;
     float: left;
-    left: 0px;
-    top: 0px;
-    width: 98%;
-    height: auto;
-    z-index: 999;
-    margin: 0;
-    padding: 0 1%;
-  }
+    margin: 0 0 10px 0;
+    padding: 0 0 100px 0;
+
+    @media #{$mediumBreakpoint} {
+        position: static;
+        float: left;
+        left: 0px;
+        top: 0px;
+        width: 98%;
+        height: auto;
+        z-index: 999;
+        margin: 0;
+        padding: 0 1%;
+    }
+
+    @media #{$smallBreakpoint} {
+        position: static;
+        float: left;
+        left: 0px;
+        top: 0px;
+        width: 98%;
+        height: auto;
+        z-index: 999;
+        margin: 0;
+        padding: 0 1%;
+    }
 
 }
 
 p, a {
 
-  font-size: .8rem;
+    font-size: .8rem;
 
-  @media #{$mediumBreakpoint} {
-    font-size: $smallScreenFontSize;
-  }
+    @media #{$mediumBreakpoint} {
+        font-size: $smallScreenFontSize;
+    }
 
 }
 
 ////////////////////////////////////////
 
-
 .horizontal-lines {
-  height: 0px;
-  border-top: 2px solid $offwhite;
-  border-bottom: 2px solid $white;
-  display: block;
+    height: 0px;
+    border-top: 2px solid $offwhite;
+    border-bottom: 2px solid $white;
+    display: block;
 }
 
 .vertical-lines {
-  width: 0px;
-  border-left: 1px solid $white;
-  border-right: 1px solid $offwhite;
-  display: block;
+    width: 0px;
+    border-left: 1px solid $white;
+    border-right: 1px solid $offwhite;
+    display: block;
 }
 
 /**
@@ -128,25 +126,24 @@ p, a {
 */
 .logo {
 
-  background: url('../../images/crivas-logo@2x.png') no-repeat;
-  background-size: ($navBarHeightLarge * 1.8875) $navBarHeightLarge;
-  width: 151px;
-  height: 80px;
-  display: inline-block;
-  float: left;
+    background: url('../../images/crivas-logo@2x.png') no-repeat;
+    background-size: ($navBarHeightLarge * 1.8875) $navBarHeightLarge;
+    width: 151px;
+    height: 80px;
+    display: inline-block;
+    float: left;
 
-  @media #{$largeBreakpoint}{
-    margin: 0 0 0 15px;
-  }
+    @media #{$largeBreakpoint}{
+        margin: 0 0 0 15px;
+    }
 
-  @media #{$mediumBreakpoint} {
-    background-size: ($navBarHeightSmall * 1.8875) $navBarHeightSmall;
-    width: $navBarHeightSmall * 1.8875;
-    height: $navBarHeightSmall;
-  }
+    @media #{$mediumBreakpoint} {
+        background-size: ($navBarHeightSmall * 1.8875) $navBarHeightSmall;
+        width: $navBarHeightSmall * 1.8875;
+        height: $navBarHeightSmall;
+    }
 
 }
-
 
 /**
 * @description resusable launch button
@@ -156,43 +153,43 @@ p, a {
 */
 .launch {
 
-  display: block;
-  height: 40px;
-  padding: 5px;
-  margin: 0;
+    display: block;
+    height: 40px;
+    padding: 5px;
+    margin: 0;
 
-  a {
-    cursor: pointer;
-    color: #EEEEEE;
-    text-decoration: none;
-    background-color: #333333;
-    padding : 10px;
-    background-repeat: repeat;
-    background-image: url('../../pattern/tweed.png');
-    @include dropShadow(0, 0, 3px, 3px, #000000);
-    @media #{$smallBreakpoint} {
-      width: 100%;
-      display: inline-block;
-      text-align: center;
-      padding : 10px 0;
-      margin: 0 auto;
+    a {
+        cursor: pointer;
+        color: #EEEEEE;
+        text-decoration: none;
+        background-color: #333333;
+        padding: 10px;
+        background-repeat: repeat;
+        background-image: url('../../pattern/tweed.png');
+        @include dropShadow(0, 0, 3px, 3px, #000000);
+        @media #{$smallBreakpoint} {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0 auto;
+        }
     }
-  }
 
-  a:hover {
-    color : #FFFFFF;
-    text-decoration : none;
-    background-color: $darkRed;
-    padding : 10px;
-    background-repeat: repeat;
-    background-image: url('../../pattern/tweed-over.png');
-    margin : 0px;
-    @include dropShadow(0, 0, 3px, 3px, #000000);
-    @media #{$smallBreakpoint} {
-      padding : 10px 0;
-      margin: 0 auto;
+    a:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: $darkRed;
+        padding: 10px;
+        background-repeat: repeat;
+        background-image: url('../../pattern/tweed-over.png');
+        margin: 0px;
+        @include dropShadow(0, 0, 3px, 3px, #000000);
+        @media #{$smallBreakpoint} {
+            padding: 10px 0;
+            margin: 0 auto;
+        }
     }
-  }
 }
 
 /**
@@ -203,32 +200,32 @@ p, a {
   */
 .icon-and-title {
 
-  width: 100%;
-  display: inline-block;
-  vertical-align: middle;
-  height: 90px;
-  line-height: 90px;
-  margin-left: 0px;
-
-  @media #{$mediumBreakpoint} {
-    padding: 0 5%;
-    width: 89%;
-    margin: 30px 0 0 0;
-  }
-
-  .section-icon {
-    vertical-align: middle;
-  }
-
-  h2 {
+    width: 100%;
     display: inline-block;
-    vertical-align: top;
-    padding: 0 0 0 15px;
-    margin: 0;
+    vertical-align: middle;
+    height: 90px;
+    line-height: 90px;
+    margin-left: 0px;
+
     @media #{$mediumBreakpoint} {
-      font-size: 3rem;
+        padding: 0 5%;
+        width: 89%;
+        margin: 30px 0 0 0;
     }
-  }
+
+    .section-icon {
+        vertical-align: middle;
+    }
+
+    h2 {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 0 0 15px;
+        margin: 0;
+        @media #{$mediumBreakpoint} {
+            font-size: 3rem;
+        }
+    }
 
 }
 
@@ -239,10 +236,10 @@ p, a {
   *   <div class="indent-line"></div>
   */
 .indent-line {
-  margin: 5px 0 5px 0;
-  border-top: 1px solid $white;
-  border-bottom: 1px solid $mediumGrey;
-  clear: both;
+    margin: 5px 0 5px 0;
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $mediumGrey;
+    clear: both;
 }
 
 /**
@@ -253,13 +250,13 @@ p, a {
   */
 a {
 
-  color: $green;
+    color: $green;
 
-  &:hover {
-    color: $orange;
-  }
+    &:hover {
+        color: $orange;
+    }
 
-  text-decoration: none;
+    text-decoration: none;
 
 }
 

@@ -9,38 +9,38 @@
 */
 .nav-bar {
 
-  height: $navBarHeightLarge;
-  width: 100%;
-  /*@include gradient($lightGrey,$lightGrey,$lightGrey);*/
-  background: url('../../pattern/squairy_light.png') repeat;
-  border-bottom: 1px $headerColour solid;
-  position: fixed;
-  z-index: 99;
-  top: 0px;
-  @include dropShadow(0, 0, 10, 5, rgba(0,0,0,.3));
-
-  @media #{$mediumBreakpoint} {
-    height: $navBarHeightSmall;
-    z-index: 998;
+    height: $navBarHeightLarge;
+    width: 100%;
+    /*@include gradient($lightGrey,$lightGrey,$lightGrey);*/
+    background: url('../../pattern/squairy_light.png') repeat;
+    border-bottom: 1px $headerColour solid;
     position: fixed;
+    z-index: 99;
     top: 0px;
-    left: 0px;
-  }
+    @include dropShadow(0, 0, 10, 5, rgba(0, 0, 0, .3));
 
-  @media #{$smallBreakpoint} {
-    height: $navBarHeightSmall;
-    z-index: 998;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-  }
+    @media #{$mediumBreakpoint} {
+        height: $navBarHeightSmall;
+        z-index: 998;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
 
-  /*
-  @media #{$retinaBreakpoint} {
-    background: none;
-    background-color: $bodyColour;
-  }
-  */
+    @media #{$smallBreakpoint} {
+        height: $navBarHeightSmall;
+        z-index: 998;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+
+    /*
+    @media #{$retinaBreakpoint} {
+      background: none;
+      background-color: $bodyColour;
+    }
+    */
 
 }
 
@@ -52,11 +52,11 @@
 */
 .nav-bar-fixed {
 
-  @include centeredAndFixed(0px);
-  vertical-align: middle;
-  display: block;
-  position: static;
-  height: 80px;
+    @include centeredAndFixed(0px);
+    vertical-align: middle;
+    display: block;
+    position: static;
+    height: 80px;
 
 }
 
@@ -70,34 +70,33 @@
 */
 .open-small-menu {
 
-  display: none;
-
-  .horizontal-groove {
-    margin: 14px 10px -12px 10px;
-    background-color: #cecece;
-    height: 2px;
-    border-radius: 4px;
-    border: 2px inset #eeeeee;
-  }
-
-  @media #{$mediumBreakpoint} {
-    float: left;
-    cursor: pointer;
-    margin: 0px 0px;
-    display: inline-block;
-    width: $navBarHeightSmall;
-    height: $navBarHeightSmall;
-    border-right: 2px solid $offwhite;
+    display: none;
 
     .horizontal-groove {
-      margin: 19px 10px -12px 10px;
-      border: 3px inset #eeeeee;
+        margin: 14px 10px -12px 10px;
+        background-color: #cecece;
+        height: 2px;
+        border-radius: 4px;
+        border: 2px inset #eeeeee;
     }
 
-  }
+    @media #{$mediumBreakpoint} {
+        float: left;
+        cursor: pointer;
+        margin: 0px 0px;
+        display: inline-block;
+        width: $navBarHeightSmall;
+        height: $navBarHeightSmall;
+        border-right: 2px solid $offwhite;
+
+        .horizontal-groove {
+            margin: 19px 10px -12px 10px;
+            border: 3px inset #eeeeee;
+        }
+
+    }
 
 }
-
 
 /**
 * @description the main menu styles
@@ -107,109 +106,109 @@
 */
 ul.main-menu {
 
-  display: inline-block;
-  position: fixed;
-  vertical-align: middle;
-  float: right;
-  height: $navBarHeightLarge;
-  margin: 0 5px 0 0;
-  padding: 0;
-  border-bottom: solid 1px #c6c6c6;
-  z-index: 997;
-  top: 0px;
-  right: 0px;
-
-  &.large {
     display: inline-block;
-    position: static;
-    @media #{$mediumBreakpoint} {
-      display: none;
-    }
-  }
-
-  &.small {
-    display: none;
-    @media #{$mediumBreakpoint} {
-      display: inline-block;
-      position: fixed;
-      float: left;
-      left: 0px;
-      top: 0px;
-      z-index: -9;
-      background-color: $offwhite;
-      border-bottom: none;
-      width: 100%;
-      height: 100%;
-      font-size: ($smallScreenFontSize + .5);
-    }
-  }
-
-  li {
-
-    display: inline-block;
-    list-style: none;
-    margin: 0;
-    padding: 0 20px;
-    cursor: pointer;
+    position: fixed;
+    vertical-align: middle;
+    float: right;
     height: $navBarHeightLarge;
-    line-height: $navBarHeightLarge;
-    text-align: center;
+    margin: 0 5px 0 0;
+    padding: 0;
+    border-bottom: solid 1px #c6c6c6;
+    z-index: 997;
+    top: 0px;
+    right: 0px;
 
-    @media #{$mediumBreakpoint} {
-      border-left: 3px rgba(0,0,0,0) solid;
-      border-bottom: none;
+    &.large {
+        display: inline-block;
+        position: static;
+        @media #{$mediumBreakpoint} {
+            display: none;
+        }
     }
 
-    @media #{$mediumBreakpoint} {
-      display: block;
-      z-index: -999;
-      text-align: left;
+    &.small {
+        display: none;
+        @media #{$mediumBreakpoint} {
+            display: inline-block;
+            position: fixed;
+            float: left;
+            left: 0px;
+            top: 0px;
+            z-index: -9;
+            background-color: $offwhite;
+            border-bottom: none;
+            width: 100%;
+            height: 100%;
+            font-size: ($smallScreenFontSize + .5);
+        }
     }
 
-    &:hover {
-      border-left: none;
-      border-bottom: 3px $darkRed solid;
-      @media #{$mediumBreakpoint} {
-        border-left: 3px $darkRed solid;
-        border-bottom: none;
-        background-color: #efefef;
-      }
-    }
+    li {
 
-    &.selected {
-      border-left: none;
-      border-bottom: 3px $green solid;
-      @media #{$mediumBreakpoint} {
-        border-left: 3px $green solid;
-        border-bottom: none;
-      }
-    }
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0 20px;
+        cursor: pointer;
+        height: $navBarHeightLarge;
+        line-height: $navBarHeightLarge;
+        text-align: center;
 
-  }
+        @media #{$mediumBreakpoint} {
+            border-left: 3px rgba(0, 0, 0, 0) solid;
+            border-bottom: none;
+        }
+
+        @media #{$mediumBreakpoint} {
+            display: block;
+            z-index: -999;
+            text-align: left;
+        }
+
+        &:hover {
+            border-left: none;
+            border-bottom: 3px $darkRed solid;
+            @media #{$mediumBreakpoint} {
+                border-left: 3px $darkRed solid;
+                border-bottom: none;
+                background-color: #efefef;
+            }
+        }
+
+        &.selected {
+            border-left: none;
+            border-bottom: 3px $green solid;
+            @media #{$mediumBreakpoint} {
+                border-left: 3px $green solid;
+                border-bottom: none;
+            }
+        }
+
+    }
 
 }
 
 @media #{$mediumBreakpoint} {
-  ul.main-menu {
-    //@include dropShadow(0, 4, 20, 0, #333333);
-  }
+    ul.main-menu {
+        //@include dropShadow(0, 4, 20, 0, #333333);
+    }
 }
 
 @media #{$smallBreakpoint} {
-  ul.main-menu {
-    width: 100%;
-    height: $navBarHeightLarge;
-    margin: 0;
-    padding: 0;
-    background-color: $bodyColour;
-    @include dropShadow(0, 4, 20, 0, #333333);
+    ul.main-menu {
+        width: 100%;
+        height: $navBarHeightLarge;
+        margin: 0;
+        padding: 0;
+        background-color: $bodyColour;
+        @include dropShadow(0, 4, 20, 0, #333333);
 
-    li {
-      width: 32.4%;
-      margin: 0;
-      padding: 0;
+        li {
+            width: 32.4%;
+            margin: 0;
+            padding: 0;
+        }
+
     }
-
-  }
 
 }

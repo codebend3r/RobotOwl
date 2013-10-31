@@ -1143,6 +1143,16 @@ ul.skillset li {
   }
 }
 
+.experience.basic {
+  color: #ffa450;
+}
+.experience.advanced {
+  color: #4860ff;
+}
+.experience.expert {
+  color: #00cf24;
+}
+
 .job {
   margin: 10px 0 25px 0;
   padding: 0;
@@ -1153,7 +1163,7 @@ ul.skillset li {
 }
 .job .job-title {
   font-size: 20px;
-  font-family: 'The Girl Next Door',cursive;
+  font-family: 'The Girl Next Door', cursive;
   line-height: 22px;
 }
 @media all and (max-width: 800px) {

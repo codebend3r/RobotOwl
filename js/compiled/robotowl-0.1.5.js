@@ -11730,34 +11730,136 @@ Crivas.Data = {
     portfolio: {
 
         summaryText: "<p> Chester Rivas is a highly skilled Front End Developer who specializes in JavaScript, JQuery and HTML/CSS. Coming from a design background he has the complementary skills of being able to design interfaces, websites, components through coding.</p>" +
+            "<p>Currently working as a contractor for many companies. </p>" +
             "<p>At Kobo he was a Sproutcore and UI Developer. He helped build Kobo's Instant Reader and Kobo website redesign. Both were responsive designed and highly optimized for all devices.</p>" +
             "<p>While at Research Now Chester developed a global Flash/JavaScript framework. Also developed several cutting edge market research tools.</p>" +
             "<p>Chester has been in the industry for 9 years and has worked for many high-end clients to small ad-agencies. His focus is always quality, design and functionality. And he is very comfortable moving at a fast pace.</p>" +
-            "<p>He is currently on his way to learning Android and other mobile development. With a special passion for getting into game development. Of course also very familiar with HTML5 and CSS3 to make him a complete and well rounded Front End Developer.</p>",
+            "<p>Chester is also very experienced with HTML5 and CSS3/SASS to make him a complete and well rounded Front End Developer.</p>",
 
         skillset: [
-            'JavaScript',
-            'JQuery',
-            'HTML/HTML5',
-            'CSS/CSS3/SASS',
-            'Knockout.js',
-            'Sproutcore',
-            'RequireJS',
-            'CodeIgniter',
-            'Ember.js',
-            'MVVM/MVC Concepts',
-            'Grunt.js',
-            'Photoshop',
-            'Illustrator',
-            'ActionScript 3.0/Flash'
+            {
+                skillName: 'JavaScript',
+                yearsOfExperience:'9',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'JQuery',
+                yearsOfExperience:'4',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'HTML',
+                yearsOfExperience:'9',
+                levelOfExpertise: 'EXPERT'
+            },
+            {
+                skillName: 'HTML5',
+                yearsOfExperience:'2',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'CSS',
+                yearsOfExperience:'9',
+                levelOfExpertise: 'EXPERT'
+            },
+            {
+                skillName: 'CSS3/SASS',
+                yearsOfExperience:'2',
+                levelOfExpertise: 'EXPERT'
+            },
+            {
+                skillName: 'PHP',
+                yearsOfExperience:'2',
+                levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: '.NET',
+                yearsOfExperience:'3',
+                levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: 'MVVM/MVC Concepts',
+                yearsOfExperience:'2',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'Knockout.js',
+                yearsOfExperience:'2',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'Sproutcore',
+                yearsOfExperience:'2',
+                levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: 'RequireJS',
+                yearsOfExperience:'1',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'Ember.js',
+                yearsOfExperience:'1',
+                levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: 'Adobe Photoshop',
+                yearsOfExperience:'9',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'Adobe Illustrator',
+                yearsOfExperience:'9',
+                levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: 'GitHub',
+                yearsOfExperience:'2',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'CodeIgniter',
+                yearsOfExperience:'1',
+                levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: 'Facebook Development',
+                yearsOfExperience:'3',
+                levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: 'Twitter Development',
+                yearsOfExperience:'3',
+                levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: 'ActionScript 3.0/Flash',
+                yearsOfExperience:'9',
+                levelOfExpertise: 'EXPERT'
+            }
         ],
 
         workExperience: [
             {
+                id: 28,
+                slug: 'countryDeep',
+                title: 'Country Deep',
+                menuText: 'Country Deep',
+                imageurl: [
+                    'pages/justeat-01.jpg'
+                ],
+                companyName: 'Jam3',
+                businessCase: 'New TV station for Country Music.',
+                details: 'Allows users to immerse themselves in the country music video experience. Users can submit videos via webcam and Instagram with specific hashtags. Their videos will dynamically be added to the remix section. You can also lip sync while recording yourself on the webcam',
+                techUsed: 'RequireJS, JavaScript, PHP, Grunt, JQuery, CSS3, LESS, HTML5, Proprietary Framework (Jam3)',
+                url: 'http://countrydeepletscruise.com/',
+                active: false
+            },
+            {
                 id: 27,
                 slug: 'justEat',
-                title: 'Just Eat',
-                menuText: 'Just Eat - Chomp Chomp Chomp',
+                title: 'Just Eat - Chomp Chomp Chomp',
+                menuText: 'Just Eat',
                 imageurl: [
                     'pages/justeat-01.jpg',
                     'pages/justeat-02.jpg',
@@ -11769,7 +11871,8 @@ Crivas.Data = {
                 businessCase: 'A website for select Canadian Universities for students to enter the Just-Eat.ca contest for a chance to win food!',
                 details: 'Built with CodeIgniter, this website has a set of different phases program to change automatically at certain times',
                 techUsed: 'CodeIgniter, Grunt, JQuery, CSS3, SASS, JavaScript, HTML5',
-                url: 'http://chompchompchomp.ca'
+                url: 'http://chompchompchomp.ca',
+                active: true
             },
             {
                 id: 26,
@@ -11784,7 +11887,8 @@ Crivas.Data = {
                 businessCase: 'Potential home buyers need a way to search and find deals on condos. Potential clients can also view pics and browse floorplans.',
                 details: 'A website showcasing all of Monde Condos',
                 techUsed: 'JavaScript, PHP, HTML5, Grunt, JQuery, CSS3, SASS',
-                url: 'http://www.mondecondominiums.com/'
+                url: 'http://www.mondecondominiums.com/',
+                active: true
             },
             {
                 id: 25,
@@ -11803,7 +11907,8 @@ Crivas.Data = {
                 details: 'This website was built with Knockout.js. Knockout.js was used in conjunction with JSON to store all the data. Custom built deep linking framework',
                 techUsed: 'Knockout.js, Grunt, JQuery, CSS3, SASS, JavaScript, HTML5',
                 //url: 'http://crivas.net/portfolio/motionseason/revolution'
-                url: 'http://revolution.motionseason.com/'
+                url: 'http://revolution.motionseason.com/',
+                active: true
             },
             {
                 id: 24,
@@ -11818,7 +11923,8 @@ Crivas.Data = {
                 businessCase: 'An HTML5 solution for reading Kobo eBooks on any device at any time.',
                 details: 'With Kobo Instant Reader you can read books on Desktop, Tablet, Smartphones. This web app has the ability to purchase and download books for offline reading, and syncs with other Kobo apps.',
                 techUsed: 'Sproutcore, CSS3, SASS, JavaScript, HTML5',
-                url: 'http://read.kobobooks.com'
+                url: 'http://read.kobobooks.com',
+                active: true
             },
             {
                 id: 23,
@@ -11836,7 +11942,8 @@ Crivas.Data = {
                 businessCase: 'Kobo decided they need a complete web design from the ground up. The idea was to consolidate all sites into one website called One Store.',
                 details: 'This is completely responsive designed optimized to 3 views: small, medium, large. Extensive work was required to setup a custom JavaScript framework. We integrated Knockout.js UI binding features to give the site an extra dimension.',
                 techUsed: '.NET, Knockout.js, CSS3, SASS, JavaScript, HTML5',
-                url: 'http://store.kobobooks.com/'
+                url: 'http://store.kobobooks.com/',
+                active: true
             },
             {
                 id: 22,
@@ -11848,7 +11955,8 @@ Crivas.Data = {
                 businessCase: 'Vaughan Mills wanted a complete website refresh for the Spring season. In other words a new colour scheme.',
                 details: 'Implemented Photoshop design into .aspx pages. Completely changed the colour scheme using CSS. As well as content change. Updated certain sections via custom Sonic Boom CMS.',
                 techUsed: 'Photoshop, HTML, JQuery, JavaScript, CSS',
-                url: 'http://www.vaughanmills.com'
+                url: 'http://www.vaughanmills.com',
+                active: true
             },
             {
                 id: 21,
@@ -11864,7 +11972,8 @@ Crivas.Data = {
                 businessCase: 'Part of a seasonal campaign to promote shopping at Bayview Village',
                 details: 'Pieced together all images and integrated it with a JQuery slideshow plugin for viewing images in a gallery. Each product can be liked on Facebook individually. The entire lookbook can be shared on Facebook as well.',
                 techUsed: 'Photoshop, HTML, JQuery, JavaScript, CSS',
-                url: 'http://www.bayviewvillageshops.com/MelissasMustsForSpring/'
+                url: 'http://www.bayviewvillageshops.com/MelissasMustsForSpring/',
+                active: true
             },
             {
                 id: 20,
@@ -11880,7 +11989,8 @@ Crivas.Data = {
                 businessCase: 'Digital brocure showcasing Spring line. Point is to attract business to Bayview Mall in Toronto.',
                 details: 'Photoshop work to prepare each image for HTML/CSS integration. Modified Flash page flipping application to suite client\'s specifications.',
                 techUsed: 'JQuery, JavaScript, CSS, Photoshop, Flash, ActionScript 3.0, HTML',
-                url: 'http://www.bayviewvillageshops.com/spring2012/'
+                url: 'http://www.bayviewvillageshops.com/spring2012/',
+                active: true
             },
             {
                 id: 19,
@@ -11892,7 +12002,8 @@ Crivas.Data = {
                 businessCase: 'Online digital brocure to attract business to Bayview Mall in Toronto.',
                 details: 'Photoshop work to prepare each image for HTML/CSS integration. Modified Flash page flipping application to suite client\'s specifications.',
                 techUsed: 'JQuery, JavaScript, CSS, Photoshop, Flash, ActionScript 3.0, HTML',
-                url: 'http://www.bayviewvillageshops.theterminal.ca/about/leasing.aspx'
+                url: 'http://www.bayviewvillageshops.theterminal.ca/about/leasing.aspx',
+                active: true
             },
             {
                 id: 18,
@@ -11909,7 +12020,8 @@ Crivas.Data = {
                 businessCase: 'Property Manager allows landlords and property managers for the city of London Ontario to mange all their properties availabilities, vacancies, move in and move out dates amongst other things. All related to having some sort of idea of hydro use. So this is primarily geared towards owner of buildings or complexes.',
                 details: 'I managed all the HTML,CSS and JavaScript. I had to create new functionality through JavaScript and JQuery. As wel as edit existing functionality and styles. Also implemented support for IE7+ and iPads. Contact me for login credentials.',
                 techUsed: 'JQuery, JavaScript, CSS, Photoshop, HTML, Mobile and Tablet Support',
-                url: 'https://www.londonhydro.com/propmgmt-dev/sign-in.aspx'
+                url: 'https://www.londonhydro.com/propmgmt-dev/sign-in.aspx',
+                active: true
             },
             {
                 id: 17,
@@ -11925,7 +12037,8 @@ Crivas.Data = {
                 businessCase: 'Time of Use allowst property owners to track individual water and electricity use. They are able to look at peek high and low usage through graphs and charts. Also allows them to see other pricing plan options to give them an idea of how they can save money. The point of the web app was to make London Hydro\'s customers efficient and smart with their hydro use.',
                 details: 'I did all front end development of this site. I added new pages and features and made modifications as neccessary. I implemented new designs. Made viewable for iPad and compatible with IE7 and up. Contact me for login credentials.',
                 techUsed: 'JQuery, JavaScript, CSS, Photoshop, HTML, Mobile and Tablet Support',
-                url: 'https://www.londonhydro.com/propmgmt-dev/sign-in.aspx'
+                url: 'https://www.londonhydro.com/propmgmt-dev/sign-in.aspx',
+                active: true
             },
             {
                 id: 16,
@@ -11937,7 +12050,8 @@ Crivas.Data = {
                 businessCase: 'York Heritage wanted a website update to support new browsers. They also wanted it to be viewable in Apple devices.',
                 details: 'I ported some Flash rotators and converted them to JavaScript. Also rebuilt the home page including the main menu. Both the main menu and rotator are custom JQuery plugins. Also edited content and copy site wide.',
                 techUsed: 'Custom JQuery Plugin, JavaScript, HTML, CSS',
-                url: 'http://www.yorkheritage.com'
+                url: 'http://www.yorkheritage.com',
+                active: true
             },
             {
                 id: 15,
@@ -11949,7 +12063,8 @@ Crivas.Data = {
                 businessCase: 'This reason for this was to replace the previous standard video player for surveys. This video player is easier to integrate into the survey framework and offers more options.',
                 details: 'This is a video player I designed and developed to be a new solution for the previous standard video player. This video comes with features such as fullscreen, data capturing for points of interest, viewing size, colour templates, and the ability to change the aspect ratio of the video, which I think is pretty important.',
                 techUsed: 'Flash, ActionScript 3.0, HTML, JavaScript',
-                url: 'http://survey.openvenue.com/DCT/demo/videoplayer/'
+                url: 'http://survey.openvenue.com/DCT/demo/videoplayer/',
+                active: true
             },
             {
                 id: 14,
@@ -11961,7 +12076,8 @@ Crivas.Data = {
                 businessCase: '',
                 details: 'A company asked me to build a demo for a slot machine as part of the interview process. I built this in 2 hours.',
                 techUsed: 'Flash, ActionScript 3.0, HTML, JavaScript',
-                url: 'http://crivas.net/portfolio/slotmachine/'
+                url: 'http://crivas.net/portfolio/slotmachine/',
+                active: true
             },
             {
                 id: 13,
@@ -11973,7 +12089,8 @@ Crivas.Data = {
                 businessCase: 'A contest on Facebook had to be built and added to the Nissan Facebook page.',
                 details: 'I built this simple Facebook app. There is a pre-like and post like state. And a form that registers users to the contest. I integrated the design and built the front end.',
                 techUsed: 'HTML5, CSS, JavaScript, JQuery, ASP.NET, C#',
-                url: 'offline'
+                url: 'offline',
+                active: true
             },
             {
                 id: 12,
@@ -11986,7 +12103,8 @@ Crivas.Data = {
                 details: 'This Facebook app requires you to like it and authorize it to get your Facebook ID. Additional functionality was added to give users an extra entry every 24 hours.',
                 techUsed: 'HTML5, CSS, JavaScript, JQuery, ASP.NET, C#',
                 offline: 'true',
-                url: 'offline'
+                url: 'offline',
+                active: true
             },
             {
                 id: 11,
@@ -11998,7 +12116,8 @@ Crivas.Data = {
                 businessCase: 'Some sort of eye catching flash component was needed to highlight Tommy Hilfiger\'s holiday clothing line.',
                 details: 'I developed this in AS3. I utilized my Hot Spot Generating tool to build the hidden hot spots.',
                 techUsed: 'Flash, ActionScript 3.0, HTML, CSS, JavaScript',
-                url: 'http://usa.tommy.com/tommy/browse/landing.jsp?categoryId=cat790026'
+                url: 'http://usa.tommy.com/tommy/browse/landing.jsp?categoryId=cat790026',
+                active: true
             },
             {
                 id: 10,
@@ -12010,7 +12129,8 @@ Crivas.Data = {
                 businessCase: 'A solution was need internally for creating hidden hotspots on images. Hidden hotspots are used to capture areas of interest and report on them.',
                 details: 'I designed and developed this tool in AS3. It was used internally by other programmers to speed up their work. Features inlcude exporting coordinates and importing previous coordines. You can also group shapes together and clone other shapes.',
                 techUsed: 'ActionScript 3.0, HTML, JavaScript',
-                url: 'http://crivas.net/portfolio/hotspotgenerator/'
+                url: 'http://crivas.net/portfolio/hotspotgenerator/',
+                active: true
             },
             {
                 id: 9,
@@ -12022,7 +12142,8 @@ Crivas.Data = {
                 businessCase: 'The previous shelf set tool was part of the standard tools for all surveys. However they needed a knew better version of shelf set that would allow for more options as far as display preferences and data capturing.',
                 details: 'This application was developed and designed by me. It\'s suppose to simulate buying a certain braind of proudcts off a shelf. This records which products were viewed in which order. Which products were purchased and in what order. How long in milliseconds each product on the shelf took to purchase.',
                 techUsed: 'ActionScript 3.0, HTML, JavaScript',
-                url: 'http://crivas.net/portfolio/shelfset/'
+                url: 'http://crivas.net/portfolio/shelfset/',
+                active: true
             },
             {
                 id: 8,
@@ -12034,7 +12155,8 @@ Crivas.Data = {
                 businessCase: 'External client wanted to display around 100 thumbnails and have the respondent group them quickily and easily. They also wanted the ability to slug these groups.',
                 details: 'I designed and developed this tool in AS3 utilizing my custom Flash Framework.',
                 techUsed: 'ActionScript 3.0, HTML, JavaScript',
-                url: 'http://survey.openvenue.com/DCT/demo/radixgridgrouping/'
+                url: 'http://survey.openvenue.com/DCT/demo/radixgridgrouping/',
+                active: true
             },
             {
                 id: 7,
@@ -12046,7 +12168,8 @@ Crivas.Data = {
                 businessCase: 'Unknown to this day.',
                 details: 'I designed and developed this tool in AS3 utilizing my custom Flash Framework.',
                 techUsed: 'ActionScript 3.0, HTML, JavaScript',
-                url: 'http://survey.openvenue.com/DCT/demo/observantgridplus/'
+                url: 'http://survey.openvenue.com/DCT/demo/observantgridplus/',
+                active: true
             },
             {
                 id: 6,
@@ -12058,7 +12181,8 @@ Crivas.Data = {
                 businessCase: 'Client wanted to simulate buying lottery tickets through a vending machine for respondents in the UK.',
                 details: 'I designed and developed most of the functionality.',
                 techUsed: 'ActionScript 3.0, HTML, JavaScript',
-                url: 'http://survey.openvenue.com/DCT/demo/vendingmachine/'
+                url: 'http://survey.openvenue.com/DCT/demo/vendingmachine/',
+                active: true
             },
             {
                 id: 5,
@@ -12070,7 +12194,8 @@ Crivas.Data = {
                 businessCase: 'Showcase website needed to be updated and redesigned.',
                 details: 'I helped develop some of the Front End work. I also integrated several Flash components, such as rotator, featured shows, and on tv tonight.',
                 techUsed: 'ActionScript 3.0, HTML, JavaScript',
-                url: 'http://www.showcase.ca/'
+                url: 'http://www.showcase.ca/',
+                active: true
             },
             {
                 id: 4,
@@ -12082,7 +12207,8 @@ Crivas.Data = {
                 businessCase: 'The Canwest SliceTV media team wanted to revamp the website including the main menu.',
                 details: 'There was an issue with the divs overlapping and being clickable when the menu drops down. I worked with another front end developer to communicate from ActionScript via JavaScript to CSS to change the div heights and z-index.',
                 techUsed: 'ActionScript 3.0, HTML, JavaScript',
-                url: 'http://www.slice.ca/'
+                url: 'http://www.slice.ca/',
+                active: true
             },
             {
                 id: 3,
@@ -12094,7 +12220,8 @@ Crivas.Data = {
                 businessCase: 'Client wanted a data on how people scratch lottery tickets.',
                 details: 'I designed and developed this application. Built to simulate scratching a ticket. Records data for percentage of surface sratched. Has adjustable settings for scratching accuracy and performance for low-CPU usage.',
                 techUsed: 'ActionScript 3.0, HTML, JavaScript',
-                url: 'http://survey.openvenue.com/DCT/demo/scratchticket/'
+                url: 'http://survey.openvenue.com/DCT/demo/scratchticket/',
+                active: true
             },
             {
                 id: 2,
@@ -12106,7 +12233,8 @@ Crivas.Data = {
                 businessCase: 'Research Now needed to improve on their standard tool kit offering to keep up with competitors. One of their main tools is this card sort tool. It is used to rate certain items or brands. For example the instructions could be "Please rate these brand of shoes to your preference". And the user will have to drag and drop the boxes into the corresponding dropzone area.',
                 details: 'This was an upgrade from a previous version of Card Sort. Includes features such as colour themes, certain modes that include for example, limiting the number of cards dropped into each dropzone and requiring the user to drop every card.',
                 techUsed: 'ActionScript 3.0, HTML, JavaScript',
-                url: 'http://crivas.net/portfolio/cardsort/'
+                url: 'http://crivas.net/portfolio/cardsort/',
+                active: true
             },
             {
                 id: 1,
@@ -12118,7 +12246,8 @@ Crivas.Data = {
                 businessCase: 'The end client wanted to showcase their kitchen appliances in an eye-catching and captivating manner.',
                 details: 'This was my first full functional ActionScript 3.0 website. I went a little crazy with the animations but all and all I think it turned out pretty good.',
                 techUsed: 'ActionScript 3.0, HTML',
-                url: 'http://www.cortinakitchens.com/'
+                url: 'http://www.cortinakitchens.com/',
+                active: true
             },
             {
                 id: 0,
@@ -12130,7 +12259,8 @@ Crivas.Data = {
                 businessCase: 'Redesign and development of club to attract more people.',
                 details: 'Pieced together all images and integrated it with a JQuery plugin for viewing images in a gallery. Each product can be liked on Facebook individually and the entire lookbook can be shared on Facebook as well.',
                 techUsed: 'ActionScipt 2.0, Photoshop, Illustrator, HTML',
-                url: 'http://crivas.net/portfolio/hyde/'
+                url: 'http://crivas.net/portfolio/hyde/',
+                active: true
             }
         ]
 
@@ -12420,6 +12550,67 @@ $(Crivas.init);
     self.visibleContact = ko.observable(true);
     self.scrollSpeed = 2;
     self.menuOpen = false;
+    self.goToPosition = 0;
+
+    /**
+     * a list of history of work
+     */
+    self.experienceList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.resume, function(i) {
+        return {
+            id: i.id,
+            companyName: i.companyName,
+            jobTitle: i.jobTitle,
+            jobType: i.jobType,
+            datesAtJob: i.datesAtJob,
+            isFullTime: i.jobType == "full-time" ? true : false,
+            tasks: i.tasks
+        };
+    }));
+
+    /**
+     * static work summary text
+     */
+    self.summaryText = Crivas.Data.portfolio.summaryText;
+
+    /**
+     * a list of skillz
+     */
+    self.skillSet = ko.observableArray(ko.utils.arrayMap(Crivas.Data.portfolio.skillset, function(i) {
+        return {
+            skillName: i.skillName,
+            yearsOfExperience: i.yearsOfExperience + ' years',
+            isBasic: false,
+            isAdvanced: false,
+            isExpert: false,
+            levelOfExpertise: function(j) {
+                console.log('this = ', this);
+                console.log('j = ', j);
+            }
+            //levelOfExpertise: self.getLevelOfExpertise(i, this).bind(self)
+        };
+    }));
+
+    self.getLevelOfExpertise = function(name, scope){
+        debugger;
+        if (name == 'BASIC') {
+            scope.isBasic = true;
+        } else if (name == 'ADVANCED') {
+            scope.isAdvanced = true;
+        } else if (name == 'EXPERT') {
+            scope.isExpert = true;
+        }
+    };
+
+    /**
+     * a list of portfolio
+     */
+    self.portfolioList = ko.observableArray(ko.utils.arrayMap(self.longList, function(i) {
+        return {
+            id: i.id,
+            menuText: i.menuText,
+            slug: i.slug.toLowerCase()
+        };
+    }));
 
     self.showPortflio = function(animateScroll) {
 
@@ -12454,8 +12645,6 @@ $(Crivas.init);
 
     };
 
-    self.goToPosition = 0;
-
     self.startScroll = function(goToPosition, animateScroll) {
 
         var currentScrollPosition = window.scrollY,
@@ -12473,14 +12662,6 @@ $(Crivas.init);
     };
 
     self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
-
-    self.navigationList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.portfolio.workExperience, function(i) {
-        return {
-            id: i.id,
-            menuText: i.menuText,
-            slug: i.slug.toLowerCase()
-        };
-    }));
 
     self.menuClick = function(data) {
         //self.killSection();
@@ -12562,7 +12743,7 @@ $(Crivas.init);
         self.currentSectionID(currentID);
 
         self.portfolioData(self.longList[self.currentSectionID()]);
-        //location.hash = 'portfolio/' + data.slug;
+        s//location.hash = 'portfolio/' + data.slug;
 
         if (self.$portfolioContainer.hasClass('slide-menu-in')) {
             self.$portfolioContainer.removeClass('slide-menu-in');
@@ -12582,22 +12763,6 @@ $(Crivas.init);
         window.open(url, '_blank');
 
     };
-
-    self.experienceList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.resume, function(i) {
-        return {
-            id: i.id,
-            companyName: i.companyName,
-            jobTitle: i.jobTitle,
-            jobType: i.jobType,
-            datesAtJob: i.datesAtJob,
-            isFullTime: i.jobType == "full-time" ? true : false,
-            tasks: i.tasks
-        };
-    }));
-
-    self.summaryText = Crivas.Data.portfolio.summaryText;
-
-    self.skillSet = Crivas.Data.portfolio.skillset;
 
     /**
      Click event listener method for menu item click

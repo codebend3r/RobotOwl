@@ -10,6 +10,76 @@ Crivas.ViewModel = function() {
     self.visibleContact = ko.observable(true);
     self.scrollSpeed = 2;
     self.menuOpen = false;
+    self.goToPosition = 0;
+
+    /**
+     * a list of history of work
+     */
+    self.experienceList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.resume, function(i) {
+        return {
+            id: i.id,
+            companyName: i.companyName,
+            jobTitle: i.jobTitle,
+            jobType: i.jobType,
+            datesAtJob: i.datesAtJob,
+            isFullTime: i.jobType == "full-time" ? true : false,
+            tasks: i.tasks
+        };
+    }));
+
+    /**
+     * static work summary text
+     */
+    self.summaryText = Crivas.Data.portfolio.summaryText;
+
+    /**
+     * a list of skillz
+     */
+    self.skillSet = ko.observableArray(ko.utils.arrayMap(Crivas.Data.portfolio.skillset, function(i) {
+        return {
+            skillName: i.skillName,
+            yearsOfExperience: i.yearsOfExperience + ' years',
+            isBasic: ko.observable(false),
+            isAdvanced: ko.observable(false),
+            isExpert: ko.observable(false),
+            levelOfExpertise: i.levelOfExpertise
+        };
+    }));
+
+    self.getLevelOfExpertise = function(data){
+        if (data.levelOfExpertise == 'BASIC') {
+            data.isBasic(true);
+        } else if (data.levelOfExpertise == 'ADVANCED') {
+            data.isAdvanced(true);
+        } else if (data.levelOfExpertise == 'EXPERT') {
+            data.isExpert(true);
+        }
+        return data.levelOfExpertise;
+    };
+
+    /**
+     * a list of portfolio items
+     */
+    self.portfolioList = ko.observableArray(ko.utils.arrayMap(self.longList, function(i) {
+        return {
+            id: i.id,
+            menuText: i.menuText,
+            slug: i.slug.toLowerCase(),
+            active: i.active
+        };
+    }));
+
+    /**
+     * a list of menu items
+     */
+    self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function(i) {
+        return {
+            id: i.id,
+            name: i.name,
+            subMenu: i.subMenu,
+            sunMenuSelector: i.subMenuSelector
+        };
+    });
 
     self.showPortflio = function(animateScroll) {
 
@@ -44,8 +114,6 @@ Crivas.ViewModel = function() {
 
     };
 
-    self.goToPosition = 0;
-
     self.startScroll = function(goToPosition, animateScroll) {
 
         var currentScrollPosition = window.scrollY,
@@ -63,14 +131,6 @@ Crivas.ViewModel = function() {
     };
 
     self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
-
-    self.navigationList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.portfolio.workExperience, function(i) {
-        return {
-            id: i.id,
-            menuText: i.menuText,
-            slug: i.slug.toLowerCase()
-        };
-    }));
 
     self.menuClick = function(data) {
         //self.killSection();
@@ -136,15 +196,6 @@ Crivas.ViewModel = function() {
 
     };
 
-    self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function(i) {
-        return {
-            id: i.id,
-            name: i.name,
-            subMenu: i.subMenu,
-            sunMenuSelector: i.subMenuSelector
-        };
-    });
-
     self.changePage = function(data) {
 
         var currentID = self.getPortfolioItemByID(data.id);
@@ -152,7 +203,7 @@ Crivas.ViewModel = function() {
         self.currentSectionID(currentID);
 
         self.portfolioData(self.longList[self.currentSectionID()]);
-        //location.hash = 'portfolio/' + data.slug;
+        s//location.hash = 'portfolio/' + data.slug;
 
         if (self.$portfolioContainer.hasClass('slide-menu-in')) {
             self.$portfolioContainer.removeClass('slide-menu-in');
@@ -172,22 +223,6 @@ Crivas.ViewModel = function() {
         window.open(url, '_blank');
 
     };
-
-    self.experienceList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.resume, function(i) {
-        return {
-            id: i.id,
-            companyName: i.companyName,
-            jobTitle: i.jobTitle,
-            jobType: i.jobType,
-            datesAtJob: i.datesAtJob,
-            isFullTime: i.jobType == "full-time" ? true : false,
-            tasks: i.tasks
-        };
-    }));
-
-    self.summaryText = Crivas.Data.portfolio.summaryText;
-
-    self.skillSet = Crivas.Data.portfolio.skillset;
 
     /**
      Click event listener method for menu item click

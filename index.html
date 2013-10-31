@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Crivas Inc.</title>
@@ -6,9 +6,9 @@
     <!-- ICONS -->
     <link rel="shortcut icon" href="icons/favicon_32x32.ico" type="image/x-icon"/>
     <link rel="icon" href="icons/favicon_32x32.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="icons/icon_32x32x32.png"/>
 
     <!-- STYLESHEETS -->
-    <link rel="apple-touch-icon" href="icons/icon_32x32x32.png"/>
     <link rel="stylesheet" type="text/css" href="css/release/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="css/release/main.css"/>
     <link rel="stylesheet" type="text/css" href="css/release/headers.css"/>
@@ -22,7 +22,7 @@
 
     <!-- FACEBOOK SHARE OG -->
     <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=1, user-scalable=no"/>
-    <meta property="og:title" content="Chester Rivas - Online Portofolio"/>
+    <meta property="og:title" content="Chester Rivas - Online Portfolio"/>
     <meta property="og:description" content="Toronto based Front End Developer offering full-service web design and development."/>
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="http://crivas.net/"/>
@@ -38,29 +38,23 @@
 
     <!-- SEO -->
     <meta name="Description" content="Chester Rivas' Online Portfolio - Web Development, PHP, HTML5/CSS, JavaScript, JQuery, Flash/Flex/ActionScript, JavaScript Frameworks, ">
-    <meta name="keywords" content="Chester, Rivas, Chester Rivas, Flash, Toronto, Ontario, Canada, UI, UX, Knockout, CodeIgniter, Sproutcore, Front-End, Front, End, Development, ActionScript, 3.0, 2.0, Flex, Flash, Adobe, HTML, HTML5, CSS, CSS3, JavaScript, JQuery"/>
+    <meta name="keywords" content="Chester, Rivas, Flash, Toronto, Ontario, Canada, Front, End, UI, UX, Knockout, CodeIgniter, Sproutcore, Development, Developer, ActionScript, 3.0, 2.0, Flex, Flash, Adobe, HTML, HTML5, CSS, CSS3, JavaScript, JQuery"/>
 
 </head>
 <body>
 
 <header class="nav-bar">
-
     <div class="nav-bar-fixed">
-
         <div class="open-small-menu" data-bind="click: $root.openSmallMenu">
             <div class="horizontal-groove"></div>
             <div class="horizontal-groove"></div>
             <div class="horizontal-groove"></div>
         </div>
-
         <div class="logo"></div>
-
         <ul class="main-menu large" data-bind="foreach: $root.menuList">
             <li class="menu-item" data-bind="text: name, subMenu: subMenu, click: $root.menuClick"></li>
         </ul>
-
     </div>
-
 </header>
 
 <ul class="main-menu small" data-bind="foreach: $root.menuList">
@@ -77,31 +71,24 @@
             <h2>Portfolio</h2>
         </div>
 
-        <ul class="portfolio-list" data-bind="foreach: $root.navigationList">
-            <li data-bind="html: menuText, click: $root.changePage"></li>
+        <ul class="portfolio-list" data-bind="foreach: $root.portfolioList">
+            <li data-bind="html: menuText, click: $root.changePage, visible: active"></li>
         </ul>
 
         <div class="portfolio-container" data-bind="with: $root.portfolioData">
-
             <h3 class="port-title" data-bind="text: title"></h3>
-
             <div class='image-container'>
-
                 <div class="image-preloader"></div>
-
                 <ul class='image-border' data-bind='foreach: imageurl, click: $root.imageClicked'>
                     <li class='images-list'>
                         <img class='work-images' data-bind='attr:{src: $data}'/>
                     </li>
                 </ul>
-
             </div>
-
             <div class="sub">
                 <p class="sub-heading">
                     Company
                 </p>
-
                 <p class="details" data-bind="text: companyName"></p>
             </div>
             <div class="sub">
@@ -115,20 +102,17 @@
                 <p class="sub-heading">
                     Details
                 </p>
-
                 <p class="details" data-bind="text: details"></p>
             </div>
             <div class="sub">
                 <p class="sub-heading">
                     Technology Used
                 </p>
-
                 <p class="details" data-bind="text: techUsed"></p>
             </div>
             <div class="launch">
                 <a data-bind="attr: {href: url}" target="_blank">VIEW</a>
             </div>
-
         </div>
 
     </section>
@@ -144,50 +128,38 @@
         </div>
 
         <div class="stackable">
-
             <p class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> .docx format (Word 2010)</p>
-
             <p class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> .pdf (Adobe PDF)</p>
-
         </div>
 
         <div class="stackable">
-
             <h3>Summary</h3>
-
             <div class='summary' data-bind='html: $root.summaryText'></div>
-
         </div>
 
         <div class="stackable">
-
-            <h3>Software and Development Languages</h3>
-
+            <h3>Skills Matrix</h3>
             <ul class="skillset" data-bind="foreach: $root.skillSet">
-                <li data-bind="text: $data"></li>
+                <li class='skill-item'>
+                    <!-- <span class='skill' data-bind='html: skillName'></span> - <span class='level' data-bind='html: levelOfExpertise, css: { isExpert: expert, isAdvanced: advanced, isBasic: basic }'></span> - <span class='experience' data-bind='html: yearsOfExperience'></span> -->
+                    <span class='skill' data-bind='html: skillName'></span> - <span class='level' data-bind='html: $root.getLevelOfExpertise($data), css: { expert:isExpert, advanced:isAdvanced, basic:isBasic }'></span> - <span class='experience' data-bind='html: yearsOfExperience'></span>
+                </li>
             </ul>
-
         </div>
 
         <div class="stackable">
-
             <h3>Work Experience</h3>
-
             <div data-bind="foreach: $root.experienceList">
                 <div class="job">
                     <p><span class="job-title" data-bind="text: jobTitle"></span></p>
-
                     <p><span class="company-name" data-bind="text: companyName"></span><span>&nbsp;|&nbsp;</span><span class="job-type" data-bind="text: jobType, css: { isFullTime: isFullTime }"></span></p>
-
                     <p></p>
-
                     <p><span class="dates-at-job" data-bind="text: datesAtJob"></span></p>
                     <ul data-bind="foreach: tasks">
                         <li data-bind="text: $data"></li>
                     </ul>
                 </div>
             </div>
-
         </div>
 
     </section>

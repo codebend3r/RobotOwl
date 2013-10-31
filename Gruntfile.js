@@ -7,24 +7,44 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         clean: ["<%= pkg.outputFolder %>", "compiled" ],
         copy: {
-            before: {
+            dev: {
                 files: [
-                    {src: ['index-optimized.html'], dest: '<%= pkg.outputFolder %>/index-optimized.html'},
-                    {src: ['index-release.html'], dest: '<%= pkg.outputFolder %>/index-release.html'},
+                    {src: ['index.html'], dest: '<%= pkg.outputFolder %>/index.html'},
+                    {src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['email/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['css/release/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['js/external/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['js/internal/**'], dest: '<%= pkg.outputFolder %>/'}
+                ]
+            },
+            prod: {
+                files: [
+                    {src: ['index.html'], dest: '<%= pkg.outputFolder %>/index.html'},
                     {src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
                     {src: ['email/**'], dest: '<%= pkg.outputFolder %>/'},
                     {src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
                     {src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
                     {src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
                     {src: ['css/'], dest: '<%= pkg.outputFolder %>/css'},
-                    {src: ['js/'], dest: '<%= pkg.outputFolder %>/js'}
+                    {src: ['js/'], dest: '<%= pkg.outputFolder %>/js'},
+                    {src: ['js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>-<%= pkg.version %>.js'},
+                    {src: ['css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css'], dest: '<%= pkg.outputFolder %>/css/<%= pkg.outputName %>-<%= pkg.version %>.css'}
                 ]
             },
-            after: {
+            release: {
                 files: [
-                    {src: ['js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>-<%= pkg.version %>.js'},
+                    {src: ['index.html'], dest: '<%= pkg.outputFolder %>/index.html'},
+                    {src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['email/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
+                    {src: ['css/'], dest: '<%= pkg.outputFolder %>/css'},
+                    {src: ['js/'], dest: '<%= pkg.outputFolder %>/js'},
                     {src: ['js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>-<%= pkg.version %>.min.js'},
-                    {src: ['css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css'], dest: '<%= pkg.outputFolder %>/css/<%= pkg.outputName %>-<%= pkg.version %>.css'},
                     {src: ['css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.css'], dest: '<%= pkg.outputFolder %>/css/<%= pkg.outputName %>-<%= pkg.version %>.min.css'}
                 ]
             }
@@ -84,14 +104,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
-        jquerytransform: {
-            files: ['<%= pkg.outputFolder %>/index-optimized.html'], // All HTML files
-            transform: function ($) {
-                // For styling bullet separate from text
-                $('html').find('script').remove();
-            }
-        },
         sass: {
             dist: {
                 options: {
@@ -120,20 +132,22 @@ module.exports = function (grunt) {
                     collapseWhitespace: true
                 },
                 files: {
-                    '<%= pkg.outputFolder %>/index.optimized.min.html': 'index-optimized.html',
-                    '<%= pkg.outputFolder %>/index-release.min.html': 'index-release.html',
-                    '<%= pkg.outputFolder %>/index.html': 'index-release.html'
+                    '<%= pkg.outputFolder %>/index.html': 'index.html'
                 }
             }
         },
         watch: {
-            css: {
-                files: [ 'sass/*.scss' ],
-                tasks: [ 'default' ]
+            dev: {
+                files: [ 'sass/*.scss', 'js/internal/*.js', 'index.html' ],
+                tasks: [ 'dev' ]
             },
-            js: {
-                files: [ 'js/internal/*.js' ],
-                tasks: [ 'default' ]
+            prod: {
+                files: [ 'sass/*.scss', 'js/internal/*.js', 'index.html' ],
+                tasks: [ 'prod' ]
+            },
+            release: {
+                files: [ 'sass/*.scss', 'js/internal/*.js', 'index.html' ],
+                tasks: [ 'release' ]
             }
         },
         jslint: {
@@ -150,6 +164,35 @@ module.exports = function (grunt) {
                     checkstyle: 'out/server-checkstyle.xml' // write a checkstyle-XML
                 }
             }
+        },
+        env : {
+
+            dev: {
+                NODE_ENV : 'DEVELOPMENT'
+            },
+            prod : {
+                NODE_ENV : 'PRODUCTION'
+            },
+            release : {
+                NODE_ENV : 'RELEASE'
+            }
+
+        },
+        preprocess : {
+
+            dev : {
+                src : 'index.html',
+                dest : 'index.html'
+            },
+            prod : {
+                src : 'index.html',
+                dest : 'index.html'
+            },
+            release : {
+                src : 'index.html',
+                dest : 'index.html'
+            }
+
         }
     });
 
@@ -162,18 +205,18 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-jslint');
-    grunt.loadNpmTasks('grunt-jquerytransform');
-    //grunt.loadNpmTasks('DSS');
-
+    grunt.loadNpmTasks('grunt-preprocess');
+    grunt.loadNpmTasks('grunt-env');
 
     // Default task(s)
-    grunt.registerTask('quickbuild', ['clean', 'copy:main', 'jquerytransform']);
-    grunt.registerTask('jslint', ['jslint']);
-    grunt.registerTask('watchcode', ['watch']);
-    grunt.registerTask('buildjs', ['concat:jsconcat', 'uglify']);
-    grunt.registerTask('buildcss', ['sass', 'concat:cssconcat', 'cssmin' ]);
-    grunt.registerTask('cleanandmove', ['clean', 'copy', 'htmlmin' ]);
-    grunt.registerTask('default', [ 'sass', 'clean', 'copy:before', 'concat', 'uglify', 'cssmin', 'copy:after', 'htmlmin' ]);
+    grunt.registerTask('watchdev', ['watch:dev']);
+    grunt.registerTask('watchprod', ['watch:prod']);
+    grunt.registerTask('watchrelease', ['watch:release']);
+
+    grunt.registerTask('default', [ 'env:dev', 'sass', 'preprocess:dev', 'clean', 'copy:dev' ]);
+    grunt.registerTask('dev', [ 'env:dev', 'sass', 'preprocess:dev', 'clean', 'copy:dev' ]);
+    grunt.registerTask('prod', [ 'env:prod', 'sass', 'concat', 'preprocess:prod', 'clean', 'copy:prod' ]);
+    grunt.registerTask('release', [ 'env:release', 'sass', 'concat', 'uglify', 'cssmin', 'preprocess:release', 'clean', 'copy:release', 'htmlmin' ]);
 
 
 
