@@ -16,46 +16,29 @@ Crivas.init = function () {
                 allBindings = allBindingsAccessor();
 
             // Next, whether or not the supplied model property is observable, get its current value
-            //var valueUnwrapped = ko.unwrap(value);
+            // var valueUnwrapped = ko.unwrap(value);
 
-            //console.log('update - element', element);
-            //console.log('update - valueAccessor', valueAccessor);
-            //console.log('update - allBindingsAccessor', allBindingsAccessor);
-            //console.log('update - viewModel', viewModel);
-            //console.log('update - bindingContext', bindingContext);
-            console.log('update - value', value);
-            //console.log('update - valueUnwrapped', valueUnwrapped);
             var subMenuOn = viewModel.subMenu;
             var subMenuSelector = viewModel.subMenuSelector;
             if (subMenuOn) {
-
                 $(element).append("<ul class='sub-menu'></ul>");
-                var data = Crivas.Data.resume;
-                //console.log("data", data);
-                console.log('!!!!!!!!!!! portfolio-list', $('.portfolio-list'));
-                //$(element).find(".sub-menu").append($clonedSubMenu);
-
                 var $clonedMenu = $('.portfolio-list').clone();
-
                 $clonedMenu.addClass('small-menu');
-
                 $('.sub-menu').append($clonedMenu);
 
             }
-
         }
     };
 
     ko.applyBindings(Crivas.ViewModel(), scope);
 
-    if (window.location.hash) window.location.hash.replace('#', '');
+    //if (window.location.hash) window.location.hash.replace('#', '');
 
+    /*
     window.onhashchange = function (e) {
-        //console.log('HASH CHANGE');
         if (window.location.hash) window.location.hash.replace('#', '');
     };
-
-
+    */
 
 };
 

@@ -52,7 +52,7 @@ module.exports = function (grunt) {
         concat: {
             options: {
                 // define a string to put between each file in the concatenated output
-                separator: '/* NEW FILE */'
+                separator: '\n\n\n/* NEW FILE */\n\n\n'
             },
             jsconcat: {
                 // the files to concatenate
@@ -86,7 +86,7 @@ module.exports = function (grunt) {
         uglify: {
             options: {
                 // the banner is inserted at the top of the output
-                banner: '/* NEW FILE */'
+                banner: '\n\n\n/* NEW FILE */\n\n\n'
             },
             dist: {
                 files: {
@@ -182,15 +182,27 @@ module.exports = function (grunt) {
 
             dev : {
                 src : 'index.html',
-                dest : 'index.html'
+                dest : '<%= pkg.outputFolder %>/index.html'
             },
             prod : {
                 src : 'index.html',
-                dest : 'index.html'
+                dest : '<%= pkg.outputFolder %>/index.html',
+                options : {
+                    context: {
+                        name : '<%= pkg.outputName %>',
+                        version : '<%= pkg.version %>'
+                    }
+                }
             },
             release : {
                 src : 'index.html',
-                dest : 'index.html'
+                dest : '<%= pkg.outputFolder %>/index.html',
+                options : {
+                    context: {
+                        name : '<%= pkg.outputName %>',
+                        version : '<%= pkg.version %>'
+                    }
+                }
             }
 
         }
@@ -215,8 +227,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [ 'env:dev', 'sass', 'preprocess:dev', 'clean', 'copy:dev' ]);
     grunt.registerTask('dev', [ 'env:dev', 'sass', 'preprocess:dev', 'clean', 'copy:dev' ]);
-    grunt.registerTask('prod', [ 'env:prod', 'sass', 'concat', 'preprocess:prod', 'clean', 'copy:prod' ]);
-    grunt.registerTask('release', [ 'env:release', 'sass', 'concat', 'uglify', 'cssmin', 'preprocess:release', 'clean', 'copy:release', 'htmlmin' ]);
+    grunt.registerTask('prod', [ 'env:prod', 'sass', 'concat', 'clean', 'copy:prod', 'preprocess:prod' ]);
+    grunt.registerTask('release', [ 'env:release', 'sass', 'concat', 'uglify', 'cssmin', 'clean', 'copy:release', 'preprocess:release' ]);
 
 
 

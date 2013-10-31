@@ -394,7 +394,13 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-/* NEW FILE */html {
+
+
+
+/* NEW FILE */
+
+
+html {
   font-size: 100%;
 }
 @media all and (max-width: 620px) {
@@ -664,7 +670,13 @@ a {
 a:hover {
   color: #db6510;
 }
-/* NEW FILE */h1, h2, h3, h4, h5 {
+
+
+
+/* NEW FILE */
+
+
+h1, h2, h3, h4, h5 {
   font-family: 'The Girl Next Door', cursive;
   padding: 0;
   margin: 0;
@@ -689,7 +701,13 @@ h3 {
   @media all and (max-width: 800px) {
     h3 {
       font-size: 2rem; } }
-/* NEW FILE *//**
+
+
+
+/* NEW FILE */
+
+
+/**
 * @description the nav bar header which spans 100% of the width
 *
 * @markup
@@ -895,7 +913,13 @@ ul.main-menu li.selected {
     padding: 0;
   }
 }
-/* NEW FILE *//**
+
+
+
+/* NEW FILE */
+
+
+/**
 * @description the preloading animated gif
 *
 * @markup
@@ -1116,7 +1140,13 @@ img.work-images {
   left: 0px;
   display: none;
 }
-/* NEW FILE */ul.skillset {
+
+
+
+/* NEW FILE */
+
+
+ul.skillset {
   margin: 0;
   padding: 10px 0;
   -moz-column-count: 2;
@@ -1246,7 +1276,13 @@ ul.skillset li.skill-item {
     height: 100px;
   }
 }
-/* NEW FILE */.column {
+
+
+
+/* NEW FILE */
+
+
+.column {
   display: inline-block;
   width: 49%;
   vertical-align: top;

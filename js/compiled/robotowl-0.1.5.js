@@ -9595,7 +9595,13 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 }
 
 })( window );
-/* NEW FILE */// $('img.photo',this).imagesLoaded(myFunction)
+
+
+
+/* NEW FILE */
+
+
+// $('img.photo',this).imagesLoaded(myFunction)
 // execute a callback when all images have loaded.
 // needed because .load() doesn't work on cached images
 
@@ -9646,7 +9652,13 @@ $.fn.imagesLoaded = function( callback ){
   });
 
   return this;
-};/* NEW FILE */// Knockout JavaScript library v2.2.1
+};
+
+
+/* NEW FILE */
+
+
+// Knockout JavaScript library v2.2.1
 // (c) Steven Sanderson - http://knockoutjs.com/
 // License: MIT (http://www.opensource.org/licenses/mit-license.php)
 
@@ -9730,7 +9742,13 @@ $.fn.imagesLoaded = function( callback ){
             r};b.C.prototype=new b.v;b.C.prototype.renderTemplateSource=function(a){var d=!(9>b.a.Z)&&a.nodes?a.nodes():p;if(d)return b.a.L(d.cloneNode(m).childNodes);a=a.text();return b.a.ta(a)};b.C.oa=new b.C;b.wa(b.C.oa);b.b("nativeTemplateEngine",b.C);b.qa=function(){var a=this.Db=function(){if("undefined"==typeof F||!F.tmpl)return 0;try{if(0<=F.tmpl.tag.tmpl.open.toString().indexOf("__"))return 2}catch(a){}return 1}();this.renderTemplateSource=function(b,c,e){e=e||{};2>a&&j(Error("Your version of jQuery.tmpl is too old. Please upgrade to jQuery.tmpl 1.0.0pre or later."));
             var f=b.data("precompiled");f||(f=b.text()||"",f=F.template(p,"{{ko_with $item.koBindingContext}}"+f+"{{/ko_with}}"),b.data("precompiled",f));b=[c.$data];c=F.extend({koBindingContext:c},e.templateOptions);c=F.tmpl(f,b,c);c.appendTo(y.createElement("div"));F.fragments={};return c};this.createJavaScriptEvaluatorBlock=function(a){return"{{ko_code ((function() { return "+a+" })()) }}"};this.addTemplate=function(a,b){y.write("<script type='text/html' id='"+a+"'>"+b+"\x3c/script>")};0<a&&(F.tmpl.tag.ko_code=
         {open:"__.push($1 || '');"},F.tmpl.tag.ko_with={open:"with($1) {",close:"} "})};b.qa.prototype=new b.v;w=new b.qa;0<w.Db&&b.wa(w);b.b("jqueryTmplTemplateEngine",b.qa)}"function"===typeof require&&"object"===typeof exports&&"object"===typeof module?L(module.exports||exports):"function"===typeof define&&define.amd?define(["exports"],L):L(x.ko={});m;
-})();/* NEW FILE *//*!
+})();
+
+
+/* NEW FILE */
+
+
+/*!
  * Modernizr v2.6.2
  * www.modernizr.com
  *
@@ -11123,7 +11141,13 @@ window.Modernizr = (function( window, document, undefined ) {
     return Modernizr;
 
 })(this, this.document);
-/* NEW FILE *//*!
+
+
+
+/* NEW FILE */
+
+
+/*!
  * Owl Gallery
  * crivas.net
  *
@@ -11701,7 +11725,13 @@ $.fn.owlgallery = function (options) {
 
     return $this;
 
-};/* NEW FILE */var Crivas = {};
+};
+
+
+/* NEW FILE */
+
+
+var Crivas = {};
 window.Crivas = Crivas;
 
 Crivas.Data = {
@@ -12476,7 +12506,13 @@ Crivas.Data = {
 
     ]
 
-}/* NEW FILE */Crivas.init = function () {
+}
+
+
+/* NEW FILE */
+
+
+Crivas.init = function () {
 
     var scope = $('body').get(0);
 
@@ -12494,46 +12530,29 @@ Crivas.Data = {
                 allBindings = allBindingsAccessor();
 
             // Next, whether or not the supplied model property is observable, get its current value
-            //var valueUnwrapped = ko.unwrap(value);
+            // var valueUnwrapped = ko.unwrap(value);
 
-            //console.log('update - element', element);
-            //console.log('update - valueAccessor', valueAccessor);
-            //console.log('update - allBindingsAccessor', allBindingsAccessor);
-            //console.log('update - viewModel', viewModel);
-            //console.log('update - bindingContext', bindingContext);
-            console.log('update - value', value);
-            //console.log('update - valueUnwrapped', valueUnwrapped);
             var subMenuOn = viewModel.subMenu;
             var subMenuSelector = viewModel.subMenuSelector;
             if (subMenuOn) {
-
                 $(element).append("<ul class='sub-menu'></ul>");
-                var data = Crivas.Data.resume;
-                //console.log("data", data);
-                console.log('!!!!!!!!!!! portfolio-list', $('.portfolio-list'));
-                //$(element).find(".sub-menu").append($clonedSubMenu);
-
                 var $clonedMenu = $('.portfolio-list').clone();
-
                 $clonedMenu.addClass('small-menu');
-
                 $('.sub-menu').append($clonedMenu);
 
             }
-
         }
     };
 
     ko.applyBindings(Crivas.ViewModel(), scope);
 
-    if (window.location.hash) window.location.hash.replace('#', '');
+    //if (window.location.hash) window.location.hash.replace('#', '');
 
+    /*
     window.onhashchange = function (e) {
-        //console.log('HASH CHANGE');
         if (window.location.hash) window.location.hash.replace('#', '');
     };
-
-
+    */
 
 };
 
@@ -12541,7 +12560,13 @@ $(Crivas.init);
 
 
 
-/* NEW FILE */Crivas.ViewModel = function() {
+
+
+
+/* NEW FILE */
+
+
+Crivas.ViewModel = function() {
 
     var self = this;
 
@@ -12876,7 +12901,13 @@ $(Crivas.init);
 
     return self;
 
-};/* NEW FILE */// Contact Form
+};
+
+
+/* NEW FILE */
+
+
+// Contact Form
 $("#contact").submit(function (e) {
     e.preventDefault();
     var firstname = $("#firstname").val();
