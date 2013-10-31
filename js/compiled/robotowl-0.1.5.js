@@ -11846,14 +11846,17 @@ Crivas.Data = {
                 title: 'Country Deep',
                 menuText: 'Country Deep',
                 imageurl: [
-                    'pages/justeat-01.jpg'
+                    'pages/country_deep_01.jpg',
+                    'pages/country_deep_02.jpg',
+                    'pages/country_deep_03.jpg',
+                    'pages/country_deep_04.jpg'
                 ],
                 companyName: 'Jam3',
                 businessCase: 'New TV station for Country Music.',
                 details: 'Allows users to immerse themselves in the country music video experience. Users can submit videos via webcam and Instagram with specific hashtags. Their videos will dynamically be added to the remix section. You can also lip sync while recording yourself on the webcam',
                 techUsed: 'RequireJS, JavaScript, PHP, Grunt, JQuery, CSS3, LESS, HTML5, Proprietary Framework (Jam3)',
-                url: 'http://countrydeepletscruise.com/',
-                active: false
+                url: 'http://countrydeepletscruise.com',
+                active: true
             },
             {
                 id: 27,
@@ -12579,38 +12582,47 @@ $(Crivas.init);
         return {
             skillName: i.skillName,
             yearsOfExperience: i.yearsOfExperience + ' years',
-            isBasic: false,
-            isAdvanced: false,
-            isExpert: false,
-            levelOfExpertise: function(j) {
-                console.log('this = ', this);
-                console.log('j = ', j);
-            }
-            //levelOfExpertise: self.getLevelOfExpertise(i, this).bind(self)
+            isBasic: ko.observable(false),
+            isAdvanced: ko.observable(false),
+            isExpert: ko.observable(false),
+            levelOfExpertise: i.levelOfExpertise
         };
     }));
 
-    self.getLevelOfExpertise = function(name, scope){
-        debugger;
-        if (name == 'BASIC') {
-            scope.isBasic = true;
-        } else if (name == 'ADVANCED') {
-            scope.isAdvanced = true;
-        } else if (name == 'EXPERT') {
-            scope.isExpert = true;
+    self.getLevelOfExpertise = function(data){
+        if (data.levelOfExpertise == 'BASIC') {
+            data.isBasic(true);
+        } else if (data.levelOfExpertise == 'ADVANCED') {
+            data.isAdvanced(true);
+        } else if (data.levelOfExpertise == 'EXPERT') {
+            data.isExpert(true);
         }
+        return data.levelOfExpertise;
     };
 
     /**
-     * a list of portfolio
+     * a list of portfolio items
      */
     self.portfolioList = ko.observableArray(ko.utils.arrayMap(self.longList, function(i) {
         return {
             id: i.id,
             menuText: i.menuText,
-            slug: i.slug.toLowerCase()
+            slug: i.slug.toLowerCase(),
+            active: i.active
         };
     }));
+
+    /**
+     * a list of menu items
+     */
+    self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function(i) {
+        return {
+            id: i.id,
+            name: i.name,
+            subMenu: i.subMenu,
+            sunMenuSelector: i.subMenuSelector
+        };
+    });
 
     self.showPortflio = function(animateScroll) {
 
@@ -12726,15 +12738,6 @@ $(Crivas.init);
         }
 
     };
-
-    self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function(i) {
-        return {
-            id: i.id,
-            name: i.name,
-            subMenu: i.subMenu,
-            sunMenuSelector: i.subMenuSelector
-        };
-    });
 
     self.changePage = function(data) {
 

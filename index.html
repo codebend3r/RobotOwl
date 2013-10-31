@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Crivas Inc.</title>
@@ -9,6 +9,9 @@
     <link rel="apple-touch-icon" href="icons/icon_32x32x32.png"/>
 
     <!-- STYLESHEETS -->
+
+    <!-- @if NODE_ENV == 'DEVELOPMENT' -->
+
     <link rel="stylesheet" type="text/css" href="css/release/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="css/release/main.css"/>
     <link rel="stylesheet" type="text/css" href="css/release/headers.css"/>
@@ -16,6 +19,20 @@
     <link rel="stylesheet" type="text/css" href="css/release/portfolio.css"/>
     <link rel="stylesheet" type="text/css" href="css/release/resume.css"/>
     <link rel="stylesheet" type="text/css" href="css/release/contact.css"/>
+
+    <!-- @endif -->
+
+    <!-- @if NODE_ENV == 'PRODUCTION' -->
+
+    <link rel="stylesheet" type="text/css" href="css/compiled/robotowl-0.1.5.css"/>
+
+    <!-- @endif -->
+
+    <!-- @if NODE_ENV == 'RELEASE' -->
+
+    <link rel="stylesheet" type="text/css" href="css/compiled/robotowl-0.1.5.min.css"/>
+
+    <!-- @endif -->
 
     <!-- CANONICAL -->
     <link rel="canonical" href="http://crivas.net/"/>
@@ -141,7 +158,6 @@
             <h3>Skills Matrix</h3>
             <ul class="skillset" data-bind="foreach: $root.skillSet">
                 <li class='skill-item'>
-                    <!-- <span class='skill' data-bind='html: skillName'></span> - <span class='level' data-bind='html: levelOfExpertise, css: { isExpert: expert, isAdvanced: advanced, isBasic: basic }'></span> - <span class='experience' data-bind='html: yearsOfExperience'></span> -->
                     <span class='skill' data-bind='html: skillName'></span> - <span class='level' data-bind='html: $root.getLevelOfExpertise($data), css: { expert:isExpert, advanced:isAdvanced, basic:isBasic }'></span> - <span class='experience' data-bind='html: yearsOfExperience'></span>
                 </li>
             </ul>
@@ -229,6 +245,8 @@
 
 </section>
 
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+
 <!-- EXTERNAL JS -->
 <script src="js/external/jquery-1.9.1.js" type="text/javascript"></script>
 <script src="js/external/jquery.imagesloaded.js" type="text/javascript"></script>
@@ -243,6 +261,20 @@
 <script src="js/internal/Crivas.Main.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.ViewModel.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.EmailForm.js" type="text/javascript"></script>
+
+<!-- @endif -->
+
+<!-- @if NODE_ENV == 'PRODUCTION' -->
+
+<script src="js/compiled/robotowl-0.1.5.js" type="text/javascript"></script>
+
+<!-- @endif -->
+
+<!-- @if NODE_ENV == 'RELEASE' -->
+
+<script src="js/compiled/robotowl-0.1.5.min.js" type="text/javascript"></script>
+
+<!-- @endif -->
 
 <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Roboto:400,700,400italic' rel='stylesheet' type='text/css'>
 

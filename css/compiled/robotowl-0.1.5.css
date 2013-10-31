@@ -1123,11 +1123,11 @@ img.work-images {
   -webkit-column-count: 2;
   column-count: 2;
 }
-ul.skillset li {
-  font-size: 14px;
+ul.skillset li.skill-item {
+  font-size: 12px;
 }
 @media all and (max-width: 800px) {
-  ul.skillset li {
+  ul.skillset li.skill-item {
     font-size: 1.4rem !important;
   }
 }
@@ -1143,14 +1143,26 @@ ul.skillset li {
   }
 }
 
-.experience.basic {
+.skill {
+  color: #000000;
+}
+
+.level {
+  font-family: 'The Girl Next Door', cursive;
+}
+.level.basic {
   color: #ffa450;
 }
-.experience.advanced {
+.level.advanced {
   color: #4860ff;
 }
-.experience.expert {
+.level.expert {
   color: #00cf24;
+}
+
+.experience {
+  color: #000000;
+  font-size: 10px;
 }
 
 .job {
