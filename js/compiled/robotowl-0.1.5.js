@@ -12703,14 +12703,12 @@ Crivas.ViewModel = function() {
     self.menuClick = function(data) {
         //self.killSection();
         var currentID = data.id;
-        console.log("menuClick.currentID", currentID);
         self.navArray[currentID]();
         self.highlightCurrentMenuItem(currentID);
     };
 
     self.portfolioItemClick = function(data) {
         var currentID = data.id;
-        console.log("portfolioItemClick.currentID", currentID);
     };
 
     self.highlightCurrentMenuItem = function(i) {
@@ -12726,8 +12724,8 @@ Crivas.ViewModel = function() {
 
     self.getPortfolioItemByID = function(id){
         var currentID;
-        for ( var i = 0; i < self.navigationList().length; i += 1) {
-            if ( id == self.navigationList()[i].id ) {
+        for ( var i = 0; i < self.portfolioList().length; i += 1) {
+            if ( id == self.portfolioList()[i].id ) {
                 currentID = i;
                 return currentID;
             }
