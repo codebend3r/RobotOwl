@@ -403,7 +403,7 @@ table {
 html {
   font-size: 100%;
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   html {
     font-size: 150%;
   }
@@ -418,7 +418,7 @@ body {
   min-width: 400px;
   overflow-x: hidden;
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   body {
     margin: 0;
     padding: 0;
@@ -478,6 +478,16 @@ body {
   margin: 0 0 10px 0;
   padding: 0 0 100px 0;
 }
+@media all and (max-width: 1000px) {
+  .main-content-section {
+    clear: both;
+    width: 80%;
+    height: auto;
+    float: left;
+    margin: 0 0 10px 0;
+    padding: 0 10% 100px 10%;
+  }
+}
 @media all and (max-width: 800px) {
   .main-content-section {
     position: static;
@@ -491,7 +501,7 @@ body {
     padding: 0 1%;
   }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .main-content-section {
     position: static;
     float: left;
@@ -580,7 +590,7 @@ p, a {
   -moz-box-shadow: 0px 0px 3pxpx 3pxpx black;
   box-shadow: 0px 0px 3pxpx 3pxpx black;
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .launch a {
     width: 100%;
     display: inline-block;
@@ -601,7 +611,7 @@ p, a {
   -moz-box-shadow: 0px 0px 3pxpx 3pxpx black;
   box-shadow: 0px 0px 3pxpx 3pxpx black;
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .launch a:hover {
     padding: 10px 0;
     margin: 0 auto;
@@ -620,7 +630,7 @@ p, a {
   vertical-align: middle;
   height: 90px;
   line-height: 90px;
-  margin-left: 0px;
+  margin: 0;
 }
 @media all and (max-width: 800px) {
   .icon-and-title {
@@ -640,7 +650,7 @@ p, a {
 }
 @media all and (max-width: 800px) {
   .icon-and-title h2 {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 }
 
@@ -718,6 +728,7 @@ h3 {
   width: 100%;
   /*@include gradient($lightGrey,$lightGrey,$lightGrey);*/
   background: url("../../pattern/squairy_light.png") repeat;
+  background-size: 200px 200px;
   border-bottom: 1px lightgrey solid;
   position: fixed;
   z-index: 99;
@@ -739,15 +750,21 @@ h3 {
     position: fixed;
     top: 0px;
     left: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .nav-bar {
     height: 70px;
     z-index: 998;
     position: fixed;
     top: 0px;
     left: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 }
 
@@ -785,9 +802,7 @@ h3 {
 .open-small-menu .horizontal-groove {
   margin: 14px 10px -12px 10px;
   background-color: #cecece;
-  height: 2px;
-  border-radius: 4px;
-  border: 2px inset #eeeeee;
+  height: 4px;
 }
 @media all and (max-width: 800px) {
   .open-small-menu {
@@ -800,8 +815,8 @@ h3 {
     border-right: 2px solid #d1d1d1;
   }
   .open-small-menu .horizontal-groove {
-    margin: 19px 10px -12px 10px;
-    border: 3px inset #eeeeee;
+    margin: 20px 10px -12px 10px;
+    height: 4px;
   }
 }
 
@@ -896,7 +911,7 @@ ul.main-menu li.selected {
   }
 }
 
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   ul.main-menu {
     width: 100%;
     height: 80px;
@@ -934,10 +949,6 @@ ul.portfolio-list {
   padding: 0;
   margin: 0;
   float: left;
-  /*
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
-  */
   border: white solid 10px;
   z-index: 9999;
 }
@@ -984,8 +995,16 @@ ul.portfolio-list.small-menu {
 }
 @media all and (max-width: 800px) {
   .portfolio-icon {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    background-size: 100% 100%;
+  }
+}
+@media all and (max-width: 660px) {
+  .portfolio-icon {
+    width: 60px;
+    height: 60px;
+    background-size: 100% 100%;
   }
 }
 
@@ -1003,13 +1022,15 @@ ul.portfolio-list.small-menu {
 @media all and (max-width: 1000px) {
   .portfolio-container {
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }
 @media all and (max-width: 800px) {
   .portfolio-container {
+    width: 100%;
     margin: 0;
-    padding: 0 5%;
-    width: 89%;
+    padding: 0;
   }
 }
 
@@ -1034,6 +1055,9 @@ ul.portfolio-list.small-menu {
 @media all and (max-width: 1000px) {
   .image-container {
     float: none;
+    position: relative;
+    left: 50%;
+    margin: 0 0 0 -300px;
   }
 }
 
@@ -1087,7 +1111,10 @@ img.work-images {
 *   <div class="sub"></div>
 */
 .sub {
-  margin: 10px 0 10px 0;
+  width: 100%;
+  margin: 0;
+  background-color: #dddddd;
+  padding: 0;
 }
 @media all and (max-width: 800px) {
   .sub {
@@ -1288,6 +1315,12 @@ ul.skillset li.skill-item {
   vertical-align: top;
   line-height: 32px;
   padding: 15px 0;
+  /**
+  * @description icon and title markup within a column class
+  *
+  * @markup
+  *   <div class="icon-and-title"></div>
+  */
 }
 @media all and (max-width: 800px) {
   .column {

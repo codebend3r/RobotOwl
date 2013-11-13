@@ -13,10 +13,6 @@ ul.portfolio-list {
   padding: 0;
   margin: 0;
   float: left;
-  /*
-  background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
-  */
   border: white solid 10px;
   z-index: 9999;
 }
@@ -63,8 +59,16 @@ ul.portfolio-list.small-menu {
 }
 @media all and (max-width: 800px) {
   .portfolio-icon {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    background-size: 100% 100%;
+  }
+}
+@media all and (max-width: 660px) {
+  .portfolio-icon {
+    width: 60px;
+    height: 60px;
+    background-size: 100% 100%;
   }
 }
 
@@ -82,13 +86,15 @@ ul.portfolio-list.small-menu {
 @media all and (max-width: 1000px) {
   .portfolio-container {
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }
 @media all and (max-width: 800px) {
   .portfolio-container {
+    width: 100%;
     margin: 0;
-    padding: 0 5%;
-    width: 89%;
+    padding: 0;
   }
 }
 
@@ -113,6 +119,9 @@ ul.portfolio-list.small-menu {
 @media all and (max-width: 1000px) {
   .image-container {
     float: none;
+    position: relative;
+    left: 50%;
+    margin: 0 0 0 -300px;
   }
 }
 
@@ -166,7 +175,10 @@ img.work-images {
 *   <div class="sub"></div>
 */
 .sub {
-  margin: 10px 0 10px 0;
+  width: 100%;
+  margin: 0;
+  background-color: #dddddd;
+  padding: 0;
 }
 @media all and (max-width: 800px) {
   .sub {

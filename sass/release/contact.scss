@@ -3,137 +3,143 @@
 
 .column {
 
-    display: inline-block;
-    width: 49%;
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+  line-height: $iconWidth;
+  padding: 15px 0;
+
+  @media #{$mediumBreakpoint} {
+    display: block;
+    width: 90%;
+    padding: 30px 5%;
+  }
+
+  h3 {
+    @media #{$mediumBreakpoint} {
+      margin-top: 30px;
+    }
+  }
+
+  /**
+  * @description icon and title markup within a column class
+  *
+  * @markup
+  *   <div class="icon-and-title"></div>
+  */
+  .icon-and-title {
+
+    height: $columnHeader;
+    line-height: $columnHeader;
     vertical-align: top;
-    line-height: $iconWidth;
-    padding: 15px 0;
 
     @media #{$mediumBreakpoint} {
-        display: block;
-        width: 90%;
-        padding: 30px 5%;
+      padding: 0;
+      width: 95%;
     }
 
-    h3 {
-        @media #{$mediumBreakpoint} {
-            margin-top: 30px;
-        }
-    }
-
-    .icon-and-title {
-
-        height: $columnHeader;
-        line-height: $columnHeader;
-        vertical-align: top;
-
-        @media #{$mediumBreakpoint} {
-            padding: 0;
-            width: 95%;
-        }
-
-        .section-icon {
-            vertical-align: top;
-
-        }
-
-        h2 {
-            vertical-align: top;
-            padding: 0 0 0 15px;
-            height: auto;
-            line-height: auto;
-        }
+    .section-icon {
+      vertical-align: top;
 
     }
+
+    h2 {
+      vertical-align: top;
+      padding: 0 0 0 15px;
+      height: auto;
+      line-height: auto;
+    }
+
+  }
 
 }
 
 .icon {
-    display: inline-block;
-    width: $iconWidth;
-    height: $iconWidth;
-    background-size: $iconWidth;
-    -webkit-background-size: $iconWidth;
-    vertical-align: middle;
-    padding: 0;
-    margin: 0 15px 0 0;
+  display: inline-block;
+  width: $iconWidth;
+  height: $iconWidth;
+  background-size: $iconWidth;
+  -webkit-background-size: $iconWidth;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0 15px 0 0;
 }
 
 .email-icon {
-    background-image: url("../../icons/email-icon.png");
+  background-image: url("../../icons/email-icon.png");
 }
 
 .git-hub-icon {
-    background-image: url("../../icons/github-icon.png");
+  background-image: url("../../icons/github-icon.png");
 }
 
 .linkedin-icon {
-    background-image: url("../../icons/linkedin-icon.png");
+  background-image: url("../../icons/linkedin-icon.png");
 }
 
 .label {
-    height: $iconWidth;
-    line-height: $iconWidth;
-    vertical-align: middle;
+  height: $iconWidth;
+  line-height: $iconWidth;
+  vertical-align: middle;
 }
 
 .contact-row {
-    height: $iconWidth;
-    padding: 10px 0;
-    @media #{$mediumBreakpoint} {
-        font-size: 20px;
-    }
+  height: $iconWidth;
+  padding: 10px 0;
+  @media #{$mediumBreakpoint} {
+    font-size: 20px;
+  }
 }
 
 .contact-icon {
-    display: inline-block;
-    background: url('../../images/about-icon.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    background-size: 100% 100%;
-    @media #{$mediumBreakpoint} {
-        width: 100px;
-        height: 100px;
-        margin-top: -30px;
-    }
+  display: inline-block;
+  background: url('../../images/about-icon.png') no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 100% 100%;
+  @media #{$mediumBreakpoint} {
+    width: 100px;
+    height: 100px;
+    margin-top: -30px;
+  }
 }
 
 label {
-    @media #{$mediumBreakpoint} {
-        font-size: 20px;
-        padding: 10px;
-    }
+  @media #{$mediumBreakpoint} {
+    font-size: 20px;
+    padding: 10px;
+  }
 }
 
 input, textarea {
-    width: 98%;
-    padding: 2px;
-    @media #{$mediumBreakpoint} {
-        width: 90%;
-        font-size: 24px;
-        padding: 3% 3%;
-    }
+  width: 98%;
+  padding: 2px;
+  @media #{$mediumBreakpoint} {
+    width: 90%;
+    font-size: 24px;
+    padding: 3% 3%;
+  }
 }
 
 input[type="button"], input[type="reset"], input[type="submit"] {
-    width: 98%;
-    @media #{$mediumBreakpoint} {
-        width: 95%;
-        margin-top: 20px;
-    }
+  width: 98%;
+  @media #{$mediumBreakpoint} {
+    width: 95%;
+    margin-top: 20px;
+  }
 }
 
 fieldset {
-    padding: 0;
-    margin: 0;
-    border: none;
-    width: 98%;
-    overflow: hidden;
-    @media #{$mediumBreakpoint} {
-    //width: 95%;
-    }
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: 98%;
+  overflow: hidden;
+  @media #{$mediumBreakpoint} {
+  //width: 95%;
+  }
 }
 
 form {
-    //width: 100%;
+  //width: 100%;
 }

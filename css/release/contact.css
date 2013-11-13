@@ -4,6 +4,12 @@
   vertical-align: top;
   line-height: 32px;
   padding: 15px 0;
+  /**
+  * @description icon and title markup within a column class
+  *
+  * @markup
+  *   <div class="icon-and-title"></div>
+  */
 }
 @media all and (max-width: 800px) {
   .column {

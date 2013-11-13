@@ -1,334 +1,343 @@
-Crivas.ViewModel = function() {
-
-    var self = this;
-
-    self.longList = Crivas.Data.portfolio.workExperience;
-    self.currentSectionID = ko.observable(0);
-    self.portfolioData = ko.observable(self.longList[self.currentSectionID()]);
-    self.visiblePortfolio = ko.observable(true);
-    self.visibleResume = ko.observable(true);
-    self.visibleContact = ko.observable(true);
-    self.scrollSpeed = 2;
-    self.menuOpen = false;
-    self.goToPosition = 0;
-
-    /**
-     * a list of history of work
-     */
-    self.experienceList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.resume, function(i) {
-        return {
-            id: i.id,
-            companyName: i.companyName,
-            jobTitle: i.jobTitle,
-            jobType: i.jobType,
-            datesAtJob: i.datesAtJob,
-            isFullTime: i.jobType == "full-time" ? true : false,
-            tasks: i.tasks
-        };
-    }));
-
-    /**
-     * static work summary text
-     */
-    self.summaryText = Crivas.Data.portfolio.summaryText;
-
-    /**
-     * a list of skillz
-     */
-    self.skillSet = ko.observableArray(ko.utils.arrayMap(Crivas.Data.portfolio.skillset, function(i) {
-        return {
-            skillName: i.skillName,
-            yearsOfExperience: i.yearsOfExperience + ' years',
-            isBasic: ko.observable(false),
-            isAdvanced: ko.observable(false),
-            isExpert: ko.observable(false),
-            levelOfExpertise: i.levelOfExpertise
-        };
-    }));
-
-    self.getLevelOfExpertise = function(data){
-        if (data.levelOfExpertise == 'BASIC') {
-            data.isBasic(true);
-        } else if (data.levelOfExpertise == 'ADVANCED') {
-            data.isAdvanced(true);
-        } else if (data.levelOfExpertise == 'EXPERT') {
-            data.isExpert(true);
-        }
-        return data.levelOfExpertise;
-    };
-
-    /**
-     * a list of portfolio items
-     */
-    self.portfolioList = ko.observableArray(ko.utils.arrayMap(self.longList, function(i) {
-        return {
-            id: i.id,
-            menuText: i.menuText,
-            slug: i.slug.toLowerCase(),
-            active: i.active
-        };
-    }));
-
-    /**
-     * a list of menu items
-     */
-    self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function(i) {
-        return {
-            id: i.id,
-            name: i.name,
-            subMenu: i.subMenu,
-            sunMenuSelector: i.subMenuSelector
-        };
-    });
-
-    self.showPortflio = function(animateScroll) {
-
-        animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
-
-        self.goToPosition = $('#portfolio-section').offset().top - $('.main-wrapper').offset().top;
-        self.startScroll(self.goToPosition, animateScroll);
-        self.setHash('portfolio');
-        self.highlightCurrentMenuItem(0);
-
-    };
-
-    self.showResume = function(animateScroll) {
-
-        animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
-
-        self.goToPosition = $('#resume-section').offset().top - $('.main-wrapper').offset().top + 20;
-        self.startScroll(self.goToPosition, animateScroll);
-        self.setHash('resume');
-        self.highlightCurrentMenuItem(1);
+Crivas.ViewModel = function () {
+
+	var self = this;
+
+	self.longList = Crivas.Data.portfolio.workExperience;
+	self.currentSectionID = ko.observable(0);
+	self.portfolioData = ko.observable(self.longList[self.currentSectionID()]);
+	self.visiblePortfolio = ko.observable(true);
+	self.visibleResume = ko.observable(true);
+	self.visibleContact = ko.observable(true);
+	self.scrollSpeed = 2;
+	self.menuOpen = false;
+	self.goToPosition = 0;
+
+	/**
+	 * a list of history of work
+	 */
+	self.experienceList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.resume, function (i) {
+		return {
+			id: i.id,
+			companyName: i.companyName,
+			jobTitle: i.jobTitle,
+			jobType: i.jobType,
+			datesAtJob: i.datesAtJob,
+			isFullTime: i.jobType == "full-time" ? true : false,
+			tasks: i.tasks
+		};
+	}));
+
+	/**
+	 * static work summary text
+	 */
+	self.summaryText = Crivas.Data.portfolio.summaryText;
+
+	/**
+	 * a list of skillz
+	 */
+	self.skillSet = ko.observableArray(ko.utils.arrayMap(Crivas.Data.portfolio.skillset, function (i) {
+		return {
+			skillName: i.skillName,
+			yearsOfExperience: i.yearsOfExperience + ' years',
+			isBasic: ko.observable(false),
+			isAdvanced: ko.observable(false),
+			isExpert: ko.observable(false),
+			levelOfExpertise: i.levelOfExpertise
+		};
+	}));
+
+	self.getLevelOfExpertise = function (data) {
+		if (data.levelOfExpertise == 'BASIC') {
+			data.isBasic(true);
+		} else if (data.levelOfExpertise == 'ADVANCED') {
+			data.isAdvanced(true);
+		} else if (data.levelOfExpertise == 'EXPERT') {
+			data.isExpert(true);
+		}
+		return data.levelOfExpertise;
+	};
+
+	/**
+	 * a list of portfolio items
+	 */
+	self.portfolioList = ko.observableArray(ko.utils.arrayMap(self.longList, function (i) {
+		return {
+			id: i.id,
+			menuText: i.menuText,
+			slug: i.slug.toLowerCase(),
+			active: i.active
+		};
+	}));
+
+	/**
+	 * a list of menu items
+	 */
+	self.menuList = ko.utils.arrayMap(Crivas.Data.menu, function (i) {
+		return {
+			id: i.id,
+			name: i.name,
+			subMenu: i.subMenu,
+			sunMenuSelector: i.subMenuSelector
+		};
+	});
+
+	self.showPortflio = function (animateScroll) {
+
+		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
+
+		self.goToPosition = $('#portfolio-section').offset().top - $('.main-wrapper').offset().top;
+		self.startScroll(self.goToPosition, animateScroll);
+		self.setHash('portfolio');
+		self.highlightCurrentMenuItem(0);
+
+	};
+
+	self.showResume = function (animateScroll) {
+
+		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
+
+		self.goToPosition = $('#resume-section').offset().top - $('.main-wrapper').offset().top + 20;
+		self.startScroll(self.goToPosition, animateScroll);
+		self.setHash('resume');
+		self.highlightCurrentMenuItem(1);
 
-    };
+	};
 
-    self.showContact = function(animateScroll) {
+	self.showContact = function (animateScroll) {
 
-        animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
+		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
-        self.goToPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top - 250;
-        self.startScroll(self.goToPosition, animateScroll);
-        self.setHash('contact');
-        self.highlightCurrentMenuItem(2);
+		self.goToPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top - 250;
+		self.startScroll(self.goToPosition, animateScroll);
+		self.setHash('contact');
+		self.highlightCurrentMenuItem(2);
 
-    };
+	};
 
-    self.startScroll = function(goToPosition, animateScroll) {
+	self.startScroll = function (goToPosition, animateScroll) {
 
-        var currentScrollPosition = window.scrollY,
-            diff = Math.abs(currentScrollPosition - goToPosition),
-            speed = diff / self.scrollSpeed;
+		var currentScrollPosition = window.scrollY,
+			diff = Math.abs(currentScrollPosition - goToPosition),
+			speed = diff / self.scrollSpeed;
 
-        if (animateScroll) {
-            $('html, body').animate({
-                scrollTop: goToPosition
-            }, speed);
-        } else {
-            window.scrollTo(0, goToPosition);
-        }
+		if (animateScroll) {
+			$('html, body').animate({
+				scrollTop: goToPosition
+			}, speed);
+		} else {
+			window.scrollTo(0, goToPosition);
+		}
 
-    };
+	};
 
-    self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
+	self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
 
-    self.menuClick = function(data) {
-        //self.killSection();
-        var currentID = data.id;
-        self.navArray[currentID]();
-        self.highlightCurrentMenuItem(currentID);
-    };
+	self.menuClick = function (data) {
+		//self.killSection();
+		var currentID = data.id;
+		self.navArray[currentID]();
+		self.highlightCurrentMenuItem(currentID);
+	};
 
-    self.portfolioItemClick = function(data) {
-        var currentID = data.id;
-    };
+	self.portfolioItemClick = function (data) {
+		var currentID = data.id;
+	};
 
-    self.highlightCurrentMenuItem = function(i) {
+	self.highlightCurrentMenuItem = function (i) {
 
-        var $allMenuItems = $('.menu-item');
-        $allMenuItems.each(function() {
-            $(this).removeClass('selected');
-        });
-        var $selectedMenuItem = $($allMenuItems[i]);
-        $selectedMenuItem.addClass('selected');
+		var $allMenuItems = $('.menu-item');
+		$allMenuItems.each(function () {
+			$(this).removeClass('selected');
+		});
+		var $selectedMenuItem = $($allMenuItems[i]);
+		$selectedMenuItem.addClass('selected');
 
-    };
+	};
 
-    self.getPortfolioItemByID = function(id){
-        var currentID;
-        for ( var i = 0; i < self.portfolioList().length; i += 1) {
-            if ( id == self.portfolioList()[i].id ) {
-                currentID = i;
-                return currentID;
-            }
-        }
-    };
+	self.getPortfolioItemByID = function (id) {
+		var currentID;
+		for (var i = 0; i < self.portfolioList().length; i += 1) {
+			if (id == self.portfolioList()[i].id) {
+				currentID = i;
+				return currentID;
+			}
+		}
+	};
 
-    self.openSmallMenu = function() {
+	self.openSmallMenu = function () {
 
-        self.menuOpen = !self.menuOpen;
+		console.log('openSmallMenu');
 
-        var $portfolioContainer = $('.portfolio-container'), $mainWrapper = $('.main-wrapper'), $mainMenu = $('.main-menu'), $navBar = $('.nav-bar');
+		self.menuOpen = !self.menuOpen;
 
-        $portfolioContainer.toggleClass('slide-menu-in');
-        $portfolioContainer.addClass('animate');
+		var $portfolioContainer = $('.portfolio-container'),
+			$mainWrapper = $('.main-wrapper'),
+			$mainMenu = $('.main-menu'),
+			$navBar = $('.nav-bar');
 
-        $mainWrapper.toggleClass('slide-menu-in');
-        $mainWrapper.addClass('animate');
+		TweenLite.to($portfolioContainer, 1, { position:'absolute', left:Crivas.windowWidth-50, ease: Expo.easeOut });
+		TweenLite.to($mainWrapper, 1, { position:'absolute', left:Crivas.windowWidth-50, ease: Expo.easeOut });
+		TweenLite.to($mainMenu, 1, { position:'absolute', left:Crivas.windowWidth-50, ease: Expo.easeOut });
+		TweenLite.to($navBar, 1, { position:'absolute', left:Crivas.windowWidth-50, ease: Expo.easeOut });
 
-        //$mainMenu.toggleClass('slide-menu-in');
-        //$mainMenu.addClass('animate');
+		//$portfolioContainer.toggleClass('slide-menu-in');
+		//$portfolioContainer.addClass('animate');
 
-        $navBar.toggleClass('slide-menu-in');
-        $navBar.addClass('animate');
+		//$mainWrapper.toggleClass('slide-menu-in');
+		//$mainWrapper.addClass('animate');
 
-        var calculatedWidth = $(window).width() - 50;
+		//$mainMenu.toggleClass('slide-menu-in');
+		//$mainMenu.addClass('animate');
 
-        $('.slide-menu-in').css({left: calculatedWidth});
+		//$navBar.toggleClass('slide-menu-in');
+		//$navBar.addClass('animate');
 
-        if (self.menuOpen) {
-            $('.animate').css({left: calculatedWidth});
-        } else {
-            $('.animate').css({left: 0});
-        }
+		//var calculatedWidth = $(window).width() - 50;
 
-    };
+		//$('.slide-menu-in').css({left: calculatedWidth});
 
-    self.changePage = function(data) {
+		//if (self.menuOpen) {
+			//$('.animate').css({left: calculatedWidth});
+		//} else {
+			//$('.animate').css({left: 0});
+		//}
 
-        var currentID = self.getPortfolioItemByID(data.id);
-        console.log("currentID", currentID);
-        self.currentSectionID(currentID);
+	};
 
-        self.portfolioData(self.longList[self.currentSectionID()]);
-        s//location.hash = 'portfolio/' + data.slug;
+	self.changePage = function (data) {
 
-        if (self.$portfolioContainer.hasClass('slide-menu-in')) {
-            self.$portfolioContainer.removeClass('slide-menu-in');
-            self.$navBar.removeClass('slide-menu-in');
-        }
+		var currentID = self.getPortfolioItemByID(data.id);
+		self.currentSectionID(currentID);
 
-        self.showNewSection();
+		self.portfolioData(self.longList[self.currentSectionID()]);
+		//location.hash = 'portfolio/' + data.slug;
 
-    };
+		if (self.$portfolioContainer.hasClass('slide-menu-in')) {
+			self.$portfolioContainer.removeClass('slide-menu-in');
+			self.$navBar.removeClass('slide-menu-in');
+		}
 
-    self.imageClicked = function(data) {
+		self.showNewSection();
 
-        var currentID = self.getPortfolioItemByID(data.id),
-            url = Crivas.Data.portfolio.workExperience[currentID].url;
+	};
 
-        console.log("currentID", currentID);
-        window.open(url, '_blank');
+	self.imageClicked = function (data) {
 
-    };
+		var currentID = self.getPortfolioItemByID(data.id),
+			url = Crivas.Data.portfolio.workExperience[currentID].url;
 
-    /**
-     Click event listener method for menu item click
+		console.log("currentID", currentID);
+		window.open(url, '_blank');
 
-     @method showNewSection
-     **/
-    self.showNewSection = function() {
+	};
 
-        self.showPreloader();
+	/**
+	 Click event listener method for menu item click
 
-        self.$workImages = $('.work-images');
+	 @method showNewSection
+	 **/
+	self.showNewSection = function () {
 
-        // wait for all images to load
-        self.$workImages.imagesLoaded(function() {
-            self.allImagesLoaded();
-        });
-    };
+		self.showPreloader();
 
-    /**
-     Listener for when images are loaded
+		self.$workImages = $('.work-images');
 
-     @method allImagesLoaded
-     **/
-    self.allImagesLoaded = function() {
+		// wait for all images to load
+		self.$workImages.imagesLoaded(function () {
+			self.allImagesLoaded();
+		});
+	};
 
-        var imgTarget = $('.image-border').find('img')[0];
-        var imgSrc = $(imgTarget).attr('src');
+	/**
+	 Listener for when images are loaded
 
-        //console.log('imgSrc', imgSrc);
-        //console.log('imgTarget', imgTarget);
+	 @method allImagesLoaded
+	 **/
+	self.allImagesLoaded = function () {
 
-        //var colorThief = new ColorThief();
-        //var palette = colorThief.getPalette(imgTarget, 4);
+		var imgTarget = $('.image-border').find('img')[0];
+		var imgSrc = $(imgTarget).attr('src');
 
-        //console.log('COLOR THIEF >>>>>>>>>', palette);
+		//console.log('imgSrc', imgSrc);
+		//console.log('imgTarget', imgTarget);
 
-        self.$imagePreloader = $('.image-preloader');
-        self.$stripedBorder = $('.striped-border');
-        self.$workImages = $('.work-images');
+		//var colorThief = new ColorThief();
+		//var palette = colorThief.getPalette(imgTarget, 4);
 
-        self.$imagePreloader.hide();
-        self.$stripedBorder.show();
+		//console.log('COLOR THIEF >>>>>>>>>', palette);
 
-        // init owl gallery
-        self.$workImages.owlgallery({
-            child: '.work-images',
-            direction: 'forward'
-        });
+		self.$imagePreloader = $('.image-preloader');
+		self.$stripedBorder = $('.striped-border');
+		self.$workImages = $('.work-images');
 
-    };
+		self.$imagePreloader.hide();
+		self.$stripedBorder.show();
 
-    self.showPreloader = function() {
+		// init owl gallery
+		self.$workImages.owlgallery({
+			child: '.work-images',
+			direction: 'forward'
+		});
 
-        self.$imagePreloader.show();
-        self.$stripedBorder.hide();
+	};
 
-    };
+	self.showPreloader = function () {
 
-    self.defaultSection = 'portfolio';
+		self.$imagePreloader.show();
+		self.$stripedBorder.hide();
 
-    self.dataModel = null;
+	};
 
-    self.setHash = function(val) {
-        window.location.hash = val;
-    };
+	self.defaultSection = 'portfolio';
 
-    //JQUERY OBJECTS
+	self.dataModel = null;
 
-    self.$imagePreloader = $('.image-preloader');
+	self.setHash = function (val) {
+		window.location.hash = val;
+	};
 
-    self.$stripedBorder = $('.striped-border');
+	// JQuery Objects
 
-    self.$workImages = $('.work-images');
+	self.$imagePreloader = $('.image-preloader');
 
-    self.$portfolioContainer = $('.portfolio-container');
+	self.$stripedBorder = $('.striped-border');
 
-    self.$navBar = $('.nav-bar');
+	self.$workImages = $('.work-images');
 
-    //INIT
+	self.$portfolioContainer = $('.portfolio-container');
 
-    self.start = function() {
+	self.$navBar = $('.nav-bar');
 
-        var hash = window.location.hash;
-        self.showNewSection();
+	// Init
 
-        if (hash == '#resume') {
+	self.start = function () {
 
-            self.showResume(false);
+		var hash = window.location.hash;
+		self.showNewSection();
 
-        } else if (hash == '#contact') {
+		if (hash == '#resume') {
 
-            self.showContact(false);
+			self.showResume(false);
 
-        } else {
+		} else if (hash == '#contact') {
 
-            self.setHash(self.defaultSection);
-            self.showPortflio(false);
+			self.showContact(false);
 
-        }
+		} else {
 
-        //var $allMenuItems = $('.menu-item');
+			self.setHash(self.defaultSection);
+			self.showPortflio(false);
 
-        console.log("self.start");
+		}
 
-    };
+		//var $allMenuItems = $('.menu-item');
 
-    setTimeout(self.start, 250);
+		console.log("self.start");
 
-    return self;
+	};
+
+	setTimeout(self.start, 250);
+
+	return self;
 
 };

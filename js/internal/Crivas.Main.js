@@ -1,4 +1,13 @@
+Crivas.$window;
+Crivas.windowWidth;
+Crivas.windowHeight;
+
 Crivas.init = function () {
+
+	Crivas.$window = $(window);
+
+	Crivas.$window.on('resize', Crivas.onWindowResize);
+	Crivas.onWindowResize();
 
     var scope = $('body').get(0);
 
@@ -40,6 +49,12 @@ Crivas.init = function () {
     };
     */
 
+};
+
+Crivas.onWindowResize = function() {
+	console.log('Crivas.onWindowResize');
+	Crivas.windowWidth = Crivas.$window.width();
+	Crivas.windowHeight = Crivas.$window.height();
 };
 
 $(Crivas.init);

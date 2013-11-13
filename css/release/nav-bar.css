@@ -9,6 +9,7 @@
   width: 100%;
   /*@include gradient($lightGrey,$lightGrey,$lightGrey);*/
   background: url("../../pattern/squairy_light.png") repeat;
+  background-size: 200px 200px;
   border-bottom: 1px lightgrey solid;
   position: fixed;
   z-index: 99;
@@ -30,15 +31,21 @@
     position: fixed;
     top: 0px;
     left: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .nav-bar {
     height: 70px;
     z-index: 998;
     position: fixed;
     top: 0px;
     left: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 }
 
@@ -76,9 +83,7 @@
 .open-small-menu .horizontal-groove {
   margin: 14px 10px -12px 10px;
   background-color: #cecece;
-  height: 2px;
-  border-radius: 4px;
-  border: 2px inset #eeeeee;
+  height: 4px;
 }
 @media all and (max-width: 800px) {
   .open-small-menu {
@@ -91,8 +96,8 @@
     border-right: 2px solid #d1d1d1;
   }
   .open-small-menu .horizontal-groove {
-    margin: 19px 10px -12px 10px;
-    border: 3px inset #eeeeee;
+    margin: 20px 10px -12px 10px;
+    height: 4px;
   }
 }
 
@@ -187,7 +192,7 @@ ul.main-menu li.selected {
   }
 }
 
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   ul.main-menu {
     width: 100%;
     height: 80px;
