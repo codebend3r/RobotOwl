@@ -173,12 +173,15 @@ Crivas.ViewModel = function () {
 		var $portfolioContainer = $('.portfolio-container'),
 			$mainWrapper = $('.main-wrapper'),
 			$mainMenu = $('.main-menu'),
-			$navBar = $('.nav-bar');
+			$navBar = $('.nav-bar'),
+			xPos = Crivas.windowWidth-50;
 
-		TweenLite.to($portfolioContainer, 1, { position:'absolute', left:Crivas.windowWidth-50, ease: Expo.easeOut });
-		TweenLite.to($mainWrapper, 1, { position:'absolute', left:Crivas.windowWidth-50, ease: Expo.easeOut });
-		TweenLite.to($mainMenu, 1, { position:'absolute', left:Crivas.windowWidth-50, ease: Expo.easeOut });
-		TweenLite.to($navBar, 1, { position:'absolute', left:Crivas.windowWidth-50, ease: Expo.easeOut });
+		console.log('TweenLite = ' + TweenLite);
+		console.log('xPos = ' + xPos);
+		TweenLite.to($portfolioContainer, 1, { position:'absolute', left:xPos, ease: Expo.easeOut });
+		TweenLite.to($mainWrapper, 1, { position:'absolute', left:xPos, ease: Expo.easeOut });
+		TweenLite.to($mainMenu, 1, { position:'absolute', left:xPos, ease: Expo.easeOut });
+		TweenLite.to($navBar, 1, { position:'absolute', left:xPos, ease: Expo.easeOut });
 
 		//$portfolioContainer.toggleClass('slide-menu-in');
 		//$portfolioContainer.addClass('animate');

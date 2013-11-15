@@ -26,6 +26,8 @@
 }
 @media all and (max-width: 800px) {
   .nav-bar {
+    background-image: none;
+    background-color: #e8e8e8;
     height: 70px;
     z-index: 998;
     position: fixed;

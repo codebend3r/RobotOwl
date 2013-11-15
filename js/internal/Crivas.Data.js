@@ -601,7 +601,7 @@ Crivas.Data = {
         {
             id: 11,
             companyName: 'Motion Season',
-            jobTitle: 'Lead UI Developer',
+            jobTitle: 'Lead Developer',
             jobType: 'contract',
             datesAtJob: 'March 2013 - May 2013',
             tasks: [
@@ -649,7 +649,7 @@ Crivas.Data = {
         {
             id: 8,
             companyName: 'St. Joseph/Pi Media',
-            jobTitle: 'Front End Developer',
+            jobTitle: 'Senior Flash Developer',
             jobType: 'contract',
             datesAtJob: 'January 2012 - February 2012',
             tasks: [
@@ -701,7 +701,7 @@ Crivas.Data = {
         {
             id: 4,
             companyName: 'Research Now',
-            jobTitle: 'Senior Flex Developer',
+            jobTitle: 'Senior Developer and Team Lead',
             jobType: 'full-time',
             datesAtJob: 'July 2008 - September 2011',
             tasks: [

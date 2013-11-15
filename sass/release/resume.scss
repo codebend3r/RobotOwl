@@ -3,128 +3,134 @@
 
 ul.skillset {
 
-    margin: 0;
-    padding: 10px 0;
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2;
+  margin: 0;
+  padding: 10px 0;
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
 
-    li.skill-item {
+  @media #{$mediumBreakpoint} {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
 
-        font-size: 12px;
-        @media #{$mediumBreakpoint} {
-            font-size: ($smallScreenFontSize + .2) !important;
-        }
+  li.skill-item {
 
+    font-size: 12px;
+    @media #{$mediumBreakpoint} {
+      font-size: ($smallScreenFontSize + .2) !important;
     }
+
+  }
 }
 
 .stackable {
-    /*border-bottom: 1px solid #666666;*/
-    margin: 30px 0;
-    @media #{$mediumBreakpoint} {
-        padding: 0 5%;
-        width: 89%;
-    }
+  /*border-bottom: 1px solid #666666;*/
+  margin: 30px 0;
+  @media #{$mediumBreakpoint} {
+    padding: 0 5%;
+    width: 89%;
+  }
 }
 
 .skill {
-    color: #000000;
+  color: #000000;
 }
 
 .level {
-    font-family: 'The Girl Next Door', cursive;
-    &.basic {
-        color: #b0270c;
-    }
+  font-family: 'The Girl Next Door', cursive;
+  &.basic {
+    color: #b0270c;
+  }
 
-    &.advanced {
-        color: #102ad1;
-    }
+  &.advanced {
+    color: #102ad1;
+  }
 
-    &.expert {
-        color: #0fb900;
-    }
+  &.expert {
+    color: #0fb900;
+  }
 }
 
 .experience {
-    color: #171717;
-    font-size: 10px;
+  color: #171717;
+  font-size: 10px;
 }
 
 .job {
 
-    margin: 10px 0 25px 0;
+  margin: 10px 0 25px 0;
+  padding: 0;
+
+  p {
+    margin: 0;
     padding: 0;
+  }
 
-    p {
-        margin: 0;
-        padding: 0;
+  .job-title {
+    font-size: 20px;
+    font-family: 'The Girl Next Door', cursive;
+    line-height: 22px;
+    @media #{$mediumBreakpoint} {
+      font-size: 32px;
     }
+  }
 
-    .job-title {
-        font-size: 20px;
-        font-family: 'The Girl Next Door', cursive;
-        line-height: 22px;
-        @media #{$mediumBreakpoint} {
-            font-size: 32px;
-        }
+  .job-type {
+    font-size: 10px;
+    color: $green;
+    font-weight: bold;
+    &.isFullTime {
+      color: $orange;
     }
+    @media #{$mediumBreakpoint} {
+      font-size: 14px;
+    }
+  }
 
-    .job-type {
-        font-size: 10px;
-        color: $green;
-        font-weight: bold;
-        &.isFullTime {
-            color: $orange;
-        }
-        @media #{$mediumBreakpoint} {
-            font-size: 14px;
-        }
+  .company-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #696969;
+    @media #{$mediumBreakpoint} {
+      font-size: 20px;
     }
+  }
 
-    .company-name {
-        font-size: 16px;
-        font-weight: bold;
-        color: #696969;
-        @media #{$mediumBreakpoint} {
-            font-size: 20px;
-        }
+  .dates-at-job {
+    text-transform: uppercase;
+    font-size: 10px;
+    @media #{$mediumBreakpoint} {
+      font-size: 14px;
     }
+  }
 
-    .dates-at-job {
-        text-transform: uppercase;
-        font-size: 10px;
-        @media #{$mediumBreakpoint} {
-            font-size: 14px;
-        }
+  ul {
+    margin: 0 0 0 10px;
+    padding: 10px 0;
+    @media #{$mediumBreakpoint} {
+      margin: 0 0 0 25px;
     }
+  }
 
-    ul {
-        margin: 0 0 0 10px;
-        padding: 10px 0;
-        @media #{$mediumBreakpoint} {
-            margin: 0 0 0 25px;
-        }
+  li {
+    font-size: 12px;
+    @media #{$mediumBreakpoint} {
+      font-size: $smallScreenFontSize;
     }
-
-    li {
-        font-size: 12px;
-        @media #{$mediumBreakpoint} {
-            font-size: $smallScreenFontSize;
-        }
-    }
+  }
 
 }
 
 .resume-icon {
-    display: inline-block;
-    background: url('../../images/resume-icon.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    background-size: 100% 100%;
-    @media #{$mediumBreakpoint} {
-        width: 100px;
-        height: 100px;
-    }
+  display: inline-block;
+  background: url('../../images/resume-icon.png') no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 100% 100%;
+  @media #{$mediumBreakpoint} {
+    width: 100px;
+    height: 100px;
+  }
 }

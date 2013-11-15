@@ -410,10 +410,10 @@ html {
 }
 
 body {
+  display: none;
   font-family: 'Roboto', sans-serif;
   font-size: 100%;
   background-color: #efefef;
-  /*background: url('../../pattern/textured_paper.png') repeat;*/
   color: darkslategrey;
   min-width: 400px;
   overflow-x: hidden;
@@ -519,6 +519,11 @@ p, a {
   font-size: .8rem;
 }
 @media all and (max-width: 800px) {
+  p, a {
+    font-size: 1.2rem;
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   p, a {
     font-size: 1.2rem;
   }
@@ -745,6 +750,8 @@ h3 {
 }
 @media all and (max-width: 800px) {
   .nav-bar {
+    background-image: none;
+    background-color: #e8e8e8;
     height: 70px;
     z-index: 998;
     position: fixed;
@@ -1113,7 +1120,6 @@ img.work-images {
 .sub {
   width: 100%;
   margin: 0;
-  background-color: #dddddd;
   padding: 0;
 }
 @media all and (max-width: 800px) {
@@ -1179,6 +1185,13 @@ ul.skillset {
   -moz-column-count: 2;
   -webkit-column-count: 2;
   column-count: 2;
+}
+@media all and (max-width: 800px) {
+  ul.skillset {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
 }
 ul.skillset li.skill-item {
   font-size: 12px;

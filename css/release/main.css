@@ -8,10 +8,10 @@ html {
 }
 
 body {
+  display: none;
   font-family: 'Roboto', sans-serif;
   font-size: 100%;
   background-color: #efefef;
-  /*background: url('../../pattern/textured_paper.png') repeat;*/
   color: darkslategrey;
   min-width: 400px;
   overflow-x: hidden;
@@ -117,6 +117,11 @@ p, a {
   font-size: .8rem;
 }
 @media all and (max-width: 800px) {
+  p, a {
+    font-size: 1.2rem;
+  }
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   p, a {
     font-size: 1.2rem;
   }

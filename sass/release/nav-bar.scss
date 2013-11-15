@@ -21,6 +21,8 @@
   @include dropShadow(0, 0, 10, 5, rgba(0, 0, 0, .3));
 
   @media #{$mediumBreakpoint} {
+    background-image: none;
+    background-color: #e8e8e8;
     height: $navBarHeightSmall;
     z-index: 998;
     position: fixed;
