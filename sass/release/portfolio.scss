@@ -99,9 +99,9 @@ ul.portfolio-list {
   }
 
   @media #{$mediumBreakpoint} {
-    width: 100%;
+    width: 90%;
+    padding: 0 5% 5% 5%;
     margin: 0;
-    padding: 0;
   }
 
 }
@@ -136,6 +136,14 @@ ul.portfolio-list {
     position: relative;
     left: 50%;
     margin: 0 0 0 -300px;
+  }
+  @media #{$smallBreakpoint} {
+    max-width: 100%;
+    max-height: 100%;
+    border: none;
+    position: static;
+    margin: 0;
+    padding: 0;
   }
 }
 

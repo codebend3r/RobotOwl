@@ -142,16 +142,16 @@ ul.main-menu {
       border-bottom: none;
       width: 100%;
       height: 100%;
-      font-size: ($smallScreenFontSize + .5);
+      font-size: $smallScreenFontSize;
     }
   }
 
   li {
 
-    display: inline-block;
-    list-style: none;
     margin: 0;
     padding: 0 20px;
+    display: inline-block;
+    list-style: none;
     cursor: pointer;
     height: $navBarHeightLarge;
     line-height: $navBarHeightLarge;
@@ -199,6 +199,7 @@ ul.main-menu {
 
 @media #{$smallBreakpoint} {
   ul.main-menu {
+
     width: 100%;
     height: $navBarHeightLarge;
     margin: 0;
@@ -207,9 +208,9 @@ ul.main-menu {
     @include dropShadow(0, 4, 20, 0, #333333);
 
     li {
-      width: 32.4%;
+      width: 90%;
       margin: 0;
-      padding: 0;
+      padding: 0 0 0 5%;
     }
 
   }

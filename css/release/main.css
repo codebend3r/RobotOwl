@@ -8,13 +8,13 @@ html {
 }
 
 body {
-  display: none;
   font-family: 'Roboto', sans-serif;
   font-size: 100%;
   background-color: #efefef;
   color: darkslategrey;
   min-width: 400px;
   overflow-x: hidden;
+  opacity: 0;
 }
 @media all and (max-width: 660px) {
   body {
@@ -116,16 +116,6 @@ body {
 p, a {
   font-size: .8rem;
 }
-@media all and (max-width: 800px) {
-  p, a {
-    font-size: 1.2rem;
-  }
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  p, a {
-    font-size: 1.2rem;
-  }
-}
 
 .horizontal-lines {
   height: 0px;
@@ -195,7 +185,7 @@ p, a {
 }
 @media all and (max-width: 660px) {
   .launch a {
-    width: 100%;
+    width: 50%;
     display: inline-block;
     text-align: center;
     padding: 10px 0;
@@ -238,7 +228,7 @@ p, a {
 @media all and (max-width: 800px) {
   .icon-and-title {
     padding: 0 5%;
-    width: 89%;
+    width: 90%;
     margin: 30px 0 0 0;
   }
 }
@@ -253,7 +243,7 @@ p, a {
 }
 @media all and (max-width: 800px) {
   .icon-and-title h2 {
-    font-size: 2.4rem;
+    font-size: 2.0rem;
   }
 }
 

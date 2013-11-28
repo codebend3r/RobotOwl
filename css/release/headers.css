@@ -2,16 +2,16 @@ h1, h2, h3, h4, h5 {
   font-family: 'The Girl Next Door', cursive;
   padding: 0;
   margin: 0;
-  line-height: auto; }
-  @media all and (max-width: 800px) {
-    h1, h2, h3, h4, h5 {
-      font-size: 32px; } }
+  line-height: auto;
+}
 
 h1 {
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 h2 {
-  padding: 20px 0 0 0; }
+  padding: 20px 0 0 0;
+}
 
 h3 {
   padding: 0 0;
@@ -19,7 +19,5 @@ h3 {
   font-size: 1.4rem;
   font-weight: normal;
   color: #cb3429;
-  text-decoration: underline; }
-  @media all and (max-width: 800px) {
-    h3 {
-      font-size: 2rem; } }
+  text-decoration: underline;
+}

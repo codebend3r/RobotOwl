@@ -86,9 +86,14 @@ Crivas.ViewModel = function () {
 		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
 		self.goToPosition = $('#portfolio-section').offset().top - $('.main-wrapper').offset().top;
-		self.startScroll(self.goToPosition, animateScroll);
-		self.setHash('portfolio');
-		self.highlightCurrentMenuItem(0);
+
+		if (Crivas.windowWidth <= Crivas.small) {
+			console.log('SMALL!!! 0');
+			var callback = self.scrollTo.bind(null, self.goToPosition, 'portfolio', 0, animateScroll);
+			self.animateSmallMenuReveal(false, true, callback);
+		} else {
+			self.scrollTo(self.goToPosition, 'portfolio', 0, animateScroll);
+		}
 
 	};
 
@@ -97,9 +102,14 @@ Crivas.ViewModel = function () {
 		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
 		self.goToPosition = $('#resume-section').offset().top - $('.main-wrapper').offset().top + 20;
-		self.startScroll(self.goToPosition, animateScroll);
-		self.setHash('resume');
-		self.highlightCurrentMenuItem(1);
+
+		if (Crivas.windowWidth <= Crivas.small) {
+			console.log('SMALL!!! 1');
+			var callback = self.scrollTo.bind(null, self.goToPosition, 'resume', 1, animateScroll);
+			self.animateSmallMenuReveal(false, true, callback);
+		} else {
+			self.scrollTo(self.goToPosition, 'resume', 1, animateScroll);
+		}
 
 	};
 
@@ -108,9 +118,22 @@ Crivas.ViewModel = function () {
 		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
 
 		self.goToPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top - 250;
-		self.startScroll(self.goToPosition, animateScroll);
-		self.setHash('contact');
-		self.highlightCurrentMenuItem(2);
+
+		if (Crivas.windowWidth <= Crivas.small) {
+			console.log('SMALL!!! 2');
+			var callback = self.scrollTo.bind(null, self.goToPosition, 'contact', 2, animateScroll);
+			self.animateSmallMenuReveal(false, true, callback);
+		} else {
+			self.scrollTo(self.goToPosition, 'contact', 2, animateScroll);
+		}
+
+	};
+
+	self.scrollTo = function(yPos, hashValue, currentItem, animateScroll) {
+
+		self.startScroll(yPos, animateScroll);
+		self.setHash(hashValue);
+		self.highlightCurrentMenuItem(currentItem);
 
 	};
 
@@ -165,73 +188,59 @@ Crivas.ViewModel = function () {
 	};
 
 	self.openSmallMenu = function () {
-
 		console.log('openSmallMenu');
-
 		self.menuOpen = !self.menuOpen;
+		self.animateSmallMenuReveal(self.menuOpen);
+	};
+
+	self.animateSmallMenuReveal = function(menuOpen, scrollTo, callback){
+
+		scrollTo = typeof scrollTo !== 'undefined' ? scrollTo : false;
 
 		var $portfolioContainer = $('.portfolio-container'),
 			$mainWrapper = $('.main-wrapper'),
 			$mainMenu = $('.main-menu'),
 			$navBar = $('.nav-bar'),
-			xPos = Crivas.windowWidth-50;
+			xPos = Crivas.windowWidth - 72;
 
-		console.log('TweenLite = ' + TweenLite);
-		console.log('xPos = ' + xPos);
-		TweenLite.to($portfolioContainer, 1, { position:'absolute', left:xPos, ease: Expo.easeOut });
-		TweenLite.to($mainWrapper, 1, { position:'absolute', left:xPos, ease: Expo.easeOut });
-		TweenLite.to($mainMenu, 1, { position:'absolute', left:xPos, ease: Expo.easeOut });
-		TweenLite.to($navBar, 1, { position:'absolute', left:xPos, ease: Expo.easeOut });
+		self.menuOpen = menuOpen;
 
-		//$portfolioContainer.toggleClass('slide-menu-in');
-		//$portfolioContainer.addClass('animate');
+		if (menuOpen) {
+			//TweenLite.to($portfolioContainer, 1, { left:xPos, ease: Expo.easeOut });
+			TweenLite.to($mainWrapper, 1, { left:xPos, ease: Expo.easeOut });
+			//TweenLite.to($mainMenu, 1, { left:xPos, ease: Expo.easeOut });
+			TweenLite.to($navBar, 1, { left:xPos, ease: Expo.easeOut });
+		} else {
+			//TweenLite.to($portfolioContainer, 1, { left:0, ease: Expo.easeOut });
+			TweenLite.to($mainWrapper, 1, { left:0, ease: Expo.easeOut });
+			//TweenLite.to($mainMenu, 1, { left:0, ease: Expo.easeOut });
+			TweenLite.to($navBar, 1, { left:0, ease: Expo.easeOut });
+		}
 
-		//$mainWrapper.toggleClass('slide-menu-in');
-		//$mainWrapper.addClass('animate');
-
-		//$mainMenu.toggleClass('slide-menu-in');
-		//$mainMenu.addClass('animate');
-
-		//$navBar.toggleClass('slide-menu-in');
-		//$navBar.addClass('animate');
-
-		//var calculatedWidth = $(window).width() - 50;
-
-		//$('.slide-menu-in').css({left: calculatedWidth});
-
-		//if (self.menuOpen) {
-			//$('.animate').css({left: calculatedWidth});
-		//} else {
-			//$('.animate').css({left: 0});
-		//}
+		if (scrollTo) {
+			console.log('callback!!!');
+			setTimeout(callback, 1000);
+		}
 
 	};
 
 	self.changePage = function (data) {
-
 		var currentID = self.getPortfolioItemByID(data.id);
 		self.currentSectionID(currentID);
-
 		self.portfolioData(self.longList[self.currentSectionID()]);
 		//location.hash = 'portfolio/' + data.slug;
-
 		if (self.$portfolioContainer.hasClass('slide-menu-in')) {
 			self.$portfolioContainer.removeClass('slide-menu-in');
 			self.$navBar.removeClass('slide-menu-in');
 		}
-
 		self.showNewSection();
-
 	};
 
 	self.imageClicked = function (data) {
-
 		var currentID = self.getPortfolioItemByID(data.id),
 			url = Crivas.Data.portfolio.workExperience[currentID].url;
 
-		console.log("currentID", currentID);
 		window.open(url, '_blank');
-
 	};
 
 	/**

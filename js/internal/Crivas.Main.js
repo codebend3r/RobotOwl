@@ -2,6 +2,10 @@ Crivas.$window;
 Crivas.windowWidth;
 Crivas.windowHeight;
 
+Crivas.small = 660;
+Crivas.medium = 800;
+Crivas.large = 1000;
+
 Crivas.init = function () {
 
 	Crivas.$window = $(window);
@@ -10,6 +14,7 @@ Crivas.init = function () {
 
 	var scope = $('body').get(0);
 
+	/*
 	ko.bindingHandlers.subMenu = {
 		init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
 			// This will be called when the binding is first applied to an element
@@ -37,23 +42,19 @@ Crivas.init = function () {
 			}
 		}
 	};
+	*/
 
 	ko.applyBindings(Crivas.ViewModel(), scope);
 
-	//if (window.location.hash) window.location.hash.replace('#', '');
 
-	/*
-	 window.onhashchange = function (e) {
-	 if (window.location.hash) window.location.hash.replace('#', '');
-	 };
-	 */
 
 };
 
 Crivas.windowLoaded = function () {
 
-	$('body').fadeIn(500);
-	//TweenLite.to($('body'), 2, { autoAlpha: 1, ease: Expo.easeOut });
+	//$('body').fadeIn(500);
+
+	TweenLite.to($('body'), 2, { autoAlpha: 1, ease: Expo.easeOut });
 
 };
 

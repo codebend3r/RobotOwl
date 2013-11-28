@@ -10,6 +10,7 @@ ul.skillset {
     -moz-column-count: 1;
     -webkit-column-count: 1;
     column-count: 1;
+    padding: 0 0 0 5%;
   }
 }
 ul.skillset li.skill-item {
@@ -17,7 +18,7 @@ ul.skillset li.skill-item {
 }
 @media all and (max-width: 800px) {
   ul.skillset li.skill-item {
-    font-size: 1.4rem !important;
+    font-size: .8rem;
   }
 }
 
@@ -28,7 +29,7 @@ ul.skillset li.skill-item {
 @media all and (max-width: 800px) {
   .stackable {
     padding: 0 5%;
-    width: 89%;
+    width: 90%;
   }
 }
 
@@ -52,6 +53,11 @@ ul.skillset li.skill-item {
 .experience {
   color: #171717;
   font-size: 10px;
+}
+@media all and (max-width: 800px) {
+  .experience {
+    font-size: .7rem;
+  }
 }
 
 .job {
@@ -118,7 +124,7 @@ ul.skillset li.skill-item {
 }
 @media all and (max-width: 800px) {
   .job li {
-    font-size: 1.2rem;
+    font-size: .8rem;
   }
 }
 

@@ -92,9 +92,9 @@ ul.portfolio-list.small-menu {
 }
 @media all and (max-width: 800px) {
   .portfolio-container {
-    width: 100%;
+    width: 90%;
+    padding: 0 5% 5% 5%;
     margin: 0;
-    padding: 0;
   }
 }
 
@@ -122,6 +122,16 @@ ul.portfolio-list.small-menu {
     position: relative;
     left: 50%;
     margin: 0 0 0 -300px;
+  }
+}
+@media all and (max-width: 660px) {
+  .image-container {
+    max-width: 100%;
+    max-height: 100%;
+    border: none;
+    position: static;
+    margin: 0;
+    padding: 0;
   }
 }
 

@@ -9,13 +9,13 @@ html {
 }
 
 body {
-  display: none;
   font-family: 'Roboto', sans-serif;
   font-size: 100%;
   background-color: $bodyColour;
   color: $slateGrey;
   min-width: 400px;
   overflow-x: hidden;
+  opacity: 0;
   @media #{$smallBreakpoint} {
     margin: 0;
     padding: 0;
@@ -104,14 +104,6 @@ p, a {
 
   font-size: .8rem;
 
-  @media #{$mediumBreakpoint} {
-    font-size: $smallScreenFontSize;
-  }
-
-  @media #{$retinaBreakpoint} {
-    font-size: $smallScreenFontSize;
-  }
-
 }
 
 ////////////////////////////////////////
@@ -181,7 +173,7 @@ p, a {
     background-image: url('../../pattern/tweed.png');
     @include dropShadow(0, 0, 3px, 3px, #000000);
     @media #{$smallBreakpoint} {
-      width: 100%;
+      width: 50%;
       display: inline-block;
       text-align: center;
       padding: 10px 0;
@@ -222,7 +214,7 @@ p, a {
 
   @media #{$mediumBreakpoint} {
     padding: 0 5%;
-    width: 89%;
+    width: 90%;
     margin: 30px 0 0 0;
   }
 
@@ -236,7 +228,7 @@ p, a {
     padding: 0 0 0 15px;
     margin: 0;
     @media #{$mediumBreakpoint} {
-      font-size: 2.4rem;
+      font-size: 2.0rem;
     }
   }
 

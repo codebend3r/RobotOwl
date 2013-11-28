@@ -59,8 +59,7 @@ module.exports = function (grunt) {
 					'js/external/jquery.imagesloaded.js',
 					'js/external/knockout-2.2.1.js',
 					'js/external/modernizr-2.6.2.js',
-					'js/external/TweenLite.js',
-					'js/external/EasePack.js',
+					'js/external/TweenMax.min.js',
 					'js/internal/plugin/jquery.owlgallery-0.1.2.js',
 					'js/internal/Crivas.Data.js',
 					'js/internal/Crivas.Main.js',
@@ -95,8 +94,7 @@ module.exports = function (grunt) {
 						'js/external/jquery.imagesloaded.js',
 						'js/external/knockout-2.2.1.js',
 						'js/external/modernizr-2.6.2.js',
-						'js/external/TweenLite.js',
-						'js/external/EasePack.js',
+						'js/external/TweenMax.min.js',
 						'js/internal/plugin/jquery.owlgallery-0.1.2.js',
 						'js/internal/Crivas.Data.js',
 						'js/internal/Crivas.Main.js',
@@ -116,7 +114,8 @@ module.exports = function (grunt) {
 					'css/release/nav-bar.css': 'sass/release/nav-bar.scss',
 					'css/release/portfolio.css': 'sass/release/portfolio.scss',
 					'css/release/resume.css': 'sass/release/resume.scss',
-					'css/release/contact.css': 'sass/release/contact.scss'
+					'css/release/contact.css': 'sass/release/contact.scss',
+					'css/release/headers.css': 'sass/release/headers.scss'
 				}
 			}
 		},
