@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['css/release/**'], dest: '<%= pkg.outputFolder %>/'},
-					{src: ['js/external/**'], dest: '<%= pkg.outputFolder %>/'},
+					{src: ['js/vendor/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['js/internal/**'], dest: '<%= pkg.outputFolder %>/'}
 				]
 			},
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
 		concat: {
 			options: {
 				// define a string to put between each file in the concatenated output
-				separator: '\n\n\n/* NEW FILE */\n\n\n'
+				separator: '\n\n\n/* ====================== */\n\n\n'
 			},
 			jsconcat: {
 				// the files to concatenate
@@ -85,7 +85,7 @@ module.exports = function (grunt) {
 		uglify: {
 			options: {
 				// the banner is inserted at the top of the output
-				banner: '\n\n\n/* NEW FILE */\n\n\n'
+				banner: '\n\n\n/* ====================== */\n\n\n'
 			},
 			dist: {
 				files: {
@@ -139,15 +139,18 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			dev: {
-				files: [ 'sass/*.scss', 'js/internal/*.js', 'index.html' ],
-				tasks: [ 'dev' ]
+				files: [ 'sass/**/*.scss', 'js/internal/**/*.js', 'js/vendor/**/*.js', 'index.html' ],
+				tasks: [ 'dev' ],
+				options: {
+					livereload: true
+				}
 			},
 			prod: {
-				files: [ 'sass/*.scss', 'js/internal/*.js', 'index.html' ],
+				files: [ 'sass/**/*.scss', 'js/internal/*.js', 'js/vendor/**/*.js', 'index.html' ],
 				tasks: [ 'prod' ]
 			},
 			release: {
-				files: [ 'sass/*.scss', 'js/internal/*.js', 'index.html' ],
+				files: [ 'sass/**/*.scss', 'js/internal/**/*.js', 'js/vendor/**/*.js', 'index.html' ],
 				tasks: [ 'release' ]
 			}
 		},
@@ -183,7 +186,13 @@ module.exports = function (grunt) {
 
 			dev: {
 				src: 'index.html',
-				dest: '<%= pkg.outputFolder %>/index.html'
+				dest: '<%= pkg.outputFolder %>/index.html',
+				options: {
+					context: {
+						name: '<%= pkg.outputName %>',
+						version: '<%= pkg.version %>'
+					}
+				}
 			},
 			prod: {
 				src: 'index.html',
@@ -222,7 +231,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-env');
 
 	// Default task(s)
-	grunt.registerTask('watchdev', ['watch:dev']);
+	grunt.registerTask('watchdev', [ 'dev', 'watch:dev']);
 	grunt.registerTask('watchprod', ['watch:prod']);
 	grunt.registerTask('watchrelease', ['watch:release']);
 

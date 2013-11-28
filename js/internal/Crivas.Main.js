@@ -2,9 +2,9 @@ Crivas.$window;
 Crivas.windowWidth;
 Crivas.windowHeight;
 
-Crivas.small = 660;
-Crivas.medium = 800;
-Crivas.large = 1000;
+Crivas.small = 700;
+Crivas.medium = 850;
+Crivas.large = 1050;
 
 Crivas.init = function () {
 
@@ -14,52 +14,38 @@ Crivas.init = function () {
 
 	var scope = $('body').get(0);
 
-	/*
 	ko.bindingHandlers.subMenu = {
-		init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
-			// This will be called when the binding is first applied to an element
-			// Set up any initial state, event handlers, etc. here
-		},
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
-			// This will be called once when the binding is first applied to an element,
-			// and again whenever the associated observable changes value.
-			// Update the DOM element based on the supplied values here.
 
 			var value = valueAccessor(),
-				allBindings = allBindingsAccessor();
+				allBindings = allBindingsAccessor(),
+				name = viewModel.name,
+				subMenuOn = viewModel.subMenu,
+				subMenuSelector = viewModel.subMenuSelector,
+				$subMenu,
+				$clonedMenu;
 
-			// Next, whether or not the supplied model property is observable, get its current value
-			// var valueUnwrapped = ko.unwrap(value);
-
-			var subMenuOn = viewModel.subMenu;
-			var subMenuSelector = viewModel.subMenuSelector;
 			if (subMenuOn) {
-				$(element).append("<ul class='sub-menu'></ul>");
-				var $clonedMenu = $('.portfolio-list').clone();
+				$(element).addClass('has-sub-menu');
+				//$(element).append("<ul class='sub-menu'></ul>");
+				$clonedMenu = $(subMenuSelector).clone();
 				$clonedMenu.addClass('small-menu');
-				$('.sub-menu').append($clonedMenu);
-
+				$subMenu = $('.has-sub-menu');
+				$subMenu.append($clonedMenu);
 			}
+
 		}
 	};
-	*/
 
 	ko.applyBindings(Crivas.ViewModel(), scope);
-
-
 
 };
 
 Crivas.windowLoaded = function () {
-
-	//$('body').fadeIn(500);
-
 	TweenLite.to($('body'), 2, { autoAlpha: 1, ease: Expo.easeOut });
-
 };
 
 Crivas.onWindowResize = function () {
-	console.log('Crivas.onWindowResize');
 	Crivas.windowWidth = Crivas.$window.width();
 	Crivas.windowHeight = Crivas.$window.height();
 };

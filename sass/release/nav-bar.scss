@@ -130,8 +130,11 @@ ul.main-menu {
   }
 
   &.small {
+
     display: none;
+
     @media #{$mediumBreakpoint} {
+
       display: inline-block;
       position: fixed;
       float: left;
@@ -143,13 +146,66 @@ ul.main-menu {
       width: 100%;
       height: 100%;
       font-size: $smallScreenFontSize;
+      overflow-y: scroll !important;
+
+      li {
+
+        span {
+          margin: 0 0 0 20px;
+          padding: 0;
+        }
+
+        &.menu-item {
+
+        }
+
+        &.has-sub-menu {
+          line-height: initial;
+          height: initial;
+          ul.small-menu {
+            position: static;
+            display: block;
+            margin: 0;
+            padding: 10px 0;
+            float: none;
+            clear: both;
+            border: none;
+            width: initial;
+            li {
+              position: static;
+              display: block;
+              line-height: 40px;
+              height: 40px;
+              margin: 0;
+              padding: 0 0 0 20px;
+              width: initial;
+              &:hover {
+                background: none;
+                background-color: red;
+                border: none;
+              }
+            }
+          }
+        }
+
+      }
+
     }
+
+    @media #{$smallBreakpoint} {
+      li.menu-item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
   }
 
   li {
 
     margin: 0;
-    padding: 0 20px;
+    padding: 0;
     display: inline-block;
     list-style: none;
     cursor: pointer;
@@ -157,12 +213,13 @@ ul.main-menu {
     line-height: $navBarHeightLarge;
     text-align: center;
 
-    @media #{$mediumBreakpoint} {
-      border-left: 3px rgba(0, 0, 0, 0) solid;
-      border-bottom: none;
+    span {
+      padding: 0 20px;
     }
 
     @media #{$mediumBreakpoint} {
+      border-left: 3px rgba(0, 0, 0, 0) solid;
+      border-bottom: none;
       display: block;
       z-index: -999;
       text-align: left;

@@ -37,7 +37,6 @@ body {
   @include centeredAndFixed(100px);
   height: 100%;
   background-color: $bodyColour;
-  //@include dropShadow(0, 0, 10, 5, rgba(0,0,0,.3));
 
   @media #{$mediumBreakpoint} {
     @include centeredAndFixed(50px);
@@ -48,6 +47,16 @@ body {
     position: absolute;
   }
 
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  //@include dropShadow(0, 10px, 3px, 3px, #000000);
+  @include dropShadow(0, 0, 10px, 5px, rgba(0,0,0,.3));
 }
 
 /**
@@ -103,6 +112,10 @@ body {
 p, a {
 
   font-size: .8rem;
+
+  @media #{$smallBreakpoint} {
+    font-size: $smallScreenFontSize
+  }
 
 }
 
@@ -163,6 +176,11 @@ p, a {
   padding: 5px;
   margin: 0;
 
+  @media #{$smallBreakpoint} {
+    height: auto;
+    margin: 10px 0 0 0;
+  }
+
   a {
     cursor: pointer;
     color: #EEEEEE;
@@ -171,7 +189,7 @@ p, a {
     padding: 10px;
     background-repeat: repeat;
     background-image: url('../../pattern/tweed.png');
-    @include dropShadow(0, 0, 3px, 3px, #000000);
+    @include dropShadow(0, 0, 5px, 1px, rgba(#000000, .3));
     @media #{$smallBreakpoint} {
       width: 50%;
       display: inline-block;
@@ -189,7 +207,7 @@ p, a {
     background-repeat: repeat;
     background-image: url('../../pattern/tweed-over.png');
     margin: 0px;
-    @include dropShadow(0, 0, 3px, 3px, #000000);
+    @include dropShadow(0, 0, 5px, 1px, rgba(#000000, .3));
     @media #{$smallBreakpoint} {
       padding: 10px 0;
       margin: 0 auto;

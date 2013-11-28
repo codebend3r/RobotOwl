@@ -31,10 +31,10 @@
   filter: none;
 }
 
-@mixin dropShadow($offsetX: 0, $offsetY: 5, $blur: 5, $spread: 5, $sColour: $shadowColour) {
-  -webkit-box-shadow: $offsetX + px $offsetY + px $blur + px $spread + px $sColour;
-  -moz-box-shadow: $offsetX + px $offsetY + px $blur + px $spread + px $sColour;
-  box-shadow: $offsetX + px $offsetY + px $blur + px $spread + px $sColour;
+@mixin dropShadow($offsetX: 0, $offsetY: 5px, $blur: 5px, $spread: 5px, $sColour: $shadowColour) {
+  -webkit-box-shadow: $offsetX $offsetY $blur $spread $sColour;
+  -moz-box-shadow: $offsetX $offsetY $blur $spread $sColour;
+  box-shadow: $offsetX $offsetY $blur $spread $sColour;
 }
 
 @mixin innerDropShadow($offsetX: 0, $offsetY: 0, $blur: 0, $spread: 0, $sColour: $shadowColour) {

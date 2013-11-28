@@ -77,7 +77,7 @@ Crivas.ViewModel = function () {
 			id: i.id,
 			name: i.name,
 			subMenu: i.subMenu,
-			sunMenuSelector: i.subMenuSelector
+			subMenuSelector: i.subMenuSelector
 		};
 	});
 
@@ -88,7 +88,6 @@ Crivas.ViewModel = function () {
 		self.goToPosition = $('#portfolio-section').offset().top - $('.main-wrapper').offset().top;
 
 		if (Crivas.windowWidth <= Crivas.small) {
-			console.log('SMALL!!! 0');
 			var callback = self.scrollTo.bind(null, self.goToPosition, 'portfolio', 0, animateScroll);
 			self.animateSmallMenuReveal(false, true, callback);
 		} else {
@@ -104,7 +103,6 @@ Crivas.ViewModel = function () {
 		self.goToPosition = $('#resume-section').offset().top - $('.main-wrapper').offset().top + 20;
 
 		if (Crivas.windowWidth <= Crivas.small) {
-			console.log('SMALL!!! 1');
 			var callback = self.scrollTo.bind(null, self.goToPosition, 'resume', 1, animateScroll);
 			self.animateSmallMenuReveal(false, true, callback);
 		} else {
@@ -120,7 +118,6 @@ Crivas.ViewModel = function () {
 		self.goToPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top - 250;
 
 		if (Crivas.windowWidth <= Crivas.small) {
-			console.log('SMALL!!! 2');
 			var callback = self.scrollTo.bind(null, self.goToPosition, 'contact', 2, animateScroll);
 			self.animateSmallMenuReveal(false, true, callback);
 		} else {
@@ -188,7 +185,6 @@ Crivas.ViewModel = function () {
 	};
 
 	self.openSmallMenu = function () {
-		console.log('openSmallMenu');
 		self.menuOpen = !self.menuOpen;
 		self.animateSmallMenuReveal(self.menuOpen);
 	};
@@ -199,27 +195,27 @@ Crivas.ViewModel = function () {
 
 		var $portfolioContainer = $('.portfolio-container'),
 			$mainWrapper = $('.main-wrapper'),
-			$mainMenu = $('.main-menu'),
+			$shadow = $('.shadow'),
 			$navBar = $('.nav-bar'),
-			xPos = Crivas.windowWidth - 72;
+			xPos = Crivas.windowWidth - 72,
+			time = 1;
 
 		self.menuOpen = menuOpen;
 
 		if (menuOpen) {
-			//TweenLite.to($portfolioContainer, 1, { left:xPos, ease: Expo.easeOut });
-			TweenLite.to($mainWrapper, 1, { left:xPos, ease: Expo.easeOut });
-			//TweenLite.to($mainMenu, 1, { left:xPos, ease: Expo.easeOut });
-			TweenLite.to($navBar, 1, { left:xPos, ease: Expo.easeOut });
+			//TweenLite.to($portfolioContainer, time, { left:xPos, ease: Expo.easeOut });
+			TweenLite.to($mainWrapper, time, { left:xPos, ease: Expo.easeOut });
+			TweenLite.to($shadow, time, { left:xPos, ease: Expo.easeOut });
+			TweenLite.to($navBar, time, { left:xPos, ease: Expo.easeOut });
 		} else {
-			//TweenLite.to($portfolioContainer, 1, { left:0, ease: Expo.easeOut });
-			TweenLite.to($mainWrapper, 1, { left:0, ease: Expo.easeOut });
-			//TweenLite.to($mainMenu, 1, { left:0, ease: Expo.easeOut });
-			TweenLite.to($navBar, 1, { left:0, ease: Expo.easeOut });
+			//TweenLite.to($portfolioContainer, time, { left:0, ease: Expo.easeOut });
+			TweenLite.to($mainWrapper, time, { left:0, ease: Expo.easeOut });
+			TweenLite.to($shadow, time, { left:0, ease: Expo.easeOut });
+			TweenLite.to($navBar, time, { left:0, ease: Expo.easeOut });
 		}
 
 		if (scrollTo) {
-			console.log('callback!!!');
-			setTimeout(callback, 1000);
+			setTimeout(callback, time * 1000);
 		}
 
 	};
@@ -229,6 +225,7 @@ Crivas.ViewModel = function () {
 		self.currentSectionID(currentID);
 		self.portfolioData(self.longList[self.currentSectionID()]);
 		//location.hash = 'portfolio/' + data.slug;
+
 		if (self.$portfolioContainer.hasClass('slide-menu-in')) {
 			self.$portfolioContainer.removeClass('slide-menu-in');
 			self.$navBar.removeClass('slide-menu-in');

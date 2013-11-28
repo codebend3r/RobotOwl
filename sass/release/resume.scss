@@ -19,8 +19,8 @@ ul.skillset {
   li.skill-item {
 
     font-size: 12px;
-    @media #{$mediumBreakpoint} {
-      font-size: .8rem;
+    @media #{$smallBreakpoint} {
+      font-size: $smallScreenFontSize
     }
 
   }
@@ -36,7 +36,7 @@ ul.skillset {
 }
 
 .skill {
-  color: #000000;
+  color: $slateGrey;
 }
 
 .level {
@@ -120,8 +120,8 @@ ul.skillset {
 
   li {
     font-size: 12px;
-    @media #{$mediumBreakpoint} {
-      font-size: .8rem;
+    @media #{$smallBreakpoint} {
+      font-size: $smallScreenFontSize
     }
   }
 

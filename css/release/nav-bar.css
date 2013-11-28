@@ -14,9 +14,9 @@
   position: fixed;
   z-index: 99;
   top: 0px;
-  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 10 5 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 10 5 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10 5 rgba(0, 0, 0, 0.3);
   /*
   @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background: none;
@@ -24,7 +24,7 @@
   }
   */
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .nav-bar {
     background-image: none;
     background-color: #e8e8e8;
@@ -38,7 +38,7 @@
     box-shadow: none;
   }
 }
-@media all and (max-width: 660px) {
+@media all and (max-width: 700px) {
   .nav-bar {
     height: 70px;
     z-index: 998;
@@ -65,7 +65,7 @@
   position: static;
   height: 80px;
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
   .nav-bar-fixed {
     width: 100%;
   }
@@ -87,7 +87,7 @@
   background-color: #cecece;
   height: 4px;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .open-small-menu {
     float: left;
     cursor: pointer;
@@ -126,7 +126,7 @@ ul.main-menu.large {
   display: inline-block;
   position: static;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   ul.main-menu.large {
     display: none;
   }
@@ -134,7 +134,7 @@ ul.main-menu.large {
 ul.main-menu.small {
   display: none;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   ul.main-menu.small {
     display: inline-block;
     position: fixed;
@@ -146,12 +146,52 @@ ul.main-menu.small {
     border-bottom: none;
     width: 100%;
     height: 100%;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    overflow-y: scroll !important;
+  }
+  ul.main-menu.small li span {
+    margin: 0 0 0 20px;
+    padding: 0;
+  }
+  ul.main-menu.small li.has-sub-menu {
+    line-height: initial;
+    height: initial;
+  }
+  ul.main-menu.small li.has-sub-menu ul.small-menu {
+    position: static;
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+    float: none;
+    clear: both;
+    border: none;
+    width: initial;
+  }
+  ul.main-menu.small li.has-sub-menu ul.small-menu li {
+    position: static;
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0 0 0 20px;
+    width: initial;
+  }
+  ul.main-menu.small li.has-sub-menu ul.small-menu li:hover {
+    background: none;
+    background-color: red;
+    border: none;
+  }
+}
+@media all and (max-width: 700px) {
+  ul.main-menu.small li.menu-item {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }
 ul.main-menu li {
   margin: 0;
-  padding: 0 20px;
+  padding: 0;
   display: inline-block;
   list-style: none;
   cursor: pointer;
@@ -159,14 +199,13 @@ ul.main-menu li {
   line-height: 80px;
   text-align: center;
 }
-@media all and (max-width: 800px) {
+ul.main-menu li span {
+  padding: 0 20px;
+}
+@media all and (max-width: 850px) {
   ul.main-menu li {
     border-left: 3px rgba(0, 0, 0, 0) solid;
     border-bottom: none;
-  }
-}
-@media all and (max-width: 800px) {
-  ul.main-menu li {
     display: block;
     z-index: -999;
     text-align: left;
@@ -176,7 +215,7 @@ ul.main-menu li:hover {
   border-left: none;
   border-bottom: 3px #cb3429 solid;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   ul.main-menu li:hover {
     border-left: 3px #cb3429 solid;
     border-bottom: none;
@@ -187,23 +226,23 @@ ul.main-menu li.selected {
   border-left: none;
   border-bottom: 3px #4f9800 solid;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   ul.main-menu li.selected {
     border-left: 3px #4f9800 solid;
     border-bottom: none;
   }
 }
 
-@media all and (max-width: 660px) {
+@media all and (max-width: 700px) {
   ul.main-menu {
     width: 100%;
     height: 80px;
     margin: 0;
     padding: 0;
     background-color: #efefef;
-    -webkit-box-shadow: 0px 4px 20px 0px #333333;
-    -moz-box-shadow: 0px 4px 20px 0px #333333;
-    box-shadow: 0px 4px 20px 0px #333333;
+    -webkit-box-shadow: 0 4 20 0 #333333;
+    -moz-box-shadow: 0 4 20 0 #333333;
+    box-shadow: 0 4 20 0 #333333;
   }
   ul.main-menu li {
     width: 90%;

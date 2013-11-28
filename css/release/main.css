@@ -1,7 +1,7 @@
 html {
   font-size: 100%;
 }
-@media all and (max-width: 660px) {
+@media all and (max-width: 700px) {
   html {
     font-size: 150%;
   }
@@ -16,15 +16,15 @@ body {
   overflow-x: hidden;
   opacity: 0;
 }
-@media all and (max-width: 660px) {
+@media all and (max-width: 700px) {
   body {
     margin: 0;
     padding: 0;
   }
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   body {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -40,12 +40,12 @@ body {
   height: 100%;
   background-color: #efefef;
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
   .main-wrapper {
     width: 100%;
   }
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .main-wrapper {
     width: 900px;
     margin: 50px auto 0 auto;
@@ -56,10 +56,21 @@ body {
     position: absolute;
   }
 }
-@media all and (max-width: 800px) and (max-width: 1000px) {
+@media all and (max-width: 850px) and (max-width: 1050px) {
   .main-wrapper {
     width: 100%;
   }
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
 /**
@@ -76,7 +87,7 @@ body {
   margin: 0 0 10px 0;
   padding: 0 0 100px 0;
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
   .main-content-section {
     clear: both;
     width: 80%;
@@ -86,7 +97,7 @@ body {
     padding: 0 10% 100px 10%;
   }
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .main-content-section {
     position: static;
     float: left;
@@ -99,7 +110,7 @@ body {
     padding: 0 1%;
   }
 }
-@media all and (max-width: 660px) {
+@media all and (max-width: 700px) {
   .main-content-section {
     position: static;
     float: left;
@@ -115,6 +126,11 @@ body {
 
 p, a {
   font-size: .8rem;
+}
+@media all and (max-width: 700px) {
+  p, a {
+    font-size: 0.9rem;
+  }
 }
 
 .horizontal-lines {
@@ -146,12 +162,12 @@ p, a {
   display: inline-block;
   float: left;
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
   .logo {
     margin: 0 0 0 15px;
   }
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .logo {
     background-size: 132.125px 70px;
     width: 132.125px;
@@ -171,6 +187,12 @@ p, a {
   padding: 5px;
   margin: 0;
 }
+@media all and (max-width: 700px) {
+  .launch {
+    height: auto;
+    margin: 10px 0 0 0;
+  }
+}
 .launch a {
   cursor: pointer;
   color: #EEEEEE;
@@ -179,11 +201,11 @@ p, a {
   padding: 10px;
   background-repeat: repeat;
   background-image: url("../../pattern/tweed.png");
-  -webkit-box-shadow: 0px 0px 3pxpx 3pxpx black;
-  -moz-box-shadow: 0px 0px 3pxpx 3pxpx black;
-  box-shadow: 0px 0px 3pxpx 3pxpx black;
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
 }
-@media all and (max-width: 660px) {
+@media all and (max-width: 700px) {
   .launch a {
     width: 50%;
     display: inline-block;
@@ -200,11 +222,11 @@ p, a {
   background-repeat: repeat;
   background-image: url("../../pattern/tweed-over.png");
   margin: 0px;
-  -webkit-box-shadow: 0px 0px 3pxpx 3pxpx black;
-  -moz-box-shadow: 0px 0px 3pxpx 3pxpx black;
-  box-shadow: 0px 0px 3pxpx 3pxpx black;
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
 }
-@media all and (max-width: 660px) {
+@media all and (max-width: 700px) {
   .launch a:hover {
     padding: 10px 0;
     margin: 0 auto;
@@ -225,7 +247,7 @@ p, a {
   line-height: 90px;
   margin: 0;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .icon-and-title {
     padding: 0 5%;
     width: 90%;
@@ -241,7 +263,7 @@ p, a {
   padding: 0 0 0 15px;
   margin: 0;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .icon-and-title h2 {
     font-size: 2.0rem;
   }

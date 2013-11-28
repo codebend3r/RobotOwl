@@ -8,7 +8,7 @@ ul.portfolio-list {
   display: inline-block;
   position: static;
   width: 25%;
-  font-size: 0.8rem;
+  font-size: .8rem;
   vertical-align: top;
   padding: 0;
   margin: 0;
@@ -31,10 +31,7 @@ ul.portfolio-list li:hover {
   background-repeat: repeat;
   background-image: url(../../pattern/stripes_faded2.png);
 }
-ul.portfolio-list.small-menu {
-  display: none;
-}
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
   ul.portfolio-list {
     display: none;
     float: none;
@@ -57,14 +54,14 @@ ul.portfolio-list.small-menu {
   height: 50px;
   background-size: 100% 100%;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .portfolio-icon {
     width: 80px;
     height: 80px;
     background-size: 100% 100%;
   }
 }
-@media all and (max-width: 660px) {
+@media all and (max-width: 700px) {
   .portfolio-icon {
     width: 60px;
     height: 60px;
@@ -83,14 +80,14 @@ ul.portfolio-list.small-menu {
   margin: 0 0 0 2%;
   float: left;
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
   .portfolio-container {
     width: 100%;
     margin: 0;
     padding: 0;
   }
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .portfolio-container {
     width: 90%;
     padding: 0 5% 5% 5%;
@@ -116,7 +113,7 @@ ul.portfolio-list.small-menu {
   border: 10px solid white;
   clear: both;
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
   .image-container {
     float: none;
     position: relative;
@@ -124,7 +121,7 @@ ul.portfolio-list.small-menu {
     margin: 0 0 0 -300px;
   }
 }
-@media all and (max-width: 660px) {
+@media all and (max-width: 700px) {
   .image-container {
     max-width: 100%;
     max-height: 100%;
@@ -162,7 +159,7 @@ ul.image-border li.images-list {
   top: 0;
   left: 0;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   ul.image-border {
     width: 100%;
   }
@@ -172,7 +169,7 @@ img.work-images {
   position: absolute;
   max-width: 100%;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   img.work-images {
     max-width: 100%;
   }
@@ -189,7 +186,7 @@ img.work-images {
   margin: 0;
   padding: 0;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .sub {
     margin: 0;
   }
@@ -206,9 +203,9 @@ img.work-images {
   color: #cb3429;
   font-size: 1rem;
 }
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
   .sub-heading {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
