@@ -50,13 +50,15 @@ body {
 }
 
 .shadow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 200px;
-  //@include dropShadow(0, 10px, 3px, 3px, #000000);
-  @include dropShadow(0, 0, 10px, 5px, rgba(0,0,0,.3));
+  @media #{$mediumBreakpoint} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    //@include dropShadow(0, 10px, 3px, 3px, #000000);
+    @include dropShadow(0, 0, 10px, 5px, rgba(0,0,0,.3));
+  }
 }
 
 /**

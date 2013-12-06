@@ -55,16 +55,17 @@ module.exports = function (grunt) {
 			jsconcat: {
 				// the files to concatenate
 				src: [
-					'js/external/jquery-1.9.1.js',
-					'js/external/jquery.imagesloaded.js',
-					'js/external/knockout-2.2.1.js',
-					'js/external/modernizr-2.6.2.js',
-					'js/external/TweenMax.min.js',
-					'js/internal/plugin/jquery.owlgallery-0.1.2.js',
-					'js/internal/Crivas.Data.js',
-					'js/internal/Crivas.Main.js',
-					'js/internal/Crivas.ViewModel.js',
-					'js/internal/Crivas.EmailForm.js'
+                    'js/vendor/jquery-1.9.1.js',
+                    'js/vendor/jquery.imagesloaded.js',
+                    'js/vendor/jquery.localscroll-1.2.7.js',
+                    'js/vendor/jquery.owlgallery-0.1.2.js',
+                    'js/vendor/knockout-2.2.1.js',
+                    'js/vendor/modernizr-2.6.2.js',
+                    'js/vendor/TweenMax.min.js',
+                    'js/internal/Crivas.Data.js',
+                    'js/internal/Crivas.Main.js',
+                    'js/internal/Crivas.ViewModel.js',
+                    'js/internal/Crivas.EmailForm.js'
 				],
 				// the location of the resulting JS file
 				dest: 'js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'
@@ -90,12 +91,13 @@ module.exports = function (grunt) {
 			dist: {
 				files: {
 					'js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.js': [
-						'js/external/jquery-1.9.1.js',
-						'js/external/jquery.imagesloaded.js',
-						'js/external/knockout-2.2.1.js',
-						'js/external/modernizr-2.6.2.js',
-						'js/external/TweenMax.min.js',
-						'js/internal/plugin/jquery.owlgallery-0.1.2.js',
+						'js/vendor/jquery-1.9.1.js',
+						'js/vendor/jquery.imagesloaded.js',
+                        'js/vendor/jquery.localscroll-1.2.7.js',
+                        'js/vendor/jquery.owlgallery-0.1.2.js',
+                        'js/vendor/knockout-2.2.1.js',
+                        'js/vendor/modernizr-2.6.2.js',
+                        'js/vendor/TweenMax.min.js',
 						'js/internal/Crivas.Data.js',
 						'js/internal/Crivas.Main.js',
 						'js/internal/Crivas.ViewModel.js',
@@ -142,33 +144,38 @@ module.exports = function (grunt) {
 				files: [ 'sass/**/*.scss', 'js/internal/**/*.js', 'js/vendor/**/*.js', 'index.html' ],
 				tasks: [ 'dev' ],
 				options: {
-					livereload: true
+					livereload: 9001,
+                    atBegin: true
 				}
 			},
 			prod: {
 				files: [ 'sass/**/*.scss', 'js/internal/*.js', 'js/vendor/**/*.js', 'index.html' ],
-				tasks: [ 'prod' ]
+				tasks: [ 'prod' ],
+                options: {
+                    livereload: 9001,
+                    atBegin: true
+                }
 			},
 			release: {
 				files: [ 'sass/**/*.scss', 'js/internal/**/*.js', 'js/vendor/**/*.js', 'index.html' ],
-				tasks: [ 'release' ]
+				tasks: [ 'release' ],
+                options: {
+                    livereload: 9001,
+                    atBegin: true
+                }
 			}
 		},
-		jslint: {
-			server: {
-				src: [ // some example files
-					'js/internal/*.js'
-				],
-				options: {
-					junit: 'jslint/server-junit.xml', // write the output to a JUnit XML
-					log: 'jslint/server-lint.log',
-					jslintXml: 'jslint/server-jslint.xml',
-					errorsOnly: true, // only display errors
-					failOnError: false, // defaults to true
-					checkstyle: 'out/server-checkstyle.xml' // write a checkstyle-XML
-				}
-			}
-		},
+        connect: {
+            server: {
+                options: {
+                    port: 9001,
+                    base: 'bin',
+                    //keepalive: true,
+                    livereload: true,
+                    debug: true
+                }
+            }
+        },
 		env: {
 
 			dev: {
@@ -218,6 +225,7 @@ module.exports = function (grunt) {
 		}
 	});
 
+    grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -226,14 +234,13 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-jslint');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-env');
 
 	// Default task(s)
-	grunt.registerTask('watchdev', [ 'dev', 'watch:dev']);
-	grunt.registerTask('watchprod', ['watch:prod']);
-	grunt.registerTask('watchrelease', ['watch:release']);
+	grunt.registerTask('watchdev', [ 'connect', 'watch:dev']);
+	grunt.registerTask('watchprod', [ 'connect', 'watch:prod']);
+	grunt.registerTask('watchrelease', [ 'connect', 'watch:release']);
 
 	grunt.registerTask('default', [ 'env:dev', 'sass', 'preprocess:dev', 'clean', 'copy:dev' ]);
 	grunt.registerTask('dev', [ 'env:dev', 'sass', 'preprocess:dev', 'clean', 'copy:dev' ]);
