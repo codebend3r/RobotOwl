@@ -169,7 +169,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 9001,
-                    base: 'bin',
+                    base: '<%= pkg.outputFolder %>',
                     //keepalive: true,
                     livereload: true,
                     debug: true
@@ -243,7 +243,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('watchrelease', [ 'connect', 'watch:release']);
 
 	grunt.registerTask('default', [ 'env:dev', 'sass', 'preprocess:dev', 'clean', 'copy:dev' ]);
-	grunt.registerTask('dev', [ 'env:dev', 'sass', 'preprocess:dev', 'clean', 'copy:dev' ]);
+	grunt.registerTask('dev', [ 'env:dev', 'sass', 'clean', 'copy:dev', 'preprocess:dev' ]);
 	grunt.registerTask('prod', [ 'env:prod', 'sass', 'concat', 'clean', 'copy:prod', 'preprocess:prod' ]);
 	grunt.registerTask('release', [ 'env:release', 'sass', 'concat', 'uglify', 'cssmin', 'clean', 'copy:release', 'preprocess:release' ]);
 

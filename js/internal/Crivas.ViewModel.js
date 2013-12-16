@@ -283,9 +283,10 @@ Crivas.ViewModel = function () {
 		self.$stripedBorder.show();
 
 		// init owl gallery
-		self.$workImages.owlgallery({
-			child: '.work-images',
-			direction: 'forward'
+		$('image-border').owlgallery({
+			child: 'li.image-list',
+			direction: Owl.direction.FORWARD,
+            animationType: Owl.animationTypes.SLIDE
 		});
 
 	};
