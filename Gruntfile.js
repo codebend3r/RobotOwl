@@ -58,7 +58,7 @@ module.exports = function (grunt) {
                     'js/vendor/jquery-1.9.1.js',
                     'js/vendor/jquery.imagesloaded.js',
                     'js/vendor/jquery.localscroll-1.2.7.js',
-                    'js/vendor/jquery.owlgallery-0.1.2.js',
+                    'js/vendor/jquery.owlgallery-0.1.5.js',
                     'js/vendor/knockout-2.2.1.js',
                     'js/vendor/modernizr-2.6.2.js',
                     'js/vendor/TweenMax.min.js',
@@ -94,7 +94,7 @@ module.exports = function (grunt) {
 						'js/vendor/jquery-1.9.1.js',
 						'js/vendor/jquery.imagesloaded.js',
                         'js/vendor/jquery.localscroll-1.2.7.js',
-                        'js/vendor/jquery.owlgallery-0.1.2.js',
+                        'js/vendor/jquery.owlgallery-0.1.5.js',
                         'js/vendor/knockout-2.2.1.js',
                         'js/vendor/modernizr-2.6.2.js',
                         'js/vendor/TweenMax.min.js',
@@ -222,10 +222,31 @@ module.exports = function (grunt) {
 				}
 			}
 
+		},
+		'ftp-deploy': {
+			prod: {
+				auth: {
+					host: 's141590.gridserver.com',
+					port: 21,
+					authKey: 'key1'
+				},
+				src: '<%= pkg.outputFolder %>',
+				dest: '/domains/crivas.net/html'
+			},
+			dev: {
+				auth: {
+					host: 's141590.gridserver.com',
+					port: 21,
+					authKey: 'key1'
+				},
+				src: '<%= pkg.outputFolder %>',
+				dest: '/domains/crivas.net/html/beta'
+			}
 		}
 	});
 
-    grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-ftp-deploy');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -246,6 +267,8 @@ module.exports = function (grunt) {
 	grunt.registerTask('dev', [ 'env:dev', 'sass', 'clean', 'copy:dev', 'preprocess:dev' ]);
 	grunt.registerTask('prod', [ 'env:prod', 'sass', 'concat', 'clean', 'copy:prod', 'preprocess:prod' ]);
 	grunt.registerTask('release', [ 'env:release', 'sass', 'concat', 'uglify', 'cssmin', 'clean', 'copy:release', 'preprocess:release' ]);
+	grunt.registerTask('deploydev', [ 'dev', 'ftp-deploy:dev' ]);
+	grunt.registerTask('deploy', [ 'release', 'ftp-deploy:prod' ]);
 
 
 };

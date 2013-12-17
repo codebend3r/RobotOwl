@@ -282,13 +282,6 @@ Crivas.ViewModel = function () {
 		self.$imagePreloader.hide();
 		self.$stripedBorder.show();
 
-		// init owl gallery
-		$('image-border').owlgallery({
-			child: 'li.image-list',
-			direction: Owl.direction.FORWARD,
-            animationType: Owl.animationTypes.SLIDE
-		});
-
 	};
 
 	self.showPreloader = function () {

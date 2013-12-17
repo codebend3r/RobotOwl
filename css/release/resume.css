@@ -18,7 +18,7 @@ ul.skillset li.skill-item {
 }
 @media all and (max-width: 700px) {
   ul.skillset li.skill-item {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -124,7 +124,7 @@ ul.skillset li.skill-item {
 }
 @media all and (max-width: 700px) {
   .job li {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 

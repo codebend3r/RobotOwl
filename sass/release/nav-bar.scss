@@ -164,13 +164,16 @@ ul.main-menu {
           height: initial;
           ul.small-menu {
             position: static;
-            display: block;
+            display: none;
             margin: 0;
             padding: 10px 0;
             float: none;
             clear: both;
             border: none;
             width: initial;
+            &.show {
+              display: block;
+            }
             li {
               position: static;
               display: block;

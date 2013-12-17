@@ -3,14 +3,12 @@
 
 html {
   font-size: 100%;
-  @media #{$smallBreakpoint} {
-    font-size: 150%;
-  }
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 100%;
   background-color: $bodyColour;
   color: $slateGrey;
   min-width: 400px;
@@ -21,7 +19,7 @@ body {
     padding: 0;
   }
 
-  @media #{$mediumBreakpoint} {
+  @media #{$retinaBreakpoint} {
     font-size: $smallScreenFontSize;
   }
 }
@@ -115,8 +113,8 @@ p, a {
 
   font-size: .8rem;
 
-  @media #{$smallBreakpoint} {
-    font-size: $smallScreenFontSize
+  @media #{$retinaBreakpoint} {
+    font-size: $smallScreenFontSize;
   }
 
 }
@@ -249,7 +247,11 @@ p, a {
     margin: 0;
     @media #{$mediumBreakpoint} {
       font-size: 2.0rem;
+      @media #{$retinaBreakpoint} {
+        font-size: 2.2rem;
+      }
     }
+
   }
 
 }

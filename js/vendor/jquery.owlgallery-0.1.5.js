@@ -3,7 +3,7 @@
  * crivas.net
  *
  * Author: Chester Rivas
- * Version: 1.5
+ * Version: 1.5.1
  */
 var Owl = {};
 
@@ -21,10 +21,10 @@ Owl.direction = {};
 Owl.direction.FORWARD = "forward";
 Owl.direction.BACKWARD = "backward";
 
-Owl.responsivemode = {};
-Owl.responsivemode.ALWAYSRESIZE = "alwaysresize";
-Owl.responsivemode.ONLYRESIZEWHENSMALLER = "onlyresizewhensmaller";
-Owl.responsivemode.NEVERRESIZE = "neverresize";
+Owl.responsiveMode = {};
+Owl.responsiveMode.ALWAYSRESIZE = "alwaysresize";
+Owl.responsiveMode.ONLYRESIZEWHENSMALLER = "onlyresizewhensmaller";
+Owl.responsiveMode.NEVERRESIZE = "neverresize";
 
 $.fn.owlgallery = function (options) {
 
@@ -40,7 +40,7 @@ $.fn.owlgallery = function (options) {
         animationType: Owl.animationTypes.SLIDE,
         direction: Owl.direction.FORWARD,
         child: null, //will automatically find img and li tags
-        responsiveMode: Owl.responsivemode.NEVERRESIZE,
+        responsiveMode: Owl.responsiveMode.NEVERRESIZE,
         enableTweener: false,
         enableTouchEvents: false,
         autoLoadTweener: false,
@@ -248,7 +248,7 @@ $.fn.owlgallery = function (options) {
         }
 
         // if responsive mode doesn't equal to neverresize then add event listener for window resize
-        if (settings.responsiveMode !== Owl.responsivemode.NEVERRESIZE) {
+        if (settings.responsiveMode !== Owl.responsiveMode.NEVERRESIZE) {
             $(window).on('resize', onWindowResize);
             $galleryImages.css({
                 minWidth: '100%',
@@ -341,21 +341,28 @@ $.fn.owlgallery = function (options) {
     var calculateParentPadding = function() {
         var totalPadding = 0;
         $.each($this.parents(), function() {
+            totalPadding += parseInt( $(this).css('border-left-width'), 10 );
+	        //console.log('border-left-width', totalPadding);
+            totalPadding += parseInt( $(this).css('border-right-width'), 10 );
+	        //console.log('border-right-width', totalPadding);
             totalPadding += parseInt( $(this).css('padding-left'), 10 );
+	        //console.log('padding-left', totalPadding);
             totalPadding += parseInt( $(this).css('padding-right'), 10 );
+	        //console.log('padding-right', totalPadding);
+	        //console.log('===========================');
         });
         return totalPadding;
     }
 
     var onWindowResize = function() {
 
-        if (settings.responsiveMode == Owl.responsivemode.ALWAYSRESIZE) {
+        if (settings.responsiveMode == Owl.responsiveMode.ALWAYSRESIZE) {
             $this.css({
-                width: $(window).width(),
+                width: $(window).width() - calculateParentPadding(),
                 height: $(window).width() * aspectRatio
             });
-            currentImageWidth = $(window).width();
-        } else if (settings.responsiveMode == Owl.responsivemode.ONLYRESIZEWHENSMALLER) {
+            currentImageWidth = $(window).width() - calculateParentPadding();
+        } else if (settings.responsiveMode == Owl.responsiveMode.ONLYRESIZEWHENSMALLER) {
             if ($(window).width() <= settings.galleryWidth ) {
                 $this.css({
                     width: $(window).width() - calculateParentPadding(),

@@ -86,8 +86,8 @@
 .contact-row {
   height: $iconWidth;
   padding: 10px 0;
-  @media #{$mediumBreakpoint} {
-    font-size: 20px;
+  @media #{$retinaBreakpoint} {
+    font-size: $smallScreenFontSize;
   }
 }
 
@@ -105,8 +105,8 @@
 }
 
 label {
-  @media #{$mediumBreakpoint} {
-    font-size: 20px;
+  @media #{$retinaBreakpoint} {
+    font-size: $smallScreenFontSize;
     padding: 10px;
   }
 }
@@ -114,9 +114,9 @@ label {
 input, textarea {
   width: 98%;
   padding: 2px;
-  @media #{$mediumBreakpoint} {
+  @media #{$retinaBreakpoint} {
+    font-size: $smallScreenFontSize;
     width: 90%;
-    font-size: 24px;
     padding: 3% 3%;
   }
 }

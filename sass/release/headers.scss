@@ -4,25 +4,36 @@
 /////////////////////
 
 h1, h2, h3, h4, h5 {
-    font-family: 'The Girl Next Door', cursive;
-    padding: 0;
-    margin: 0;
-    line-height: auto;
+  font-family: 'The Girl Next Door', cursive;
+  padding: 0;
+  margin: 0;
+  line-height: auto;
 }
 
 h1 {
-    text-decoration: underline;
+  text-decoration: underline;
+  font-size: 1.6rem;
+  @media #{$retinaBreakpoint} {
+    font-size: 2rem;
+  }
 }
 
 h2 {
-    padding: 20px 0 0 0;
+  padding: 20px 0 0 0;
+  font-size: 1.5rem;
+  @media #{$retinaBreakpoint} {
+    font-size: 1.65rem;
+  }
 }
 
 h3 {
-    padding: 0 0;
-    font-family: 'The Girl Next Door', cursive;
-    font-size: 1.4rem;
-    font-weight: normal;
-    color: $darkRed;
-    text-decoration: underline;
+  padding: 0 0;
+  font-family: 'The Girl Next Door', cursive;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: $darkRed;
+  text-decoration: underline;
+  @media #{$retinaBreakpoint} {
+    font-size: 1.8rem;
+  }
 }

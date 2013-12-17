@@ -568,7 +568,20 @@ Crivas.Data = {
 
     resume: [
 
-        {
+	    {
+		    id: 14,
+		    companyName: 'Bell Media',
+		    jobTitle: 'Senior Front End Developer',
+		    jobType: 'contract',
+		    datesAtJob: 'November 2013 - Present',
+		    tasks: [
+			    'responsible for all front end development on TMN website redesign',
+			    'worked in Symfony2 backend environment',
+			    'created custom JQuery plugins',
+			    'responsive web-design implementation and optimization'
+		    ]
+	    },
+	    {
             id: 13,
             companyName: 'Jam3',
             jobTitle: 'Senior Front End Developer',

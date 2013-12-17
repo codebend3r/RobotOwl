@@ -77,9 +77,9 @@
   height: 32px;
   padding: 10px 0;
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .contact-row {
-    font-size: 20px;
+    font-size: 1.2rem;
   }
 }
 
@@ -98,9 +98,9 @@
   }
 }
 
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   label {
-    font-size: 20px;
+    font-size: 1.2rem;
     padding: 10px;
   }
 }
@@ -109,10 +109,10 @@ input, textarea {
   width: 98%;
   padding: 2px;
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   input, textarea {
+    font-size: 1.2rem;
     width: 90%;
-    font-size: 24px;
     padding: 3% 3%;
   }
 }

@@ -1,15 +1,11 @@
 html {
   font-size: 100%;
-}
-@media all and (max-width: 700px) {
-  html {
-    font-size: 150%;
-  }
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 100%;
   background-color: #efefef;
   color: darkslategrey;
   min-width: 400px;
@@ -22,9 +18,9 @@ body {
     padding: 0;
   }
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   body {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -129,9 +125,9 @@ body {
 p, a {
   font-size: .8rem;
 }
-@media all and (max-width: 700px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   p, a {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -268,6 +264,11 @@ p, a {
 @media all and (max-width: 850px) {
   .icon-and-title h2 {
     font-size: 2.0rem;
+  }
+}
+@media all and (max-width: 850px) and (-webkit-min-device-pixel-ratio: 1.5), all and (max-width: 850px) and (-o-min-device-pixel-ratio: 1.5), all and (max-width: 850px) and (min-device-pixel-ratio: 1.5), all and (max-width: 850px) and (min-resolution: 144dpi), all and (max-width: 850px) and (min-resolution: 1.5dppx) {
+  .icon-and-title h2 {
+    font-size: 2.2rem;
   }
 }
 
