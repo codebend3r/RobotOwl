@@ -94,7 +94,7 @@ module.exports = function (grunt) {
 						'js/vendor/jquery-1.9.1.js',
 						'js/vendor/jquery.imagesloaded.js',
                         'js/vendor/jquery.localscroll-1.2.7.js',
-                        'js/vendor/jquery.owlgallery-0.1.5.js',
+                        'js/vendor/jquery.owlgallery-1.5.2.js',
                         'js/vendor/knockout-2.2.1.js',
                         'js/vendor/modernizr-2.6.2.js',
                         'js/vendor/TweenMax.min.js',
@@ -144,40 +144,34 @@ module.exports = function (grunt) {
 				files: [ 'sass/**/*.scss', 'js/internal/**/*.js', 'js/vendor/**/*.js', 'index.html' ],
 				tasks: [ 'dev' ],
 				options: {
-					livereload: 9001,
-                    atBegin: true
+					livereload: '<%= pkg.port %>'
 				}
 			},
 			prod: {
 				files: [ 'sass/**/*.scss', 'js/internal/*.js', 'js/vendor/**/*.js', 'index.html' ],
 				tasks: [ 'prod' ],
                 options: {
-                    livereload: 9001,
-                    atBegin: true
+                    livereload: '<%= pkg.port %>'
                 }
 			},
 			release: {
 				files: [ 'sass/**/*.scss', 'js/internal/**/*.js', 'js/vendor/**/*.js', 'index.html' ],
 				tasks: [ 'release' ],
                 options: {
-                    livereload: 9001,
-                    atBegin: true
+                    livereload: '<%= pkg.port %>'
                 }
 			}
 		},
         connect: {
             server: {
                 options: {
-                    port: 9001,
+                    port: '<%= pkg.port %>',
                     base: '<%= pkg.outputFolder %>',
-                    //keepalive: true,
-                    livereload: true,
-                    debug: true
+                    livereload: true
                 }
             }
         },
 		env: {
-
 			dev: {
 				NODE_ENV: 'DEVELOPMENT'
 			},
@@ -186,42 +180,31 @@ module.exports = function (grunt) {
 			},
 			release: {
 				NODE_ENV: 'RELEASE'
-			}
-
+			},
+		    watching: {
+		    	LIVE_RELOAD: true
+		    }
 		},
 		preprocess: {
-
+			options: {
+				context: {
+					name: '<%= pkg.outputName %>',
+					version: '<%= pkg.version %>',
+					port: '<%= pkg.port %>',
+				}
+			}
 			dev: {
 				src: 'index.html',
-				dest: '<%= pkg.outputFolder %>/index.html',
-				options: {
-					context: {
-						name: '<%= pkg.outputName %>',
-						version: '<%= pkg.version %>'
-					}
-				}
+				dest: '<%= pkg.outputFolder %>/index.html'
 			},
 			prod: {
 				src: 'index.html',
-				dest: '<%= pkg.outputFolder %>/index.html',
-				options: {
-					context: {
-						name: '<%= pkg.outputName %>',
-						version: '<%= pkg.version %>'
-					}
-				}
+				dest: '<%= pkg.outputFolder %>/index.html'
 			},
 			release: {
 				src: 'index.html',
-				dest: '<%= pkg.outputFolder %>/index.html',
-				options: {
-					context: {
-						name: '<%= pkg.outputName %>',
-						version: '<%= pkg.version %>'
-					}
-				}
+				dest: '<%= pkg.outputFolder %>/index.html'
 			}
-
 		},
 		'ftp-deploy': {
 			prod: {

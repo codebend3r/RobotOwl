@@ -159,9 +159,14 @@ ul.main-menu {
 
         }
 
-        &.has-sub-menu {
+        &.show {
           line-height: initial;
           height: initial;
+          padding-top: 28px;
+        }
+
+        &.has-sub-menu {
+
           ul.small-menu {
             position: static;
             display: none;
@@ -173,6 +178,7 @@ ul.main-menu {
             width: initial;
             &.show {
               display: block;
+              margin-top: 10px;
             }
             li {
               position: static;

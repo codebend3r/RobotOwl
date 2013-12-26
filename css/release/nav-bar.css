@@ -146,26 +146,31 @@ ul.main-menu.small {
     border-bottom: none;
     width: 100%;
     height: 100%;
-    font-size: 1.2rem;
+    font-size: 18px;
     overflow-y: scroll !important;
   }
   ul.main-menu.small li span {
     margin: 0 0 0 20px;
     padding: 0;
   }
-  ul.main-menu.small li.has-sub-menu {
+  ul.main-menu.small li.show {
     line-height: initial;
     height: initial;
+    padding-top: 28px;
   }
   ul.main-menu.small li.has-sub-menu ul.small-menu {
     position: static;
-    display: block;
+    display: none;
     margin: 0;
     padding: 10px 0;
     float: none;
     clear: both;
     border: none;
     width: initial;
+  }
+  ul.main-menu.small li.has-sub-menu ul.small-menu.show {
+    display: block;
+    margin-top: 10px;
   }
   ul.main-menu.small li.has-sub-menu ul.small-menu li {
     position: static;

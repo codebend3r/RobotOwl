@@ -14,13 +14,16 @@ ul.portfolio-list {
   display: inline-block;
   position: static;
   width: 25%;
-  font-size: .8rem;
+  font-size: 12px;
   vertical-align: top;
   padding: 0;
   margin: 0;
   float: left;
   border: white solid 10px;
   z-index: 9999;
+  @media #{$retinaBreakpoint} {
+    font-size: $smallScreenFontSize;
+  }
 
   &.small-menu {
     display: none;
@@ -201,7 +204,7 @@ img.work-images {
   font-weight: bold;
   color: $darkRed;
   font-size: 1rem;
-  @media #{$mediumBreakpoint} {
+  @media #{$retinaBreakpoint} {
     font-size: $smallScreenFontSize;
   }
 }

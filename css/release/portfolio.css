@@ -8,13 +8,18 @@ ul.portfolio-list {
   display: inline-block;
   position: static;
   width: 25%;
-  font-size: .8rem;
+  font-size: 12px;
   vertical-align: top;
   padding: 0;
   margin: 0;
   float: left;
   border: white solid 10px;
   z-index: 9999;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  ul.portfolio-list {
+    font-size: 18px;
+  }
 }
 ul.portfolio-list.small-menu {
   display: none;
@@ -195,9 +200,9 @@ img.work-images {
   color: #cb3429;
   font-size: 1rem;
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .sub-heading {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 }
 

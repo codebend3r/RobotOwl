@@ -4,6 +4,7 @@
   "version": "0.1.7",
   "homepage": "crivas.net",
   "outputFolder": "www",
+  "port": "9000",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.1.1",

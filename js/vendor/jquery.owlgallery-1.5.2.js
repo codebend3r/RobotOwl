@@ -3,25 +3,25 @@
  * crivas.net
  *
  * Author: Chester Rivas
- * Version: 1.5.1
+ * Version: 1.5.2
  */
-var Owl = {};
+var Owl = Owl || {};
 
 Owl.animationTypes = {};
 Owl.animationTypes.SLIDE = "slide";
 Owl.animationTypes.FADE = "fade";
 
-Owl.event = {};
+Owl.event = Owl.event || {};
 Owl.event.SLIDECHANGED = "slidechanged";
 Owl.event.SLIDENEXTCLICKED = "slidenextclicked";
 Owl.event.SLIDEPREVCLICKED = "slideprevclicked";
 Owl.event.PAGINATIONCLICKED = "paginationclicked";
 
-Owl.direction = {};
+Owl.direction = Owl.direction || {};
 Owl.direction.FORWARD = "forward";
 Owl.direction.BACKWARD = "backward";
 
-Owl.responsiveMode = {};
+Owl.responsiveMode = Owl.responsiveMode || {};
 Owl.responsiveMode.ALWAYSRESIZE = "alwaysresize";
 Owl.responsiveMode.ONLYRESIZEWHENSMALLER = "onlyresizewhensmaller";
 Owl.responsiveMode.NEVERRESIZE = "neverresize";
@@ -76,9 +76,12 @@ $.fn.owlgallery = function (options) {
         easeType = 'Strong.easeOut',
         containerClassName = 'owl-slide-container',
         imageClassName = 'owl-image',
+        paginationContainerClassName = 'owl-pagination-container',
         paginationClassName = 'owl-pagination-button',
         listClassName = 'owl-list-item',
         navClassName = 'owl-nav',
+        navClassNameLeft = 'owl-nav-left',
+        navClassNameRight = 'owl-nav-right',
         currentClassName = 'current',
         buttonIDPropertyName = 'buttonID';
 
@@ -123,8 +126,8 @@ $.fn.owlgallery = function (options) {
 
         var kids,
             $paginationContainer,
-            paginationButtonItem,
-            paginationCopy,
+            $paginationButtonItem,
+            $paginationCopy,
             id = 0;
 
         settings.child !== null ? kids = $this.find(settings.child) : kids = $this.children('img');
@@ -133,14 +136,11 @@ $.fn.owlgallery = function (options) {
             throw Error("child is undefined, therefore plugin can not find slide elements. Make sure an img, li or child div exist.");
         }
 
-        $paginationContainer = $(settings.paginationElement);
-        paginationButtonItem = $paginationContainer.children('li');
-
-        // clear the list items
-        $paginationContainer.html('');
-
-        //setupPagination();
-
+        $paginationContainer = $this.find(settings.paginationElement);
+        $paginationContainer.addClass(paginationContainerClassName);
+        $paginationButtonItem = $paginationContainer.children(); //saved pagination element
+        $paginationContainer.html(''); // clear the list items
+		
         kids.each(function () {
 
             var child = $(this);
@@ -193,12 +193,10 @@ $.fn.owlgallery = function (options) {
 
             }
 
-            paginationCopy = paginationButtonItem.clone();
-            paginationCopy.attr(buttonIDPropertyName, id);
-            paginationCopy.addClass(paginationClassName);
-
-            //add a new list item on every loop
-            $paginationContainer.append(paginationCopy);
+            $paginationCopy = $paginationButtonItem.clone();
+            $paginationCopy.attr(buttonIDPropertyName, id);
+            $paginationCopy.addClass(paginationClassName);
+            $paginationContainer.append($paginationCopy); //add a new list item on every loop
 
             id += 1;
 
@@ -342,14 +340,9 @@ $.fn.owlgallery = function (options) {
         var totalPadding = 0;
         $.each($this.parents(), function() {
             totalPadding += parseInt( $(this).css('border-left-width'), 10 );
-	        //console.log('border-left-width', totalPadding);
             totalPadding += parseInt( $(this).css('border-right-width'), 10 );
-	        //console.log('border-right-width', totalPadding);
             totalPadding += parseInt( $(this).css('padding-left'), 10 );
-	        //console.log('padding-left', totalPadding);
-            totalPadding += parseInt( $(this).css('padding-right'), 10 );
-	        //console.log('padding-right', totalPadding);
-	        //console.log('===========================');
+            totalPadding += parseInt( $(this).css('padding-right'), 10 );;
         });
         return totalPadding;
     }
@@ -408,25 +401,26 @@ $.fn.owlgallery = function (options) {
     var setupNavigationListeners = function() {
 
         var $navigationElement = $(settings.navElement),
-            navigationButtons = $navigationElement.children('li'),
+            navigationButtons = $navigationElement.children(),
             $navLeft = $(navigationButtons[0]),
             $navRight = $(navigationButtons[1]);
 
+	    $navigationElement.addClass(navClassName);
         $navLeft.on('click', navigationDecrementClick);
-        $navLeft.addClass(navClassName);
+        $navLeft.addClass(navClassNameLeft);
         $navRight.on('click', navigationIncrementClick);
-        $navRight.addClass(navClassName);
+        $navRight.addClass(navClassNameRight);
 
         if (settings.enableTouchEvents) {
 
-            $this.mobileswipe({
+            $this.owlmobileswipe({
                 event: 'swipeleft',
                 callback: function(e) {
                     navigationIncrementClick(e);
                 }
             });
 
-            $this.mobileswipe({
+            $this.owlmobileswipe({
                 event: 'swiperight',
                 callback: function(e) {
                     navigationDecrementClick(e);
