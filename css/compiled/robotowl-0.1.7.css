@@ -422,7 +422,7 @@ body {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   body {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 }
 
@@ -529,7 +529,7 @@ p, a {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   p, a {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 }
 
@@ -900,26 +900,31 @@ ul.main-menu.small {
     border-bottom: none;
     width: 100%;
     height: 100%;
-    font-size: 1.2rem;
+    font-size: 18px;
     overflow-y: scroll !important;
   }
   ul.main-menu.small li span {
     margin: 0 0 0 20px;
     padding: 0;
   }
-  ul.main-menu.small li.has-sub-menu {
+  ul.main-menu.small li.show {
     line-height: initial;
     height: initial;
+    padding-top: 28px;
   }
   ul.main-menu.small li.has-sub-menu ul.small-menu {
     position: static;
-    display: block;
+    display: none;
     margin: 0;
     padding: 10px 0;
     float: none;
     clear: both;
     border: none;
     width: initial;
+  }
+  ul.main-menu.small li.has-sub-menu ul.small-menu.show {
+    display: block;
+    margin-top: 10px;
   }
   ul.main-menu.small li.has-sub-menu ul.small-menu li {
     position: static;
@@ -1020,13 +1025,18 @@ ul.portfolio-list {
   display: inline-block;
   position: static;
   width: 25%;
-  font-size: .8rem;
+  font-size: 12px;
   vertical-align: top;
   padding: 0;
   margin: 0;
   float: left;
   border: white solid 10px;
   z-index: 9999;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  ul.portfolio-list {
+    font-size: 18px;
+  }
 }
 ul.portfolio-list.small-menu {
   display: none;
@@ -1207,9 +1217,9 @@ img.work-images {
   color: #cb3429;
   font-size: 1rem;
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .sub-heading {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 }
 
@@ -1267,7 +1277,7 @@ ul.skillset li.skill-item {
 }
 @media all and (max-width: 700px) {
   ul.skillset li.skill-item {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 }
 
@@ -1303,9 +1313,9 @@ ul.skillset li.skill-item {
   color: #171717;
   font-size: 10px;
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .experience {
-    font-size: .7rem;
+    font-size: 18px;
   }
 }
 
@@ -1322,9 +1332,9 @@ ul.skillset li.skill-item {
   font-family: 'The Girl Next Door', cursive;
   line-height: 22px;
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .job .job-title {
-    font-size: 32px;
+    font-size: 18px;
   }
 }
 .job .job-type {
@@ -1335,9 +1345,9 @@ ul.skillset li.skill-item {
 .job .job-type.isFullTime {
   color: #db6510;
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .job .job-type {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 .job .company-name {
@@ -1345,18 +1355,18 @@ ul.skillset li.skill-item {
   font-weight: bold;
   color: #696969;
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .job .company-name {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .job .dates-at-job {
   text-transform: uppercase;
   font-size: 10px;
 }
-@media all and (max-width: 850px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .job .dates-at-job {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 .job ul {
@@ -1371,9 +1381,9 @@ ul.skillset li.skill-item {
 .job li {
   font-size: 12px;
 }
-@media all and (max-width: 700px) {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .job li {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 }
 
@@ -1477,7 +1487,7 @@ ul.skillset li.skill-item {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .contact-row {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
 }
 
@@ -1498,7 +1508,7 @@ ul.skillset li.skill-item {
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   label {
-    font-size: 1.2rem;
+    font-size: 18px;
     padding: 10px;
   }
 }
@@ -1509,7 +1519,7 @@ input, textarea {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   input, textarea {
-    font-size: 1.2rem;
+    font-size: 18px;
     width: 90%;
     padding: 3% 3%;
   }

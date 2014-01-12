@@ -144,6 +144,7 @@ module.exports = function (grunt) {
 				files: [ 'sass/**/*.scss', 'js/internal/**/*.js', 'js/vendor/**/*.js', 'index.html' ],
 				tasks: [ 'dev' ],
 				options: {
+					atBegin : true,
 					livereload: '<%= pkg.port %>'
 				}
 			},
@@ -151,6 +152,7 @@ module.exports = function (grunt) {
 				files: [ 'sass/**/*.scss', 'js/internal/*.js', 'js/vendor/**/*.js', 'index.html' ],
 				tasks: [ 'prod' ],
                 options: {
+	                atBegin : true,
                     livereload: '<%= pkg.port %>'
                 }
 			},
@@ -158,6 +160,7 @@ module.exports = function (grunt) {
 				files: [ 'sass/**/*.scss', 'js/internal/**/*.js', 'js/vendor/**/*.js', 'index.html' ],
 				tasks: [ 'release' ],
                 options: {
+	                atBegin : true,
                     livereload: '<%= pkg.port %>'
                 }
 			}
@@ -172,6 +175,9 @@ module.exports = function (grunt) {
             }
         },
 		env: {
+			options: {
+				LIVE_RELOAD: false
+			},
 			dev: {
 				NODE_ENV: 'DEVELOPMENT'
 			},
@@ -190,9 +196,9 @@ module.exports = function (grunt) {
 				context: {
 					name: '<%= pkg.outputName %>',
 					version: '<%= pkg.version %>',
-					port: '<%= pkg.port %>',
+					port: '<%= pkg.port %>'
 				}
-			}
+			},
 			dev: {
 				src: 'index.html',
 				dest: '<%= pkg.outputFolder %>/index.html'
@@ -240,6 +246,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-env');
+	grunt.loadNpmTasks('grunt-ftp-deploy');
 
 	// Default task(s)
 	grunt.registerTask('watchdev', [ 'connect', 'watch:dev']);

@@ -55,6 +55,21 @@
   margin: 0 15px 0 0;
 }
 
+.contact-icon {
+  display: inline-block;
+  background: url("../../images/about-icon.png") no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 100% 100%;
+}
+@media all and (max-width: 850px) {
+  .contact-icon {
+    width: 100px;
+    height: 100px;
+    margin-top: -30px;
+  }
+}
+
 .email-icon {
   background-image: url("../../icons/email-icon.png");
 }
@@ -80,21 +95,6 @@
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .contact-row {
     font-size: 18px;
-  }
-}
-
-.contact-icon {
-  display: inline-block;
-  background: url("../../images/about-icon.png") no-repeat;
-  width: 50px;
-  height: 50px;
-  background-size: 100% 100%;
-}
-@media all and (max-width: 850px) {
-  .contact-icon {
-    width: 100px;
-    height: 100px;
-    margin-top: -30px;
   }
 }
 

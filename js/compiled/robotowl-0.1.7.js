@@ -12329,11 +12329,22 @@ Crivas.ViewModel = function () {
 
 	self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
 
-	self.menuClick = function (data) {
-		//self.killSection();
-		var currentID = data.id;
-		self.navArray[currentID]();
-		self.highlightCurrentMenuItem(currentID);
+	self.menuClick = function (data, e) {
+
+		var $target = $(e.currentTarget),
+			currentID = data.id;
+
+		if ($target.hasClass('has-sub-menu') && !$target.hasClass('show')) {
+			$target.addClass('show');
+			$target.find('ul').addClass('show');
+		} else if ($target.hasClass('has-sub-menu') && $target.hasClass('show')) {
+			$target.removeClass('show');
+			$target.find('ul').removeClass('show');
+		} else {
+			self.navArray[currentID]();
+			self.highlightCurrentMenuItem(currentID);
+		}
+
 	};
 
 	self.portfolioItemClick = function (data) {
