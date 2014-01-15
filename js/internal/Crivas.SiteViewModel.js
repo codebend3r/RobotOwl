@@ -1,8 +1,9 @@
-Crivas.ViewModel = function () {
+Crivas.SiteViewModel = function () {
 
 	var self = this;
 
 	self.longList = Crivas.Data.portfolio.workExperience;
+	self.plugins = Crivas.Data.plugins;
 	self.currentSectionID = ko.observable(0);
 	self.portfolioData = ko.observable(self.longList[self.currentSectionID()]);
 	self.visiblePortfolio = ko.observable(true);
@@ -111,6 +112,21 @@ Crivas.ViewModel = function () {
 
 	};
 
+	self.showPlugin = function (animateScroll) {
+
+		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
+
+		self.goToPosition = $('#contact-section').offset().top - $('.main-wrapper').offset().top - 250;
+
+		if (Crivas.windowWidth <= Crivas.small) {
+			var callback = self.scrollTo.bind(null, self.goToPosition, 'contact', 2, animateScroll);
+			self.animateSmallMenuReveal(false, true, callback);
+		} else {
+			self.scrollTo(self.goToPosition, 'contact', 2, animateScroll);
+		}
+
+	};
+
 	self.showContact = function (animateScroll) {
 
 		animateScroll = typeof animateScroll !== 'undefined' ? animateScroll : true;
@@ -150,12 +166,14 @@ Crivas.ViewModel = function () {
 
 	};
 
-	self.navArray = [ self.showPortflio, self.showResume, self.showContact ];
+	self.navArray = [ self.showPortflio, self.showResume, self.showPlugin, self.showContact ];
 
 	self.menuClick = function (data, e) {
 
 		var $target = $(e.currentTarget),
 			currentID = data.id;
+
+		console.log('currentID', currentID);
 
 		if ($target.hasClass('has-sub-menu') && !$target.hasClass('show')) {
 			$target.addClass('show');

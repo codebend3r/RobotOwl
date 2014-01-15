@@ -26,10 +26,16 @@ body {
 
 ul.plugins-list {
   margin: 0;
-  padding: 0;
+  padding: 0 0 30px 0;
+  font-size: 12px;
 }
 ul.plugins-list li {
   list-style: none;
+  padding: 5px 0;
+}
+ul.plugins-list li a {
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .plugins-icon {
@@ -100,6 +106,9 @@ ul.plugins-list li {
   float: left;
   margin: 0 0 10px 0;
   padding: 0 0 100px 0;
+}
+.main-content-section.resume-content {
+  padding: 0 0 20px 0;
 }
 @media all and (max-width: 1050px) {
   .main-content-section {

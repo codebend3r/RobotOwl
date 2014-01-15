@@ -37,7 +37,7 @@ Crivas.init = function () {
 		}
 	};
 
-	ko.applyBindings(Crivas.ViewModel(), scope);
+	ko.applyBindings(Crivas.SiteViewModel(), scope);
 
 	// init owl gallery
 	$('ul.image-border').owlgallery({

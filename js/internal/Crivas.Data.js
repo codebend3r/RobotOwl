@@ -16,8 +16,14 @@ Crivas.Data = {
             subMenu: false,
             subMenuSelector: ''
         },
+	    {
+		    id: 2,
+		    name: 'Plugins',
+		    subMenu: false,
+		    subMenuSelector: ''
+	    },
         {
-            id: 2,
+            id: 3,
             name: 'Contact',
             subMenu: false,
             subMenuSelector: ''
@@ -566,6 +572,33 @@ Crivas.Data = {
 
     },
 
+	plugins: [
+		{
+			id: 0,
+			title: 'OwlGallery',
+			description: 'A customizable alternative for a combobox/dropdown list.',
+			link: 'http://crivas.net/git/owlgallery/'
+		},
+		{
+			id: 1,
+			title: 'OwlModal',
+			description: 'A plugin that allows a modal pop up window with various customizable options.',
+			link: 'http://crivas.net/git/owlmodal/'
+		},
+		{
+			id: 2,
+			title: 'OwlSwipe',
+			description: 'A plugin that detects touch events for touch devices including swiping and touch moving.',
+			link: 'http://crivas.net/git/owlswipe//'
+		},
+		{
+			id: 3,
+			title: 'OwlDropDown',
+			description: 'A customizable alternative for a combobox/dropdown list.',
+			link: 'http://crivas.net/git/owldropdown/'
+		}
+	],
+
     resume: [
 
 	    {
@@ -573,12 +606,14 @@ Crivas.Data = {
 		    companyName: 'Bell Media',
 		    jobTitle: 'Senior Front End Developer',
 		    jobType: 'contract',
-		    datesAtJob: 'November 2013 - Present',
+		    datesAtJob: 'November 2013 - February 2014',
 		    tasks: [
 			    'responsible for all front end development on TMN website redesign',
 			    'worked in Symfony2 backend environment',
 			    'created custom JQuery plugins',
-			    'responsive web-design implementation and optimization'
+			    'responsive web-design implementation and optimization',
+			    'implemented backend API using Knockout to render on the front end',
+			    'using TweenMax to animate elements'
 		    ]
 	    },
 	    {
@@ -588,12 +623,12 @@ Crivas.Data = {
             jobType: 'contract',
             datesAtJob: 'September 2013 - November 2013',
             tasks: [
-                "developed with CodeIgniter PHP framework to maintain backend and code the front end",
-                "created custom functionality in PHP/JavaScript for automatic phase switching at certain times",
-                "implemented styles and created custom JQuery plugins when needed",
-                "worked with RequireJS to implement static page animations and transitions with TweenerLite",
-                "integrated Grunt.js tasks for release packages",
-                "implemented designs and worked with proprietary internal JavaScript Framework"
+                'developed with CodeIgniter PHP framework to maintain backend and code the front end',
+                'created custom functionality in PHP/JavaScript for automatic phase switching at certain times',
+                'implemented styles and created custom JQuery plugins when needed',
+                'worked with RequireJS to implement static page animations and transitions with TweenMax',
+                'integrated Grunt.js tasks for release packages',
+                'implemented designs and worked with proprietary internal JavaScript Framework'
             ]
         },
         {
@@ -603,12 +638,12 @@ Crivas.Data = {
             jobType: 'contract',
             datesAtJob: 'May 2013 - September 2013',
             tasks: [
-                "updated and maintained front and back end of numerous company websites",
-                "lead developer on multiple projects",
-                "worked closely with CTO and Technical Director",
-                "mentored and guided junior developers",
-                "implemented methods for improving workflow, efficiency and organization",
-                "taught employees how to use GitHub"
+                'updated and maintained front and back end of numerous company websites',
+                'lead developer on multiple projects',
+                'worked closely with CTO and Technical Director',
+                'mentored and guided junior developers',
+                'implemented methods for improving workflow, efficiency and organization',
+                'taught employees how to use GitHub'
             ]
         },
         {
@@ -618,13 +653,13 @@ Crivas.Data = {
             jobType: 'contract',
             datesAtJob: 'March 2013 - May 2013',
             tasks: [
-                "lead developer on Revolution Movie website",
-                "developed website with Knockout.js",
-                "integrated CSS3 animations",
-                "integrated parallax scrolling effect",
-                "fully responsive website via media queries",
-                "integrated Grunt.js tasks for release packages",
-                "taught employees how to use GitHub"
+                'lead developer on Revolution Movie website',
+                'developed website with Knockout.js',
+                'integrated CSS3 animations',
+                'integrated parallax scrolling effect',
+                'fully responsive website via media queries',
+                'integrated Grunt.js tasks for release packages',
+                'taught employees how to use GitHub'
             ]
         },
         {
@@ -634,16 +669,16 @@ Crivas.Data = {
             jobType: 'full-time',
             datesAtJob: 'May 2012 - March 2013',
             tasks: [
-                "worked on Kobo's Instant Reader web app built on Sproutcore JavaScript framework",
-                "responsible for front end bug fixes and implementing new features to the application as needed",
-                "worked with design/UX team to implement responsive design on all platforms",
-                "workflow involved using GitHub",
-                "built research prototypes for potential widgets and functionality in website redesign",
-                "performance tested  prototypes on devices",
-                "managed site maintenance and improvements",
-                "maintained documentation on internal wiki page",
-                "collaborated with other teams to solve bugs or research on certain features",
-                "collaborated with back end developers to implement full scale features to the Kobo’s website"
+                'worked on Kobo\'s Instant Reader web app built on Sproutcore JavaScript framework',
+                'responsible for front end bug fixes and implementing new features to the application as needed',
+                'worked with design/UX team to implement responsive design on all platforms',
+                'workflow involved using GitHub',
+                'built research prototypes for potential widgets and functionality in website redesign',
+                'performance tested  prototypes on devices',
+                'managed site maintenance and improvements',
+                'maintained documentation on internal wiki page',
+                'collaborated with other teams to solve bugs or research on certain features',
+                'collaborated with back end developers to implement full scale features to the Kobo\'s website'
             ]
         },
         {
@@ -653,10 +688,10 @@ Crivas.Data = {
             jobType: 'contract',
             datesAtJob: 'February 2012 - April 2012',
             tasks: [
-                "front end support for existing client websites",
-                "go-to developer for all front end projects",
-                "develop websites and application using HTML5, CSS, JavaScript and JQuery",
-                "some Photoshop retouching and/or manipulation of images"
+                'front end support for existing client websites',
+                'go-to developer for all front end projects',
+                'develop websites and application using HTML5, CSS, JavaScript and JQuery',
+                'some Photoshop retouching and/or manipulation of images'
             ]
         },
         {

@@ -58,13 +58,13 @@ module.exports = function (grunt) {
                     'js/vendor/jquery-1.9.1.js',
                     'js/vendor/jquery.imagesloaded.js',
                     'js/vendor/jquery.localscroll-1.2.7.js',
-                    'js/vendor/jquery.owlgallery-0.1.5.js',
+                    'js/vendor/jquery.owlgallery-1.6.js',
                     'js/vendor/knockout-2.2.1.js',
                     'js/vendor/modernizr-2.6.2.js',
                     'js/vendor/TweenMax.min.js',
                     'js/internal/Crivas.Data.js',
                     'js/internal/Crivas.Main.js',
-                    'js/internal/Crivas.ViewModel.js',
+                    'js/internal/Crivas.SiteViewModel.js',
                     'js/internal/Crivas.EmailForm.js'
 				],
 				// the location of the resulting JS file
@@ -86,22 +86,12 @@ module.exports = function (grunt) {
 		uglify: {
 			options: {
 				// the banner is inserted at the top of the output
-				banner: '\n\n\n/* ====================== */\n\n\n'
+				banner: '\n\n\n/* Crivas Inc. */\n\n\n'
 			},
 			dist: {
 				files: {
 					'js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.js': [
-						'js/vendor/jquery-1.9.1.js',
-						'js/vendor/jquery.imagesloaded.js',
-                        'js/vendor/jquery.localscroll-1.2.7.js',
-                        'js/vendor/jquery.owlgallery-1.5.2.js',
-                        'js/vendor/knockout-2.2.1.js',
-                        'js/vendor/modernizr-2.6.2.js',
-                        'js/vendor/TweenMax.min.js',
-						'js/internal/Crivas.Data.js',
-						'js/internal/Crivas.Main.js',
-						'js/internal/Crivas.ViewModel.js',
-						'js/internal/Crivas.EmailForm.js'
+						'js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'
 					]
 				}
 			}

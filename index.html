@@ -173,18 +173,17 @@
 			<span class='section-icon plugins-icon'></span>
 			<h2>JQuery Plugins</h2>
 		</div>
-		<ul class='plugins-list'>
-			<li><a href='http://crivas.net/git/owlgallery/' target='_blank'>OwlGallery</a></li>
-			<li><a href='http://crivas.net/git/owlmodal/' target='_blank'>OwlModal</a></li>
-			<li><a href='http://crivas.net/git/owldropdown/' target='_blank'>OwlDropDown</a></li>
-			<li><a href='http://crivas.net/git/owlswipe/' target='_blank'>OwlSwipe</a></li>
+		<ul class='plugins-list' data-bind='foreach: $root.plugins'>
+			<li>
+				<a data-bind='text: title, attr:{href:link}' target='_blank'></a> - <span data-bind='text: description'></span>
+			</li>
 		</ul>
 	</section>
 
 	<hr>
 
 	<!-- CONTACT SECTION -->
-	<section id="contact-section" clss="main-content-section contact-content" data-bind="css: { visibleSection: $root.visibleContact }">
+	<section id="contact-section" clss="main-content-section contact-content" data-bind="css:{visibleSection: $root.visibleContact}">
 		<div class='column'>
 			<div class='icon-and-title'>
 				<span class='section-icon contact-icon'></span>
@@ -240,7 +239,7 @@
 <script src="js/vendor/TweenMax.min.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.Data.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.Main.js" type="text/javascript"></script>
-<script src="js/internal/Crivas.ViewModel.js" type="text/javascript"></script>
+<script src="js/internal/Crivas.SiteViewModel.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.EmailForm.js" type="text/javascript"></script>
 <!-- @endif -->
 
