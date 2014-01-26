@@ -24,6 +24,16 @@ body {
   }
 }
 
+.inner-container {
+  width: auto;
+  padding: 10px;
+  //background-color: rgba(red, .5);
+  overflow: auto;
+  @media #{$mediumBreakpoint} {
+    padding: 10px 25px;
+  }
+}
+
 ul.plugins-list {
   margin: 0;
   padding: 0 0 30px 0;
@@ -54,7 +64,7 @@ ul.plugins-list {
 */
 .main-wrapper {
 
-  @include centeredAndFixed(100px);
+  @include centeredAndFixed(80px);
   height: 100%;
   background-color: $bodyColour;
 
@@ -93,13 +103,10 @@ ul.plugins-list {
   width: 100%;
   height: auto;
   float: left;
-  margin: 0 0 10px 0;
-  padding: 0 0 100px 0;
+  margin: 0;
+  padding: 0;
 
-  &.resume-content {
-    padding: 0 0 20px 0;
-  }
-
+  /*
   @media #{$largeBreakpoint} {
     clear: both;
     width: 80%;
@@ -132,6 +139,7 @@ ul.plugins-list {
     margin: 0;
     padding: 0 1%;
   }
+  */
 
 }
 
@@ -256,11 +264,13 @@ p, a {
   line-height: 90px;
   margin: 0;
 
+  /*
   @media #{$mediumBreakpoint} {
     padding: 0 5%;
     width: 90%;
     margin: 30px 0 0 0;
   }
+  */
 
   .section-icon {
     vertical-align: middle;

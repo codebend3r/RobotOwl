@@ -13216,16 +13216,6 @@ Crivas.init = function () {
 
 	ko.applyBindings(Crivas.SiteViewModel(), scope);
 
-	// init owl gallery
-	$('ul.image-border').owlgallery({
-		galleryWidth: 600,
-		galleryHeight: 334,
-		child: 'li.images-list',
-		direction: Owl.direction.FORWARD,
-		animationType: Owl.animationTypes.SLIDE,
-		responsiveMode: Owl.responsiveMode.ONLYRESIZEWHENSMALLER
-	});
-
 };
 
 Crivas.windowLoaded = function () {
@@ -13562,6 +13552,16 @@ Crivas.SiteViewModel = function () {
 
 		self.$imagePreloader.hide();
 		self.$stripedBorder.show();
+
+		// init owl gallery
+		$('ul.image-border').owlgallery({
+			galleryWidth: 600,
+			galleryHeight: 334,
+			child: 'li.images-list',
+			direction: Owl.direction.FORWARD,
+			animationType: Owl.animationTypes.SLIDE,
+			responsiveMode: Owl.responsiveMode.ONLYRESIZEWHENSMALLER
+		});
 
 	};
 

@@ -426,6 +426,17 @@ body {
   }
 }
 
+.inner-container {
+  width: auto;
+  padding: 10px;
+  overflow: auto;
+}
+@media all and (max-width: 850px) {
+  .inner-container {
+    padding: 10px 25px;
+  }
+}
+
 ul.plugins-list {
   margin: 0;
   padding: 0 0 30px 0;
@@ -456,7 +467,7 @@ ul.plugins-list li a {
 */
 .main-wrapper {
   width: 900px;
-  margin: 100px auto 0 auto;
+  margin: 80px auto 0 auto;
   height: 100%;
   background-color: #efefef;
 }
@@ -506,14 +517,10 @@ ul.plugins-list li a {
   width: 100%;
   height: auto;
   float: left;
-  margin: 0 0 10px 0;
-  padding: 0 0 100px 0;
-}
-.main-content-section.resume-content {
-  padding: 0 0 20px 0;
-}
-@media all and (max-width: 1050px) {
-  .main-content-section {
+  margin: 0;
+  padding: 0;
+  /*
+  @media all and (max-width: 1050px) {
     clear: both;
     width: 80%;
     height: auto;
@@ -521,9 +528,8 @@ ul.plugins-list li a {
     margin: 0 0 10px 0;
     padding: 0 10% 100px 10%;
   }
-}
-@media all and (max-width: 850px) {
-  .main-content-section {
+
+  @media all and (max-width: 850px) {
     position: static;
     float: left;
     left: 0px;
@@ -534,9 +540,8 @@ ul.plugins-list li a {
     margin: 0;
     padding: 0 1%;
   }
-}
-@media all and (max-width: 700px) {
-  .main-content-section {
+
+  @media all and (max-width: 700px) {
     position: static;
     float: left;
     left: 0px;
@@ -547,6 +552,7 @@ ul.plugins-list li a {
     margin: 0;
     padding: 0 1%;
   }
+  */
 }
 
 p, a {
@@ -671,13 +677,13 @@ p, a {
   height: 90px;
   line-height: 90px;
   margin: 0;
-}
-@media all and (max-width: 850px) {
-  .icon-and-title {
+  /*
+  @media all and (max-width: 850px) {
     padding: 0 5%;
     width: 90%;
     margin: 30px 0 0 0;
   }
+  */
 }
 .icon-and-title .section-icon {
   vertical-align: middle;
@@ -1126,19 +1132,19 @@ ul.portfolio-list li:hover {
   padding: 0;
   margin: 0 0 0 2%;
   float: left;
+  /*
+  @media all and (max-width: 850px) {
+    width: 90%;
+    padding: 0 5% 5% 5%;
+    margin: 0;
+  }
+  */
 }
 @media all and (max-width: 1050px) {
   .portfolio-container {
     width: 100%;
     margin: 0;
     padding: 0;
-  }
-}
-@media all and (max-width: 850px) {
-  .portfolio-container {
-    width: 90%;
-    padding: 0 5% 5% 5%;
-    margin: 0;
   }
 }
 
@@ -1309,12 +1315,12 @@ ul.skillset li.skill-item {
 .stackable {
   /*border-bottom: 1px solid #666666;*/
   margin: 30px 0;
-}
-@media all and (max-width: 850px) {
-  .stackable {
+  /*
+  @media all and (max-width: 850px) {
     padding: 0 5%;
     width: 90%;
   }
+  */
 }
 
 .skill {
@@ -1418,12 +1424,12 @@ ul.skillset li.skill-item {
   width: 50px;
   height: 50px;
   background-size: 100% 100%;
-}
-@media all and (max-width: 850px) {
-  .resume-icon {
+  /*
+  @media all and (max-width: 850px) {
     width: 100px;
     height: 100px;
   }
+  */
 }
 
 
@@ -1437,19 +1443,19 @@ ul.skillset li.skill-item {
   vertical-align: top;
   line-height: 32px;
   padding: 15px 0;
+  /*
+  @media all and (max-width: 850px) {
+    display: block;
+    width: 90%;
+    padding: 30px 5%;
+  }
+  */
   /**
   * @description icon and title markup within a column class
   *
   * @markup
   *   <div class="icon-and-title"></div>
   */
-}
-@media all and (max-width: 850px) {
-  .column {
-    display: block;
-    width: 90%;
-    padding: 30px 5%;
-  }
 }
 @media all and (max-width: 850px) {
   .column h3 {
@@ -1494,13 +1500,13 @@ ul.skillset li.skill-item {
   width: 50px;
   height: 50px;
   background-size: 100% 100%;
-}
-@media all and (max-width: 850px) {
-  .contact-icon {
+  /*
+  @media all and (max-width: 850px) {
     width: 100px;
     height: 100px;
     margin-top: -30px;
   }
+  */
 }
 
 .email-icon {

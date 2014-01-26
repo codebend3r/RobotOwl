@@ -81,44 +81,48 @@
 	<!-- PORTFOLIO SECTION -->
 	<section id="portfolio-section" class="main-content-section portfolio-content" data-bind="css: { visibleSection: $root.visiblePortfolio }">
 
-		<div class='icon-and-title'>
-			<span class='section-icon portfolio-icon'></span>
-			<h2>Portfolio</h2>
-		</div>
+		<div class='inner-container'>
 
-		<ul class="portfolio-list" data-bind="foreach: $root.portfolioList">
-			<li data-bind="html: menuText, click: $root.changePage, visible: active"></li>
-		</ul>
+			<div class='icon-and-title'>
+				<span class='section-icon portfolio-icon'></span>
+				<h2>Portfolio</h2>
+			</div>
 
-		<div class="portfolio-container" data-bind="with: $root.portfolioData">
-			<h3 class="port-title" data-bind="text: title"></h3>
-			<div class='image-container'>
-				<div class="image-preloader"></div>
-				<ul class='image-border' data-bind='foreach: imageurl, click: $root.imageClicked'>
-					<li class='images-list'>
-						<img class='work-images' data-bind='attr:{src: $data}'/>
-					</li>
-				</ul>
+			<ul class="portfolio-list" data-bind="foreach: $root.portfolioList">
+				<li data-bind="html: menuText, click: $root.changePage, visible: active"></li>
+			</ul>
+
+			<div class="portfolio-container" data-bind="with: $root.portfolioData">
+				<h3 class="port-title" data-bind="text: title"></h3>
+				<div class='image-container'>
+					<div class="image-preloader"></div>
+					<ul class='image-border' data-bind='foreach: imageurl, click: $root.imageClicked'>
+						<li class='images-list'>
+							<img class='work-images' data-bind='attr:{src: $data}'/>
+						</li>
+					</ul>
+				</div>
+				<div class="sub">
+					<p class="sub-heading">Company</p>
+					<p class="details" data-bind="text: companyName"></p>
+				</div>
+				<div class="sub">
+					<p class="sub-heading">Business Case</p>
+					<p class="details" data-bind="text: businessCase"></p>
+				</div>
+				<div class="sub">
+					<p class="sub-heading">Details</p>
+					<p class="details" data-bind="text: details"></p>
+				</div>
+				<div class="sub">
+					<p class="sub-heading">Technology Used</p>
+					<p class="details" data-bind="text: techUsed"></p>
+				</div>
+				<div class="launch">
+					<a data-bind="attr: {href: url}" target="_blank">VIEW</a>
+				</div>
 			</div>
-			<div class="sub">
-				<p class="sub-heading">Company</p>
-				<p class="details" data-bind="text: companyName"></p>
-			</div>
-			<div class="sub">
-				<p class="sub-heading">Business Case</p>
-				<p class="details" data-bind="text: businessCase"></p>
-			</div>
-			<div class="sub">
-				<p class="sub-heading">Details</p>
-				<p class="details" data-bind="text: details"></p>
-			</div>
-			<div class="sub">
-				<p class="sub-heading">Technology Used</p>
-				<p class="details" data-bind="text: techUsed"></p>
-			</div>
-			<div class="launch">
-				<a data-bind="attr: {href: url}" target="_blank">VIEW</a>
-			</div>
+
 		</div>
 
 	</section>
@@ -127,103 +131,113 @@
 
 	<!-- RESUME SECTION -->
 	<section id="resume-section" class="main-content-section resume-content" data-bind="css: { visibleSection: $root.visibleResume }">
-		<div class='icon-and-title'>
-			<span class='section-icon resume-icon'></span>
-			<h2>Resume</h2>
-		</div>
-		<div class="stackable">
-			<p class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> .docx format (Word 2010)</p>
-			<p class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> .pdf (Adobe PDF)</p>
-		</div>
-		<div class="stackable">
-			<h3>Summary</h3>
-			<div class='summary' data-bind='html: $root.summaryText'></div>
-		</div>
-		<div class="stackable">
-			<h3>Skills Matrix</h3>
-			<ul class="skillset" data-bind="foreach: $root.skillSet">
-				<li class='skill-item'>
-					<span class='skill' data-bind='html: skillName'></span> - <span class='level' data-bind='html: $root.getLevelOfExpertise($data), css: { expert:isExpert, advanced:isAdvanced, basic:isBasic }'></span> - <span class='experience' data-bind='html: yearsOfExperience'></span>
-				</li>
-			</ul>
-		</div>
-		<div class="stackable">
-			<h3>Work Experience</h3>
-			<div data-bind="foreach: $root.experienceList">
-				<div class="job">
-					<p><span class="job-title" data-bind="text: jobTitle"></span></p>
 
-					<p><span class="company-name" data-bind="text: companyName"></span><span>&nbsp;|&nbsp;</span><span class="job-type" data-bind="text: jobType, css: { isFullTime: isFullTime }"></span></p>
+		<div class='inner-container'>
 
-					<p></p>
+			<div class='icon-and-title'>
+				<span class='section-icon resume-icon'></span>
+				<h2>Resume</h2>
+			</div>
+			<div class="stackable">
+				<p class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> .docx format (Word 2010)</p>
+				<p class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> .pdf (Adobe PDF)</p>
+			</div>
+			<div class="stackable">
+				<h3>Summary</h3>
+				<div class='summary' data-bind='html: $root.summaryText'></div>
+			</div>
+			<div class="stackable">
+				<h3>Skills Matrix</h3>
+				<ul class="skillset" data-bind="foreach: $root.skillSet">
+					<li class='skill-item'>
+						<span class='skill' data-bind='html: skillName'></span> - <span class='level' data-bind='html: $root.getLevelOfExpertise($data), css: { expert:isExpert, advanced:isAdvanced, basic:isBasic }'></span> - <span class='experience' data-bind='html: yearsOfExperience'></span>
+					</li>
+				</ul>
+			</div>
+			<div class="stackable">
+				<h3>Work Experience</h3>
+				<div data-bind="foreach: $root.experienceList">
+					<div class="job">
+						<p><span class="job-title" data-bind="text: jobTitle"></span></p>
 
-					<p><span class="dates-at-job" data-bind="text: datesAtJob"></span></p>
-					<ul data-bind="foreach: tasks">
-						<li data-bind="text: $data"></li>
-					</ul>
+						<p><span class="company-name" data-bind="text: companyName"></span><span>&nbsp;|&nbsp;</span><span class="job-type" data-bind="text: jobType, css: { isFullTime: isFullTime }"></span></p>
+
+						<p></p>
+
+						<p><span class="dates-at-job" data-bind="text: datesAtJob"></span></p>
+						<ul data-bind="foreach: tasks">
+							<li data-bind="text: $data"></li>
+						</ul>
+					</div>
 				</div>
 			</div>
+
 		</div>
+
 	</section>
 
 	<hr>
 
 	<section id='plugins-section' clss='main-content-section contact-content'>
-		<div class='icon-and-title'>
-			<span class='section-icon plugins-icon'></span>
-			<h2>JQuery Plugins</h2>
+		<div class='inner-container'>
+			<div class='icon-and-title'>
+				<span class='section-icon plugins-icon'></span>
+				<h2>JQuery Plugins</h2>
+			</div>
+			<ul class='plugins-list' data-bind='foreach: $root.plugins'>
+				<li>
+					<a data-bind='text: title, attr:{href:link}' target='_blank'></a> - <span data-bind='text: description'></span>
+				</li>
+			</ul>
 		</div>
-		<ul class='plugins-list' data-bind='foreach: $root.plugins'>
-			<li>
-				<a data-bind='text: title, attr:{href:link}' target='_blank'></a> - <span data-bind='text: description'></span>
-			</li>
-		</ul>
 	</section>
 
 	<hr>
 
 	<!-- CONTACT SECTION -->
 	<section id="contact-section" clss="main-content-section contact-content" data-bind="css:{visibleSection: $root.visibleContact}">
-		<div class='column'>
+		<div class='inner-container'>
 			<div class='icon-and-title'>
 				<span class='section-icon contact-icon'></span>
 				<h2>Contact Info</h2>
 			</div>
-			<h3>Chester Rivas</h3>
-			<h4>Front End Developer</h4>
-			<div class='contact-row'>
-				<a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'><span class='icon email-icon'></span></a>
-				<span class='label'><a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'>chester.rivas@gmail.com</a></span>
+			<div class='column'>
+				<h3>Chester Rivas</h3>
+				<h4>Front End Developer</h4>
+				<div class='contact-row'>
+					<a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'><span class='icon email-icon'></span></a>
+					<span class='label'><a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'>chester.rivas@gmail.com</a></span>
+				</div>
+				<div class='contact-row'>
+					<a href='http://ca.linkedin.com/in/crivasinc' target='_blank'><span class='icon linkedin-icon'></span></a>
+					<span class='label'><a href='http://ca.linkedin.com/in/crivasinc' target='_blank'>Chester Rivas</a></span>
+				</div>
+				<div class='contact-row'>
+					<a href='https://github.com/crivas' target='_blank'><span class='icon git-hub-icon'></span></a>
+					<span class='label'><a href='https://github.com/crivas' target='_blank'>crivas</a></span>
+				</div>
 			</div>
-			<div class='contact-row'>
-				<a href='http://ca.linkedin.com/in/crivasinc' target='_blank'><span class='icon linkedin-icon'></span></a>
-				<span class='label'><a href='http://ca.linkedin.com/in/crivasinc' target='_blank'>Chester Rivas</a></span>
-			</div>
-			<div class='contact-row'>
-				<a href='https://github.com/crivas' target='_blank'><span class='icon git-hub-icon'></span></a>
-				<span class='label'><a href='https://github.com/crivas' target='_blank'>crivas</a></span>
-			</div>
-		</div>
-		<div class='column'>
-			<form id="contact" method="post">
-				<fieldset>
-					<label>First Name</label><br/>
-					<input name="firstname" id="firstname" type="text">
-					<label>Last Name</label><br/>
-					<input name="lastname" id="lastname" type="text">
-					<label>Phone Number</label><br/>
-					<input name="phonenumber" id="phonenumber" type="text">
-					<label>Email</label><br/>
-					<input name="email" id="email" type="text">
-					<label>Message</label><br/>
-					<textarea rows="10" name="message" id="message"></textarea>
-				</fieldset>
-				<input type="submit" value="Send Message" name="submit">
+			<div class='column'>
+				<form id="contact" method="post">
+					<fieldset>
+						<label>First Name</label><br/>
+						<input name="firstname" id="firstname" type="text">
+						<label>Last Name</label><br/>
+						<input name="lastname" id="lastname" type="text">
+						<label>Phone Number</label><br/>
+						<input name="phonenumber" id="phonenumber" type="text">
+						<label>Email</label><br/>
+						<input name="email" id="email" type="text">
+						<label>Message</label><br/>
+						<textarea rows="10" name="message" id="message"></textarea>
+					</fieldset>
+					<input type="submit" value="Send Message" name="submit">
 
-				<p class="success" style="display:none">Your message has been sent successfully.</p>
+					<p class="success" style="display:none">Your message has been sent successfully.</p>
 
-				<p class="error" style="display:none">E-mail must be valid.</p>
-			</form>
+					<p class="error" style="display:none">E-mail must be valid.</p>
+				</form>
+			</div>
 		</div>
 	</section>
 
