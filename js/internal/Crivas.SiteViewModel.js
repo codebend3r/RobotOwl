@@ -324,10 +324,8 @@ Crivas.SiteViewModel = function () {
 	};
 
 	self.showPreloader = function () {
-
 		self.$imagePreloader.show();
 		self.$stripedBorder.hide();
-
 	};
 
 	self.defaultSection = 'portfolio';

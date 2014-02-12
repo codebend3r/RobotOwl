@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="css/release/portfolio.css"/>
 	<link rel="stylesheet" type="text/css" href="css/release/resume.css"/>
 	<link rel="stylesheet" type="text/css" href="css/release/contact.css"/>
+	<link rel="stylesheet" type="text/css" href="css/release/owlgallery.css"/>
 	<!-- @endif -->
 	<!-- @if NODE_ENV == 'PRODUCTION' -->
 	<link rel="stylesheet" type="text/css" href="css/<!-- @echo name -->-<!-- @echo version -->.css"/>
@@ -94,8 +95,8 @@
 
 			<div class="portfolio-container" data-bind="with: $root.portfolioData">
 				<h3 class="port-title" data-bind="text: title"></h3>
+                <!--<div class="image-preloader"></div>-->
 				<div class='image-container'>
-					<div class="image-preloader"></div>
 					<ul class='image-border' data-bind='foreach: imageurl, click: $root.imageClicked'>
 						<li class='images-list'>
 							<img class='work-images' data-bind='attr:{src: $data}'/>
@@ -159,11 +160,8 @@
 				<div data-bind="foreach: $root.experienceList">
 					<div class="job">
 						<p><span class="job-title" data-bind="text: jobTitle"></span></p>
-
 						<p><span class="company-name" data-bind="text: companyName"></span><span>&nbsp;|&nbsp;</span><span class="job-type" data-bind="text: jobType, css: { isFullTime: isFullTime }"></span></p>
-
 						<p></p>
-
 						<p><span class="dates-at-job" data-bind="text: datesAtJob"></span></p>
 						<ul data-bind="foreach: tasks">
 							<li data-bind="text: $data"></li>
@@ -178,7 +176,7 @@
 
 	<hr>
 
-	<section id='plugins-section' clss='main-content-section contact-content'>
+	<section id='plugins-section' class='main-content-section contact-content'>
 		<div class='inner-container'>
 			<div class='icon-and-title'>
 				<span class='section-icon plugins-icon'></span>
@@ -195,49 +193,26 @@
 	<hr>
 
 	<!-- CONTACT SECTION -->
-	<section id="contact-section" clss="main-content-section contact-content" data-bind="css:{visibleSection: $root.visibleContact}">
+	<section id="contact-section" class="main-content-section contact-content" data-bind="css:{visibleSection: $root.visibleContact}">
 		<div class='inner-container'>
 			<div class='icon-and-title'>
 				<span class='section-icon contact-icon'></span>
 				<h2>Contact Info</h2>
 			</div>
-			<div class='column'>
-				<h3>Chester Rivas</h3>
-				<h4>Front End Developer</h4>
-				<div class='contact-row'>
-					<a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'><span class='icon email-icon'></span></a>
-					<span class='label'><a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'>chester.rivas@gmail.com</a></span>
-				</div>
-				<div class='contact-row'>
-					<a href='http://ca.linkedin.com/in/crivasinc' target='_blank'><span class='icon linkedin-icon'></span></a>
-					<span class='label'><a href='http://ca.linkedin.com/in/crivasinc' target='_blank'>Chester Rivas</a></span>
-				</div>
-				<div class='contact-row'>
-					<a href='https://github.com/crivas' target='_blank'><span class='icon git-hub-icon'></span></a>
-					<span class='label'><a href='https://github.com/crivas' target='_blank'>crivas</a></span>
-				</div>
-			</div>
-			<div class='column'>
-				<form id="contact" method="post">
-					<fieldset>
-						<label>First Name</label><br/>
-						<input name="firstname" id="firstname" type="text">
-						<label>Last Name</label><br/>
-						<input name="lastname" id="lastname" type="text">
-						<label>Phone Number</label><br/>
-						<input name="phonenumber" id="phonenumber" type="text">
-						<label>Email</label><br/>
-						<input name="email" id="email" type="text">
-						<label>Message</label><br/>
-						<textarea rows="10" name="message" id="message"></textarea>
-					</fieldset>
-					<input type="submit" value="Send Message" name="submit">
-
-					<p class="success" style="display:none">Your message has been sent successfully.</p>
-
-					<p class="error" style="display:none">E-mail must be valid.</p>
-				</form>
-			</div>
+            <h3>Chester Rivas</h3>
+            <h4>Front End Developer</h4>
+            <div class='contact-row'>
+                <a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'><span class='icon email-icon'></span></a>
+                <span class='label'><a href='mailto:chester.rivas@gmail.com?Subject=Message%20From%20Crivas.net'>chester.rivas@gmail.com</a></span>
+            </div>
+            <div class='contact-row'>
+                <a href='http://ca.linkedin.com/in/crivasinc' target='_blank'><span class='icon linkedin-icon'></span></a>
+                <span class='label'><a href='http://ca.linkedin.com/in/crivasinc' target='_blank'>Chester Rivas</a></span>
+            </div>
+            <div class='contact-row'>
+                <a href='https://github.com/crivas' target='_blank'><span class='icon git-hub-icon'></span></a>
+                <span class='label'><a href='https://github.com/crivas' target='_blank'>crivas</a></span>
+            </div>
 		</div>
 	</section>
 

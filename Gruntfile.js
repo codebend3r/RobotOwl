@@ -64,8 +64,8 @@ module.exports = function (grunt) {
                     'js/vendor/TweenMax.min.js',
                     'js/internal/Crivas.Data.js',
                     'js/internal/Crivas.Main.js',
-                    'js/internal/Crivas.SiteViewModel.js',
-                    'js/internal/Crivas.EmailForm.js'
+                    'js/internal/Crivas.SiteViewModel.js'
+                    //'js/internal/Crivas.EmailForm.js'
 				],
 				// the location of the resulting JS file
 				dest: 'js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'
@@ -78,7 +78,8 @@ module.exports = function (grunt) {
 					'css/release/nav-bar.css',
 					'css/release/portfolio.css',
 					'css/release/resume.css',
-					'css/release/contact.css'
+					'css/release/contact.css',
+					'css/release/owlgallery.css'
 				],
 				dest: 'css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css'
 			}
@@ -103,11 +104,12 @@ module.exports = function (grunt) {
 				},
 				files: {
 					'css/release/main.css': 'sass/release/main.scss',
-					'css/release/nav-bar.css': 'sass/release/nav-bar.scss',
-					'css/release/portfolio.css': 'sass/release/portfolio.scss',
-					'css/release/resume.css': 'sass/release/resume.scss',
-					'css/release/contact.css': 'sass/release/contact.scss',
-					'css/release/headers.css': 'sass/release/headers.scss'
+                    'css/release/headers.css': 'sass/release/headers.scss',
+                    'css/release/nav-bar.css': 'sass/release/nav-bar.scss',
+                    'css/release/portfolio.css': 'sass/release/portfolio.scss',
+                    'css/release/resume.css': 'sass/release/resume.scss',
+                    'css/release/contact.css': 'sass/release/contact.scss',
+					'css/release/owlgallery.css': 'sass/release/owlgallery.scss'
 				}
 			}
 		},

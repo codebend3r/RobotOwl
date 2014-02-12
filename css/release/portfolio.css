@@ -84,91 +84,12 @@ ul.portfolio-list li:hover {
   padding: 0;
   margin: 0 0 0 2%;
   float: left;
-  /*
-  @media all and (max-width: 850px) {
-    width: 90%;
-    padding: 0 5% 5% 5%;
-    margin: 0;
-  }
-  */
 }
 @media all and (max-width: 1050px) {
   .portfolio-container {
     width: 100%;
     margin: 0;
     padding: 0;
-  }
-}
-
-.image-container {
-  width: 600px;
-  height: 334px;
-  padding: 0;
-  margin: 0 0 30px 0;
-  display: block;
-  float: left;
-  border: 10px solid white;
-  clear: both;
-}
-@media all and (max-width: 1050px) {
-  .image-container {
-    float: none;
-    position: relative;
-    left: 50%;
-    margin: 0 0 0 -300px;
-  }
-}
-@media all and (max-width: 700px) {
-  .image-container {
-    width: 100%;
-    height: 100%;
-    border: none;
-    position: static;
-    margin: 0;
-    padding: 0;
-  }
-}
-
-/**
-* @description a diagonal border for images
-*
-* @markup
-*   <div class="striped-border"></div>
-*/
-ul.image-border {
-  position: relative;
-  overflow: visible;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  cursor: pointer;
-}
-ul.image-border li.images-list {
-  position: absolute;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-@media all and (max-width: 850px) {
-  ul.image-border {
-    width: 100%;
-  }
-}
-
-img.work-images {
-  position: absolute;
-  max-width: 100%;
-}
-@media all and (max-width: 850px) {
-  img.work-images {
-    max-width: 100%;
   }
 }
 
