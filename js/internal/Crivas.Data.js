@@ -72,8 +72,13 @@ Crivas.Data = {
             },
             {
                 skillName: 'PHP',
-                yearsOfExperience:'2',
+                yearsOfExperience:'3',
                 levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: 'ActionScript 3.0/Flash',
+                yearsOfExperience:'9',
+                levelOfExpertise: 'EXPERT'
             },
             {
                 skillName: '.NET',
@@ -82,7 +87,7 @@ Crivas.Data = {
             },
             {
                 skillName: 'MVVM/MVC Concepts',
-                yearsOfExperience:'2',
+                yearsOfExperience:'3',
                 levelOfExpertise: 'ADVANCED'
             },
             {
@@ -134,11 +139,6 @@ Crivas.Data = {
                 skillName: 'Twitter Development',
                 yearsOfExperience:'3',
                 levelOfExpertise: 'BASIC'
-            },
-            {
-                skillName: 'ActionScript 3.0/Flash',
-                yearsOfExperience:'9',
-                levelOfExpertise: 'EXPERT'
             }
         ],
 
@@ -212,8 +212,8 @@ Crivas.Data = {
                 businessCase: 'A complete responsive website with breakpoints for mobile phones and tablets.',
                 details: 'This website was built with Knockout.js. Knockout.js was used in conjunction with JSON to store all the data. Custom built deep linking framework',
                 techUsed: 'Knockout.js, Grunt, JQuery, CSS3, SASS, JavaScript, HTML5',
-                //url: 'http://crivas.net/portfolio/motionseason/revolution'
-                url: 'http://revolution.motionseason.com/',
+                url: 'http://crivas.net/portfolio/motionseason/revolution',
+                //url: 'http://revolution.motionseason.com/',
                 active: true
             },
             {
