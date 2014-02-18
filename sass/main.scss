@@ -70,7 +70,7 @@ ul.plugins-list {
   background-color: $bodyColour;
 
   @media #{$mediumBreakpoint} {
-    @include centeredAndFixed(50px);
+    @include centeredAndFixed(70px);
     height: auto;
     padding: 0;
     z-index: 997;

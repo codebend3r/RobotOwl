@@ -13,6 +13,7 @@ module.exports = function (grunt) {
 					{src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
+					{src: ['resume/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['css/*.css'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['js/vendor/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['js/internal/**'], dest: '<%= pkg.outputFolder %>/'}
@@ -26,8 +27,7 @@ module.exports = function (grunt) {
 					{src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
-					//{src: ['css/'], dest: '<%= pkg.outputFolder %>/css'},
-					//{src: ['js/'], dest: '<%= pkg.outputFolder %>/js'},
+                    {src: ['resume/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>-<%= pkg.version %>.js'},
 					{src: ['css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css'], dest: '<%= pkg.outputFolder %>/css/<%= pkg.outputName %>-<%= pkg.version %>.css'}
 				]
@@ -40,8 +40,7 @@ module.exports = function (grunt) {
 					{src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
-					//{src: ['css/'], dest: '<%= pkg.outputFolder %>/css'},
-					//{src: ['js/'], dest: '<%= pkg.outputFolder %>/js'},
+                    {src: ['resume/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>-<%= pkg.version %>.min.js'},
 					{src: ['css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.css'], dest: '<%= pkg.outputFolder %>/css/<%= pkg.outputName %>-<%= pkg.version %>.min.css'}
 				]
@@ -65,21 +64,20 @@ module.exports = function (grunt) {
                     'js/internal/Crivas.Data.js',
                     'js/internal/Crivas.Main.js',
                     'js/internal/Crivas.SiteViewModel.js'
-                    //'js/internal/Crivas.EmailForm.js'
 				],
 				// the location of the resulting JS file
 				dest: 'js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'
 			},
 			cssconcat: {
 				src: [
-					'css/release/normalize.css',
-					'css/release/main.css',
-					'css/release/headers.css',
-					'css/release/nav-bar.css',
-					'css/release/portfolio.css',
-					'css/release/resume.css',
-					'css/release/contact.css',
-					'css/release/owlgallery.css'
+					'css/normalize.css',
+					'css/main.css',
+					'css/headers.css',
+					'css/nav-bar.css',
+					'css/portfolio.css',
+					'css/resume.css',
+					'css/contact.css',
+					'css/owlgallery.css'
 				],
 				dest: 'css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css'
 			}
@@ -214,6 +212,15 @@ module.exports = function (grunt) {
 				src: '<%= pkg.outputFolder %>',
 				dest: '/domains/crivas.net/html'
 			},
+            quickcode: {
+                auth: {
+                    host: 's141590.gridserver.com',
+                    port: 21,
+                    authKey: 'key1'
+                },
+                src: ['<%= pkg.outputFolder %>/js', '<%= pkg.outputFolder %>/css'],
+                dest: '/domains/crivas.net/html'
+            },
 			dev: {
 				auth: {
 					host: 's141590.gridserver.com',
@@ -245,11 +252,12 @@ module.exports = function (grunt) {
 	grunt.registerTask('watchprod', [ 'connect', 'watch:prod']);
 	grunt.registerTask('watchrelease', [ 'connect', 'watch:release']);
 
-	grunt.registerTask('default', [ 'env:dev', 'sass', 'preprocess:dev', 'clean', 'copy:dev' ]);
-	grunt.registerTask('dev', [ 'env:dev', 'sass', 'clean', 'copy:dev', 'preprocess:dev' ]);
-	grunt.registerTask('prod', [ 'env:prod', 'sass', 'concat', 'clean', 'copy:prod', 'preprocess:prod' ]);
-	grunt.registerTask('release', [ 'env:release', 'sass', 'concat', 'uglify', 'cssmin', 'clean', 'copy:release', 'preprocess:release' ]);
+	grunt.registerTask('default', [ 'dev' ]);
+	grunt.registerTask('dev', [ 'env:dev', 'clean', 'sass', 'copy:dev', 'preprocess:dev' ]);
+	grunt.registerTask('prod', [ 'env:prod', 'clean', 'sass', 'concat', 'copy:prod', 'preprocess:prod' ]);
+	grunt.registerTask('release', [ 'env:release', 'clean', 'sass', 'concat', 'uglify', 'cssmin', 'copy:release', 'preprocess:release' ]);
 	grunt.registerTask('deploydev', [ 'dev', 'ftp-deploy:dev' ]);
+	grunt.registerTask('deploycode', [ 'release', 'ftp-deploy:quickcode' ]);
 	grunt.registerTask('deploy', [ 'release', 'ftp-deploy:prod' ]);
 
 

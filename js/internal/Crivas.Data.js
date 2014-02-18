@@ -32,7 +32,13 @@ Crivas.Data = {
 
     portfolio: {
 
-        summaryText: "",
+        summaryText: "<p>Chester Rivas is a highly skilled Front End Developer with many years of experience in both design and development. Chester specializes in various JavaScript frameworks such as: Sproutcore, Knockout.js, Ember.js, which compliment JQuery. Coming from a design background he has the complementary skills of being able to design and animate through code and pickup new frameworks pretty easily.<br/><br/>" +
+            "Chester worked at Bell Media on The Movie Network website redesign. Which will be launching soon<br/><br/>" +
+            "Recently Chester worked with Jam3 where he worked with several other Senior Front End Developers to put out high-end award winning websites.<br/><br/>" +
+            "At Kobo he was a Sproutcore and UI Developer. He helped build Kobo's Instant Reader and Kobo OneStore website redesign.<br/><br/>" +
+            "While at Research Now Chester was part of a custom dev team which specialized in eye-catching and highly interactive tools. He developed the global Flash/JavaScript framework that was underneath the hood of all these industry leading market research tools.<br/><br/>" +
+            "Chester has been in the industry for 9 years and has worked for many high-end corporate clients and small ad/web agencies. His focus is always quality, design and functionality. Chester is adaptable is comfortable moving at a fast pace.<br/><br/>" +
+            "Specialties: JavaScript, JQuery, Knockout.js, Sproutcore, CSS3/SASS, Grunt, Require.js, CodeIgniter, Git, ActionScript 3.0, HTML5, Photoshop.</p>",
 
         skillset: [
             {
@@ -44,6 +50,11 @@ Crivas.Data = {
                 skillName: 'JQuery',
                 yearsOfExperience: '4',
                 levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'Responsive Web Design (RWD)',
+                yearsOfExperience: '2',
+                levelOfExpertise: 'EXPERT'
             },
             {
                 skillName: 'HTML',
@@ -66,6 +77,16 @@ Crivas.Data = {
                 levelOfExpertise: 'EXPERT'
             },
             {
+                skillName: 'Grunt',
+                yearsOfExperience: '1',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
+                skillName: 'GitHub',
+                yearsOfExperience: '2',
+                levelOfExpertise: 'ADVANCED'
+            },
+            {
                 skillName: 'PHP',
                 yearsOfExperience: '3',
                 levelOfExpertise: 'BASIC'
@@ -79,11 +100,6 @@ Crivas.Data = {
                 skillName: '.NET',
                 yearsOfExperience: '3',
                 levelOfExpertise: 'BASIC'
-            },
-            {
-                skillName: 'MVVM/MVC Concepts',
-                yearsOfExperience: '3',
-                levelOfExpertise: 'ADVANCED'
             },
             {
                 skillName: 'Knockout.js',
@@ -111,6 +127,21 @@ Crivas.Data = {
                 levelOfExpertise: 'BASIC'
             },
             {
+                skillName: 'PHP',
+                yearsOfExperience: '3',
+                levelOfExpertise: 'BASIC'
+            },
+            {
+                skillName: 'ActionScript 3.0/Flash',
+                yearsOfExperience: '9',
+                levelOfExpertise: 'EXPERT'
+            },
+            {
+                skillName: '.NET',
+                yearsOfExperience: '3',
+                levelOfExpertise: 'BASIC'
+            },
+            {
                 skillName: 'Adobe Photoshop',
                 yearsOfExperience: '9',
                 levelOfExpertise: 'ADVANCED'
@@ -119,11 +150,6 @@ Crivas.Data = {
                 skillName: 'Adobe Illustrator',
                 yearsOfExperience: '9',
                 levelOfExpertise: 'BASIC'
-            },
-            {
-                skillName: 'GitHub',
-                yearsOfExperience: '2',
-                levelOfExpertise: 'ADVANCED'
             },
             {
                 skillName: 'CodeIgniter',
@@ -603,7 +629,7 @@ Crivas.Data = {
 
 	    {
 		    id: 14,
-		    companyName: 'Bell Media',
+		    companyName: 'The Movie Network - Bell Media',
 		    jobTitle: 'Senior Front End Developer',
 		    jobType: 'contract',
 		    datesAtJob: 'November 2013 - February 2014',
@@ -627,7 +653,7 @@ Crivas.Data = {
                 'created custom functionality in PHP/JavaScript for automatic phase switching at certain times',
                 'implemented styles and created custom JQuery plugins when needed',
                 'worked with RequireJS to implement static page animations and transitions with TweenMax',
-                'integrated Grunt.js tasks for release packages',
+                'integrated Grunt tasks for release packages',
                 'implemented designs and worked with proprietary internal JavaScript Framework'
             ]
         },
@@ -658,7 +684,7 @@ Crivas.Data = {
                 'integrated CSS3 animations',
                 'integrated parallax scrolling effect',
                 'fully responsive website via media queries',
-                'integrated Grunt.js tasks for release packages',
+                'integrated Grunt tasks for release packages',
                 'taught employees how to use GitHub'
             ]
         },

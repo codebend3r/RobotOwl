@@ -1,4 +1,6 @@
 bin
+js/compiled
+css/compiled
 *.log
 *.zip
 *.iml

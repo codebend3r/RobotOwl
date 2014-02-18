@@ -39,7 +39,7 @@ Crivas.SiteViewModel = function () {
 	self.skillSet = ko.observableArray(ko.utils.arrayMap(Crivas.Data.portfolio.skillset, function (i) {
 		return {
 			skillName: i.skillName,
-			yearsOfExperience: i.yearsOfExperience + ' years',
+			yearsOfExperience: i.yearsOfExperience == '1' ? i.yearsOfExperience + ' year' : i.yearsOfExperience + ' years',
 			isBasic: ko.observable(false),
 			isAdvanced: ko.observable(false),
 			isExpert: ko.observable(false),
