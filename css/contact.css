@@ -57,7 +57,7 @@
 
 .contact-icon {
   display: inline-block;
-  background: url("../../images/about-icon.png") no-repeat;
+  background: url("../images/about-icon.png") no-repeat;
   width: 50px;
   height: 50px;
   background-size: 100% 100%;
@@ -71,15 +71,15 @@
 }
 
 .email-icon {
-  background-image: url("../../icons/email-icon.png");
+  background-image: url("../icons/email-icon.png");
 }
 
 .git-hub-icon {
-  background-image: url("../../icons/github-icon.png");
+  background-image: url("../icons/github-icon.png");
 }
 
 .linkedin-icon {
-  background-image: url("../../icons/linkedin-icon.png");
+  background-image: url("../icons/linkedin-icon.png");
 }
 
 .label {

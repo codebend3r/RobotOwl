@@ -54,7 +54,7 @@ ul.plugins-list li a {
 
 .plugins-icon {
   display: inline-block;
-  background: url("../../images/about-icon.png") no-repeat;
+  background: url("../images/about-icon.png") no-repeat;
   width: 50px;
   height: 50px;
   background-size: 100% 100%;
@@ -156,7 +156,7 @@ p, a {
 *
 */
 .logo {
-  background: url("../../images/crivas-logo@2x.png") no-repeat;
+  background: url("../images/crivas-logo@2x.png") no-repeat;
   background-size: 151px 80px;
   width: 151px;
   height: 80px;
@@ -201,7 +201,7 @@ p, a {
   background-color: #333333;
   padding: 10px;
   background-repeat: repeat;
-  background-image: url("../../pattern/tweed.png");
+  background-image: url("../pattern/tweed.png");
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
@@ -221,7 +221,7 @@ p, a {
   background-color: #cb3429;
   padding: 10px;
   background-repeat: repeat;
-  background-image: url("../../pattern/tweed-over.png");
+  background-image: url("../pattern/tweed-over.png");
   margin: 0px;
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);

@@ -51,7 +51,7 @@ ul.plugins-list {
 
 .plugins-icon {
   display: inline-block;
-  background: url('../../images/about-icon.png') no-repeat;
+  background: url('../images/about-icon.png') no-repeat;
   width: 50px;
   height: 50px;
   background-size: 100% 100%;
@@ -147,7 +147,7 @@ p, a {
 */
 .logo {
 
-  background: url('../../images/crivas-logo@2x.png') no-repeat;
+  background: url('../images/crivas-logo@2x.png') no-repeat;
   background-size: ($navBarHeightLarge * 1.8875) $navBarHeightLarge;
   width: 151px;
   height: 80px;
@@ -191,7 +191,7 @@ p, a {
     background-color: #333333;
     padding: 10px;
     background-repeat: repeat;
-    background-image: url('../../pattern/tweed.png');
+    background-image: url('../pattern/tweed.png');
     @include dropShadow(0, 0, 5px, 1px, rgba(#000000, .3));
     @media #{$smallBreakpoint} {
       width: 50%;
@@ -208,7 +208,7 @@ p, a {
     background-color: $darkRed;
     padding: 10px;
     background-repeat: repeat;
-    background-image: url('../../pattern/tweed-over.png');
+    background-image: url('../pattern/tweed-over.png');
     margin: 0px;
     @include dropShadow(0, 0, 5px, 1px, rgba(#000000, .3));
     @media #{$smallBreakpoint} {

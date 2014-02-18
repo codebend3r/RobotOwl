@@ -12,7 +12,7 @@
   height: $navBarHeightLarge;
   width: 100%;
   /*@include gradient($lightGrey,$lightGrey,$lightGrey);*/
-  background: url('../../pattern/squairy_light.png') repeat;
+  background: url('../pattern/squairy_light.png') repeat;
   background-size: 200px 200px;
   border-bottom: 1px $headerColour solid;
   position: fixed;

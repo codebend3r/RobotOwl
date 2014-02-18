@@ -32,112 +32,112 @@ Crivas.Data = {
 
     portfolio: {
 
-        summaryText: "<p> Chester Rivas is a highly skilled Front End Developer who specializes in JavaScript, JQuery and HTML/CSS. Coming from a design background he has the complementary skills of being able to design interfaces, websites, components through coding.</p>" +
-            "<p>Currently working as a contractor for many companies. </p>" +
-            "<p>At Kobo he was a Sproutcore and UI Developer. He helped build Kobo's Instant Reader and Kobo website redesign. Both were responsive designed and highly optimized for all devices.</p>" +
-            "<p>While at Research Now Chester developed a global Flash/JavaScript framework. Also developed several cutting edge market research tools.</p>" +
-            "<p>Chester has been in the industry for 9 years and has worked for many high-end clients to small ad-agencies. His focus is always quality, design and functionality. And he is very comfortable moving at a fast pace.</p>" +
-            "<p>Chester is also very experienced with HTML5 and CSS3/SASS to make him a complete and well rounded Front End Developer.</p>",
+        summaryText: "",
 
         skillset: [
             {
                 skillName: 'JavaScript',
-                yearsOfExperience:'9',
+                yearsOfExperience: '9',
                 levelOfExpertise: 'ADVANCED'
             },
             {
                 skillName: 'JQuery',
-                yearsOfExperience:'4',
+                yearsOfExperience: '4',
                 levelOfExpertise: 'ADVANCED'
             },
             {
                 skillName: 'HTML',
-                yearsOfExperience:'9',
+                yearsOfExperience: '9',
                 levelOfExpertise: 'EXPERT'
             },
             {
                 skillName: 'HTML5',
-                yearsOfExperience:'2',
+                yearsOfExperience: '3',
                 levelOfExpertise: 'ADVANCED'
             },
             {
                 skillName: 'CSS',
-                yearsOfExperience:'9',
+                yearsOfExperience: '9',
                 levelOfExpertise: 'EXPERT'
             },
             {
                 skillName: 'CSS3/SASS',
-                yearsOfExperience:'2',
+                yearsOfExperience: '3',
                 levelOfExpertise: 'EXPERT'
             },
             {
                 skillName: 'PHP',
-                yearsOfExperience:'3',
+                yearsOfExperience: '3',
                 levelOfExpertise: 'BASIC'
             },
             {
                 skillName: 'ActionScript 3.0/Flash',
-                yearsOfExperience:'9',
+                yearsOfExperience: '9',
                 levelOfExpertise: 'EXPERT'
             },
             {
                 skillName: '.NET',
-                yearsOfExperience:'3',
+                yearsOfExperience: '3',
                 levelOfExpertise: 'BASIC'
             },
             {
                 skillName: 'MVVM/MVC Concepts',
-                yearsOfExperience:'3',
+                yearsOfExperience: '3',
                 levelOfExpertise: 'ADVANCED'
             },
             {
                 skillName: 'Knockout.js',
-                yearsOfExperience:'2',
+                yearsOfExperience: '3',
                 levelOfExpertise: 'ADVANCED'
             },
             {
+                skillName: 'Angular.js',
+                yearsOfExperience: '1',
+                levelOfExpertise: 'BASIC'
+            },
+            {
                 skillName: 'Sproutcore',
-                yearsOfExperience:'2',
+                yearsOfExperience: '2',
                 levelOfExpertise: 'BASIC'
             },
             {
                 skillName: 'RequireJS',
-                yearsOfExperience:'1',
+                yearsOfExperience: '1',
                 levelOfExpertise: 'ADVANCED'
             },
             {
                 skillName: 'Ember.js',
-                yearsOfExperience:'1',
+                yearsOfExperience: '1',
                 levelOfExpertise: 'BASIC'
             },
             {
                 skillName: 'Adobe Photoshop',
-                yearsOfExperience:'9',
+                yearsOfExperience: '9',
                 levelOfExpertise: 'ADVANCED'
             },
             {
                 skillName: 'Adobe Illustrator',
-                yearsOfExperience:'9',
+                yearsOfExperience: '9',
                 levelOfExpertise: 'BASIC'
             },
             {
                 skillName: 'GitHub',
-                yearsOfExperience:'2',
+                yearsOfExperience: '2',
                 levelOfExpertise: 'ADVANCED'
             },
             {
                 skillName: 'CodeIgniter',
-                yearsOfExperience:'1',
+                yearsOfExperience: '1',
                 levelOfExpertise: 'BASIC'
             },
             {
                 skillName: 'Facebook Development',
-                yearsOfExperience:'3',
+                yearsOfExperience: '3',
                 levelOfExpertise: 'BASIC'
             },
             {
                 skillName: 'Twitter Development',
-                yearsOfExperience:'3',
+                yearsOfExperience: '3',
                 levelOfExpertise: 'BASIC'
             }
         ],

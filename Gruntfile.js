@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		clean: ["<%= pkg.outputFolder %>", "compiled" ],
+		clean: ["<%= pkg.outputFolder %>", 'js/compiled', 'css/compiled' ],
 		copy: {
 			dev: {
 				files: [
@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 					{src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
-					{src: ['css/release/**'], dest: '<%= pkg.outputFolder %>/'},
+					{src: ['css/*.css'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['js/vendor/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['js/internal/**'], dest: '<%= pkg.outputFolder %>/'}
 				]
@@ -26,8 +26,8 @@ module.exports = function (grunt) {
 					{src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
-					{src: ['css/'], dest: '<%= pkg.outputFolder %>/css'},
-					{src: ['js/'], dest: '<%= pkg.outputFolder %>/js'},
+					//{src: ['css/'], dest: '<%= pkg.outputFolder %>/css'},
+					//{src: ['js/'], dest: '<%= pkg.outputFolder %>/js'},
 					{src: ['js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>-<%= pkg.version %>.js'},
 					{src: ['css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css'], dest: '<%= pkg.outputFolder %>/css/<%= pkg.outputName %>-<%= pkg.version %>.css'}
 				]
@@ -40,8 +40,8 @@ module.exports = function (grunt) {
 					{src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
-					{src: ['css/'], dest: '<%= pkg.outputFolder %>/css'},
-					{src: ['js/'], dest: '<%= pkg.outputFolder %>/js'},
+					//{src: ['css/'], dest: '<%= pkg.outputFolder %>/css'},
+					//{src: ['js/'], dest: '<%= pkg.outputFolder %>/js'},
 					{src: ['js/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.js'], dest: '<%= pkg.outputFolder %>/js/<%= pkg.outputName %>-<%= pkg.version %>.min.js'},
 					{src: ['css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.min.css'], dest: '<%= pkg.outputFolder %>/css/<%= pkg.outputName %>-<%= pkg.version %>.min.css'}
 				]
@@ -103,13 +103,13 @@ module.exports = function (grunt) {
 					style: 'expanded'
 				},
 				files: {
-					'css/release/main.css': 'sass/release/main.scss',
-                    'css/release/headers.css': 'sass/release/headers.scss',
-                    'css/release/nav-bar.css': 'sass/release/nav-bar.scss',
-                    'css/release/portfolio.css': 'sass/release/portfolio.scss',
-                    'css/release/resume.css': 'sass/release/resume.scss',
-                    'css/release/contact.css': 'sass/release/contact.scss',
-					'css/release/owlgallery.css': 'sass/release/owlgallery.scss'
+					'css/main.css': 'sass/main.scss',
+                    'css/headers.css': 'sass/headers.scss',
+                    'css/nav-bar.css': 'sass/nav-bar.scss',
+                    'css/portfolio.css': 'sass/portfolio.scss',
+                    'css/resume.css': 'sass/resume.scss',
+                    'css/contact.css': 'sass/contact.scss',
+					'css/owlgallery.css': 'sass/owlgallery.scss'
 				}
 			}
 		},

@@ -34,7 +34,7 @@ ul.portfolio-list li:hover {
   background-color: #cb3429;
   color: white;
   background-repeat: repeat;
-  background-image: url(../../pattern/stripes_faded2.png);
+  background-image: url(../pattern/stripes_faded2.png);
 }
 @media all and (max-width: 1050px) {
   ul.portfolio-list {
@@ -54,7 +54,7 @@ ul.portfolio-list li:hover {
 
 .portfolio-icon {
   display: inline-block;
-  background: url("../../images/portfolio-icon.png") no-repeat;
+  background: url("../images/portfolio-icon.png") no-repeat;
   width: 50px;
   height: 50px;
   background-size: 100% 100%;
@@ -145,7 +145,7 @@ ul.portfolio-list li:hover {
   display: block;
   width: 600px;
   height: 335px;
-  background: url(../../images/preloader.gif) 50% 50% no-repeat;
+  background: url(../images/preloader.gif) 50% 50% no-repeat;
   padding: 10px;
   margin: 0;
 }
