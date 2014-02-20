@@ -29,13 +29,8 @@ body {
 */
 .inner-container {
   width: auto;
-  padding: 10px;
+  padding: 20px;
   overflow: auto;
-}
-@media all and (max-width: 850px) {
-  .inner-container {
-    padding: 10px 25px;
-  }
 }
 
 ul.plugins-list {
@@ -54,7 +49,7 @@ ul.plugins-list li a {
 
 .plugins-icon {
   display: inline-block;
-  background: url("../images/about-icon.png") no-repeat;
+  background: url("../images/plugins.png") no-repeat;
   width: 50px;
   height: 50px;
   background-size: 100% 100%;

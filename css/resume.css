@@ -43,18 +43,17 @@ ul.skillset li.skill-item {
 }
 
 .level {
-  font-family: 'The Girl Next Door', cursive;
+  font-size: 10px;
+  font-weight: bold;
 }
 .level.basic {
   color: #b0270c;
 }
 .level.advanced {
   color: #102ad1;
-  font-size: 14px;
 }
 .level.expert {
   color: #0fb900;
-  font-size: 14px;
 }
 
 .experience {

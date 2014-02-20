@@ -2,10 +2,26 @@ Crivas.SiteViewModel = function () {
 
 	var self = this;
 
-	self.longList = Crivas.Data.portfolio.workExperience;
+	//self.longList = Crivas.Data.portfolio.workExperience;
+	self.longList = ko.observableArray(ko.utils.arrayMap(Crivas.Data.portfolio.workExperience, function (i) {
+        return {
+            id: i.id,
+            slug: i.slug,
+            title: i.title,
+            menuText: i.menuText,
+            imageURL: i.imageURL,
+            companyName: i.companyName,
+            businessCase: i.businessCase,
+            details: i.details,
+            techUsed: i.techUsed,
+            url: i.url,
+            isOffline: i.url !== 'offline',
+            active: i.active
+        };
+    }));
 	self.plugins = Crivas.Data.plugins;
 	self.currentSectionID = ko.observable(0);
-	self.portfolioData = ko.observable(self.longList[self.currentSectionID()]);
+	self.portfolioData = ko.observable(self.longList()[self.currentSectionID()]);
 	self.visiblePortfolio = ko.observable(true);
 	self.visibleResume = ko.observable(true);
 	self.visibleContact = ko.observable(true);
@@ -61,7 +77,7 @@ Crivas.SiteViewModel = function () {
 	/**
 	 * a list of portfolio items
 	 */
-	self.portfolioList = ko.observableArray(ko.utils.arrayMap(self.longList, function (i) {
+	self.portfolioList = ko.observableArray(ko.utils.arrayMap(self.longList(), function (i) {
 		return {
 			id: i.id,
 			menuText: i.menuText,
@@ -252,7 +268,7 @@ Crivas.SiteViewModel = function () {
 	self.changePage = function (data) {
 		var currentID = self.getPortfolioItemByID(data.id);
 		self.currentSectionID(currentID);
-		self.portfolioData(self.longList[self.currentSectionID()]);
+		self.portfolioData(self.longList()[self.currentSectionID()]);
 		//location.hash = 'portfolio/' + data.slug;
 
 		if (self.$portfolioContainer.hasClass('slide-menu-in')) {

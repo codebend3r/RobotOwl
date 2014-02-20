@@ -9,7 +9,6 @@ module.exports = function (grunt) {
 				files: [
 					{src: ['index.html'], dest: '<%= pkg.outputFolder %>/index.html'},
 					{src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
-					{src: ['email/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
@@ -23,7 +22,6 @@ module.exports = function (grunt) {
 				files: [
 					{src: ['index.html'], dest: '<%= pkg.outputFolder %>/index.html'},
 					{src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
-					{src: ['email/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
@@ -36,7 +34,6 @@ module.exports = function (grunt) {
 				files: [
 					{src: ['index.html'], dest: '<%= pkg.outputFolder %>/index.html'},
 					{src: ['icons/**'], dest: '<%= pkg.outputFolder %>/'},
-					{src: ['email/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['images/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pages/**'], dest: '<%= pkg.outputFolder %>/'},
 					{src: ['pattern/**'], dest: '<%= pkg.outputFolder %>/'},
@@ -218,7 +215,8 @@ module.exports = function (grunt) {
                     port: 21,
                     authKey: 'key1'
                 },
-                src: ['<%= pkg.outputFolder %>/js', '<%= pkg.outputFolder %>/css'],
+                src: '<%= pkg.outputFolder %>',
+                exclusions: [ '<%= pkg.outputFolder %>/pages', '<%= pkg.outputFolder %>/resume', '<%= pkg.outputFolder %>/images', '<%= pkg.outputFolder %>/icons', '<%= pkg.outputFolder %>/pattern' ],
                 dest: '/domains/crivas.net/html'
             },
 			dev: {

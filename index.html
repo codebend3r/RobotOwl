@@ -97,7 +97,7 @@
 				<h3 class="port-title" data-bind="text: title"></h3>
                 <!--<div class="image-preloader"></div>-->
 				<div class='image-container'>
-					<ul class='image-border' data-bind='foreach: imageurl, click: $root.imageClicked'>
+					<ul class='image-border' data-bind='foreach: imageURL, click: $root.imageClicked'>
 						<li class='images-list'>
 							<img class='work-images' data-bind='attr:{src: $data}'/>
 						</li>
@@ -120,7 +120,7 @@
 					<p class="details" data-bind="text: techUsed"></p>
 				</div>
 				<div class="launch">
-					<a data-bind="attr: {href: url}" target="_blank">VIEW</a>
+					<a data-bind="attr: {href: url}, visible: isOffline" target="_blank">VIEW</a>
 				</div>
 			</div>
 
@@ -229,7 +229,6 @@
 <script src="js/internal/Crivas.Data.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.Main.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.SiteViewModel.js" type="text/javascript"></script>
-<script src="js/internal/Crivas.EmailForm.js" type="text/javascript"></script>
 <!-- @endif -->
 
 <!-- @if NODE_ENV == 'PRODUCTION' -->

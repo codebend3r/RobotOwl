@@ -48,19 +48,19 @@ ul.skillset {
 }
 
 .level {
-  font-family: 'The Girl Next Door', cursive;
+  //font-family: 'The Girl Next Door', cursive;
+  font-size: 10px;
+  font-weight: bold;
   &.basic {
     color: #b0270c;
   }
 
   &.advanced {
     color: #102ad1;
-    font-size: 14px;
   }
 
   &.expert {
     color: #0fb900;
-    font-size: 14px;
   }
 }
 
