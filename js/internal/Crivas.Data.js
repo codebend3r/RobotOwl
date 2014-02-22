@@ -602,20 +602,20 @@ Crivas.Data = {
 		{
 			id: 0,
 			title: 'OwlGallery',
-			description: 'A customizable alternative for a combobox/dropdown list.',
+			description: 'Image gallery with various settings and modes. Supports TweenLite/TweenMax and touch device support.',
 			link: 'http://crivas.net/git/owlgallery/'
 		},
 		{
 			id: 1,
 			title: 'OwlModal',
-			description: 'A plugin that allows a modal pop up window with various customizable options.',
+			description: 'A modal window plugin.',
 			link: 'http://crivas.net/git/owlmodal/'
 		},
 		{
 			id: 2,
 			title: 'OwlSwipe',
 			description: 'A plugin that detects touch events for touch devices including swiping and touch moving.',
-			link: 'http://crivas.net/git/owlswipe//'
+			link: 'http://crivas.net/git/owlswipe/'
 		},
 		{
 			id: 3,
