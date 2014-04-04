@@ -15,6 +15,7 @@ Crivas.init = function () {
 	var scope = $('body').get(0);
 
 	ko.bindingHandlers.subMenu = {
+		
 		update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
 
 			var value = valueAccessor(),
@@ -27,7 +28,6 @@ Crivas.init = function () {
 
 			if (subMenuOn) {
 				$(element).addClass('has-sub-menu');
-				//$(element).append("<ul class='sub-menu'></ul>");
 				$clonedMenu = $(subMenuSelector).clone();
 				$clonedMenu.addClass('small-menu');
 				$subMenu = $('.has-sub-menu');

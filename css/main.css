@@ -7,7 +7,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #efefef;
-  color: darkslategrey;
+  color: darkslategray;
   min-width: 400px;
   overflow-x: hidden;
   opacity: 0;

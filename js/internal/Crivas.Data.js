@@ -1,5 +1,4 @@
 var Crivas = {};
-window.Crivas = Crivas;
 
 Crivas.Data = {
 
@@ -627,9 +626,23 @@ Crivas.Data = {
 
     resume: [
 
+        {
+            id: 15,
+            companyName: 'Uptime Software',
+            jobTitle: 'Senior Front End Developer',
+            jobType: 'full-time',
+            datesAtJob: 'March 2014 - Present',
+            tasks: [
+                'front end specialist',
+                'consuming RESTful API data and display on the front end',
+                'using Angular to develop the front end',
+                'built unit test and e2e tests using Karma, Jasmine and Protractor'
+            ]
+        },
+
 	    {
 		    id: 14,
-		    companyName: 'The Movie Network - Bell Media',
+		    companyName: 'Bell Media | The Movie Network ',
 		    jobTitle: 'Senior Front End Developer',
 		    jobType: 'contract',
 		    datesAtJob: 'November 2013 - February 2014',
