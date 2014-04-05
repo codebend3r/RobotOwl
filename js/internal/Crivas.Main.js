@@ -12,6 +12,9 @@ Crivas.init = function () {
 	Crivas.$window.on('resize', Crivas.onWindowResize);
 	Crivas.onWindowResize();
 
+    prettyPrint();
+    //adjustHeightInParent();
+
 	var scope = $('body').get(0);
 
 	ko.bindingHandlers.subMenu = {

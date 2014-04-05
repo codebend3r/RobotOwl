@@ -20,6 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="css/resume.css"/>
 	<link rel="stylesheet" type="text/css" href="css/contact.css"/>
 	<link rel="stylesheet" type="text/css" href="css/owlgallery.css"/>
+
+	<link rel="stylesheet" type="text/css" href="css/prettify.css"/>
 	<!-- @endif -->
 	<!-- @if NODE_ENV == 'PRODUCTION' -->
 	<link rel="stylesheet" type="text/css" href="css/<!-- @echo name -->-<!-- @echo version -->.css"/>
@@ -216,6 +218,18 @@
 		</div>
 	</section>
 
+    <section>
+        <pre class="prettyprint lang-js linenums">
+        // Say hello world until the user starts questioning
+        // the meaningfulness of their existence.
+        function helloWorld(world) {
+          for (var i = 42; --i &gt;= 0;) {
+            alert('Hello ' + String(world));
+          }
+        }
+        </pre>
+    </section>
+
 </section>
 
 <!-- @if NODE_ENV == 'DEVELOPMENT' -->
@@ -226,9 +240,13 @@
 <script src="js/vendor/modernizr-2.6.2.js" type="text/javascript"></script>
 <script src="js/vendor/knockout-2.2.1.js" type="text/javascript"></script>
 <script src="js/vendor/TweenMax.min.js" type="text/javascript"></script>
+<script src="js/vendor/lang-css.js" type="text/javascript"></script>
+<script src="js/vendor/prettify.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.Data.js" type="text/javascript"></script>
+<script src="js/internal/Crivas.Blog.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.Main.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.SiteViewModel.js" type="text/javascript"></script>
+
 <!-- @endif -->
 
 <!-- @if NODE_ENV == 'PRODUCTION' -->
