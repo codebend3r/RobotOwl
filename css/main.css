@@ -8,8 +8,7 @@ body {
   background-color: #efefef;
   color: #2f4f4f;
   min-width: 400px;
-  overflow-x: hidden;
-  opacity: 0; }
+  overflow-x: hidden; }
   @media all and (max-width: 700px) {
     body {
       margin: 0;

@@ -2,33 +2,6 @@ var Crivas = {};
 
 Crivas.Data = {
 
-    menu: [
-        {
-            id: 0,
-            name: 'Portfolio',
-            subMenu: true,
-            subMenuSelector: '.portfolio-list'
-        },
-        {
-            id: 1,
-            name: 'Resume',
-            subMenu: false,
-            subMenuSelector: ''
-        },
-	    {
-		    id: 2,
-		    name: 'Plugins',
-		    subMenu: false,
-		    subMenuSelector: ''
-	    },
-        {
-            id: 3,
-            name: 'Contact',
-            subMenu: false,
-            subMenuSelector: ''
-        }
-    ],
-
     portfolio: {
 
         summaryText: "<p>Chester Rivas is a highly skilled Front End Developer with many years of experience in both design and development. Chester specializes in various JavaScript frameworks such as: Sproutcore, Knockout.js, Ember.js, which compliment JQuery. Coming from a design background he has the complementary skills of being able to design and animate through code and pickup new frameworks pretty easily.<br/><br/>" +
@@ -168,6 +141,26 @@ Crivas.Data = {
         ],
 
         workExperience: [
+            {
+                id: 29,
+                slug: 'TMN',
+                title: 'TMN',
+                menuText: 'TMN',
+                imageURL: [
+                    'pages/tmn-1.jpg',
+                    'pages/tmn-2.jpg',
+                    'pages/tmn-3.jpg',
+                    'pages/tmn-4.jpg',
+                    'pages/tmn-5.jpg',
+                    'pages/tmn-6.jpg'
+                ],
+                companyName: 'Bell Media',
+                businessCase: 'Needed a modern website that was responsive.',
+                details: 'Complete website responsive redesign. RESTful API consumed by the Front End.',
+                techUsed: 'Symfony2, PHP, JavaScript, Knockout, Grunt, JQuery, SASS, CSS',
+                url: 'offline',
+                active: true
+            },
             {
                 id: 28,
                 slug: 'countryDeep',
@@ -597,32 +590,32 @@ Crivas.Data = {
 
     },
 
-	plugins: [
-		{
-			id: 0,
-			title: 'OwlGallery',
-			description: 'Image gallery with various settings and modes. Supports TweenLite/TweenMax and touch device support.',
-			link: 'http://crivas.net/git/owlgallery/'
-		},
-		{
-			id: 1,
-			title: 'OwlModal',
-			description: 'A modal window plugin.',
-			link: 'http://crivas.net/git/owlmodal/'
-		},
-		{
-			id: 2,
-			title: 'OwlSwipe',
-			description: 'A plugin that detects touch events for touch devices including swiping and touch moving.',
-			link: 'http://crivas.net/git/owlswipe/'
-		},
-		{
-			id: 3,
-			title: 'OwlDropDown',
-			description: 'A customizable alternative for a combobox/dropdown list.',
-			link: 'http://crivas.net/git/owldropdown/'
-		}
-	],
+    plugins: [
+        {
+            id: 0,
+            title: 'OwlGallery',
+            description: 'Image gallery with various settings and modes. Supports TweenLite/TweenMax and touch device support.',
+            link: 'http://crivas.net/git/owlgallery/'
+        },
+        {
+            id: 1,
+            title: 'OwlModal',
+            description: 'A modal window plugin.',
+            link: 'http://crivas.net/git/owlmodal/'
+        },
+        {
+            id: 2,
+            title: 'OwlSwipe',
+            description: 'A plugin that detects touch events for touch devices including swiping and touch moving.',
+            link: 'http://crivas.net/git/owlswipe/'
+        },
+        {
+            id: 3,
+            title: 'OwlDropDown',
+            description: 'A customizable alternative for a combobox/dropdown list.',
+            link: 'http://crivas.net/git/owldropdown/'
+        }
+    ],
 
     resume: [
 
@@ -640,23 +633,23 @@ Crivas.Data = {
             ]
         },
 
-	    {
-		    id: 14,
-		    companyName: 'Bell Media | The Movie Network ',
-		    jobTitle: 'Senior Front End Developer',
-		    jobType: 'contract',
-		    datesAtJob: 'November 2013 - February 2014',
-		    tasks: [
-			    'responsible for all front end development on TMN website redesign',
-			    'worked in Symfony2 backend environment',
-			    'created custom JQuery plugins',
+        {
+            id: 14,
+            companyName: 'Bell Media | The Movie Network ',
+            jobTitle: 'Senior Front End Developer',
+            jobType: 'contract',
+            datesAtJob: 'November 2013 - February 2014',
+            tasks: [
+                'responsible for all front end development on TMN website redesign',
+                'worked in Symfony2 backend environment',
+                'created custom JQuery plugins',
                 'implemented backend API using Knockout parse JSON and render to front end',
-			    'responsive web-design implementation and optimization',
-			    'implemented backend API using Knockout to render on the front end',
-			    'used TweenMax to animate elements'
-		    ]
-	    },
-	    {
+                'responsive web-design implementation and optimization',
+                'implemented backend API using Knockout to render on the front end',
+                'used TweenMax to animate elements'
+            ]
+        },
+        {
             id: 13,
             companyName: 'Jam3',
             jobTitle: 'Senior Front End Developer',

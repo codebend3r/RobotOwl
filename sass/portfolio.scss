@@ -18,7 +18,7 @@ ul.portfolio-list {
   vertical-align: top;
   padding: 0;
   margin: 0;
-  float: left;
+  //float: left;
   border: white solid 10px;
   z-index: 9999;
   @media #{$retinaBreakpoint} {
@@ -49,8 +49,8 @@ ul.portfolio-list {
   }
 
   @media #{$largeBreakpoint} {
-    display: none;
-    float: none;
+    //display: none;
+    //float: none;
     position: absolute;
     width: 300px;
     height: 100%;
@@ -94,7 +94,7 @@ ul.portfolio-list {
   display: inline-block;
   padding: 0;
   margin: 0 0 0 2%;
-  float: left;
+  //float: left;
 
   @media #{$largeBreakpoint} {
     width: 100%;
@@ -169,5 +169,81 @@ ul.portfolio-list {
     display: none;
   }
 
+}
+
+.image-container {
+  width: 600px;
+  height: auto;
+  padding: 0;
+  margin: 00;
+  display: block;
+  //border: 10px solid white;
+  border: none;
+  clear: both;
+
+  @media #{$mediumBreakpoint} {
+    width: 100%;
+  }
+
+  /*
+  @media #{$largeBreakpoint} {
+    float: none;
+    position: relative;
+    left: 50%;
+    margin: 0 0 0 -300px;
+  }
+  @media #{$smallBreakpoint} {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: static;
+    margin: 0;
+    padding: 0;
+  }
+  */
+
+}
+
+/**
+* @description a diagonal border for images
+*
+* @markup
+*   <div class="striped-border"></div>
+*/
+ul.image-border {
+
+  position: relative;
+  overflow: visible;
+  display: block;
+  width: 600px;
+  height: 334px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+
+  li.images-list {
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  @media #{$mediumBreakpoint} {
+    width: 100%;
+  }
+
+}
+
+img.work-images {
+  position: absolute;
+  max-width: 100%;
+  @media #{$mediumBreakpoint} {
+    max-width: 100%;
+  }
 }
 

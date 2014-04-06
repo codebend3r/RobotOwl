@@ -20,24 +20,26 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     //tasks = require("gulp-load-tasks")(),
     settings = {
-        output: 'www',
+        outputFolder: 'www',
         projectName: 'RobotOwl',
         outputName: 'robotowl',
         version: '0.1.8',
-        port: 8000
+        port: 8080
     },
     allJS = [
-        'js/vendor/jquery-1.9.1.js',
-        'js/vendor/jquery.imagesloaded.js',
-        'js/vendor/jquery.localscroll-1.2.7.js',
-        'js/vendor/jquery.owlgallery-1.6.js',
-        'js/vendor/prettify.js',
-        'js/vendor/knockout-2.2.1.js',
-        'js/vendor/modernizr-2.6.2.js',
-        'js/vendor/TweenMax.min.js',
-        'js/internal/Crivas.Data.js',
-        'js/internal/Crivas.Main.js',
-        'js/internal/Crivas.SiteViewModel.js'
+        'js/vendor/angular.js',
+        'js/vendor/angular-route.js',
+        'js/vendor/angular-cookies.js',
+        'js/vendor/angular-resource.js',
+        'js/vendor/angular-animate.js',
+        'js/vendor/angular-cookies.js',
+        'js/vendor/angular-mocks.js',
+        'js/vendor/angular-sanitize.js',
+        'js/vendor/angular-scenario.js',
+        'js/module/app.js',
+        'js/controllers/portfolio.js',
+        'js/controllers/mainmenu.js',
+        'js/internal/Crivas.Data.js'
     ],
     allCSS = [
         'css/normalize.css',
@@ -47,13 +49,14 @@ var gulp = require('gulp'),
         'css/portfolio.css',
         'css/resume.css',
         'css/contact.css',
-        'css/owlgallery.css'
+        'css/owlgallery.css',
+        'css/prettify.css'
     ],
     filename = settings.outputName + '-' + settings.version + '.min';
 
 
 gulp.task('clean', function () {
-    gulp.src([settings.output], { read: false })
+    gulp.src([settings.output], { read: false, force: true })
         .pipe(clean());
 });
 
@@ -65,40 +68,70 @@ gulp.task('build', function() {
                 cssName: 'css/' + filename + '.css'
             }
         ))
-        .pipe(gulp.dest(settings.output))
+        .pipe(gulp.dest(settings.outputFolder))
 });
 
 gulp.task('sass', function () {
     gulp.src('sass/**/*.scss')
         .pipe(sass())
+        .pipe(filesize())
         .pipe(gulp.dest('./css'));
 });
 
 gulp.task('scripts', function () {
+    //gulp.src(allJS)
+    gulp.src(['js/vendor/**/*.js', 'js/modules/**/*.js', 'js/controllers/**/*.js', 'js/directives/**/*.js'])
+        .pipe(filesize())
+        //.pipe(connect.reload())
+        .pipe(gulp.dest(settings.outputFolder + '/js/'));
+
+});
+
+gulp.task('scriptsProd', function () {
     gulp.src(allJS)
         .pipe(concat(filename + '.js'))
         .pipe(uglify())
         .pipe(filesize())
-        .pipe(connect.reload())
-        .pipe(gulp.dest(settings.output + '/js/'));
+        //.pipe(connect.reload())
+        .pipe(gulp.dest(settings.outputFolder + '/js/'));
 
 });
 
 gulp.task('styles', function () {
     gulp.src(allCSS)
-        .pipe(concat(filename + '.css'))
+        //.pipe(concat(filename + '.css'))
         .pipe(minifyCSS())
         .pipe(filesize())
-        .pipe(connect.reload())
-        .pipe(gulp.dest(settings.output + '/css/'));
+        //.pipe(connect.reload())
+        .pipe(gulp.dest(settings.outputFolder + '/css/'));
 });
 
 gulp.task('move', function () {
     // the base option sets the relative root for the set of files,
     // preserving the folder structure
-    gulp.src([ 'index.html', 'images/**', 'pages/**', 'resume/**', 'icons/**', 'pattern/**'], 
-        { base: './' })
-        .pipe(gulp.dest(settings.output));
+    gulp.src(
+            [
+                '*.html',
+                'partials/*.html',
+                'js/vendor/**/*.js',
+                'js/module/**/*.js',
+                'js/controllers/**/*.js',
+                'js/directives/**/*.js',
+                'js/internal/**/*.js',
+                'css/**',
+                'images/**',
+                'pages/**',
+                'resume/**',
+                'icons/**',
+                'pattern/**'
+            ],
+            {
+                base: './'
+                //cwd : 'vendor/**'
+            }
+        )
+        //.pipe(filesize())
+        .pipe(gulp.dest(settings.outputFolder));
 });
 
 gulp.task('rename', function () {
@@ -119,9 +152,9 @@ gulp.task('serve', tasks.serve({
 
 gulp.task('connect', function() {
     connect.server({
-        root: 'www',
-        port: 8080,
-        livereload: true
+        root: settings.outputName,
+        port: settings.port
+        //livereload: true
     });
 });
 
@@ -134,13 +167,32 @@ gulp.task('connect', function() {
 //});
 
 gulp.task('watch', function () {
-    gulp.watch('js/**/*.js', ['dev']);
-    gulp.watch('css/**/*.js', ['dev']);
+    gulp.watch( ['js/**/*.js', 'sass/**/*.scss', '*.html', 'partials/*.html'], ['dev2']);
+    //gulp.watch('css/**/*.js', ['dev2']);
 });
 
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('dev', [ 'clean', 'sass', 'styles', 'scripts', 'rename', 'move', 'build' ]);
+gulp.task('dev1', [
+    'clean',
+    'sass',
+    'styles',
+    'scripts',
+    'move'
+]);
+
+gulp.task('dev2', [
+    'sass',
+    //'styles',
+    //'scripts',
+    'move'
+]);
+
+gulp.task('watchdev', [
+    'dev2',
+    'watch'
+]);
+
 gulp.task('default', [
     'dev',
     'watch',

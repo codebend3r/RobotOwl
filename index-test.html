@@ -46,17 +46,31 @@
 	<meta name="keywords" content="Chester, Rivas, Flash, Toronto, Ontario, Canada, Front, End, UI, UX, Knockout, CodeIgniter, Sproutcore, Development, Developer, ActionScript, 3.0, 2.0, Flex, Flash, Adobe, HTML, HTML5, CSS, CSS3, JavaScript, JQuery"/>
 
 </head>
-<body>
+<body ng-app='CrivasApp'>
 
 <nav-menu></nav-menu>
 
-<section class="shadow"></section>
+<!--<section class="shadow"></section>-->
 
 <section class="main-wrapper">
 
-	<ng-view></ng-view>
+    <div class="container" ng-view=""></div>
 
 </section>
+
+<script src="js/vendor/angular.js" type="text/javascript"></script>
+<script src="js/vendor/angular-cookies.js" type="text/javascript"></script>
+<script src="js/vendor/angular-resource.js" type="text/javascript"></script>
+<script src="js/vendor/angular-route.js" type="text/javascript"></script>
+<script src="js/vendor/angular-animate.js" type="text/javascript"></script>
+<script src="js/vendor/angular-mocks.js" type="text/javascript"></script>
+<script src="js/vendor/angular-sanitize.js" type="text/javascript"></script>
+<script src="js/vendor/angular-scenario.js" type="text/javascript"></script>
+
+<script src="js/internal/Crivas.Data.js" type="text/javascript"></script>
+<script src="js/module/app.js" type="text/javascript"></script>
+<script src="js/controllers/portfolio.js" type="text/javascript"></script>
+<script src="js/controllers/mainmenu.js" type="text/javascript"></script>
 
 <!--<script src="js/vendor/jquery-1.9.1.js" type="text/javascript"></script>
 <script src="js/vendor/jquery.imagesloaded.js" type="text/javascript"></script>

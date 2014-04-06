@@ -1,0 +1,19 @@
+<header class='nav-bar' ng-controller='MainMenuCtrl'>
+    <div class='nav-bar-fixed'>
+        <div class='open-small-menu'>
+            <div class='horizontal-groove'></div>
+            <div class='horizontal-groove'></div>
+            <div class='horizontal-groove'></div>
+        </div>
+        <div class='logo'></div>
+        <ul class='main-menu large'>
+            <li class='menu-item' ng-repeat='nav in navs'><a ng-href='{{nav.url}}'>{{nav.name}}</a></li>
+        </ul>
+    </div>
+</header>
+
+<ul class='main-menu small'>
+    <li class='menu-item' ng-repeat='work in workList'>
+        <span>{{work.menuText}}</span>
+    </li>
+</ul>

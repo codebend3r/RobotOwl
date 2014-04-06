@@ -1,0 +1,42 @@
+<section id="resume-section" class="main-content-section resume-content" data-bind="css: { visibleSection: $root.visibleResume }">
+
+    <div class='inner-container'>
+
+        <div class='icon-and-title'>
+            <span class='section-icon resume-icon'></span>
+            <h2>Resume</h2>
+        </div>
+        <div class="stackable">
+            <p class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> .docx format (Word 2010)</p>
+            <p class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> .pdf (Adobe PDF)</p>
+        </div>
+        <div class="stackable">
+            <h3>Summary</h3>
+            <div class='summary' data-bind='html: $root.summaryText'></div>
+        </div>
+        <div class="stackable">
+            <h3>Skills Matrix</h3>
+            <ul class="skillset" data-bind="foreach: $root.skillSet">
+                <li class='skill-item'>
+                    <span class='skill' data-bind='html: skillName'></span> - <span class='level' data-bind='html: $root.getLevelOfExpertise($data), css: { expert:isExpert, advanced:isAdvanced, basic:isBasic }'></span> - <span class='experience' data-bind='html: yearsOfExperience'></span>
+                </li>
+            </ul>
+        </div>
+        <div class="stackable">
+            <h3>Work Experience</h3>
+            <div data-bind="foreach: $root.experienceList">
+                <div class="job">
+                    <p><span class="job-title" data-bind="text: jobTitle"></span></p>
+                    <p><span class="company-name" data-bind="text: companyName"></span><span>&nbsp;|&nbsp;</span><span class="job-type" data-bind="text: jobType, css: { isFullTime: isFullTime }"></span></p>
+                    <p></p>
+                    <p><span class="dates-at-job" data-bind="text: datesAtJob"></span></p>
+                    <ul data-bind="foreach: tasks">
+                        <li data-bind="text: $data"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

@@ -12,7 +12,6 @@ ul.portfolio-list {
   vertical-align: top;
   padding: 0;
   margin: 0;
-  float: left;
   border: white solid 10px;
   z-index: 9999; }
   @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
@@ -32,8 +31,6 @@ ul.portfolio-list {
     background-image: url(../pattern/stripes_faded2.png); }
   @media all and (max-width: 1050px) {
     ul.portfolio-list {
-      display: none;
-      float: none;
       position: absolute;
       width: 300px;
       height: 100%;
@@ -68,8 +65,7 @@ ul.portfolio-list {
   width: 70%;
   display: inline-block;
   padding: 0;
-  margin: 0 0 0 2%;
-  float: left; }
+  margin: 0 0 0 2%; }
   @media all and (max-width: 1050px) {
     .portfolio-container {
       width: 100%;
@@ -131,3 +127,67 @@ ul.portfolio-list {
     top: 0px;
     left: 0px;
     display: none; }
+
+.image-container {
+  width: 600px;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  display: block;
+  border: none;
+  clear: both;
+  /*
+  @media all and (max-width: 1050px) {
+    float: none;
+    position: relative;
+    left: 50%;
+    margin: 0 0 0 -300px;
+  }
+  @media all and (max-width: 700px) {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: static;
+    margin: 0;
+    padding: 0;
+  }
+  */ }
+  @media all and (max-width: 850px) {
+    .image-container {
+      width: 100%; } }
+
+/**
+* @description a diagonal border for images
+*
+* @markup
+*   <div class="striped-border"></div>
+*/
+ul.image-border {
+  position: relative;
+  overflow: visible;
+  display: block;
+  width: 600px;
+  height: 334px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  cursor: pointer; }
+  ul.image-border li.images-list {
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+  @media all and (max-width: 850px) {
+    ul.image-border {
+      width: 100%; } }
+
+img.work-images {
+  position: absolute;
+  max-width: 100%; }
+  @media all and (max-width: 850px) {
+    img.work-images {
+      max-width: 100%; } }
