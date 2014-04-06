@@ -17,6 +17,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     rename = require("gulp-rename"),
     serve = require('gulp-serve'),
+    connect = require('gulp-connect'),
+    //tasks = require("gulp-load-tasks")(),
     settings = {
         output: 'www',
         projectName: 'RobotOwl',
@@ -75,8 +77,9 @@ gulp.task('sass', function () {
 gulp.task('scripts', function () {
     gulp.src(allJS)
         .pipe(concat(filename + '.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(filesize())
+        .pipe(connect.reload())
         .pipe(gulp.dest(settings.output + '/js/'));
 
 });
@@ -86,6 +89,7 @@ gulp.task('styles', function () {
         .pipe(concat(filename + '.css'))
         .pipe(minifyCSS())
         .pipe(filesize())
+        .pipe(connect.reload())
         .pipe(gulp.dest(settings.output + '/css/'));
 });
 
@@ -103,23 +107,43 @@ gulp.task('rename', function () {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('serve', serve({
+/*
+gulp.task('serve', tasks.serve({
     root: ['www'],
     port: settings.port,
     middleware: function(req, res) {
         // custom optional middleware
     }
 }));
+*/
 
-// Rerun the task when a file changes
-gulp.task('watch', function () {
-    var server = livereload();
-    gulp.watch([ 'js/**/*.js', 'css/**/*.css' ]).on('change', function(file) {
-        console.log('++++++++++++++++++++++', file.path);
-        //server.changed(file.path);
+gulp.task('connect', function() {
+    connect.server({
+        root: 'www',
+        port: 8080,
+        livereload: true
     });
 });
 
+// Rerun the task when a file changes
+//gulp.task('watch', function () {
+    //var server = livereload();
+    //gulp.watch([ 'js/**/*.js', 'css/**/*.css' ]).on('change', function(file) {
+        //server.changed(file.path);
+    //});
+//});
+
+gulp.task('watch', function () {
+    gulp.watch('js/**/*.js', ['dev']);
+    gulp.watch('css/**/*.js', ['dev']);
+});
+
+
 // The default task (called when you run `gulp` from cli)
-gulp.task('dev', [ 'sass', 'styles', 'scripts', 'rename', 'move', 'build' ]);
-gulp.task('default', [ 'clean', 'dev', 'watch', 'serve' ]);
+gulp.task('dev', [ 'clean', 'sass', 'styles', 'scripts', 'rename', 'move', 'build' ]);
+gulp.task('default', [
+    'dev',
+    'watch',
+    //'serve'
+    'connect'
+]);
