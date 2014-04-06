@@ -8,9 +8,9 @@
   height: 80px;
   width: 100%;
   /*@include gradient($lightGrey,$lightGrey,$lightGrey);*/
-  background: url("../pattern/squairy_light.png") repeat;
+  background: url('../pattern/squairy_light.png') repeat;
   background-size: 200px 200px;
-  border-bottom: 1px lightgrey solid;
+  border-bottom: 1px #d3d3d3 solid;
   position: fixed;
   z-index: 99;
   top: 0px;
@@ -22,34 +22,29 @@
     background: none;
     background-color: $bodyColour;
   }
-  */
-}
-@media all and (max-width: 850px) {
-  .nav-bar {
-    background-image: none;
-    background-color: #e8e8e8;
-    height: 70px;
-    z-index: 998;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-  }
-}
-@media all and (max-width: 700px) {
-  .nav-bar {
-    height: 70px;
-    z-index: 998;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-  }
-}
+  */ }
+  @media all and (max-width: 850px) {
+    .nav-bar {
+      background-image: none;
+      background-color: #e8e8e8;
+      height: 70px;
+      z-index: 998;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none; } }
+  @media all and (max-width: 700px) {
+    .nav-bar {
+      height: 70px;
+      z-index: 998;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none; } }
 
 /**
 * @description the container which has a max width
@@ -63,13 +58,10 @@
   vertical-align: middle;
   display: block;
   position: static;
-  height: 80px;
-}
-@media all and (max-width: 1050px) {
-  .nav-bar-fixed {
-    width: 100%;
-  }
-}
+  height: 80px; }
+  @media all and (max-width: 1050px) {
+    .nav-bar-fixed {
+      width: 100%; } }
 
 /**
 * @description button that only appears in medium and small mode
@@ -80,28 +72,23 @@
 *   </div>
 */
 .open-small-menu {
-  display: none;
-}
-.open-small-menu .horizontal-groove {
-  margin: 14px 10px -12px 10px;
-  background-color: #cecece;
-  height: 4px;
-}
-@media all and (max-width: 850px) {
-  .open-small-menu {
-    float: left;
-    cursor: pointer;
-    margin: 0px 0px;
-    display: inline-block;
-    width: 70px;
-    height: 70px;
-    border-right: 2px solid #d1d1d1;
-  }
+  display: none; }
   .open-small-menu .horizontal-groove {
-    margin: 20px 10px -12px 10px;
-    height: 4px;
-  }
-}
+    margin: 14px 10px -12px 10px;
+    background-color: #cecece;
+    height: 4px; }
+  @media all and (max-width: 850px) {
+    .open-small-menu {
+      float: left;
+      cursor: pointer;
+      margin: 0px 0px;
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      border-right: 2px solid #d1d1d1; }
+      .open-small-menu .horizontal-groove {
+        margin: 20px 10px -12px 10px;
+        height: 4px; } }
 
 /**
 * @description the main menu styles
@@ -120,123 +107,100 @@ ul.main-menu {
   border-bottom: solid 1px #c6c6c6;
   z-index: 997;
   top: 0px;
-  right: 0px;
-}
-ul.main-menu.large {
-  display: inline-block;
-  position: static;
-}
-@media all and (max-width: 850px) {
+  right: 0px; }
   ul.main-menu.large {
-    display: none;
-  }
-}
-ul.main-menu.small {
-  display: none;
-}
-@media all and (max-width: 850px) {
-  ul.main-menu.small {
     display: inline-block;
-    position: fixed;
-    float: left;
-    left: 0px;
-    top: 0px;
-    z-index: -9;
-    background-color: #d1d1d1;
-    border-bottom: none;
-    width: 100%;
-    height: 100%;
-    font-size: 18px;
-    overflow-y: scroll !important;
-  }
-  ul.main-menu.small li span {
-    margin: 0 0 0 20px;
-    padding: 0;
-  }
-  ul.main-menu.small li.show {
-    line-height: initial;
-    height: initial;
-    padding-top: 28px;
-  }
-  ul.main-menu.small li.has-sub-menu ul.small-menu {
-    position: static;
-    display: none;
-    margin: 0;
-    padding: 10px 0;
-    float: none;
-    clear: both;
-    border: none;
-    width: initial;
-  }
-  ul.main-menu.small li.has-sub-menu ul.small-menu.show {
-    display: block;
-    margin-top: 10px;
-  }
-  ul.main-menu.small li.has-sub-menu ul.small-menu li {
-    position: static;
-    display: block;
-    line-height: 40px;
-    height: 40px;
-    margin: 0;
-    padding: 0 0 0 20px;
-    width: initial;
-  }
-  ul.main-menu.small li.has-sub-menu ul.small-menu li:hover {
-    background: none;
-    background-color: red;
-    border: none;
-  }
-}
-@media all and (max-width: 700px) {
-  ul.main-menu.small li.menu-item {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-}
-ul.main-menu li {
-  margin: 0;
-  padding: 0 25px;
-  display: inline-block;
-  list-style: none;
-  cursor: pointer;
-  height: 80px;
-  line-height: 80px;
-  text-align: center;
-}
-ul.main-menu li span {
-  padding: 0 20px;
-}
-@media all and (max-width: 850px) {
+    position: static; }
+    @media all and (max-width: 850px) {
+      ul.main-menu.large {
+        display: none; } }
+  ul.main-menu.small {
+    display: none; }
+    @media all and (max-width: 850px) {
+      ul.main-menu.small {
+        display: inline-block;
+        position: fixed;
+        float: left;
+        left: 0px;
+        top: 0px;
+        z-index: -9;
+        background-color: #d1d1d1;
+        border-bottom: none;
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+        overflow-y: scroll !important; }
+        ul.main-menu.small li span {
+          margin: 0 0 0 20px;
+          padding: 0; }
+        ul.main-menu.small li.show {
+          line-height: initial;
+          height: initial;
+          padding-top: 28px; }
+        ul.main-menu.small li.has-sub-menu ul.small-menu {
+          position: static;
+          display: none;
+          margin: 0;
+          padding: 10px 0;
+          float: none;
+          clear: both;
+          border: none;
+          width: initial; }
+          ul.main-menu.small li.has-sub-menu ul.small-menu.show {
+            display: block;
+            margin-top: 10px; }
+          ul.main-menu.small li.has-sub-menu ul.small-menu li {
+            position: static;
+            display: block;
+            line-height: 40px;
+            height: 40px;
+            margin: 0;
+            padding: 0 0 0 20px;
+            width: initial; }
+            ul.main-menu.small li.has-sub-menu ul.small-menu li:hover {
+              background: none;
+              background-color: red;
+              border: none; } }
+    @media all and (max-width: 700px) {
+      ul.main-menu.small li.menu-item {
+        width: 100%;
+        margin: 0;
+        padding: 0; } }
   ul.main-menu li {
-    border-left: 3px rgba(0, 0, 0, 0) solid;
-    border-bottom: none;
-    display: block;
-    z-index: -999;
-    text-align: left;
-  }
-}
-ul.main-menu li:hover {
-  border-left: none;
-  border-bottom: 3px #cb3429 solid;
-}
-@media all and (max-width: 850px) {
-  ul.main-menu li:hover {
-    border-left: 3px #cb3429 solid;
-    border-bottom: none;
-    background-color: #efefef;
-  }
-}
-ul.main-menu li.selected {
-  border-left: none;
-  border-bottom: 3px #4f9800 solid;
-}
-@media all and (max-width: 850px) {
-  ul.main-menu li.selected {
-    border-left: 3px #4f9800 solid;
-    border-bottom: none;
-  }
-}
+    margin: 0;
+    padding: 0 25px;
+    display: inline-block;
+    list-style: none;
+    cursor: pointer;
+    height: 80px;
+    line-height: 80px;
+    text-align: center; }
+    ul.main-menu li span {
+      padding: 0 20px; }
+    @media all and (max-width: 850px) {
+      ul.main-menu li {
+        border-left: 3px rgba(0, 0, 0, 0) solid;
+        border-bottom: none;
+        display: block;
+        z-index: -999;
+        text-align: left; } }
+    ul.main-menu li:hover {
+      border-left: none;
+      border-bottom: 3px #cb3429 solid; }
+      @media all and (max-width: 850px) {
+        ul.main-menu li:hover {
+          border-left: 3px #cb3429 solid;
+          border-bottom: none;
+          background-color: #efefef; } }
+    ul.main-menu li.selected {
+      border-left: none;
+      border-bottom: 3px #4f9800 solid; }
+      @media all and (max-width: 850px) {
+        ul.main-menu li.selected {
+          border-left: 3px #4f9800 solid;
+          border-bottom: none; } }
+
+@media all and (max-width: 850px) { }
 
 @media all and (max-width: 700px) {
   ul.main-menu {
@@ -247,11 +211,8 @@ ul.main-menu li.selected {
     background-color: #efefef;
     -webkit-box-shadow: 0 4 20 0 #333333;
     -moz-box-shadow: 0 4 20 0 #333333;
-    box-shadow: 0 4 20 0 #333333;
-  }
-  ul.main-menu li {
-    width: 90%;
-    margin: 0;
-    padding: 0 0 0 5%;
-  }
-}
+    box-shadow: 0 4 20 0 #333333; }
+    ul.main-menu li {
+      width: 90%;
+      margin: 0;
+      padding: 0 0 0 5%; } }

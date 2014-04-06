@@ -14,84 +14,67 @@ ul.portfolio-list {
   margin: 0;
   float: left;
   border: white solid 10px;
-  z-index: 9999;
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  ul.portfolio-list {
-    font-size: 18px;
-  }
-}
-ul.portfolio-list.small-menu {
-  display: none;
-}
-ul.portfolio-list li {
-  padding: 5px;
-  margin: 0;
-  list-style: none;
-  cursor: pointer;
-}
-ul.portfolio-list li:hover {
-  background-color: #cb3429;
-  color: white;
-  background-repeat: repeat;
-  background-image: url(../pattern/stripes_faded2.png);
-}
-@media all and (max-width: 1050px) {
-  ul.portfolio-list {
-    display: none;
-    float: none;
-    position: absolute;
-    width: 300px;
-    height: 100%;
-    top: 0px;
-    left: 0px;
+  z-index: 9999; }
+  @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    ul.portfolio-list {
+      font-size: 18px; } }
+  ul.portfolio-list.small-menu {
+    display: none; }
+  ul.portfolio-list li {
+    padding: 5px;
     margin: 0;
-    padding: 0;
-    z-index: -999;
-    border-right: 1px solid #cccccc;
-  }
-}
+    list-style: none;
+    cursor: pointer; }
+  ul.portfolio-list li:hover {
+    background-color: #cb3429;
+    color: #ffffff;
+    background-repeat: repeat;
+    background-image: url(../pattern/stripes_faded2.png); }
+  @media all and (max-width: 1050px) {
+    ul.portfolio-list {
+      display: none;
+      float: none;
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      margin: 0;
+      padding: 0;
+      z-index: -999;
+      border-right: 1px solid #cccccc; } }
 
 .portfolio-icon {
   display: inline-block;
-  background: url("../images/portfolio-icon.png") no-repeat;
+  background: url('../images/portfolio-icon.png') no-repeat;
   width: 50px;
   height: 50px;
-  background-size: 100% 100%;
-}
-@media all and (max-width: 850px) {
-  .portfolio-icon {
-    width: 80px;
-    height: 80px;
-    background-size: 100% 100%;
-  }
-}
-@media all and (max-width: 700px) {
-  .portfolio-icon {
-    width: 60px;
-    height: 60px;
-    background-size: 100% 100%;
-  }
-}
+  background-size: 100% 100%; }
+  @media all and (max-width: 850px) {
+    .portfolio-icon {
+      width: 80px;
+      height: 80px;
+      background-size: 100% 100%; } }
+  @media all and (max-width: 700px) {
+    .portfolio-icon {
+      width: 60px;
+      height: 60px;
+      background-size: 100% 100%; } }
 
 .port-title {
-  padding: 0 0 20px 0;
-}
+  padding: 0 0 20px 0; }
 
 .portfolio-container {
   width: 70%;
   display: inline-block;
   padding: 0;
   margin: 0 0 0 2%;
-  float: left;
-}
-@media all and (max-width: 1050px) {
-  .portfolio-container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-}
+  float: left; }
+  @media all and (max-width: 1050px) {
+    .portfolio-container {
+      width: 100%;
+      margin: 0;
+      padding: 0; } }
 
 /**
 * @description container for a text section
@@ -102,13 +85,10 @@ ul.portfolio-list li:hover {
 .sub {
   width: 100%;
   margin: 0;
-  padding: 0;
-}
-@media all and (max-width: 850px) {
-  .sub {
-    margin: 0;
-  }
-}
+  padding: 0; }
+  @media all and (max-width: 850px) {
+    .sub {
+      margin: 0; } }
 
 /**
 * @description sub header in red
@@ -119,13 +99,10 @@ ul.portfolio-list li:hover {
 .sub-heading {
   font-weight: bold;
   color: #cb3429;
-  font-size: 1rem;
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .sub-heading {
-    font-size: 18px;
-  }
-}
+  font-size: 1rem; }
+  @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    .sub-heading {
+      font-size: 18px; } }
 
 /**
 * @description the text under .subHeading
@@ -133,6 +110,7 @@ ul.portfolio-list li:hover {
 * @markup
 *   <p class="details"></p>
 */
+
 /**
 * @description the preloading animated gif
 *
@@ -147,11 +125,9 @@ ul.portfolio-list li:hover {
   height: 335px;
   background: url(../images/preloader.gif) 50% 50% no-repeat;
   padding: 10px;
-  margin: 0;
-}
-.image-preloader img {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: none;
-}
+  margin: 0; }
+  .image-preloader img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none; }
