@@ -1,14 +1,23 @@
 {
-    "name": "RobotOwl",
-    "outputName": "robotowl",
-    "version": "0.1.8",
-    "homepage": "crivas.net",
-    "outputFolder": "www",
-    "port": "8000",
-    "dependencies": {
-        "gulp": "*",
-        "gulp-concat": "*",
-        "gulp-minify-css": "*",
-        "gulp-uglify": "*"
-    }
+  "name": "RobotOwl",
+  "outputName": "robotowl",
+  "version": "0.2",
+  "homepage": "crivas.net",
+  "outputFolder": "www",
+  "port": "8000",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-minify-css": "*",
+    "gulp-uglify": "*"
+  },
+  "devDependencies": {
+    "gulp-sass": "^0.7.1",
+    "gulp-uglify": "^0.2.1",
+    "gulp-clean": "^0.2.4",
+    "gulp-filesize": "0.0.6",
+    "gulp-concat": "^2.2.0",
+    "gulp-serve": "^0.2.0",
+    "gulp-connect": "^2.0.4"
+  }
 }

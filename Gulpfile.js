@@ -12,13 +12,12 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     clean = require('gulp-clean'),
     filesize = require('gulp-filesize'),
-    livereload = require('gulp-livereload'),
     build = require('gulp-build'),
     concat = require('gulp-concat'),
     rename = require("gulp-rename"),
-    serve = require('gulp-serve'),
     connect = require('gulp-connect'),
-    //tasks = require("gulp-load-tasks")(),
+    //$ = require('gulp-load-plugin')({camelize: true}),
+    server = $.tinyLr();
     settings = {
         outputFolder: 'www',
         projectName: 'RobotOwl',
@@ -56,7 +55,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('clean', function () {
-    gulp.src([settings.output], { read: false, force: true })
+    gulp.src([settings.output], { read: false})
         .pipe(clean());
 });
 
@@ -126,8 +125,8 @@ gulp.task('move', function () {
                 'pattern/**'
             ],
             {
-                base: './'
-                //cwd : 'vendor/**'
+                base: './',
+                cwd : 'js/**'
             }
         )
         //.pipe(filesize())
@@ -140,16 +139,6 @@ gulp.task('rename', function () {
         .pipe(gulp.dest('./'));
 });
 
-/*
-gulp.task('serve', tasks.serve({
-    root: ['www'],
-    port: settings.port,
-    middleware: function(req, res) {
-        // custom optional middleware
-    }
-}));
-*/
-
 gulp.task('connect', function() {
     connect.server({
         root: settings.outputName,
@@ -158,17 +147,8 @@ gulp.task('connect', function() {
     });
 });
 
-// Rerun the task when a file changes
-//gulp.task('watch', function () {
-    //var server = livereload();
-    //gulp.watch([ 'js/**/*.js', 'css/**/*.css' ]).on('change', function(file) {
-        //server.changed(file.path);
-    //});
-//});
-
 gulp.task('watch', function () {
     gulp.watch( ['js/**/*.js', 'sass/**/*.scss', '*.html', 'partials/*.html'], ['dev2']);
-    //gulp.watch('css/**/*.js', ['dev2']);
 });
 
 
@@ -183,8 +163,8 @@ gulp.task('dev1', [
 
 gulp.task('dev2', [
     'sass',
-    //'styles',
-    //'scripts',
+    'styles',
+    'scripts',
     'move'
 ]);
 
@@ -194,7 +174,7 @@ gulp.task('watchdev', [
 ]);
 
 gulp.task('default', [
-    'dev',
+    'dev1',
     'watch',
     //'serve'
     'connect'

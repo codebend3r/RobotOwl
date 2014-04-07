@@ -6,9 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
-crivas.controller('PortfolioCtrl', function($scope){
+Crivas.controller('PortfolioCtrl', function($scope, workExperience){
 
-    $scope.data = Crivas.Data.portfolio.workExperience;
+    $scope.data = workExperience;
 
     $scope.workList = $scope.data.map(function(i){
 

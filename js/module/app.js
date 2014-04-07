@@ -8,34 +8,10 @@
 
 'use strict';
 
-var crivas = angular.module('CrivasApp', [
+var Crivas = angular.module('CrivasApp', [
         'ngCookies',
         'ngResource',
         'ngSanitize',
         'ngAnimate',
         'ngRoute'
     ]);
-
-crivas.config(function ($routeProvider, $locationProvider) {
-
-    //$locationProvider.html5Mode(true);
-
-    $routeProvider
-        .when('/portfolio', {
-            templateUrl: 'partials/portfolio.html',
-            controller: 'PortfolioCtrl'
-        })
-        .otherwise({
-            redirectTo: '/portfolio'
-        });
-
-});
-
-crivas.directive('navMenu', function(){
-
-    return {
-        restrict: 'E',
-        templateUrl: 'partials/nav.html'
-    }
-
-});

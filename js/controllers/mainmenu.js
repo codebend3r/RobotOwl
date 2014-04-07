@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-crivas.controller('MainMenuCtrl', function ($scope) {
+Crivas.controller('MainMenuCtrl', function ($scope) {
 
     $scope.navs = [
         {
@@ -14,44 +14,35 @@ crivas.controller('MainMenuCtrl', function ($scope) {
             name: 'Portfolio',
             subMenu: true,
             subMenuSelector: '.portfolio-list',
-            url: '#/portfolio',
-            isActive: ''
+            url: '#/portfolio'
         },
         {
             id: 1,
             name: 'Resume',
             subMenu: false,
             subMenuSelector: '',
-            url: '#/resume',
-            isActive: ''
+            url: '#/resume'
         },
         {
             id: 2,
             name: 'Plugins',
             subMenu: false,
             subMenuSelector: '',
-            url: '#/plugins',
-            isActive: ''
+            url: '#/plugins'
         },
         {
             id: 3,
             name: 'Contact',
             subMenu: false,
             subMenuSelector: '',
-            url: '#/contact',
-            isActive: ''
+            url: '#/contact'
         }
     ];
 
-    /*
-     $scope.setCurrentMenuItem = function(event, n) {
-     $scope.navItems.forEach(function(element){
-     element.isActive = '';
-     });
-     $scope.navItems[n].isActive = 'active';
-     };
-     */
+    $scope.setActiveMenu = function() {
 
-    //$scope.$on('updatemenu', $scope.setCurrentMenuItem);
+
+
+    };
 
 });
