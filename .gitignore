@@ -1,11 +1,11 @@
 bin
-js/compiled
-css/compiled
 *.log
 *.zip
+*.rar
 *.iml
 .idea
 .sass-cache
 .ftppass
 bin
 www
+dist

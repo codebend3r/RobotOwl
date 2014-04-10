@@ -1,0 +1,284 @@
+@import "variables";
+@import "mixins";
+
+/**
+* @description the nav bar header which spans 100% of the width
+*
+* @markup
+*   <div class="nav-bar"></div>
+*/
+.nav-bar {
+
+  height: $navBarHeightLarge;
+  width: 100%;
+  /*@include gradient($lightGrey,$lightGrey,$lightGrey);*/
+  background: url('../images/pattern/squairy_light.png') repeat;
+  background-size: 200px 200px;
+  border-bottom: 1px $headerColour solid;
+  position: fixed;
+  z-index: 99;
+  top: 0px;
+  @include dropShadow(0, 0, 10, 5, rgba(0, 0, 0, .3));
+
+  @media #{$mediumBreakpoint} {
+    background-image: none;
+    background-color: #e8e8e8;
+    height: $navBarHeightSmall;
+    z-index: 998;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    @include removeShadow();
+  }
+
+  @media #{$smallBreakpoint} {
+    height: $navBarHeightSmall;
+    z-index: 998;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    @include removeShadow();
+  }
+
+  /*
+  @media #{$retinaBreakpoint} {
+    background: none;
+    background-color: $bodyColour;
+  }
+  */
+
+}
+
+/**
+* @description the container which has a max width
+*
+* @markup
+*   <div class="nav-bar-fixed"></div>
+*/
+.nav-bar-fixed {
+
+  @include centeredAndFixed(0px);
+  vertical-align: middle;
+  display: block;
+  position: static;
+  height: 80px;
+
+}
+
+/**
+* @description button that only appears in medium and small mode
+*
+* @markup
+*   <div class="open-small-menu">
+*      <div class="horizontal-groove"></div>
+*   </div>
+*/
+.open-small-menu {
+
+  display: none;
+
+  .horizontal-groove {
+    margin: 14px 10px -12px 10px;
+    background-color: #cecece;
+    height: 4px;
+  }
+
+  @media #{$mediumBreakpoint} {
+    float: left;
+    cursor: pointer;
+    margin: 0px 0px;
+    display: inline-block;
+    width: $navBarHeightSmall;
+    height: $navBarHeightSmall;
+    border-right: 2px solid $offwhite;
+
+    .horizontal-groove {
+      margin: 20px 10px -12px 10px;
+      height: 4px;
+    }
+
+  }
+
+}
+
+/**
+* @description the main menu styles
+*
+* @markup
+*   <ul class="main-menu">
+*/
+ul.main-menu {
+
+  display: inline-block;
+  position: fixed;
+  vertical-align: middle;
+  float: right;
+  height: $navBarHeightLarge;
+  margin: 0 5px 0 0;
+  padding: 0;
+  border-bottom: solid 1px #c6c6c6;
+  z-index: 997;
+  top: 0px;
+  right: 0px;
+
+  &.large {
+    display: inline-block;
+    position: static;
+    @media #{$mediumBreakpoint} {
+      display: none;
+    }
+  }
+
+  &.small {
+
+    display: none;
+
+    @media #{$mediumBreakpoint} {
+
+      display: inline-block;
+      position: fixed;
+      float: left;
+      left: 0px;
+      top: 0px;
+      z-index: -9;
+      background-color: $offwhite;
+      border-bottom: none;
+      width: 100%;
+      height: 100%;
+      font-size: $smallScreenFontSize;
+      overflow-y: scroll !important;
+
+      li {
+
+        span {
+          margin: 0 0 0 20px;
+          padding: 0;
+        }
+
+        &.menu-item {
+
+        }
+
+        &.show {
+          line-height: initial;
+          height: initial;
+          padding-top: 28px;
+        }
+
+        &.has-sub-menu {
+
+          ul.small-menu {
+            position: static;
+            display: none;
+            margin: 0;
+            padding: 10px 0;
+            float: none;
+            clear: both;
+            border: none;
+            width: initial;
+            &.show {
+              display: block;
+              margin-top: 10px;
+            }
+            li {
+              position: static;
+              display: block;
+              line-height: 40px;
+              height: 40px;
+              margin: 0;
+              padding: 0 0 0 20px;
+              width: initial;
+              &:hover {
+                background: none;
+                background-color: red;
+                border: none;
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+
+    @media #{$smallBreakpoint} {
+      li.menu-item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+  }
+
+  li {
+
+    margin: 0;
+    padding: 0 25px;
+    display: inline-block;
+    list-style: none;
+    cursor: pointer;
+    height: $navBarHeightLarge;
+    line-height: $navBarHeightLarge;
+    text-align: center;
+
+    span {
+      padding: 0 20px;
+    }
+
+    @media #{$mediumBreakpoint} {
+      border-left: 3px rgba(0, 0, 0, 0) solid;
+      border-bottom: none;
+      display: block;
+      z-index: -999;
+      text-align: left;
+    }
+
+    &:hover {
+      border-left: none;
+      border-bottom: 3px $darkRed solid;
+      @media #{$mediumBreakpoint} {
+        border-left: 3px $darkRed solid;
+        border-bottom: none;
+        background-color: #efefef;
+      }
+    }
+
+    &.selected {
+      border-left: none;
+      border-bottom: 3px $green solid;
+      @media #{$mediumBreakpoint} {
+        border-left: 3px $green solid;
+        border-bottom: none;
+      }
+    }
+
+  }
+
+}
+
+@media #{$mediumBreakpoint} {
+  ul.main-menu {
+    //@include dropShadow(0, 4, 20, 0, #333333);
+  }
+}
+
+@media #{$smallBreakpoint} {
+  ul.main-menu {
+
+    width: 100%;
+    height: $navBarHeightLarge;
+    margin: 0;
+    padding: 0;
+    background-color: $bodyColour;
+    @include dropShadow(0, 4, 20, 0, #333333);
+
+    li {
+      width: 90%;
+      margin: 0;
+      padding: 0 0 0 5%;
+    }
+
+  }
+
+}

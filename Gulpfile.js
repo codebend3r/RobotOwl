@@ -1,181 +1,148 @@
-/**
- * Created with IntelliJ IDEA.
- * User: Bouse
- * Date: 4/6/14
- * Time: 12:06 AM
- * To change this template use File | Settings | File Templates.
- */
+'use strict';
+// Generated on 2014-04-10 using generator-gulp-webapp 0.0.6
 
-var gulp = require('gulp'),
-    minifyCSS = require('gulp-minify-css'),
-    sass = require('gulp-sass'),
-    uglify = require('gulp-uglify'),
-    clean = require('gulp-clean'),
-    filesize = require('gulp-filesize'),
-    build = require('gulp-build'),
-    concat = require('gulp-concat'),
-    rename = require("gulp-rename"),
-    connect = require('gulp-connect'),
-    //$ = require('gulp-load-plugin')({camelize: true}),
-    server = $.tinyLr();
-    settings = {
-        outputFolder: 'www',
-        projectName: 'RobotOwl',
-        outputName: 'robotowl',
-        version: '0.1.8',
-        port: 8080
-    },
-    allJS = [
-        'js/vendor/angular.js',
-        'js/vendor/angular-route.js',
-        'js/vendor/angular-cookies.js',
-        'js/vendor/angular-resource.js',
-        'js/vendor/angular-animate.js',
-        'js/vendor/angular-cookies.js',
-        'js/vendor/angular-mocks.js',
-        'js/vendor/angular-sanitize.js',
-        'js/vendor/angular-scenario.js',
-        'js/module/app.js',
-        'js/controllers/portfolio.js',
-        'js/controllers/mainmenu.js',
-        'js/internal/Crivas.Data.js'
-    ],
-    allCSS = [
-        'css/normalize.css',
-        'css/main.css',
-        'css/headers.css',
-        'css/nav-bar.css',
-        'css/portfolio.css',
-        'css/resume.css',
-        'css/contact.css',
-        'css/owlgallery.css',
-        'css/prettify.css'
-    ],
-    filename = settings.outputName + '-' + settings.version + '.min';
+var gulp = require('gulp');
+var open = require('open');
+var wiredep = require('wiredep').stream;
+
+// Load plugins
+var $ = require('gulp-load-plugins')();
+
+var outputFolder = 'dist';
 
 
-gulp.task('clean', function () {
-    gulp.src([settings.output], { read: false})
-        .pipe(clean());
-});
-
-gulp.task('build', function() {
-    gulp.src('index.html')
-        .pipe(build(
-            {
-                jsName: 'js/' + filename + '.js',
-                cssName: 'css/' + filename + '.css'
-            }
-        ))
-        .pipe(gulp.dest(settings.outputFolder))
-});
-
-gulp.task('sass', function () {
-    gulp.src('sass/**/*.scss')
-        .pipe(sass())
-        .pipe(filesize())
-        .pipe(gulp.dest('./css'));
-});
-
-gulp.task('scripts', function () {
-    //gulp.src(allJS)
-    gulp.src(['js/vendor/**/*.js', 'js/modules/**/*.js', 'js/controllers/**/*.js', 'js/directives/**/*.js'])
-        .pipe(filesize())
-        //.pipe(connect.reload())
-        .pipe(gulp.dest(settings.outputFolder + '/js/'));
-
-});
-
-gulp.task('scriptsProd', function () {
-    gulp.src(allJS)
-        .pipe(concat(filename + '.js'))
-        .pipe(uglify())
-        .pipe(filesize())
-        //.pipe(connect.reload())
-        .pipe(gulp.dest(settings.outputFolder + '/js/'));
-
-});
-
+// Styles
 gulp.task('styles', function () {
-    gulp.src(allCSS)
-        //.pipe(concat(filename + '.css'))
-        .pipe(minifyCSS())
-        .pipe(filesize())
-        //.pipe(connect.reload())
-        .pipe(gulp.dest(settings.outputFolder + '/css/'));
+    return gulp.src('app/sass/*.scss')
+        .pipe($.sass())
+        .pipe($.autoprefixer('last 1 version'))
+        .pipe(gulp.dest('dist/css'))
+        .pipe($.size());
 });
 
-gulp.task('move', function () {
-    // the base option sets the relative root for the set of files,
-    // preserving the folder structure
-    gulp.src(
-            [
-                '*.html',
-                'partials/*.html',
-                'js/vendor/**/*.js',
-                'js/module/**/*.js',
-                'js/controllers/**/*.js',
-                'js/directives/**/*.js',
-                'js/internal/**/*.js',
-                'css/**',
-                'images/**',
-                'pages/**',
-                'resume/**',
-                'icons/**',
-                'pattern/**'
-            ],
-            {
-                base: './',
-                cwd : 'js/**'
-            }
-        )
-        //.pipe(filesize())
-        .pipe(gulp.dest(settings.outputFolder));
+// Scripts
+gulp.task('scripts', function () {
+    return gulp.src([
+            'app/js/vendor/*.js',
+            'app/js/modules/*.js',
+            'app/js/routes/*.js',
+            'app/js/controllers/**/*.js',
+            'app/js/directives/**/*.js',
+            'app/js/filters/**/*.js',
+            'app/js/providers/**/*.js'
+        ], {
+            base: './app/js'
+        })
+        //.pipe($.jshint('.jshintrc'))
+        //.pipe($.jshint.reporter('default'))
+        .pipe(gulp.dest('dist/js'))
+        .pipe($.size());
 });
 
-gulp.task('rename', function () {
-    gulp.src('index-dev.html')
-        .pipe(rename('index.html'))
-        .pipe(gulp.dest('./'));
+// HTML
+gulp.task('html', ['styles', 'scripts'], function () {
+
+    var jsFilter = $.filter('**/*.js');
+    var cssFilter = $.filter('**/*.css');
+
+    return gulp.src('app/*.html')
+        .pipe($.useref.assets())
+        .pipe(jsFilter)
+        .pipe($.uglify())
+        .pipe(jsFilter.restore())
+        .pipe(cssFilter)
+        .pipe($.csso())
+        .pipe(cssFilter.restore())
+        .pipe($.useref.restore())
+        .pipe($.useref())
+        .pipe(gulp.dest('dist'))
+        .pipe($.size());
 });
 
-gulp.task('connect', function() {
-    connect.server({
-        root: settings.outputName,
-        port: settings.port
-        //livereload: true
+// Images
+gulp.task('images', function () {
+    return gulp.src([
+            'app/images/**/*'
+        ])
+        .pipe($.cache($.imagemin({
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest('dist/images'))
+        .pipe($.size());
+});
+
+gulp.task('fonts', function () {
+    return gulp.src(
+        [
+            '**/*.eot',
+            '**/*.svg',
+            '**/*.ttf',
+            '**/*.woff'
+        ])
+        .pipe($.flatten())
+        .pipe(gulp.dest('dist/font'))
+        .pipe($.size());
+});
+
+// Clean
+gulp.task('clean', function () {
+    return gulp.src([
+        'dist/styles',
+        'dist/scripts',
+        'dist/images',
+        'dist/fonts'
+    ], { read: false }).pipe($.clean());
+});
+
+// Build
+gulp.task('build', [
+    'html',
+    'images',
+    'fonts'
+]);
+
+// Default task
+gulp.task('default', ['clean'], function () {
+    gulp.start('build');
+});
+
+// Connect
+gulp.task('connect', function () {
+  $.connect.server({
+    root: ['app'],
+    port: 9000,
+    livereload: true
+  });
+});
+
+// Open
+gulp.task('serve', ['connect'], function() {
+  open("http://localhost:9000");
+});
+
+// Watch
+gulp.task('watch', ['connect', 'serve'], function () {
+    // Watch for changes in `app` folder
+    gulp.watch([
+        'app/*.html',
+        'app/css/**/*.css',
+        'app/js/**/*.js'
+    ], function (event) {
+        return gulp.src(event.path)
+            .pipe($.connect.reload());
     });
+
+    // Watch .css files
+    gulp.watch('app/css/**/*.css', ['styles']);
+
+    // Watch .js files
+    gulp.watch('app/js/**/*.js', ['scripts']);
+
+    // Watch image files
+    gulp.watch('app/images/**/*', ['images']);
+
+    // Watch bower files
+    gulp.watch('bower.json', ['wiredep']);
 });
-
-gulp.task('watch', function () {
-    gulp.watch( ['js/**/*.js', 'sass/**/*.scss', '*.html', 'partials/*.html'], ['dev2']);
-});
-
-
-// The default task (called when you run `gulp` from cli)
-gulp.task('dev1', [
-    'clean',
-    'sass',
-    'styles',
-    'scripts',
-    'move'
-]);
-
-gulp.task('dev2', [
-    'sass',
-    'styles',
-    'scripts',
-    'move'
-]);
-
-gulp.task('watchdev', [
-    'dev2',
-    'watch'
-]);
-
-gulp.task('default', [
-    'dev1',
-    'watch',
-    //'serve'
-    'connect'
-]);
