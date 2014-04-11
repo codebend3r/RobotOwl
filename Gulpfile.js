@@ -62,7 +62,7 @@ gulp.task('html', ['styles', 'scripts'], function () {
 // Images
 gulp.task('images', function () {
     return gulp.src([
-            'app/images/**/*'
+            'app/images/**/*.{png.jpg,gif}'
         ])
         .pipe($.cache($.imagemin({
             optimizationLevel: 3,
@@ -89,8 +89,8 @@ gulp.task('fonts', function () {
 // Clean
 gulp.task('clean', function () {
     return gulp.src([
-        'dist/styles',
-        'dist/scripts',
+        'dist/js',
+        'dist/css',
         'dist/images',
         'dist/fonts'
     ], { read: false }).pipe($.clean());
