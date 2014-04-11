@@ -11,6 +11,18 @@ Crivas.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'partials/portfolio.html',
             controller: 'PortfolioCtrl'
         })
+        .when('/resume', {
+            templateUrl: 'partials/resume.html',
+            controller: 'ResumeCtrl'
+        })
+        .when('/plugins', {
+            templateUrl: 'partials/plugins.html',
+            controller: 'PluginsCtrl'
+        })
+        .when('/contact', {
+            templateUrl: 'partials/contact.html',
+            controller: 'ContactCtrl'
+        })
         .otherwise({
             redirectTo: '/portfolio'
         });

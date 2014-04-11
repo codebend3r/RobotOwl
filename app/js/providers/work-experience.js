@@ -4,7 +4,7 @@
 
 Crivas.service('workExperience', function() {
 
-    this.workExperience = [
+    return [
         {
             id: 29,
             slug: 'TMN',

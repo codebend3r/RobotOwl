@@ -5,3 +5,11 @@
  * Time: 4:15 PM
  * To change this template use File | Settings | File Templates.
  */
+
+
+Crivas.controller('ContactCtrl', function($scope) {
+
+    $scope.hello = 'kjdls;kfjaslk;djs';
+
+
+});

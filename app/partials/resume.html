@@ -12,20 +12,20 @@
         </div>
         <div class="stackable">
             <h3>Summary</h3>
-            <div class='summary' data-bind='html: $root.summaryText'></div>
+            <div class='summary'>{{summaryText}}</div>
         </div>
         <div class="stackable">
             <h3>Skills Matrix</h3>
-            <ul class="skillset" data-bind="foreach: $root.skillSet">
-                <li class='skill-item'>
-                    <span class='skill' data-bind='html: skillName'></span> - <span class='level' data-bind='html: $root.getLevelOfExpertise($data), css: { expert:isExpert, advanced:isAdvanced, basic:isBasic }'></span> - <span class='experience' data-bind='html: yearsOfExperience'></span>
+            <ul class="skillset">
+                <li ng-repeat="skill in skillSet" class='skill-item'>
+                    <span class='skill' data-bind='html: skill.skillName'></span> - <span class='level'></span> - <span class='experience' data-bind='html: skill.yearsOfExperience'></span>
                 </li>
             </ul>
         </div>
         <div class="stackable">
             <h3>Work Experience</h3>
             <div data-bind="foreach: $root.experienceList">
-                <div class="job">
+                <div ng-repeat="experience in experienceList" class="job">
                     <p><span class="job-title" data-bind="text: jobTitle"></span></p>
                     <p><span class="company-name" data-bind="text: companyName"></span><span>&nbsp;|&nbsp;</span><span class="job-type" data-bind="text: jobType, css: { isFullTime: isFullTime }"></span></p>
                     <p></p>

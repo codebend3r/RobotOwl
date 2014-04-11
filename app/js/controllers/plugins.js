@@ -5,3 +5,11 @@
  * Time: 4:11 PM
  * To change this template use File | Settings | File Templates.
  */
+
+
+Crivas.controller('PluginsCtrl', function($scope) {
+
+    $scope.hello = 'kjdls;kfjaslk;djs';
+
+
+});

@@ -10,8 +10,6 @@ Crivas.controller('PortfolioCtrl', function($scope, workExperience) {
 
     $scope.hello = 'kjdls;kfjaslk;djs';
 
-    /*
-
     $scope.data = workExperience;
 
     $scope.workList = $scope.data.map(function(i){
@@ -33,12 +31,10 @@ Crivas.controller('PortfolioCtrl', function($scope, workExperience) {
 
     });
 
-    $scope.currentWork =  $scope.data[0];
+    $scope.currentWork =  $scope.workList[0];
 
     $scope.selectWork = function($index) {
         $scope.currentWork = $scope.data[$index];
     }
-
-    */
 
 });
