@@ -1,4 +1,5 @@
-<section id="resume-section" class="main-content-section resume-content" data-bind="css: { visibleSection: $root.visibleResume }">
+<section id="resume-section" class="main-content-section resume-content"
+         data-bind="css: { visibleSection: $root.visibleResume }">
 
     <div class='inner-container'>
 
@@ -12,28 +13,28 @@
         </div>
         <div class="stackable">
             <h3>Summary</h3>
+
             <div class='summary'>{{summaryText}}</div>
         </div>
         <div class="stackable">
             <h3>Skills Matrix</h3>
             <ul class="skillset">
                 <li ng-repeat="skill in skillSet" class='skill-item'>
-                    <span class='skill' data-bind='html: skill.skillName'></span> - <span class='level'></span> - <span class='experience' data-bind='html: skill.yearsOfExperience'></span>
+                    <span class='skill'>{{skill.skillName}}</span> - <span class='level'></span> - <span class='experience'>{{skill.yearsOfExperience}}</span>
                 </li>
             </ul>
         </div>
         <div class="stackable">
             <h3>Work Experience</h3>
-            <div data-bind="foreach: $root.experienceList">
-                <div ng-repeat="experience in experienceList" class="job">
-                    <p><span class="job-title" data-bind="text: jobTitle"></span></p>
-                    <p><span class="company-name" data-bind="text: companyName"></span><span>&nbsp;|&nbsp;</span><span class="job-type" data-bind="text: jobType, css: { isFullTime: isFullTime }"></span></p>
-                    <p></p>
-                    <p><span class="dates-at-job" data-bind="text: datesAtJob"></span></p>
-                    <ul data-bind="foreach: tasks">
-                        <li data-bind="text: $data"></li>
-                    </ul>
-                </div>
+            <div ng-repeat='experience in experienceList' class='job'>
+                <p><span class='job-title'>{{experience.jobTitle}}</span></p>
+
+                <p><span class='company-name'>{{experience.companyName}}</span><span>&nbsp;|&nbsp;</span><span class="job-type">{{experience.jobType}}</span></p>
+
+                <p><span class='dates-at-job'>{{experience.datesAtJob}}</span></p>
+                <ul>
+                    <li ng-repeat='date in experience.tasks'>{{date}}</li>
+                </ul>
             </div>
         </div>
 

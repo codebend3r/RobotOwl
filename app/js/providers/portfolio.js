@@ -2,7 +2,7 @@
  * Created by crivas on 4/7/2014.
  */
 
-Crivas.service('workExperience', function() {
+Crivas.service('portfolio', function() {
 
     return [
         {
