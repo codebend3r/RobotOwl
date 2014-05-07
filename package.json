@@ -21,7 +21,7 @@
     "open": "~0.0.4",
     "gulp-flatten": "~0.0.2",
     "gulp-bower-files": "~0.2.1",
-    "gulp-sass": "~0.7.1"
+    "gulp-ruby-sass": "^0.4.3"
   },
   "engines": {
     "node": ">=0.10.0"

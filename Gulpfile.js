@@ -14,7 +14,9 @@ var outputFolder = 'dist';
 // Styles
 gulp.task('styles', function () {
     return gulp.src('app/sass/*.scss')
-        .pipe($.sass())
+        .pipe($.rubySass({
+            style: 'expanded'
+        }))
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('dist/css'))
         .pipe($.size());

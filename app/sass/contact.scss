@@ -9,26 +9,17 @@
   line-height: $iconWidth;
   padding: 15px 0;
 
-  /*
-  @media #{$mediumBreakpoint} {
-    display: block;
-    width: 90%;
-    padding: 30px 5%;
-  }
-  */
-
   h3 {
     @media #{$mediumBreakpoint} {
       margin-top: 30px;
     }
   }
 
-  /**
-  * @description icon and title markup within a column class
-  *
-  * @markup
-  *   <div class="icon-and-title"></div>
-  */
+/* icon and title markup within a column class
+
+
+    <div class="icon-and-title"></div>
+*/
   .icon-and-title {
 
     height: $columnHeader;
@@ -73,13 +64,6 @@
   width: 50px;
   height: 50px;
   background-size: 100% 100%;
-  /*
-  @media #{$mediumBreakpoint} {
-    width: 100px;
-    height: 100px;
-    margin-top: -30px;
-  }
-  */
 }
 
 .email-icon {
@@ -140,7 +124,7 @@ fieldset {
   width: 98%;
   overflow: hidden;
   @media #{$mediumBreakpoint} {
-  //width: 95%;
+    //width: 95%;
   }
 }
 

@@ -1,3 +1,3 @@
 RobotOwl
 
-PoC single page website with experimental technologies
+Portfolio site built on Angular
