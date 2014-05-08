@@ -40,7 +40,8 @@ Crivas.service('portfolio', function() {
             businessCase: 'New TV station for Country Music.',
             details: 'Allows users to immerse themselves in the country music video experience. Users can submit videos via webcam and Instagram with specific hashtags. Their videos will dynamically be added to the remix section. You can also lip sync while recording yourself on the webcam',
             techUsed: 'RequireJS, JavaScript, PHP, Grunt, JQuery, CSS3, LESS, HTML5, Proprietary Framework (Jam3)',
-            url: 'http://countrydeepletscruise.com',
+            //url: 'http://countrydeepletscruise.com',
+            url: 'http://www.jam3.com/work/#country-deep',
             active: true
         },
         {
