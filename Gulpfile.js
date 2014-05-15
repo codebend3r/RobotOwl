@@ -8,7 +8,6 @@ var gulp = require('gulp'),
         release: 'release'
     },
     $ = require('gulp-load-plugins')(),
-    protractor = require('gulp-protractor').protractor,
     connect = require('gulp-connect-multi'),
     minifyCSS = require('gulp-minify-css'),
     devServer = connect(),
@@ -204,33 +203,10 @@ gulp.task('e2e', [ 'connect', 'protractor' ]);
 // Default task
 gulp.task('default', [ 'build' ]);
 
-// Karma - Unit
-gulp.task('karma', function () {
-    return gulp.src(['test/spec/**/*.js'])
-        .pipe($.karma({
-            configFile: 'karma.conf.js',
-            action: 'run'
-        }));
-
-});
-
-// Protractor - E2E
-gulp.task('protractor', [ ], function () {
-    gulp.src(['test/e2e/*.js'])
-        .pipe(protractor({
-            configFile: 'protractor.conf.js'
-        }));
-});
-
 // Open
 gulp.task('serve', ['connect'], function () {
-    open('http://localhost:9000');
+    open('http://localhost:9999');
 });
-
-gulp.task('serve-test', ['connect-test'], function () {
-    open('http://localhost:9003');
-});
-
 
 // Watch
 gulp.task('watch', ['connect'], function () {
@@ -281,10 +257,4 @@ gulp.task('connect-release', releaseServer.server({
     root: [ config.release ],
     port: 9002,
     livereload: true
-}));
-
-gulp.task('connect-test', testServer.server({
-    root: [ config.dev ],
-    port: 9003,
-    livereload: false
 }));
