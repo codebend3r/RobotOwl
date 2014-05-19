@@ -1,0 +1,121 @@
+.column {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+  line-height: 32px;
+  padding: 15px 0;
+  /* icon and title markup within a column class
+  
+  
+      <div class="icon-and-title"></div>
+  */
+}
+@media all and (max-width: 850px) {
+  .column h3 {
+    margin-top: 30px;
+  }
+}
+.column .icon-and-title {
+  height: 50px;
+  line-height: 50px;
+  vertical-align: top;
+}
+@media all and (max-width: 850px) {
+  .column .icon-and-title {
+    padding: 0;
+    width: 95%;
+  }
+}
+.column .icon-and-title .section-icon {
+  vertical-align: top;
+}
+.column .icon-and-title h2 {
+  vertical-align: top;
+  padding: 0 0 0 15px;
+  height: auto;
+  line-height: auto;
+}
+
+.icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: 32px;
+  -webkit-background-size: 32px;
+  vertical-align: middle;
+  padding: 0;
+  margin: 0 15px 0 0;
+}
+
+.contact-icon {
+  display: inline-block;
+  background: url("../images/about-icon.png") no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 100% 100%;
+}
+
+.email-icon {
+  background-image: url("../icons/email-icon.png");
+}
+
+.git-hub-icon {
+  background-image: url("../icons/github-icon.png");
+}
+
+.linkedin-icon {
+  background-image: url("../icons/linkedin-icon.png");
+}
+
+.label {
+  height: 32px;
+  line-height: 32px;
+  vertical-align: middle;
+}
+
+.contact-row {
+  height: 32px;
+  padding: 10px 0;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dppx), (min-resolution: 1.5dppx) {
+  .contact-row {
+    font-size: 18px;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dppx), (min-resolution: 1.5dppx) {
+  label {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+
+input, textarea {
+  width: 98%;
+  padding: 2px;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dppx), (min-resolution: 1.5dppx) {
+  input, textarea {
+    font-size: 18px;
+    width: 90%;
+    padding: 3% 3%;
+  }
+}
+
+input[type="button"], input[type="reset"], input[type="submit"] {
+  width: 98%;
+}
+@media all and (max-width: 850px) {
+  input[type="button"], input[type="reset"], input[type="submit"] {
+    width: 95%;
+    margin-top: 20px;
+  }
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: 98%;
+  overflow: hidden;
+}

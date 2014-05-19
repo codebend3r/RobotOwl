@@ -9,9 +9,9 @@
 'use strict';
 
 var Crivas = angular.module('CrivasApp', [
-        'ngCookies',
-        'ngResource',
-        'ngSanitize',
-        //'ngAnimate',
-        'ngRoute'
-    ]);
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  //'ngAnimate',
+  'ngRoute'
+]);

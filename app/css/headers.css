@@ -1,0 +1,63 @@
+h1, h2, h3, h4, h5 {
+  font-family: 'The Girl Next Door', cursive;
+  padding: 0;
+  margin: 0;
+  line-height: auto;
+}
+
+/* Header 1
+
+    <h1>Example</h1>
+*/
+h1 {
+  text-decoration: underline;
+  font-size: 1.6rem;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dppx), (min-resolution: 1.5dppx) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Header 2
+
+    <h2>Example</h2>
+*/
+h2 {
+  padding: 20px 0 0 0;
+  font-size: 1.5rem;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dppx), (min-resolution: 1.5dppx) {
+  h2 {
+    font-size: 1.65rem;
+  }
+}
+
+/* Provides extra visual weight and identifies the primary action in a set of buttons.
+
+    <h3>Example</h3>
+*/
+h3 {
+  padding: 0 0;
+  font-family: 'The Girl Next Door', cursive;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: #cb3429;
+  text-decoration: underline;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dppx), (min-resolution: 1.5dppx) {
+  h3 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Red Box
+
+    <div class='red-box'>Red Box</div>
+*/
+.red-box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  display: block;
+}

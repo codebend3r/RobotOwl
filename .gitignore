@@ -9,4 +9,7 @@ bin
 bin
 www
 dist
+dev
+prod
+release
 node_modules

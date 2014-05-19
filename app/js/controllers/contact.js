@@ -7,9 +7,9 @@
  */
 
 
-Crivas.controller('ContactCtrl', function($scope) {
+Crivas.controller('ContactCtrl', function ($scope) {
 
-    $scope.hello = 'kjdls;kfjaslk;djs';
+  $scope.hello = 'kjdls;kfjaslk;djs';
 
 
 });

@@ -7,9 +7,8 @@
  */
 
 
-Crivas.controller('PluginsCtrl', function($scope) {
+Crivas.controller('PluginsCtrl', function ($scope) {
 
-    $scope.hello = 'kjdls;kfjaslk;djs';
-
+  $scope.hello = 'kjdls;kfjaslk;djs';
 
 });

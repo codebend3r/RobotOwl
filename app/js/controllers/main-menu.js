@@ -8,41 +8,40 @@
 
 Crivas.controller('MainMenuCtrl', function ($scope) {
 
-    $scope.navs = [
-        {
-            id: 0,
-            name: 'Portfolio',
-            subMenu: true,
-            subMenuSelector: '.portfolio-list',
-            url: '#/portfolio'
-        },
-        {
-            id: 1,
-            name: 'Resume',
-            subMenu: false,
-            subMenuSelector: '',
-            url: '#/resume'
-        },
-        {
-            id: 2,
-            name: 'Plugins',
-            subMenu: false,
-            subMenuSelector: '',
-            url: '#/plugins'
-        },
-        {
-            id: 3,
-            name: 'Contact',
-            subMenu: false,
-            subMenuSelector: '',
-            url: '#/contact'
-        }
-    ];
+  $scope.navs = [
+    {
+      id: 0,
+      name: 'Portfolio',
+      subMenu: true,
+      subMenuSelector: '.portfolio-list',
+      url: '#/portfolio'
+    },
+    {
+      id: 1,
+      name: 'Resume',
+      subMenu: false,
+      subMenuSelector: '',
+      url: '#/resume'
+    },
+    {
+      id: 2,
+      name: 'Plugins',
+      subMenu: false,
+      subMenuSelector: '',
+      url: '#/plugins'
+    },
+    {
+      id: 3,
+      name: 'Contact',
+      subMenu: false,
+      subMenuSelector: '',
+      url: '#/contact'
+    }
+  ];
 
-    $scope.setActiveMenu = function() {
+  $scope.setActiveMenu = function () {
 
 
-
-    };
+  };
 
 });
