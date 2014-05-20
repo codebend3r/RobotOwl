@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
   background-color: #efefef;
   color: darkslategray;
   min-width: 400px;
@@ -171,75 +171,66 @@ p, a {
 }
 
 /**
-* @description resusable launch button
-*
-* @markup
-*   <div class="launch"></div>
+ @description resusable launch button
+
+ @markup
+   <div class="launch"></div>
 */
-.launch {
-  display: block;
-  height: 40px;
-  padding: 5px;
-  margin: 0;
-}
-@media all and (max-width: 700px) {
-  .launch {
-    height: auto;
-    margin: 10px 0 0 0;
-  }
-}
-.launch a {
+a.launch {
+  clear: both;
   cursor: pointer;
   color: #EEEEEE;
   text-decoration: none;
-  background-color: #333333;
+  background: #333333 url("../images/pattern/tweed.png") repeat;
+  margin: 0;
   padding: 10px;
-  background-repeat: repeat;
-  background-image: url("../images/pattern/tweed.png");
+  display: block;
+  width: 36px;
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+    /*
+    @media all and (max-width: 700px) {
+      width: 50%;
+      display: inline-block;
+      text-align: center;
+      padding: 10px 0;
+      margin: 0 auto;
+    }
+
+    @media all and (max-width: 700px) {
+      height: auto;
+      margin: 10px 0 0 0;
+    }
+    */
 }
-@media all and (max-width: 700px) {
-  .launch a {
-    width: 50%;
-    display: inline-block;
-    text-align: center;
-    padding: 10px 0;
-    margin: 0 auto;
-  }
-}
-.launch a:hover {
+a.launch:hover {
   color: #FFFFFF;
   text-decoration: none;
-  background-color: #cb3429;
-  padding: 10px;
-  background-repeat: repeat;
-  background-image: url("../images/pattern/tweed-over.png");
-  margin: 0px;
+  background: #cb3429 url("../images/pattern/tweed-over.png") repeat;
   -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
 }
 @media all and (max-width: 700px) {
-  .launch a:hover {
+  a.launch:hover {
     padding: 10px 0;
     margin: 0 auto;
   }
 }
 
 /**
-* @description contains two elements: a h2 and an icon element
-*
-* @markup
-*   <div class="icon-and-title"></div>
+ @description contains two elements: a h2 and an icon element
+
+ @markup
+   <div class="icon-and-title"></div>
 */
 .icon-and-title {
   width: 100%;
   display: inline-block;
   vertical-align: middle;
-  height: 90px;
-  line-height: 90px;
+  height: 75px;
+  line-height: 75px;
   margin: 0;
 }
 .icon-and-title .section-icon {

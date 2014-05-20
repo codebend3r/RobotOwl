@@ -5,12 +5,13 @@
 	<title>Crivas Inc.</title>
 
 	<!-- ICONS -->
-	<link rel="shortcut icon" href="icons/favicon_32x32.ico" type="image/x-icon"/>
-	<link rel="icon" href="icons/favicon_32x32.ico" type="image/x-icon"/>
-	<link rel="apple-touch-icon" href="icons/icon.png"/>
+	<link rel="shortcut icon" href="images/icons/favicon_32x32.ico" type="image/x-icon"/>
+	<link rel="icon" href="images/icons/favicon_32x32.ico" type="image/x-icon"/>
+	<link rel="apple-touch-icon" href="images/icons/icon.png"/>
 
 	<!-- STYLESHEETS -->
-	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door|Roboto:400,700,400italic'>
+    <!-- build:css css/uptime.css -->
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Bitter|Roboto:400,700,400italic'>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
 	<link rel="stylesheet" type="text/css" href="css/headers.css"/>
@@ -20,6 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="css/contact.css"/>
 	<link rel="stylesheet" type="text/css" href="css/owlgallery.css"/>
 	<link rel="stylesheet" type="text/css" href="css/prettify.css"/>
+    <!-- endbuild -->
 
 	<!-- CANONICAL -->
 	<link rel="canonical" href="http://crivas.net/"/>
@@ -32,7 +34,7 @@
 	<meta property="og:type" content="article"/>
 	<meta property="og:url" content="http://crivas.net/"/>
 	<meta property="og:image" content="icons/icon.png"/>
-	<meta property="og:site_name" content="Crivas.net"/>
+	<meta property="og:site_name" content="crivas.net"/>
 	<meta property="fb:admins" content="511581331"/>
 
 	<meta name="author" content="Crivas"/>
@@ -54,9 +56,11 @@
 
 <section class="main-wrapper">
 
-    <div class="container" ng-view=""></div>
+    <div class="container" ng-view></div>
 
 </section>
+
+<!-- build:js js/robotowl.js -->
 
 <script src="js/vendor/angular.js" type="text/javascript"></script>
 <script src="js/vendor/angular-cookies.js" type="text/javascript"></script>
@@ -66,6 +70,7 @@
 <script src="js/vendor/angular-mocks.js" type="text/javascript"></script>
 <script src="js/vendor/angular-sanitize.js" type="text/javascript"></script>
 <script src="js/vendor/angular-scenario.js" type="text/javascript"></script>
+<script src="js/vendor/ng-infinite-scroll.js" type="text/javascript"></script>
 
 <script src="js/modules/app.js" type="text/javascript"></script>
 
@@ -83,16 +88,7 @@
 <script src="js/providers/portfolio.js" type="text/javascript"></script>
 <script src="js/providers/resume.js" type="text/javascript"></script>
 
-<!--<script src="js/vendor/jquery-1.9.1.js" type="text/javascript"></script>
-<script src="js/vendor/jquery.imagesloaded.js" type="text/javascript"></script>
-<script src="js/vendor/jquery.owlgallery-1.6.js" type="text/javascript"></script>
-<script src="js/vendor/TweenMax.min.js" type="text/javascript"></script>
-<script src="js/vendor/lang-css.js" type="text/javascript"></script>
-<script src="js/vendor/prettify.js" type="text/javascript"></script>
-<script src="js/internal/Crivas.Data.js" type="text/javascript"></script>
-<script src="js/internal/Crivas.Blog.js" type="text/javascript"></script>
-<script src="js/internal/Crivas.Main.js" type="text/javascript"></script>
-<script src="js/internal/Crivas.SiteViewModel.js" type="text/javascript"></script>-->
+<!-- endbuild -->
 
 
 </body>

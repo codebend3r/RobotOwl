@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
   background-color: $bodyColour;
   color: $slateGrey;
   min-width: 400px;
@@ -163,32 +163,28 @@ p, a {
 }
 
 /**
-* @description resusable launch button
-*
-* @markup
-*   <div class="launch"></div>
+ @description resusable launch button
+
+ @markup
+   <div class="launch"></div>
 */
-.launch {
+a {
 
-  display: block;
-  height: 40px;
-  padding: 5px;
-  margin: 0;
+  &.launch {
 
-  @media #{$smallBreakpoint} {
-    height: auto;
-    margin: 10px 0 0 0;
-  }
-
-  a {
+    clear: both;
     cursor: pointer;
     color: #EEEEEE;
     text-decoration: none;
-    background-color: #333333;
+    background: #333333 url('../images/pattern/tweed.png') repeat;
+    margin: 0;
     padding: 10px;
-    background-repeat: repeat;
-    background-image: url('../images/pattern/tweed.png');
+    display: block;
+    width: 36px;
+
     @include dropShadow(0, 0, 5px, 1px, rgba(#000000, .3));
+
+    /*
     @media #{$smallBreakpoint} {
       width: 50%;
       display: inline-block;
@@ -196,37 +192,40 @@ p, a {
       padding: 10px 0;
       margin: 0 auto;
     }
-  }
 
-  a:hover {
-    color: #FFFFFF;
-    text-decoration: none;
-    background-color: $darkRed;
-    padding: 10px;
-    background-repeat: repeat;
-    background-image: url('../images/pattern/tweed-over.png');
-    margin: 0px;
-    @include dropShadow(0, 0, 5px, 1px, rgba(#000000, .3));
     @media #{$smallBreakpoint} {
-      padding: 10px 0;
-      margin: 0 auto;
+      height: auto;
+      margin: 10px 0 0 0;
     }
+    */
+
+    &:hover {
+      color: #FFFFFF;
+      text-decoration: none;
+      background: $darkRed url('../images/pattern/tweed-over.png') repeat;
+      @include dropShadow(0, 0, 5px, 1px, rgba(#000000, .3));
+      @media #{$smallBreakpoint} {
+        padding: 10px 0;
+        margin: 0 auto;
+      }
+    }
+
   }
 }
 
 /**
-* @description contains two elements: a h2 and an icon element
-*
-* @markup
-*   <div class="icon-and-title"></div>
+ @description contains two elements: a h2 and an icon element
+
+ @markup
+   <div class="icon-and-title"></div>
 */
 .icon-and-title {
 
   width: 100%;
   display: inline-block;
   vertical-align: middle;
-  height: 90px;
-  line-height: 90px;
+  height: 75px;
+  line-height: 75px;
   margin: 0;
 
   .section-icon {

@@ -5,7 +5,6 @@
 Crivas.service('portfolio', function () {
 
   return [
-    /*
     {
       id: 29,
       slug: 'TMN',
@@ -23,10 +22,10 @@ Crivas.service('portfolio', function () {
       businessCase: 'Needed a modern website that was responsive.',
       details: 'Complete website responsive redesign. RESTful API consumed by the Front End.',
       techUsed: 'Symfony2, PHP, JavaScript, Knockout, Grunt, JQuery, SASS, CSS',
+      datePosted: 'May 19, 2014',
       url: 'offline',
       active: true
     },
-    */
     {
       id: 28,
       slug: 'countryDeep',
@@ -43,6 +42,7 @@ Crivas.service('portfolio', function () {
       details: 'Allows users to immerse themselves in the country music video experience. Users can submit videos via webcam and Instagram with specific hashtags. Their videos will dynamically be added to the remix section. You can also lip sync while recording yourself on the webcam',
       techUsed: 'RequireJS, JavaScript, PHP, Grunt, JQuery, CSS3, LESS, HTML5, Proprietary Framework (Jam3)',
       //url: 'http://countrydeepletscruise.com',
+      datePosted: 'May 19, 2014',
       url: 'http://www.jam3.com/work/#country-deep',
       active: true
     },
@@ -63,6 +63,7 @@ Crivas.service('portfolio', function () {
       details: 'Built with CodeIgniter, this website has a set of different phases program to change automatically at certain times',
       techUsed: 'CodeIgniter, Grunt, JQuery, CSS3, SASS, JavaScript, HTML5',
       url: 'http://chompchompchomp.ca',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -79,6 +80,7 @@ Crivas.service('portfolio', function () {
       details: 'A website showcasing all of Monde Condos',
       techUsed: 'JavaScript, PHP, HTML5, Grunt, JQuery, CSS3, SASS',
       url: 'http://www.mondecondominiums.com/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -99,6 +101,7 @@ Crivas.service('portfolio', function () {
       techUsed: 'Knockout.js, Grunt, JQuery, CSS3, SASS, JavaScript, HTML5',
       url: 'http://crivas.net/portfolio/motionseason/revolution',
       //url: 'http://revolution.motionseason.com/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -115,6 +118,7 @@ Crivas.service('portfolio', function () {
       details: 'With Kobo Instant Reader you can read books on Desktop, Tablet, Smartphones. This web app has the ability to purchase and download books for offline reading, and syncs with other Kobo apps.',
       techUsed: 'Sproutcore, CSS3, SASS, JavaScript, HTML5',
       url: 'http://read.kobobooks.com',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -134,6 +138,7 @@ Crivas.service('portfolio', function () {
       details: 'This is completely responsive designed optimized to 3 views: small, medium, large. Extensive work was required to setup a custom JavaScript framework. We integrated Knockout.js UI binding features to give the site an extra dimension.',
       techUsed: '.NET, Knockout.js, CSS3, SASS, JavaScript, HTML5',
       url: 'http://store.kobobooks.com/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -147,6 +152,7 @@ Crivas.service('portfolio', function () {
       details: 'Implemented Photoshop design into .aspx pages. Completely changed the colour scheme using CSS. As well as content change. Updated certain sections via custom Sonic Boom CMS.',
       techUsed: 'Photoshop, HTML, JQuery, JavaScript, CSS',
       url: 'http://www.vaughanmills.com',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -164,6 +170,7 @@ Crivas.service('portfolio', function () {
       details: 'Pieced together all images and integrated it with a JQuery slideshow plugin for viewing images in a gallery. Each product can be liked on Facebook individually. The entire lookbook can be shared on Facebook as well.',
       techUsed: 'Photoshop, HTML, JQuery, JavaScript, CSS',
       url: 'http://crivas.net/portfolio/bayview2012spring/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -181,6 +188,7 @@ Crivas.service('portfolio', function () {
       details: 'Photoshop work to prepare each image for HTML/CSS integration. Modified Flash page flipping application to suite client\'s specifications.',
       techUsed: 'JQuery, JavaScript, CSS, Photoshop, Flash, ActionScript 3.0, HTML',
       url: 'http://crivas.net/portfolio/spring2012flipbook/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -194,6 +202,7 @@ Crivas.service('portfolio', function () {
       details: 'Photoshop work to prepare each image for HTML/CSS integration. Modified Flash page flipping application to suite client\'s specifications.',
       techUsed: 'JQuery, JavaScript, CSS, Photoshop, Flash, ActionScript 3.0, HTML',
       url: 'http://www.bayviewvillageshops.theterminal.ca/about/leasing.aspx',
+      datePosted: 'May 19, 2014',
       active: false
     },
     {
@@ -212,6 +221,7 @@ Crivas.service('portfolio', function () {
       details: 'I managed all the HTML,CSS and JavaScript. I had to create new functionality through JavaScript and JQuery. As wel as edit existing functionality and styles. Also implemented support for IE7+ and iPads. Contact me for login credentials.',
       techUsed: 'JQuery, JavaScript, CSS, Photoshop, HTML, Mobile and Tablet Support',
       url: 'https://www.londonhydro.com/propmgmt-dev/sign-in.aspx',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -229,6 +239,7 @@ Crivas.service('portfolio', function () {
       details: 'I did all front end development of this site. I added new pages and features and made modifications as neccessary. I implemented new designs. Made viewable for iPad and compatible with IE7 and up. Contact me for login credentials.',
       techUsed: 'JQuery, JavaScript, CSS, Photoshop, HTML, Mobile and Tablet Support',
       url: 'https://www.londonhydro.com/propmgmt-dev/sign-in.aspx',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -242,6 +253,7 @@ Crivas.service('portfolio', function () {
       details: 'I ported some Flash rotators and converted them to JavaScript. Also rebuilt the home page including the main menu. Both the main menu and rotator are custom JQuery plugins. Also edited content and copy site wide.',
       techUsed: 'Custom JQuery Plugin, JavaScript, HTML, CSS',
       url: 'http://www.yorkheritage.com',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -255,6 +267,7 @@ Crivas.service('portfolio', function () {
       details: 'This is a video player I designed and developed to be a new solution for the previous standard video player. This video comes with features such as fullscreen, data capturing for points of interest, viewing size, colour templates, and the ability to change the aspect ratio of the video, which I think is pretty important.',
       techUsed: 'Flash, ActionScript 3.0, HTML, JavaScript',
       url: 'http://survey.openvenue.com/DCT/demo/videoplayer/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -268,6 +281,7 @@ Crivas.service('portfolio', function () {
       details: 'A company asked me to build a demo for a slot machine as part of the interview process. I built this in 2 hours.',
       techUsed: 'Flash, ActionScript 3.0, HTML, JavaScript',
       url: 'http://crivas.net/portfolio/slotmachine/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -281,6 +295,7 @@ Crivas.service('portfolio', function () {
       details: 'I built this simple Facebook app. There is a pre-like and post like state. And a form that registers users to the contest. I integrated the design and built the front end.',
       techUsed: 'HTML5, CSS, JavaScript, JQuery, ASP.NET, C#',
       url: 'offline',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -295,6 +310,7 @@ Crivas.service('portfolio', function () {
       techUsed: 'HTML5, CSS, JavaScript, JQuery, ASP.NET, C#',
       offline: 'true',
       url: 'offline',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -308,6 +324,7 @@ Crivas.service('portfolio', function () {
       details: 'I developed this in AS3. I utilized my Hot Spot Generating tool to build the hidden hot spots.',
       techUsed: 'Flash, ActionScript 3.0, HTML, CSS, JavaScript',
       url: 'http://crivas.net/portfolio/tommyhilfiger/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -321,6 +338,7 @@ Crivas.service('portfolio', function () {
       details: 'I designed and developed this tool in AS3. It was used internally by other programmers to speed up their work. Features inlcude exporting coordinates and importing previous coordines. You can also group shapes together and clone other shapes.',
       techUsed: 'ActionScript 3.0, HTML, JavaScript',
       url: 'http://crivas.net/portfolio/hotspotgenerator/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -334,6 +352,7 @@ Crivas.service('portfolio', function () {
       details: 'This application was developed and designed by me. It\'s suppose to simulate buying a certain braind of proudcts off a shelf. This records which products were viewed in which order. Which products were purchased and in what order. How long in milliseconds each product on the shelf took to purchase.',
       techUsed: 'ActionScript 3.0, HTML, JavaScript',
       url: 'http://crivas.net/portfolio/shelfset/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -347,6 +366,7 @@ Crivas.service('portfolio', function () {
       details: 'I designed and developed this tool in AS3 utilizing my custom Flash Framework.',
       techUsed: 'ActionScript 3.0, HTML, JavaScript',
       url: 'http://survey.openvenue.com/DCT/demo/radixgridgrouping/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -360,6 +380,7 @@ Crivas.service('portfolio', function () {
       details: 'I designed and developed this tool in AS3 utilizing my custom Flash Framework.',
       techUsed: 'ActionScript 3.0, HTML, JavaScript',
       url: 'http://survey.openvenue.com/DCT/demo/observantgridplus/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -373,6 +394,7 @@ Crivas.service('portfolio', function () {
       details: 'I designed and developed most of the functionality.',
       techUsed: 'ActionScript 3.0, HTML, JavaScript',
       url: 'http://survey.openvenue.com/DCT/demo/vendingmachine/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -386,6 +408,7 @@ Crivas.service('portfolio', function () {
       details: 'I helped develop some of the Front End work. I also integrated several Flash components, such as rotator, featured shows, and on tv tonight.',
       techUsed: 'ActionScript 3.0, HTML, JavaScript',
       url: 'http://www.showcase.ca/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -399,6 +422,7 @@ Crivas.service('portfolio', function () {
       details: 'There was an issue with the divs overlapping and being clickable when the menu drops down. I worked with another front end developer to communicate from ActionScript via JavaScript to CSS to change the div heights and z-index.',
       techUsed: 'ActionScript 3.0, HTML, JavaScript',
       url: 'http://www.slice.ca/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -412,6 +436,7 @@ Crivas.service('portfolio', function () {
       details: 'I designed and developed this application. Built to simulate scratching a ticket. Records data for percentage of surface sratched. Has adjustable settings for scratching accuracy and performance for low-CPU usage.',
       techUsed: 'ActionScript 3.0, HTML, JavaScript',
       url: 'http://survey.openvenue.com/DCT/demo/scratchticket/',
+      datePosted: 'May 19, 2014',
       active: true
     },
     {
@@ -425,6 +450,7 @@ Crivas.service('portfolio', function () {
       details: 'This was an upgrade from a previous version of Card Sort. Includes features such as colour themes, certain modes that include for example, limiting the number of cards dropped into each dropzone and requiring the user to drop every card.',
       techUsed: 'ActionScript 3.0, HTML, JavaScript',
       url: 'http://crivas.net/portfolio/cardsort/',
+      datePosted: 'Jan 15, 2009',
       active: true
     },
     {
@@ -438,6 +464,7 @@ Crivas.service('portfolio', function () {
       details: 'This was my first full functional ActionScript 3.0 website. I went a little crazy with the animations but all and all I think it turned out pretty good.',
       techUsed: 'ActionScript 3.0, HTML',
       url: 'http://www.cortinakitchens.com/',
+      datePosted: 'Mar 2, 2007',
       active: true
     },
     {
@@ -451,6 +478,7 @@ Crivas.service('portfolio', function () {
       details: 'Pieced together all images and integrated it with a JQuery plugin for viewing images in a gallery. Each product can be liked on Facebook individually and the entire lookbook can be shared on Facebook as well.',
       techUsed: 'ActionScipt 2.0, Photoshop, Illustrator, HTML',
       url: 'http://crivas.net/portfolio/hyde/',
+      datePosted: 'Feb 11, 2007',
       active: true
     }
   ]

@@ -2,10 +2,10 @@
 @import "mixins";
 
 /**
-* @description the nav bar header which spans 100% of the width
-*
-* @markup
-*   <div class="nav-bar"></div>
+ @description the nav bar header which spans 100% of the width
+
+ @markup
+   <div class="nav-bar"></div>
 */
 .nav-bar {
 
@@ -50,10 +50,10 @@
 }
 
 /**
-* @description the container which has a max width
-*
-* @markup
-*   <div class="nav-bar-fixed"></div>
+ @description the container which has a max width
+
+ @markup
+   <div class="nav-bar-fixed"></div>
 */
 .nav-bar-fixed {
 
@@ -66,12 +66,12 @@
 }
 
 /**
-* @description button that only appears in medium and small mode
-*
-* @markup
-*   <div class="open-small-menu">
-*      <div class="horizontal-groove"></div>
-*   </div>
+ @description button that only appears in medium and small mode
+
+ @markup
+   <div class="open-small-menu">
+      <div class="horizontal-groove"></div>
+   </div>
 */
 .open-small-menu {
 
@@ -102,10 +102,10 @@
 }
 
 /**
-* @description the main menu styles
-*
-* @markup
-*   <ul class="main-menu">
+ @description the main menu styles
+
+ @markup
+   <ul class="main-menu">
 */
 ul.main-menu {
 
@@ -221,6 +221,11 @@ ul.main-menu {
     height: $navBarHeightLarge;
     line-height: $navBarHeightLarge;
     text-align: center;
+
+    a {
+      font-size: 16px;
+      color: #2f4f4e;
+    }
 
     span {
       padding: 0 20px;

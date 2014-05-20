@@ -30,13 +30,12 @@ ul.portfolio-list li {
   cursor: pointer;
 }
 ul.portfolio-list li:hover {
-  background-color: #cb3429;
+  background: #cb3429 url(../images/pattern/stripes_faded2.png) repeat;
   color: white;
-  background-repeat: repeat;
-  background-image: url(../pattern/stripes_faded2.png);
 }
 @media all and (max-width: 1050px) {
   ul.portfolio-list {
+    display: none;
     position: absolute;
     width: 300px;
     height: 100%;
@@ -71,15 +70,32 @@ ul.portfolio-list li:hover {
   }
 }
 
-.port-title {
-  padding: 0 0 20px 0;
+h1.port-title {
+  padding: 5px 0;
+}
+
+h2.date-posted {
+  font-size: 12px;
+  width: 100px;
+  font-weight: normal;
+  padding: 5px;
+  margin: 5px 0;
+  background-color: #cb3429;
+  color: white;
 }
 
 .portfolio-container {
-  width: 70%;
+  width: 100%;
   display: inline-block;
-  padding: 0;
-  margin: 0 0 0 2%;
+  padding: 40px 0;
+  margin: 0;
+  border-bottom: 1px solid #cbcbcb;
+}
+.portfolio-container:first-child {
+  padding: 0 0 40px 0;
+}
+.portfolio-container:last-child {
+  border-bottom: none;
 }
 @media all and (max-width: 1050px) {
   .portfolio-container {
@@ -98,7 +114,7 @@ ul.portfolio-list li:hover {
 .sub {
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 10px 0;
 }
 @media all and (max-width: 850px) {
   .sub {
@@ -116,6 +132,8 @@ ul.portfolio-list li:hover {
   font-weight: bold;
   color: #cb3429;
   font-size: 1rem;
+  padding: 0;
+  margin: 0;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dppx), (min-resolution: 1.5dppx) {
   .sub-heading {
@@ -129,6 +147,11 @@ ul.portfolio-list li:hover {
 * @markup
 *   <p class="details"></p>
 */
+.details {
+  padding: 0;
+  margin: 0;
+}
+
 /**
 * @description the preloading animated gif
 *

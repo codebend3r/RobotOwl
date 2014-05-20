@@ -137,7 +137,7 @@ gulp.task('clean', function () {
   return gulp.src([config.dev, config.prod, config.release], { read: false }).pipe($.clean({force: false}));
 });
 
-//Build
+// Build
 gulp.task('build', [
     'set-to-dev',
     'html',
@@ -205,7 +205,7 @@ gulp.task('watch', ['connect'], function () {
   gulp.watch([config.app + '/**/*.html', config.app + '/*.html'], ['html']);
 
   // Watch .scss files
-  gulp.watch(config.app + '/css/**/*.scss', [ 'css' ]);
+  gulp.watch(config.app + '/sass/**/*.scss', [ 'css' ]);
 
   // Watch .js files
   gulp.watch([config.app + '/js/**/*.js', config.app + '/js/*.js'], ['scripts']);
@@ -234,3 +234,5 @@ gulp.task('connect-release', releaseServer.server({
   port: 9002,
   livereload: true
 }));
+
+module.exports = gulp;

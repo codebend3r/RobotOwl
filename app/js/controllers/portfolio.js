@@ -8,11 +8,11 @@
 
 Crivas.controller('PortfolioCtrl', function ($scope, portfolio) {
 
-  $scope.hello = 'kjdls;kfjaslk;djs';
+  console.log('PortfolioCtrl');
 
-  $scope.data = portfolio;
+  //infinite-scroll='addMoreItems()'
 
-  $scope.workList = portfolio.map(function (i) {
+  $scope.allWorkList = portfolio.map(function (i) {
 
     return {
       id: i.id,
@@ -24,12 +24,26 @@ Crivas.controller('PortfolioCtrl', function ($scope, portfolio) {
       businessCase: i.businessCase,
       details: i.details,
       techUsed: i.techUsed,
+      datePosted: i.datePosted,
       url: i.url,
       isOffline: i.url !== 'offline',
       active: i.active
     };
 
   });
+
+  $scope.workList = $scope.allWorkList.slice(0, 5);
+
+  $scope.addMoreItems = function () {
+
+    console.log('addMoreItems');
+
+    var last = $scope.images[$scope.workList.length - 1];
+    for (var i = 1; i <= 5; i++) {
+      $scope.workList.push($scope.allWorkList[last + i]);
+    }
+
+  };
 
   $scope.currentWork = $scope.workList[0];
 

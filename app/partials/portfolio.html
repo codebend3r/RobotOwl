@@ -7,35 +7,39 @@
             <h2>Portfolio</h2>
         </div>
 
+        <!--
         <ul class='portfolio-list'>
             <li ng-repeat='work in workList' ng-show='work.active' ng-click='selectWork($index)'>{{work.menuText}}</li>
         </ul>
+        -->
 
-        <div class='portfolio-container'>
-            <h3 class='port-title'>{{currentWork.title}}</h3>
-            <ul class='image-border'>
-                <li class='images-list' ng-repeat='image in currentWork.imageURL'>
-                    <img class='work-images' ng-src='{{image}}'/>
-                </li>
-            </ul>
-            <div class='sub'>
-                <p class='sub-heading'>Company</p>
-                <p class="details">{{currentWork.companyName}}</p>
-            </div>
-            <div class='sub'>
-                <p class='sub-heading'>Business Case</p>
-                <p class="details">{{currentWork.businessCase}}</p>
-            </div>
-            <div class='sub'>
-                <p class='sub-heading'>Details</p>
-                <p class="details">{{currentWork.details}}</p>
-            </div>
-            <div class='sub'>
-                <p class='sub-heading'>Technology Used</p>
-                <p class="details">{{currentWork.techUsed}}</p>
-            </div>
-            <div class='launch'>
-                <a ng-href='url' ng-show='isOffline' target="_blank">VIEW</a>
+        <!--<div when-scrolled='addMoreItems()'>-->
+        <div>
+            <div class='portfolio-container' ng-repeat='work in workList'>
+                <h3 class='port-title'>{{work.title}}</h3>
+                <h2 class='date-posted'>{{work.datePosted}}</h2>
+                <ul class='image-border'>
+                    <li class='images-list' ng-repeat='image in work.imageURL'>
+                        <img class='work-images' ng-src='{{image}}'/>
+                    </li>
+                </ul>
+                <div class='sub'>
+                    <p class='sub-heading'>Company</p>
+                    <p class="details">{{work.companyName}}</p>
+                </div>
+                <div class='sub'>
+                    <p class='sub-heading'>Business Case</p>
+                    <p class="details">{{work.businessCase}}</p>
+                </div>
+                <div class='sub'>
+                    <p class='sub-heading'>Details</p>
+                    <p class="details">{{work.details}}</p>
+                </div>
+                <div class='sub'>
+                    <p class='sub-heading'>Technology Used</p>
+                    <p class="details">{{work.techUsed}}</p>
+                </div>
+                <a class='launch' ng-href='{{work.url}}' ng-show='work.isOffline' target="_blank">VIEW</a>
             </div>
         </div>
 

@@ -1,8 +1,8 @@
 /**
-* @description the nav bar header which spans 100% of the width
-*
-* @markup
-*   <div class="nav-bar"></div>
+ @description the nav bar header which spans 100% of the width
+
+ @markup
+   <div class="nav-bar"></div>
 */
 .nav-bar {
   height: 80px;
@@ -52,10 +52,10 @@
 }
 
 /**
-* @description the container which has a max width
-*
-* @markup
-*   <div class="nav-bar-fixed"></div>
+ @description the container which has a max width
+
+ @markup
+   <div class="nav-bar-fixed"></div>
 */
 .nav-bar-fixed {
   width: 900px;
@@ -72,12 +72,12 @@
 }
 
 /**
-* @description button that only appears in medium and small mode
-*
-* @markup
-*   <div class="open-small-menu">
-*      <div class="horizontal-groove"></div>
-*   </div>
+ @description button that only appears in medium and small mode
+
+ @markup
+   <div class="open-small-menu">
+      <div class="horizontal-groove"></div>
+   </div>
 */
 .open-small-menu {
   display: none;
@@ -104,10 +104,10 @@
 }
 
 /**
-* @description the main menu styles
-*
-* @markup
-*   <ul class="main-menu">
+ @description the main menu styles
+
+ @markup
+   <ul class="main-menu">
 */
 ul.main-menu {
   display: inline-block;
@@ -203,6 +203,10 @@ ul.main-menu li {
   height: 80px;
   line-height: 80px;
   text-align: center;
+}
+ul.main-menu li a {
+  font-size: 16px;
+  color: #2f4f4e;
 }
 ul.main-menu li span {
   padding: 0 20px;
