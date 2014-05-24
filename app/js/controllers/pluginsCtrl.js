@@ -2,14 +2,13 @@
  * Created with IntelliJ IDEA.
  * User: Bouse
  * Date: 4/6/14
- * Time: 4:15 PM
+ * Time: 4:11 PM
  * To change this template use File | Settings | File Templates.
  */
 
 
-Crivas.controller('ContactCtrl', function ($scope) {
+Crivas.controller('PluginsCtrl', function ($scope) {
 
-  $scope.hello = 'kjdls;kfjaslk;djs';
-
+  $scope.currentMenuID = 2;
 
 });

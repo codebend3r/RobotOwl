@@ -8,6 +8,8 @@
 
 Crivas.controller('ResumeCtrl', function ($scope, resume) {
 
+  $scope.currentMenuID = 1;
+
   /**
    * a list of history of work
    */
@@ -35,22 +37,23 @@ Crivas.controller('ResumeCtrl', function ($scope, resume) {
     return {
       skillName: i.skillName,
       yearsOfExperience: i.yearsOfExperience == '1' ? i.yearsOfExperience + ' year' : i.yearsOfExperience + ' years',
-      isBasic: ko.observable(false),
-      isAdvanced: ko.observable(false),
-      isExpert: ko.observable(false),
-      levelOfExpertise: i.levelOfExpertise
+      levelOfExpertise: i.levelOfExpertise,
+      getLevel: function() {
+        if (i.levelOfExpertise == 'BASIC') {
+          return 'basic';
+        } else if (i.levelOfExpertise == 'ADVANCED') {
+          return 'advanced';
+        } else if (i.levelOfExpertise == 'EXPERT') {
+          return 'expert';
+        } else {
+          return '';
+        }
+      }
     };
   });
 
   $scope.getLevelOfExpertise = function (data) {
-    if (data.levelOfExpertise == 'BASIC') {
-      data.isBasic(true);
-    } else if (data.levelOfExpertise == 'ADVANCED') {
-      data.isAdvanced(true);
-    } else if (data.levelOfExpertise == 'EXPERT') {
-      data.isExpert(true);
-    }
-    return data.levelOfExpertise;
+
   };
 
 

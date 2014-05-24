@@ -1,14 +1,15 @@
+<nav-menu></nav-menu>
 <section id='plugins-section' class='main-content-section contact-content'>
-    <div class='inner-container'>
-        <div class='icon-and-title'>
-            <span class='section-icon plugins-icon'></span>
-            <h2>JQuery Plugins</h2>
-            <h2>{{hello}}</h2>
-        </div>
-        <ul class='plugins-list'>
-            <li>
-                <a ng-repeat='plugin in plugins' ng-href='plugin.link' target='_blank'>{{plugin.title}}</a> - <span>{{plugin.description}}</span>
-            </li>
-        </ul>
+  <div class='inner-container'>
+    <div class='icon-and-title'>
+      <span class='section-icon plugins-icon'></span>
+      <h2>JQuery Plugins</h2>
+      <h2>{{hello}}</h2>
     </div>
+    <ul class='plugins-list'>
+      <li>
+        <a ng-repeat='plugin in plugins' ng-href='plugin.link' target='_blank'>{{plugin.title}}</a> - <span>{{plugin.description}}</span>
+      </li>
+    </ul>
+  </div>
 </section>

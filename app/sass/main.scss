@@ -22,11 +22,16 @@ body {
   }
 }
 
+.container {
+
+}
+
 /**
 * @description container with variable width that is used for inner padding
 */
 .inner-container {
-  width: auto;
+  //width: auto;
+  @include centeredAndFixed(0px);
   padding: 20px;
   overflow: auto;
 }
@@ -63,8 +68,10 @@ ul.plugins-list {
 
   @include centeredAndFixed(80px);
   height: 100%;
+  //background-color: $bodyColour;
   background-color: $bodyColour;
 
+  /*
   @media #{$mediumBreakpoint} {
     @include centeredAndFixed(70px);
     height: auto;
@@ -73,6 +80,7 @@ ul.plugins-list {
     float: left;
     position: absolute;
   }
+  */
 
 }
 
@@ -83,7 +91,7 @@ ul.plugins-list {
     left: 0;
     height: 100%;
     width: 200px;
-    @include dropShadow(0, 0, 10px, 5px, rgba(0,0,0,.3));
+    @include dropShadow(0, 0, 10px, 5px, rgba(0, 0, 0, .3));
   }
 }
 
@@ -99,7 +107,7 @@ ul.plugins-list {
   width: 100%;
   height: auto;
   float: left;
-  margin: 0;
+  margin: 80px 0 0 0;
   padding: 0;
 
   &:last-child {

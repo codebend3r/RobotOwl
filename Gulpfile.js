@@ -192,8 +192,8 @@ gulp.task('watch', ['connect'], function () {
       config.app + '/*.html',
       config.app + '/**/*.html',
       config.app + '/bower_components/**/*.{css,scss,js}',
-      config.app + '/styles/**/*.scss',
-      config.app + '/scripts/**/*.js',
+      config.app + '/sass/**/*.scss',
+      config.app + '/js/**/*.js',
       config.app + '/fonts/**/*.js',
       config.app + '/images/**/*.{png,jpg,gif}'
   ], function (event) {
@@ -202,16 +202,16 @@ gulp.task('watch', ['connect'], function () {
   });
 
   // Watch all .html files
-  gulp.watch([config.app + '/**/*.html', config.app + '/*.html'], ['html']);
+  gulp.watch([config.app + '/**/*.html', config.app + '/*.html'], [ 'html' ]);
 
   // Watch .scss files
   gulp.watch(config.app + '/sass/**/*.scss', [ 'css' ]);
 
   // Watch .js files
-  gulp.watch([config.app + '/js/**/*.js', config.app + '/js/*.js'], ['scripts']);
+  gulp.watch([config.app + '/js/**/*.js', config.app + '/js/*.js'], [ 'scripts' ]);
 
   // Watch image files
-  gulp.watch(config.app + '/images/**/*.{png,jpg,gif}', ['images']);
+  gulp.watch(config.app + '/images/**/*.{png,jpg,gif}', [ 'images' ]);
 
 });
 

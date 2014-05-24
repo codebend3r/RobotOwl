@@ -6,7 +6,7 @@ html {
 
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: #efefef;
+  background-color: #f4f4f4;
   color: darkslategray;
   min-width: 400px;
   overflow-x: hidden;
@@ -27,9 +27,15 @@ body {
 * @description container with variable width that is used for inner padding
 */
 .inner-container {
-  width: auto;
+  width: 900px;
+  margin: 0px auto 0 auto;
   padding: 20px;
   overflow: auto;
+}
+@media all and (max-width: 1050px) {
+  .inner-container {
+    width: 100%;
+  }
 }
 
 ul.plugins-list {
@@ -64,25 +70,19 @@ ul.plugins-list li a {
   width: 900px;
   margin: 80px auto 0 auto;
   height: 100%;
-  background-color: #efefef;
-}
-@media all and (max-width: 1050px) {
-  .main-wrapper {
-    width: 100%;
-  }
-}
-@media all and (max-width: 850px) {
-  .main-wrapper {
-    width: 900px;
-    margin: 70px auto 0 auto;
+  background-color: #f4f4f4;
+  /*
+  @media all and (max-width: 850px) {
+    @include centeredAndFixed(70px);
     height: auto;
     padding: 0;
     z-index: 997;
     float: left;
     position: absolute;
   }
+  */
 }
-@media all and (max-width: 850px) and (max-width: 1050px) {
+@media all and (max-width: 1050px) {
   .main-wrapper {
     width: 100%;
   }
@@ -112,7 +112,7 @@ ul.plugins-list li a {
   width: 100%;
   height: auto;
   float: left;
-  margin: 0;
+  margin: 80px 0 0 0;
   padding: 0;
 }
 .main-content-section:last-child {

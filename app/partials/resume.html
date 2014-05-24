@@ -1,43 +1,42 @@
-<section id="resume-section" class="main-content-section resume-content"
-         data-bind="css: { visibleSection: $root.visibleResume }">
+<nav-menu></nav-menu>
+<section id="resume-section" class="main-content-section resume-content" data-bind="css: { visibleSection: $root.visibleResume }">
 
-    <div class='inner-container'>
+  <div class='inner-container'>
 
-        <div class='icon-and-title'>
-            <span class='section-icon resume-icon'></span>
-            <h2>Resume</h2>
-        </div>
-        <div class="stackable">
-            <p class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> .docx format (Word 2010)</p>
-            <p class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> .pdf (Adobe PDF)</p>
-        </div>
-        <div class="stackable">
-            <h3>Summary</h3>
-
-            <div class='summary'>{{summaryText}}</div>
-        </div>
-        <div class="stackable">
-            <h3>Skills Matrix</h3>
-            <ul class="skillset">
-                <li ng-repeat="skill in skillSet" class='skill-item'>
-                    <span class='skill'>{{skill.skillName}}</span> - <span class='level'></span> - <span class='experience'>{{skill.yearsOfExperience}}</span>
-                </li>
-            </ul>
-        </div>
-        <div class="stackable">
-            <h3>Work Experience</h3>
-            <div ng-repeat='experience in experienceList' class='job'>
-                <p><span class='job-title'>{{experience.jobTitle}}</span></p>
-
-                <p><span class='company-name'>{{experience.companyName}}</span><span>&nbsp;|&nbsp;</span><span class="job-type">{{experience.jobType}}</span></p>
-
-                <p><span class='dates-at-job'>{{experience.datesAtJob}}</span></p>
-                <ul>
-                    <li ng-repeat='date in experience.tasks'>{{date}}</li>
-                </ul>
-            </div>
-        </div>
-
+    <div class='icon-and-title'>
+      <span class='section-icon resume-icon'></span>
+      <h2>Resume</h2>
     </div>
+    <div class="stackable">
+      <p class="launch"><a href="resume/Chester Rivas CV.docx" target="_blank">DOWNLOAD</a> .docx format (Word 2010)</p>
+      <p class="launch"><a href="resume/Chester Rivas CV.pdf" target="_blank">DOWNLOAD</a> .pdf (Adobe PDF)</p>
+    </div>
+    <div class="stackable">
+      <h3>Summary</h3>
+      <div class='summary' ng-bind-html="summaryText"></div>
+    </div>
+    <div class="stackable">
+      <h3>Skills Matrix</h3>
+      <ul class="skillset">
+        <li ng-repeat="skill in skillSet" class='skill-item'>
+          <span class='skill'>{{skill.skillName}}</span> -
+          <span ng-class='skill.getLevel()' class='level'>{{skill.levelOfExpertise}}</span> -
+          <span class='experience'>{{skill.yearsOfExperience}}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="stackable">
+      <h3>Work Experience</h3>
+      <div ng-repeat='experience in experienceList' class='job'>
+        <p><span class='job-title'>{{experience.jobTitle}}</span></p>
+        <p><span class='company-name'>{{experience.companyName}}</span><span>&nbsp;|&nbsp;</span><span class="job-type">{{experience.jobType}}</span></p>
+        <p><span class='dates-at-job'>{{experience.datesAtJob}}</span></p>
+        <ul>
+          <li ng-repeat='date in experience.tasks'>{{date}}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 
 </section>
