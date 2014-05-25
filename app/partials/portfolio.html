@@ -14,7 +14,7 @@
     </ul>
     -->
 
-    <div class='portfolio-container' ng-repeat='work in allWorkList | filter: {show:true}'>
+    <div class='portfolio-container' ng-repeat='work in workList'>
       <h3 class='port-title'>{{work.title}}</h3>
 
       <h2 class='date-posted'>{{work.datePosted}}</h2>
@@ -41,6 +41,8 @@
       </div>
       <a class='launch' ng-href='{{work.url}}' ng-show='work.isOffline' target="_blank">VIEW</a>
     </div>
+
+    <button ng-click='addMoreItems()'>Add</button>
 
 
   </div>
