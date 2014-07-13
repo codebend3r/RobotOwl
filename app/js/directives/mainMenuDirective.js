@@ -62,13 +62,13 @@ Crivas.directive('navMenu', function () {
 
       $scope.getCurrentNav = function (n) {
         if ($scope.currentMenuID === 0 && n === 0) {
-          return 'selected';
+          return 'active';
         } else if ($scope.currentMenuID === 1 && n === 1) {
-          return 'selected';
+          return 'active';
         } else if ($scope.currentMenuID === 2 && n === 2) {
-          return 'selected';
+          return 'active';
         } else if ($scope.currentMenuID === 3 && n === 3) {
-          return 'selected';
+          return 'active';
         } else {
           return '';
         }

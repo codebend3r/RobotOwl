@@ -1,4 +1,4 @@
-<header class='nav-bar'>
+<!--<header class='nav-bar'>
   <div class='nav-bar-fixed'>
     <div class='open-small-menu'>
       <div class='horizontal-groove'></div>
@@ -10,7 +10,28 @@
       <li class='menu-item' ng-class='getCurrentNav({{$index}})' ng-repeat='nav in navs | filter: {enabled:true}'><a ng-href='{{nav.url}}'>{{nav.name}}</a></li>
     </ul>
   </div>
-</header>
+</header>-->
+  
+<div class='navbar navbar-default navbar-fixed-top'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-responsive-collapse'>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+    </div>
+    <div class='logo navbar-brand'></div>
+    <div class='navbar-collapse collapse navbar-responsive-collapse'>
+      <ul class='nav navbar-nav'>
+        <li class='menu-item' ng-class='getCurrentNav({{$index}})' ng-repeat='nav in navs | filter: {enabled:true}'><a ng-href='{{nav.url}}'>{{nav.name}}</a></li>
+      </ul>
+      <form class='navbar-form navbar-left'>
+        <input type='text' class='form-control col-lg-8' placeholder='Search'>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!--
 <ul class='main-menu small'>

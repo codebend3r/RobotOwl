@@ -6,24 +6,19 @@
  * To change this template use File | Settings | File Templates.
  */
 
-Crivas.controller('PortfolioCtrl', function ($scope, portfolio, $window) {
-
-  $window.onscroll = function () {
-    //console.log(this.scrollY);
-    if (this.scrollY == 2500) {
-      //$scope.addMoreItems();
-    }
-  };
+Crivas.controller('PortfolioCtrl', function ($scope, $portfolio) {
 
   $scope.currentMenuID = 0;
 
-  $scope.min = 0;
-
   $scope.max = 4;
 
-  $scope.allWorkList = portfolio.map(function (i) {
+  $scope.active = function(item){
+    return item.active;
+  };
 
-    return {
+  $scope.allWorkList = $portfolio.map(function (i) {
+
+    var portfolioObject = {
       id: i.id,
       slug: i.slug,
       title: i.title,
@@ -40,20 +35,14 @@ Crivas.controller('PortfolioCtrl', function ($scope, portfolio, $window) {
       show: false
     };
 
+    return portfolioObject;
+
   });
 
   $scope.workList = [];
 
   $scope.addMoreItems = function () {
 
-    console.log('addMoreItems', this);
-
-    for (var i = $scope.min; i <= $scope.max; i++) {
-      var currentObj = $scope.allWorkList[i];
-      $scope.workList.push(currentObj);
-    }
-
-    $scope.min += 5;
     $scope.max += 5;
 
   };
@@ -66,11 +55,4 @@ Crivas.controller('PortfolioCtrl', function ($scope, portfolio, $window) {
 
   $scope.addMoreItems();
 
-});
-
-Crivas.filter('viewablePortfolio', function () {
-  return function (a) {
-    console.log('a', a);
-    return a;
-  };
 });

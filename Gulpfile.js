@@ -4,16 +4,12 @@ var gulp = require('gulp'),
   port = 9009,
   config = {
     app: 'app',
-    dev: 'dev',
-    prod: 'prod',
-    release: 'release'
+    dev: 'builds/dev',
+    prod: 'builds/prod',
+    release: 'builds/release'
   },
   $ = require('gulp-load-plugins')(),
-  connect = require('gulp-connect-multi'),
-  minifyCSS = require('gulp-minify-css'),
-  devServer = connect(),
-  prodServer = connect(),
-  releaseServer = connect(),
+  connect = require('gulp-connect'),
   gulpif = require('gulp-if'),
   open = require('open'),
   env = 'dev';
@@ -37,16 +33,16 @@ gulp.task('set-to-release', function () {
 
 // HTML
 gulp.task('html', function () {
-  return gulp.src([ config.app + '/**/*.html', config.app + '/*.html', '!' + config.app + '/bower_components/**/*.html' ])
+  return gulp.src([ config.app + '/**/*.html', config.app + '/*.html' ])
     // RELEASE
     .pipe(gulpif(env === 'release',
       $.usemin({
         css: [
-          minifyCSS({keepSpecialComments: 0})
+          $.csso()
         ],
         js: [
           $.jshint(),
-          //$.ngmin(),
+          $.ngmin(),
           $.uglify()
         ]
       })
@@ -70,7 +66,6 @@ gulp.task('html', function () {
     ));
 
 });
-
 
 // SASS
 gulp.task('sass', function () {
@@ -99,17 +94,19 @@ gulp.task('scripts', function () {
 
 // Images
 gulp.task('images', function () {
-  return gulp.src(config.app + '/images/**/*.{png,jpg,gif}')
-    .pipe($.imagemin({
-      optimizationLevel: 1,
-      progressive: true,
-      interlaced: true
-    }))
+  return gulp.src(config.app + '/images/**/*.{png,jpg,gif,svg}')
     .pipe(gulpif(env === 'dev',
       gulp.dest(config.dev + '/images/')
     ))
     .pipe(gulpif(env === 'prod',
       gulp.dest(config.prod + '/images/')
+    ))
+    .pipe(gulpif(env === 'release',
+      $.imagemin({
+        optimizationLevel: 1,
+        progressive: true,
+        interlaced: true
+      })
     ))
     .pipe(gulpif(env === 'release',
       gulp.dest(config.release + '/images/')
@@ -150,7 +147,7 @@ gulp.task('build', [
 
 gulp.task('build-prod', [
   'set-to-prod',
-  'sass',
+  'css',
   'html',
   'images',
   'fonts'
@@ -158,30 +155,23 @@ gulp.task('build-prod', [
 
 gulp.task('build-release', [
   'set-to-release',
-  'sass',
+  'css',
   'html',
   'images',
   'fonts'
 ]);
 
 // Build and Watch
-gulp.task('buildclean', [ 'clean', 'build' ]);
+gulp.task('buildclean', [ 'build' ]);
 
-//gulp.task('connect-prod', [ 'set-to-prod', 'connect-prod' ]);
-
+//
 gulp.task('buildclean-prod', [ 'clean', 'build-prod' ]);
 
-// Build and Watch
-gulp.task('buildserve', [ 'buildclean', 'serve' ]);
-
-// Clean, Build and Watch
-gulp.task('buildwatch', [ 'buildclean', 'watch' ]);
-
 // Default task
-gulp.task('default', [ 'build' ]);
+gulp.task('default', [ 'watch' ]);
 
 // Open
-gulp.task('serve', ['connect'], function () {
+gulp.task('serve', [ 'connect' ], function () {
   open('http://localhost:' + port);
 });
 
@@ -198,7 +188,7 @@ gulp.task('watch', ['connect'], function () {
       config.app + '/images/**/*.{png,jpg,gif}'
   ], function (event) {
     return gulp.src(event.path)
-      .pipe(devServer.reload());
+      .pipe(connect.reload());
   });
 
   // Watch all .html files
@@ -215,24 +205,29 @@ gulp.task('watch', ['connect'], function () {
 
 });
 
+gulp.task('connect', [ 'build' ], function () {
+  connect.server({
+    root: [ config.dev ],
+    port: port,
+    livereload: true
+  });
+});
 
-// Servers
-gulp.task('connect', devServer.server({
-  root: [ config.dev ],
-  port: port,
-  livereload: true
-}));
+gulp.task('connect-prod', function () {
+  connect.server({
+    root: [ config.prod ],
+    port: port,
+    livereload: true
+  });
+});
 
-gulp.task('connect-prod', prodServer.server({
-  root: [ config.prod ],
-  port: 9001,
-  livereload: true
-}));
+gulp.task('connect-release', function () {
+  connect.server({
+    root: [ config.release ],
+    port: port,
+    livereload: true
+  });
+});
 
-gulp.task('connect-release', releaseServer.server({
-  root: [ config.release ],
-  port: 9002,
-  livereload: true
-}));
 
 module.exports = gulp;

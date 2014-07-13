@@ -112,7 +112,6 @@ h2.date-posted {
   display: inline-block;
   padding: 40px 0;
   margin: 0;
-  //float: left;
   border-bottom: 1px solid #cbcbcb;
 
   &:first-child {
@@ -121,12 +120,12 @@ h2.date-posted {
 
   &:last-child {
     border-bottom: none;
+    margin: 0 0 40px 0;
+    background-color: #d1526a;
   }
 
   @media #{$largeBreakpoint} {
     width: 100%;
-    margin: 0;
-    padding: 0;
   }
 
 }

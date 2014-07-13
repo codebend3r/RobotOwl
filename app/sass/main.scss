@@ -22,8 +22,20 @@ body {
   }
 }
 
-.container {
+.vertical-padding {
+  padding: 15px 0;
+}
 
+.no-padding {
+  padding: 0;
+}
+
+.vertical-margin {
+  margin: 15px 0;
+}
+
+.no-margin {
+  margin: 0;
 }
 
 /**
@@ -116,7 +128,7 @@ ul.plugins-list {
 
 }
 
-p, a {
+/*p, a {
 
   font-size: .8rem;
 
@@ -124,7 +136,7 @@ p, a {
     font-size: $smallScreenFontSize;
   }
 
-}
+}*/
 
 ////////////////////////////////////////
 
@@ -157,8 +169,10 @@ p, a {
   height: 80px;
   display: inline-block;
   float: left;
+  //position: absolute;
+  //top: 0px;
 
-  @media #{$largeBreakpoint}{
+  /*@media #{$largeBreakpoint}{
     margin: 0 0 0 15px;
   }
 
@@ -166,59 +180,8 @@ p, a {
     background-size: ($navBarHeightSmall * 1.8875) $navBarHeightSmall;
     width: $navBarHeightSmall * 1.8875;
     height: $navBarHeightSmall;
-  }
+  }*/
 
-}
-
-/**
- @description resusable launch button
-
- @markup
-   <div class="launch"></div>
-*/
-a {
-
-  &.launch {
-
-    clear: both;
-    cursor: pointer;
-    color: #EEEEEE;
-    text-decoration: none;
-    background: #333333 url('../images/pattern/tweed.png') repeat;
-    margin: 0;
-    padding: 10px;
-    display: block;
-    width: 36px;
-
-    @include dropShadow(0, 0, 5px, 1px, rgba(#000000, .3));
-
-    /*
-    @media #{$smallBreakpoint} {
-      width: 50%;
-      display: inline-block;
-      text-align: center;
-      padding: 10px 0;
-      margin: 0 auto;
-    }
-
-    @media #{$smallBreakpoint} {
-      height: auto;
-      margin: 10px 0 0 0;
-    }
-    */
-
-    &:hover {
-      color: #FFFFFF;
-      text-decoration: none;
-      background: $darkRed url('../images/pattern/tweed-over.png') repeat;
-      @include dropShadow(0, 0, 5px, 1px, rgba(#000000, .3));
-      @media #{$smallBreakpoint} {
-        padding: 10px 0;
-        margin: 0 auto;
-      }
-    }
-
-  }
 }
 
 /**
@@ -267,24 +230,6 @@ a {
   border-top: 1px solid $white;
   border-bottom: 1px solid $mediumGrey;
   clear: both;
-}
-
-/**
-* @description global a elements styles
-*
-* @markup
-*   <a href=''></a>
-*/
-a {
-
-  color: $green;
-
-  &:hover {
-    color: $orange;
-  }
-
-  text-decoration: none;
-
 }
 
 //////////////////////

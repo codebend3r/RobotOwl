@@ -2,7 +2,7 @@
  * Created by crivas on 4/7/2014.
  */
 
-Crivas.service('portfolio', function () {
+Crivas.service('$portfolio', function () {
 
   return [
     {
@@ -24,7 +24,7 @@ Crivas.service('portfolio', function () {
       techUsed: 'Symfony2, PHP, JavaScript, Knockout, Grunt, JQuery, SASS, CSS',
       datePosted: 'May 19, 2014',
       url: 'offline',
-      active: true
+      active: false
     },
     {
       id: 28,

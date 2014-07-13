@@ -18,6 +18,7 @@
   position: fixed;
   z-index: 99;
   top: 0px;
+  left: 0px;
   @include dropShadow(0, 0, 10, 5, rgba(0, 0, 0, .3));
 
   @media #{$mediumBreakpoint} {
