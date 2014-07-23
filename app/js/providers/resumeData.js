@@ -2,7 +2,7 @@
  * Created by crivas on 4/7/2014.
  */
 
-Crivas.service('resume', function () {
+Crivas.service('$resumeData', function () {
 
   return {
 

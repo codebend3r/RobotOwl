@@ -7,7 +7,9 @@
  */
 
 
-Crivas.controller('ContactCtrl', function ($scope) {
+Crivas.controller('contactCtrl', function ($scope) {
+
+  'use strict';
 
   $scope.currentMenuID = 3;
 

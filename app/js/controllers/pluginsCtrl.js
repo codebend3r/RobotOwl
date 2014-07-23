@@ -7,7 +7,9 @@
  */
 
 
-Crivas.controller('PluginsCtrl', function ($scope) {
+Crivas.controller('pluginsCtrl', function ($scope, $pluginsData) {
+
+  'use strict';
 
   $scope.currentMenuID = 2;
 

@@ -6,14 +6,16 @@
  * To change this template use File | Settings | File Templates.
  */
 
-Crivas.controller('ResumeCtrl', function ($scope, resume) {
+Crivas.controller('resumeCtrl', function ($scope, $resumeData) {
+
+  'use strict';
 
   $scope.currentMenuID = 1;
 
   /**
    * a list of history of work
    */
-  $scope.experienceList = resume.resume.map(function (i) {
+  $scope.experienceList = $resumeData.resume.map(function (i) {
     return {
       id: i.id,
       companyName: i.companyName,
@@ -28,12 +30,12 @@ Crivas.controller('ResumeCtrl', function ($scope, resume) {
   /**
    * static work summary text
    */
-  $scope.summaryText = resume.summaryText;
+  $scope.summaryText = $resumeData.summaryText;
 
   /**
    * a list of skillz
    */
-  $scope.skillSet = resume.skillset.map(function (i) {
+  $scope.skillSet = $resumeData.skillset.map(function (i) {
     return {
       skillName: i.skillName,
       yearsOfExperience: i.yearsOfExperience == '1' ? i.yearsOfExperience + ' year' : i.yearsOfExperience + ' years',

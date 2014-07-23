@@ -6,7 +6,11 @@
  * To change this template use File | Settings | File Templates.
  */
 
-Crivas.controller('PortfolioCtrl', function ($scope, $portfolio) {
+Crivas.controller('portfolioCtrl', function ($scope, $portfolioData) {
+
+  'use strict';
+
+  console.log('portfolioCtrl');
 
   $scope.currentMenuID = 0;
 
@@ -16,7 +20,7 @@ Crivas.controller('PortfolioCtrl', function ($scope, $portfolio) {
     return item.active;
   };
 
-  $scope.allWorkList = $portfolio.map(function (i) {
+  $scope.allWorkList = $portfolioData.map(function (i) {
 
     var portfolioObject = {
       id: i.id,
@@ -39,15 +43,9 @@ Crivas.controller('PortfolioCtrl', function ($scope, $portfolio) {
 
   });
 
-  $scope.workList = [];
-
   $scope.addMoreItems = function () {
-
     $scope.max += 5;
-
   };
-
-  $scope.currentWork = $scope.workList[0];
 
   $scope.selectWork = function ($index) {
     $scope.currentWork = $scope.data[$index];

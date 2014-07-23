@@ -14,7 +14,7 @@
     </ul>
     -->
 
-    <div class='portfolio-container' ng-repeat='work in workList'>
+    <div class='portfolio-container' ng-repeat='work in allWorkList | limitTo: max'>
       <h3 class='port-title'>{{work.title}}</h3>
 
       <h2 class='date-posted'>{{work.datePosted}}</h2>

@@ -2,7 +2,7 @@
  * Created by crivas on 4/14/2014.
  */
 
-Crivas.service('plugins', function () {
+Crivas.service('$pluginsData', function () {
 
   return [
     {

@@ -2,7 +2,7 @@
  * Created by crivas on 4/7/2014.
  */
 
-Crivas.service('$portfolio', function () {
+Crivas.service('$portfolioData', function () {
 
   return [
     {
